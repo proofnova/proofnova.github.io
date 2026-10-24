@@ -1,6 +1,6 @@
 import test from "node:test";
 import strict from "node:assert/strict";
-import { mkdtemp, readFile, writeFile, rm } from "node:fs/promises";
+import { mkdtemp, readFile, writeFile, rm, realpath } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import path from "node:path";
 import { spawnSync } from "node:child_process";
@@ -14,7 +14,9 @@ const example = JSON.parse(
   await readFile(new URL("../examples/invoice.json", import.meta.url)),
 );
 test("Node persistent and browser memory engines produce the same actual result", async () => {
-  const stateRoot = await mkdtemp(path.join(tmpdir(), "pact-parity-"));
+  const stateRoot = await realpath(
+    await mkdtemp(path.join(tmpdir(), "pact-parity-")),
+  );
   try {
     const local = await run(example, { stateRoot });
     const web = await runBrowser(example);
@@ -34,7 +36,7 @@ test("CLI JSON and meaningful missing-data exit code", async () => {
   );
   strict.equal(r.status, 0);
   strict.equal(JSON.parse(r.stdout).original_request, "make it good");
-  const dir = await mkdtemp(path.join(tmpdir(), "pact-cli-"));
+  const dir = await realpath(await mkdtemp(path.join(tmpdir(), "pact-cli-")));
   try {
     const file = path.join(dir, "missing.json");
     await writeFile(file, JSON.stringify({ request: "ambiguous" }));
@@ -63,7 +65,7 @@ test("CLI JSON and meaningful missing-data exit code", async () => {
   }
 });
 test("host test adapter requires both host and contract grants and runs real tests", async () => {
-  const dir = await mkdtemp(path.join(tmpdir(), "pact-host-"));
+  const dir = await realpath(await mkdtemp(path.join(tmpdir(), "pact-host-")));
   try {
     await writeFile(
       path.join(dir, "check.mjs"),

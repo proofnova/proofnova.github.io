@@ -86,6 +86,10 @@
       "sha256": "cabdd8e5ac0d2e04b0ed83a8013845aafb70b6122330b4a6edecc1ea54b25584"
     },
     {
+      "path": "docs/evidence/ci-first-run.json",
+      "sha256": "014e223899d2120af55fcc5010ecbf5bacebabf730a6e25ee3c790c5b7c2a79e"
+    },
+    {
       "path": "docs/evidence/cli-smoke.json",
       "sha256": "90859d559ba12b4d6a3a078944899546e984178724ab0ff5650876d6dd45759c"
     },
@@ -98,12 +102,16 @@
       "sha256": "ba30b0d711d3603dbd9d62d0d539f774b2ebe1453848fc007fa4212bc00fc31e"
     },
     {
+      "path": "docs/evidence/test-run-03.txt",
+      "sha256": "b2aa85c6b9fd1900d71e3ddf8af6aed96273772c323a6696f36858c1b3734c8e"
+    },
+    {
       "path": "docs/module-contracts.md",
       "sha256": "617450df7034c012aea92e86dc5465a7350a90bb5091e0ea4954611500132eaf"
     },
     {
       "path": "docs/verification.md",
-      "sha256": "1704756f2f7e829046a50024b402886cc5612d241b6da3b5b210e34bca4d7c97"
+      "sha256": "87c6a5e30eef7e5edae8c01fa5e7f55fac31362a14a1482b8922eac61d80bc5a"
     },
     {
       "path": "examples/invoice.json",
@@ -255,7 +263,7 @@
     },
     {
       "path": "tests/cli-browser.test.mjs",
-      "sha256": "dfb3ce58d67fae062214e4baf715db41ab2d588daecef06a83ff43e6abf0397c"
+      "sha256": "e35ea4792309ef63fb6f62f8735c3e40603bc997375b1fb5643c2c72db68beb2"
     },
     {
       "path": "tests/contracts.test.mjs",
@@ -279,7 +287,7 @@
     },
     {
       "path": "tests/foundation-store.test.mjs",
-      "sha256": "4f82ddf85107df5c345d3fd01c0309128b6e04d41832fc13ee2435513e697cc1"
+      "sha256": "8c9dc07336ace598adf55798d91e87bd0c710248bf4214d2cd56d45b5e2092ec"
     },
     {
       "path": "THIRD_PARTY_NOTICES.md",

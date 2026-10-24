@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
-  "checked_at": "2026-10-24T16:55:52.6225587Z",
+  "checked_at": "2026-10-24T17:07:23.951193+00:00",
   "repository": "https://github.com/proofnova/proofnova-pactweave",
   "repository_verified": true,
-  "repository_commit": "f664689a85d93a3f42c87b12e431f2fceb001f43",
+  "repository_commit": "f11584f6bfd16a6f63fb46f957a4674897d5f090",
   "public_skill": "pactweave",
   "site": "https://proofnova.github.io/workspaces/pactweave/",
   "showcase_position": 1,
@@ -17,5 +17,59 @@
     "ja",
     "zh-CN"
   ],
-  "website_verification": "pending deployed UI check"
+  "website_verification": "Published root resource list observed with PactWeave first; linked HTTPS invoice demo executed PASS, model calls 0.",
+  "ci_verification": {
+    "source_commit": "f11584f6bfd16a6f63fb46f957a4674897d5f090",
+    "run_id": 40114580480,
+    "url": "https://github.com/proofnova/proofnova-pactweave/actions/runs/40114580480",
+    "checked_at": "2026-10-24T17:07:23.951193+00:00",
+    "jobs": [
+      {
+        "id": 120933115599,
+        "name": "windows-latest / Node 24",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 120933115806,
+        "name": "ubuntu-latest / Node 24",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 120933115810,
+        "name": "macos-latest / Node 22",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 120933115814,
+        "name": "windows-latest / Node 22",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 120933115875,
+        "name": "macos-latest / Node 24",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 120933115898,
+        "name": "ubuntu-latest / Node 22",
+        "status": "completed",
+        "conclusion": "success"
+      }
+    ],
+    "previous_failed_run": 40113763254,
+    "production_security_policy_changed": false
+  },
+  "source_pack": {
+    "files": 198,
+    "crc": "PASS",
+    "source_member_bytes": "PASS",
+    "sha256": "31fcb33cd1a74fc79abcda3c8befe183ee2c9c8abd3a6a7073872d86ac6cf160",
+    "bytes": 5385559,
+    "source_commit": "f11584f6bfd16a6f63fb46f957a4674897d5f090"
+  }
 }

@@ -9,7 +9,11 @@ import { SessionLLMCache } from "../src/session-llm-cache.mjs";
 import { createNodeContext } from "../run.mjs";
 
 async function fixture(t) {
-  const root = await fs.mkdtemp(path.join(os.tmpdir(), "pactvault-"));
+  // macOS exposes its system temp directory through /var -> /private/var.
+  // Pass the canonical fixture root; deliberately created links remain rejected below.
+  const root = await fs.realpath(
+    await fs.mkdtemp(path.join(os.tmpdir(), "pactvault-")),
+  );
   t.after(() => fs.rm(root, { recursive: true, force: true }));
   return {
     root,

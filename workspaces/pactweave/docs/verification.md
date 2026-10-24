@@ -6,21 +6,27 @@ This record separates executable tests, browser observations, synthetic workflow
 
 Environment: Windows, Node.js **24.13.1**. The minimum supported runtime is Node.js 22. Other operating systems are represented by the repository's CI configuration; they were not locally executed in this session.
 
-| Check | Observed result | Evidence |
-| --- | --- | --- |
-| Node test suite, final run | **142/142 passed**, zero failed, skipped or cancelled | [test-run-02.txt](evidence/test-run-02.txt) |
-| Original test run | 138 passed, 4 failed; preserved before corrections and final rerun | [test-run-01.txt](evidence/test-run-01.txt) |
-| Registered adapters in the actual local browser | **60/60 supplied fixtures passed**, covering all 30 adapters | [browser-adapters.json](evidence/browser-adapters.json) |
-| Four-language browser invoice workflow | English, Korean, Japanese and Simplified Chinese each returned PASS | [browser-local.json](evidence/browser-local.json) |
-| Browser negative cases | Missing task BLOCKED; unmet criterion BLOCKED; malformed JSON ERROR with download disabled | [browser-local.json](evidence/browser-local.json) |
-| Mobile browser | 390 × 844 viewport; no horizontal overflow or missing form labels in the checked page | [browser-local.json](evidence/browser-local.json) |
-| CLI command smoke checks | All 14 command surfaces were exercised successfully with parsed JSON | [cli-smoke.json](evidence/cli-smoke.json) and [CLI usage](cli.md) |
+| Check                                           | Observed result                                                                            | Evidence                                                          |
+| ----------------------------------------------- | ------------------------------------------------------------------------------------------ | ----------------------------------------------------------------- |
+| Node test suite, latest local run               | **142/142 passed**, zero failed, skipped or cancelled                                      | [test-run-03.txt](evidence/test-run-03.txt)                       |
+| Original test run                               | 138 passed, 4 failed; preserved before corrections and final rerun                         | [test-run-01.txt](evidence/test-run-01.txt)                       |
+| Registered adapters in the actual local browser | **60/60 supplied fixtures passed**, covering all 30 adapters                               | [browser-adapters.json](evidence/browser-adapters.json)           |
+| Four-language browser invoice workflow          | English, Korean, Japanese and Simplified Chinese each returned PASS                        | [browser-local.json](evidence/browser-local.json)                 |
+| Browser negative cases                          | Missing task BLOCKED; unmet criterion BLOCKED; malformed JSON ERROR with download disabled | [browser-local.json](evidence/browser-local.json)                 |
+| Mobile browser                                  | 390 × 844 viewport; no horizontal overflow or missing form labels in the checked page      | [browser-local.json](evidence/browser-local.json)                 |
+| CLI command smoke checks                        | All 14 command surfaces were exercised successfully with parsed JSON                       | [cli-smoke.json](evidence/cli-smoke.json) and [CLI usage](cli.md) |
 
 The release ZIP preflight recorded 193 entries and passed CRC checks. A fresh extraction ran the invoice workflow successfully and passed the full 142-test suite. The archive contains no model files or mandatory runtime packages. Archive entry counts describe that particular preflight build and can change when documentation is added; they are not a product performance metric.
 
 The browser's execution-record download was also clicked and its actual downloaded JSON parsed: PASS with one execution-evidence record. This is a local interaction observation, not evidence of disk recovery or provider execution in the browser. The checked mobile condition is a layout/label check, not a comprehensive accessibility audit.
 
 The initial test failures included three adapter parity checks and a Gateway timeout assertion. They remain visible in the first log rather than being erased. The final complete run passed all 142 checks. The individual assertions and their scope are available in [tests](../tests/).
+
+## First cross-platform CI run and recovery
+
+The [first CI run](https://github.com/proofnova/proofnova-pactweave/actions/runs/40113763254) passed on Ubuntu and Windows with Node.js 22 and 24. Both macOS jobs failed: the macOS 24 job recorded 129 passing and 13 failing tests. Positive filesystem fixtures supplied the macOS `/var` alias to a store that deliberately rejects symlink path components.
+
+The test harness now canonicalizes newly created temporary directories before using them as approved roots. Production path guards and explicit symlink-rejection assertions remain unchanged. Four independent reviews accepted this test-only repair, and the complete local suite again passed 142/142 checks. The original failed CI remains recorded in [ci-first-run.json](evidence/ci-first-run.json); consult subsequent workflow runs for remote verification of this repair.
 
 ## Synthetic workflow experiment
 

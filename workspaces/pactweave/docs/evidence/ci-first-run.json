@@ -1,0 +1,17 @@
+{
+  "source_commit": "f664689a85d93a3f42c87b12e431f2fceb001f43",
+  "run_id": 40113763254,
+  "url": "https://github.com/proofnova/proofnova-pactweave/actions/runs/40113763254",
+  "conclusion": "failure",
+  "jobs": {
+    "ubuntu-node22": "success",
+    "ubuntu-node24": "success",
+    "windows-node22": "success",
+    "windows-node24": "success",
+    "macos-node22": "failure",
+    "macos-node24": "failure"
+  },
+  "diagnosis": "macOS system temporary paths use the /var -> /private/var alias. Positive fixtures passed that alias into a store that deliberately rejects linked path components. The test harness now resolves each newly created temporary directory to its canonical real path. Production symlink rejection and explicit malicious-link tests are unchanged.",
+  "macos_node24_tests": { "passed": 129, "failed": 13, "total": 142 },
+  "recovery_status": "Test-only change awaiting fresh review and CI execution; do not treat this failed run as a cross-platform pass."
+}
