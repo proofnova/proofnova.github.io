@@ -1,0 +1,143 @@
+{
+  "id": "localization-contract",
+  "folder": "29-localization-contract",
+  "domain": "learning",
+  "title": "ICU localization gate",
+  "job": "번역문의 중첩 ICU 인자·선택·복수형·보호 토큰 누락을 검사한다.",
+  "method": "A bounded nested MessageFormat parser rather than a flat placeholder regex.",
+  "recovery": "Repair the exact missing argument/category/brace; semantic translation review remains separate.",
+  "required": [
+    "source",
+    "target"
+  ],
+  "acceptance": "Nested plurals and quoted literal braces must not be mistaken for missing or extra arguments.",
+  "alternatives": [
+    "icu",
+    "formatjs",
+    "manual"
+  ],
+  "version": 1,
+  "novelty_status": "direct-overlap-on-core-checks",
+  "novelty_scope": "Algorithms and domain operations have established prior art. The evaluated contribution is the bounded executable resource and small-model integration, not invention of the underlying task.",
+  "repository": "https://github.com/proofnova/localization-contract",
+  "site": "https://proofnova.github.io/localization-contract/",
+  "idea_id": "fieldwork-localization-contract",
+  "problem_evidence": [
+    {
+      "origin": "user",
+      "evidence": "User requested inexpensive AI resources that improve completion of specific domain jobs."
+    },
+    {
+      "origin": "public",
+      "evidence": "The linked existing tools and their manuals document the recurring task and established solutions. No user interview or unmeasured frustration count is invented."
+    }
+  ],
+  "stars_pattern_refs": [
+    "https://stars.github.com/profiles/rajbos/",
+    "https://stars.github.com/profiles/ba4bes/",
+    "https://stars.github.com/profiles/ruth-ikegah/"
+  ],
+  "nearest_alternatives": [
+    {
+      "name": "ICU MessageFormat",
+      "url": "https://unicode-org.github.io/icu/userguide/format_parse/messages/",
+      "capability": "Nested message arguments, selection and plurals",
+      "burden": "Established syntax and mature implementations",
+      "evidence_status": "primary page read; exact feature parity not fully executed"
+    },
+    {
+      "name": "모두의도구 다국어 카탈로그 검사기",
+      "url": "https://teck-tani.com/ko/localization-catalog-auditor",
+      "capability": "Public page explicitly describes nested ICU variable, missing-key and plural validation",
+      "burden": "Direct functional overlap. Page read, implementation not executed here; novelty cannot be claimed for those checks",
+      "evidence_status": "primary page read; exact feature parity not fully executed"
+    },
+    {
+      "name": "FormatJS",
+      "url": "https://formatjs.github.io/docs/core-concepts/icu-syntax/",
+      "capability": "ICU parsing and formatting, including nested selectors",
+      "burden": "Package/runtime integration; many validation needs can use existing parser tooling",
+      "evidence_status": "primary page read; exact feature parity not fully executed"
+    },
+    {
+      "name": "Manual or composed workflow",
+      "url": null,
+      "capability": "A person follows the rules with a spreadsheet, scripts and tool documentation",
+      "burden": "Repeated setup, arithmetic, checks and trace keeping; actual human time savings have not been measured",
+      "evidence_status": "comparison baseline, not user observation"
+    }
+  ],
+  "research_scope": {
+    "languages": [
+      "English",
+      "Korean"
+    ],
+    "queries": [
+      "ICU nested plural placeholder localization validation 번역 변수 검사"
+    ],
+    "scope": "Primary documentation and repository descriptions were read on the public web. Competitor code, plugins and packaged execution were not exhaustively tested. This is a bounded prior-art review, not a worldwide novelty search.",
+    "limitations": [
+      "Search results and documentation do not establish universal absence.",
+      "Competitor configuration/plugin parity is not exhausted.",
+      "No independent end-user interview or deployment evidence."
+    ],
+    "proposed_queries": [
+      "ICU localization gate",
+      "localization contract",
+      "번역문의 중첩 ICU 인자·선택·복수형·보호 토큰 누락을 검사한다.",
+      "icu",
+      "localization-auditor",
+      "formatjs"
+    ],
+    "query_scope": "One actual bilingual search per resource, grouped in shared cached batches; additional suggested terms are explicitly proposed, not executed."
+  },
+  "checked_at": "2026-10-24",
+  "distinctive_capability": "A bounded nested MessageFormat parser rather than a flat placeholder regex. An offline executable can be called by a small model and checked against an explicit task contract.",
+  "counterevidence": [
+    "Underlying algorithms and task outcomes already exist in the alternatives.",
+    "An existing public catalog auditor describes overlapping nested ICU checks.",
+    "Small synthetic tests cannot establish broad expertise or external demand."
+  ],
+  "validation_hypothesis": "The same small model completes the held-out structured job more accurately with this executable resource than without it.",
+  "prototype_budget": {
+    "batch_minutes": 330,
+    "additional_cost": 0,
+    "resource_slice_minutes": 5,
+    "note": "Shared implementation/research/test/publication budget is tracked at batch level; not a claim of actual elapsed work."
+  },
+  "stop_conditions": [
+    "No measured completion improvement",
+    "Existing configured tool gives the same accessibility and integration benefit",
+    "Setup burden exceeds saved effort",
+    "An invariant fails on real input"
+  ],
+  "validation_status": "local-regression-passed; model benchmark pending",
+  "validation_results": {
+    "worked_cases": 1,
+    "evaluation_cases": 1,
+    "root_required_field_rejection": true,
+    "fixture_role": "Development regression fixtures; not an untouched final model evaluation set."
+  },
+  "external_impact_evidence": [],
+  "decision": {
+    "action": "publish testable prototype",
+    "reason": "Independent task implementation and local regression pass. Publication is for feedback; no flagship or external-impact certification."
+  },
+  "input_contract": {
+    "format": "JSON object",
+    "required_root_keys": [
+      "source",
+      "target"
+    ],
+    "money": "Declared decimal strings; exact minor-unit results are strings",
+    "timestamps": "Explicit RFC3339 offsets where applicable",
+    "reference": "cases.json gives the complete normal and edge-case structures"
+  },
+  "execution": {
+    "node": ">=22",
+    "runtime_dependencies": 0,
+    "cli": "node cli.mjs input.json",
+    "browser": "index.html / live static worker",
+    "side_effects": "Pure computation: no payments, deployments, outbound messages or file writes."
+  }
+}

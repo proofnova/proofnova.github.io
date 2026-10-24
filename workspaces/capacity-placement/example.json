@@ -1,0 +1,34 @@
+{
+  "nodes": [
+    {
+      "id": "n1",
+      "cpu": 4,
+      "memory": 8,
+      "cost": 4,
+      "labels": {
+        "os": "linux"
+      }
+    },
+    {
+      "id": "n2",
+      "cpu": 4,
+      "memory": 8,
+      "cost": 6,
+      "labels": {
+        "os": "win"
+      }
+    }
+  ],
+  "jobs": [
+    {
+      "id": "a",
+      "cpu": 2,
+      "memory": 2
+    },
+    {
+      "id": "b",
+      "cpu": 2,
+      "memory": 2
+    }
+  ]
+}

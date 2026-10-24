@@ -1,0 +1,1 @@
+import {execute} from './browser.mjs';self.onmessage=({data})=>{const start=performance.now();try{self.postMessage({ok:true,output:execute(data),ms:Math.round((performance.now()-start)*100)/100});}catch(error){self.postMessage({ok:false,error:error.message,code:error.code??'INPUT_INVALID'});}};

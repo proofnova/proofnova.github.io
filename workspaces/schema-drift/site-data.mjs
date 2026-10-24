@@ -1,0 +1,1 @@
+export const data={"id":"schema-drift","cases":[{"name":"new optional and removed","input":{"before":[{"a":1,"b":2}],"after":[{"a":1},{"a":2,"c":3}]}},{"name":"type and new null","input":{"before":[{"a":1}],"after":[{"a":"one"},{"a":null}]}}]};

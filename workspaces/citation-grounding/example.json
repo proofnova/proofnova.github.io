@@ -1,0 +1,32 @@
+{
+  "documents": [
+    {
+      "id": "d",
+      "text": "alpha\nbeta"
+    }
+  ],
+  "claims": [
+    {
+      "id": "a",
+      "citations": [
+        {
+          "document": "d",
+          "start_line": 2,
+          "end_line": 2,
+          "quote": "beta"
+        }
+      ]
+    },
+    {
+      "id": "b",
+      "citations": [
+        {
+          "document": "d",
+          "start_line": 1,
+          "end_line": 1,
+          "quote": "gamma"
+        }
+      ]
+    }
+  ]
+}

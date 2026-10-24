@@ -1,0 +1,22 @@
+{
+  "schema": [
+    {
+      "name": "id",
+      "required": true
+    },
+    {
+      "name": "price",
+      "type": "decimal",
+      "required": true
+    }
+  ],
+  "keys": [
+    "id"
+  ],
+  "sources": [
+    {
+      "id": "a",
+      "csv": "id,price\na,1.20\na,1.20\nb,no\nc,2.10"
+    }
+  ]
+}

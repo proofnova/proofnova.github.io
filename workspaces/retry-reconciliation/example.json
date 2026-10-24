@@ -1,0 +1,16 @@
+{
+  "now": "2026-10-24T00:00:00Z",
+  "tasks": [
+    {
+      "id": "a",
+      "status": "planned",
+      "attempts": 0
+    },
+    {
+      "id": "b",
+      "status": "uncertain",
+      "attempts": 1,
+      "side_effect": true
+    }
+  ]
+}

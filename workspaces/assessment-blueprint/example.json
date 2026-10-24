@@ -1,0 +1,45 @@
+{
+  "items": [
+    {
+      "id": "a",
+      "topic": "sql",
+      "difficulty": "easy",
+      "options": [
+        "yes",
+        "no"
+      ],
+      "correct": 0,
+      "minutes": 2
+    },
+    {
+      "id": "b",
+      "topic": "sql",
+      "difficulty": "easy",
+      "options": [
+        "yes",
+        "no"
+      ],
+      "correct": 1,
+      "minutes": 2
+    },
+    {
+      "id": "bad",
+      "topic": "sql",
+      "difficulty": "easy",
+      "options": [
+        "same",
+        "same"
+      ],
+      "correct": 0,
+      "minutes": 2
+    }
+  ],
+  "blueprint": [
+    {
+      "topic": "sql",
+      "difficulty": "easy",
+      "count": 2
+    }
+  ],
+  "max_minutes": 5
+}

@@ -1,0 +1,27 @@
+{
+  "turns": [
+    {
+      "id": "t",
+      "speaker": "Ada",
+      "text": "I will send report tomorrow",
+      "at": "2026-10-24T00:00:00Z"
+    }
+  ],
+  "owners": [
+    {
+      "id": "a",
+      "aliases": [
+        "Ada"
+      ]
+    }
+  ],
+  "timezone": "UTC",
+  "proposals": [
+    {
+      "turn": "t",
+      "task_quote": "I will send report tomorrow",
+      "owner": "Ada",
+      "due_quote": "tomorrow"
+    }
+  ]
+}

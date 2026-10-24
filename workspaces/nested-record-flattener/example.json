@@ -1,0 +1,23 @@
+{
+  "records": [
+    {
+      "id": "a",
+      "items": [
+        {
+          "n": 2
+        },
+        {
+          "bad": 3
+        }
+      ]
+    }
+  ],
+  "expand": "items",
+  "columns": {
+    "parent": "$.id",
+    "n": "@.n"
+  },
+  "required": [
+    "n"
+  ]
+}

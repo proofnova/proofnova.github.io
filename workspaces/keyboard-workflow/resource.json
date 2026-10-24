@@ -1,0 +1,139 @@
+{
+  "id": "keyboard-workflow",
+  "folder": "28-keyboard-workflow",
+  "domain": "learning",
+  "title": "Keyboard workflow auditor",
+  "job": "상태·컨트롤·키 조작 경로로 사용자 업무의 키보드 도달 가능성과 막힌 단계를 찾는다.",
+  "method": "Control-specific activation rules and shortest valid state-graph paths.",
+  "recovery": "Fix accessible names/focus/key wiring, then repeat the real browser task as a separate check.",
+  "required": [
+    "states",
+    "actions",
+    "start",
+    "goal"
+  ],
+  "acceptance": "A pointer-only or unnamed button cannot make a keyboard workflow reachable; this is a bounded graph audit.",
+  "alternatives": [
+    "wai",
+    "playwright",
+    "manual"
+  ],
+  "version": 1,
+  "novelty_status": "practical-differentiation-hypothesis",
+  "novelty_scope": "Algorithms and domain operations have established prior art. The evaluated contribution is the bounded executable resource and small-model integration, not invention of the underlying task.",
+  "repository": "https://github.com/proofnova/keyboard-workflow",
+  "site": "https://proofnova.github.io/keyboard-workflow/",
+  "idea_id": "fieldwork-keyboard-workflow",
+  "problem_evidence": [
+    {
+      "origin": "user",
+      "evidence": "User requested inexpensive AI resources that improve completion of specific domain jobs."
+    },
+    {
+      "origin": "public",
+      "evidence": "The linked existing tools and their manuals document the recurring task and established solutions. No user interview or unmeasured frustration count is invented."
+    }
+  ],
+  "stars_pattern_refs": [
+    "https://stars.github.com/profiles/rajbos/",
+    "https://stars.github.com/profiles/ba4bes/",
+    "https://stars.github.com/profiles/ruth-ikegah/"
+  ],
+  "nearest_alternatives": [
+    {
+      "name": "WAI ARIA keyboard practices",
+      "url": "https://www.w3.org/WAI/ARIA/apg/practices/keyboard-interface/",
+      "capability": "Keyboard navigation and focus patterns",
+      "burden": "Real widget behavior and assistive-technology checks; this graph supports only listed activation roles",
+      "evidence_status": "primary page read; exact feature parity not fully executed"
+    },
+    {
+      "name": "Playwright assertions",
+      "url": "https://playwright.dev/docs/test-assertions",
+      "capability": "Real browser assertions and repeated checks of rendered state",
+      "burden": "Browser/test setup; a declarative state graph does not replace actual keyboard testing",
+      "evidence_status": "primary page read; exact feature parity not fully executed"
+    },
+    {
+      "name": "Manual or composed workflow",
+      "url": null,
+      "capability": "A person follows the rules with a spreadsheet, scripts and tool documentation",
+      "burden": "Repeated setup, arithmetic, checks and trace keeping; actual human time savings have not been measured",
+      "evidence_status": "comparison baseline, not user observation"
+    }
+  ],
+  "research_scope": {
+    "languages": [
+      "English",
+      "Korean"
+    ],
+    "queries": [
+      "keyboard workflow reachability accessible state graph 키보드 접근성"
+    ],
+    "scope": "Primary documentation and repository descriptions were read on the public web. Competitor code, plugins and packaged execution were not exhaustively tested. This is a bounded prior-art review, not a worldwide novelty search.",
+    "limitations": [
+      "Search results and documentation do not establish universal absence.",
+      "Competitor configuration/plugin parity is not exhausted.",
+      "No independent end-user interview or deployment evidence."
+    ],
+    "proposed_queries": [
+      "Keyboard workflow auditor",
+      "keyboard workflow",
+      "상태·컨트롤·키 조작 경로로 사용자 업무의 키보드 도달 가능성과 막힌 단계를 찾는다.",
+      "wai",
+      "playwright"
+    ],
+    "query_scope": "One actual bilingual search per resource, grouped in shared cached batches; additional suggested terms are explicitly proposed, not executed."
+  },
+  "checked_at": "2026-10-24",
+  "distinctive_capability": "Control-specific activation rules and shortest valid state-graph paths. An offline executable can be called by a small model and checked against an explicit task contract.",
+  "counterevidence": [
+    "Underlying algorithms and task outcomes already exist in the alternatives.",
+    "An existing tool configured for this exact task may remove the need for a separate project.",
+    "Small synthetic tests cannot establish broad expertise or external demand."
+  ],
+  "validation_hypothesis": "The same small model completes the held-out structured job more accurately with this executable resource than without it.",
+  "prototype_budget": {
+    "batch_minutes": 330,
+    "additional_cost": 0,
+    "resource_slice_minutes": 5,
+    "note": "Shared implementation/research/test/publication budget is tracked at batch level; not a claim of actual elapsed work."
+  },
+  "stop_conditions": [
+    "No measured completion improvement",
+    "Existing configured tool gives the same accessibility and integration benefit",
+    "Setup burden exceeds saved effort",
+    "An invariant fails on real input"
+  ],
+  "validation_status": "local-regression-passed; model benchmark pending",
+  "validation_results": {
+    "worked_cases": 1,
+    "evaluation_cases": 1,
+    "root_required_field_rejection": true,
+    "fixture_role": "Development regression fixtures; not an untouched final model evaluation set."
+  },
+  "external_impact_evidence": [],
+  "decision": {
+    "action": "publish testable prototype",
+    "reason": "Independent task implementation and local regression pass. Publication is for feedback; no flagship or external-impact certification."
+  },
+  "input_contract": {
+    "format": "JSON object",
+    "required_root_keys": [
+      "states",
+      "actions",
+      "start",
+      "goal"
+    ],
+    "money": "Declared decimal strings; exact minor-unit results are strings",
+    "timestamps": "Explicit RFC3339 offsets where applicable",
+    "reference": "cases.json gives the complete normal and edge-case structures"
+  },
+  "execution": {
+    "node": ">=22",
+    "runtime_dependencies": 0,
+    "cli": "node cli.mjs input.json",
+    "browser": "index.html / live static worker",
+    "side_effects": "Pure computation: no payments, deployments, outbound messages or file writes."
+  }
+}

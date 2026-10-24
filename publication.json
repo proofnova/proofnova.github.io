@@ -1,0 +1,186 @@
+{
+  "checked_at": "2026-10-24T05:13:53.604Z",
+  "resources": [
+    {
+      "id": "csv-harmonizer",
+      "site": "./workspaces/csv-harmonizer/",
+      "repository": "https://github.com/proofnova/csv-harmonizer",
+      "repository_published": true
+    },
+    {
+      "id": "nested-record-flattener",
+      "site": "./workspaces/nested-record-flattener/",
+      "repository": "https://github.com/proofnova/nested-record-flattener",
+      "repository_published": true
+    },
+    {
+      "id": "time-series-repair",
+      "site": "./workspaces/time-series-repair/",
+      "repository": "https://github.com/proofnova/time-series-repair",
+      "repository_published": true
+    },
+    {
+      "id": "schema-drift",
+      "site": "./workspaces/schema-drift/",
+      "repository": "https://github.com/proofnova/schema-drift",
+      "repository_published": true
+    },
+    {
+      "id": "relational-quality",
+      "site": "./workspaces/relational-quality/",
+      "repository": "https://github.com/proofnova/relational-quality",
+      "repository_published": true
+    },
+    {
+      "id": "change-impact",
+      "site": "./workspaces/change-impact/",
+      "repository": "https://github.com/proofnova/change-impact",
+      "repository_published": true
+    },
+    {
+      "id": "api-contract-diff",
+      "site": "./workspaces/api-contract-diff/",
+      "repository": "https://github.com/proofnova/api-contract-diff",
+      "repository_published": true
+    },
+    {
+      "id": "ci-matrix-cover",
+      "site": "./workspaces/ci-matrix-cover/",
+      "repository": "https://github.com/proofnova/ci-matrix-cover",
+      "repository_published": true
+    },
+    {
+      "id": "release-propagation",
+      "site": "./workspaces/release-propagation/",
+      "repository": "https://github.com/proofnova/release-propagation",
+      "repository_published": true
+    },
+    {
+      "id": "patch-preflight",
+      "site": "./workspaces/patch-preflight/",
+      "repository": "https://github.com/proofnova/patch-preflight",
+      "repository_published": true
+    },
+    {
+      "id": "trace-reconstruction",
+      "site": "./workspaces/trace-reconstruction/",
+      "repository": "https://github.com/proofnova/trace-reconstruction",
+      "repository_published": false
+    },
+    {
+      "id": "slo-burn-rate",
+      "site": "./workspaces/slo-burn-rate/",
+      "repository": "https://github.com/proofnova/slo-burn-rate",
+      "repository_published": false
+    },
+    {
+      "id": "retry-reconciliation",
+      "site": "./workspaces/retry-reconciliation/",
+      "repository": "https://github.com/proofnova/retry-reconciliation",
+      "repository_published": false
+    },
+    {
+      "id": "capacity-placement",
+      "site": "./workspaces/capacity-placement/",
+      "repository": "https://github.com/proofnova/capacity-placement",
+      "repository_published": false
+    },
+    {
+      "id": "restore-manifest",
+      "site": "./workspaces/restore-manifest/",
+      "repository": "https://github.com/proofnova/restore-manifest",
+      "repository_published": false
+    },
+    {
+      "id": "invoice-reconciliation",
+      "site": "./workspaces/invoice-reconciliation/",
+      "repository": "https://github.com/proofnova/invoice-reconciliation",
+      "repository_published": false
+    },
+    {
+      "id": "procurement-quotes",
+      "site": "./workspaces/procurement-quotes/",
+      "repository": "https://github.com/proofnova/procurement-quotes",
+      "repository_published": false
+    },
+    {
+      "id": "inventory-rebalance",
+      "site": "./workspaces/inventory-rebalance/",
+      "repository": "https://github.com/proofnova/inventory-rebalance",
+      "repository_published": false
+    },
+    {
+      "id": "coverage-roster",
+      "site": "./workspaces/coverage-roster/",
+      "repository": "https://github.com/proofnova/coverage-roster",
+      "repository_published": false
+    },
+    {
+      "id": "billing-auditor",
+      "site": "./workspaces/billing-auditor/",
+      "repository": "https://github.com/proofnova/billing-auditor",
+      "repository_published": false
+    },
+    {
+      "id": "citation-grounding",
+      "site": "./workspaces/citation-grounding/",
+      "repository": "https://github.com/proofnova/citation-grounding",
+      "repository_published": false
+    },
+    {
+      "id": "document-redline",
+      "site": "./workspaces/document-redline/",
+      "repository": "https://github.com/proofnova/document-redline",
+      "repository_published": false
+    },
+    {
+      "id": "requirement-evidence",
+      "site": "./workspaces/requirement-evidence/",
+      "repository": "https://github.com/proofnova/requirement-evidence",
+      "repository_published": false
+    },
+    {
+      "id": "research-screening",
+      "site": "./workspaces/research-screening/",
+      "repository": "https://github.com/proofnova/research-screening",
+      "repository_published": false
+    },
+    {
+      "id": "action-ledger",
+      "site": "./workspaces/action-ledger/",
+      "repository": "https://github.com/proofnova/action-ledger",
+      "repository_published": false
+    },
+    {
+      "id": "prerequisite-learning",
+      "site": "./workspaces/prerequisite-learning/",
+      "repository": "https://github.com/proofnova/prerequisite-learning",
+      "repository_published": false
+    },
+    {
+      "id": "assessment-blueprint",
+      "site": "./workspaces/assessment-blueprint/",
+      "repository": "https://github.com/proofnova/assessment-blueprint",
+      "repository_published": false
+    },
+    {
+      "id": "keyboard-workflow",
+      "site": "./workspaces/keyboard-workflow/",
+      "repository": "https://github.com/proofnova/keyboard-workflow",
+      "repository_published": false
+    },
+    {
+      "id": "localization-contract",
+      "site": "./workspaces/localization-contract/",
+      "repository": "https://github.com/proofnova/localization-contract",
+      "repository_published": false
+    },
+    {
+      "id": "time-window-itinerary",
+      "site": "./workspaces/time-window-itinerary/",
+      "repository": "https://github.com/proofnova/time-window-itinerary",
+      "repository_published": false
+    }
+  ],
+  "note": "Workspace hosting does not replace the requirement for thirty independent repositories. GitHub temporarily limited repository creation."
+}

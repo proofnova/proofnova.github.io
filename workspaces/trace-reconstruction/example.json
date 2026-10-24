@@ -1,0 +1,18 @@
+{
+  "spans": [
+    {
+      "id": "r",
+      "trace": "t",
+      "start": "2026-10-24T00:00:00Z",
+      "duration_ms": 100
+    },
+    {
+      "id": "c",
+      "trace": "t",
+      "parent": "r",
+      "start": "2026-10-24T00:00:00.020Z",
+      "duration_ms": 20,
+      "status": "error"
+    }
+  ]
+}

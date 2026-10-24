@@ -1,0 +1,38 @@
+{
+  "stops": [
+    {
+      "id": "a",
+      "open": 0,
+      "close": 10,
+      "duration": 2,
+      "cost": 1
+    },
+    {
+      "id": "b",
+      "open": 0,
+      "close": 4,
+      "duration": 1,
+      "cost": 1
+    }
+  ],
+  "travel_minutes": [
+    [
+      0,
+      1,
+      2
+    ],
+    [
+      1,
+      0,
+      3
+    ],
+    [
+      2,
+      1,
+      0
+    ]
+  ],
+  "start_minute": 0,
+  "end_minute": 15,
+  "budget": 3
+}

@@ -1,0 +1,33 @@
+{
+  "states": [
+    {
+      "id": "a",
+      "controls": [
+        {
+          "id": "go",
+          "role": "button",
+          "name": "Continue",
+          "focusable": true
+        }
+      ],
+      "tab_order": [
+        "go"
+      ]
+    },
+    {
+      "id": "b",
+      "controls": [],
+      "tab_order": []
+    }
+  ],
+  "actions": [
+    {
+      "from": "a",
+      "to": "b",
+      "via": "go",
+      "key": "Enter"
+    }
+  ],
+  "start": "a",
+  "goal": "b"
+}

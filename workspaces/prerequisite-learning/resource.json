@@ -1,0 +1,139 @@
+{
+  "id": "prerequisite-learning",
+  "folder": "26-prerequisite-learning",
+  "domain": "learning",
+  "title": "Prerequisite learning planner",
+  "job": "현재 숙련도와 선행 조건에서 목표를 달성하는 최소 학습 시간 경로를 찾는다.",
+  "method": "Exact mastery-state dynamic programming over declared activity contracts.",
+  "recovery": "Add a missing prerequisite activity or revise the time budget; do not infer mastery from a plan.",
+  "required": [
+    "concepts",
+    "activities",
+    "goals",
+    "budget_minutes"
+  ],
+  "acceptance": "A cheap activity cannot bypass an unmet prerequisite; already-mastered concepts need no repeat work.",
+  "alternatives": [
+    "moodle",
+    "or-tools",
+    "manual"
+  ],
+  "version": 1,
+  "novelty_status": "practical-differentiation-hypothesis",
+  "novelty_scope": "Algorithms and domain operations have established prior art. The evaluated contribution is the bounded executable resource and small-model integration, not invention of the underlying task.",
+  "repository": "https://github.com/proofnova/prerequisite-learning",
+  "site": "https://proofnova.github.io/prerequisite-learning/",
+  "idea_id": "fieldwork-prerequisite-learning",
+  "problem_evidence": [
+    {
+      "origin": "user",
+      "evidence": "User requested inexpensive AI resources that improve completion of specific domain jobs."
+    },
+    {
+      "origin": "public",
+      "evidence": "The linked existing tools and their manuals document the recurring task and established solutions. No user interview or unmeasured frustration count is invented."
+    }
+  ],
+  "stars_pattern_refs": [
+    "https://stars.github.com/profiles/rajbos/",
+    "https://stars.github.com/profiles/ba4bes/",
+    "https://stars.github.com/profiles/ruth-ikegah/"
+  ],
+  "nearest_alternatives": [
+    {
+      "name": "Moodle Quiz",
+      "url": "https://docs.moodle.org/503/en/Quiz_activity",
+      "capability": "Question bank, quiz setup and assessment",
+      "burden": "Learning platform; not a close workforce scheduling alternative",
+      "evidence_status": "primary page read; exact feature parity not fully executed"
+    },
+    {
+      "name": "Google OR-Tools",
+      "url": "https://developers.google.com/optimization",
+      "capability": "Scheduling, constraint optimization, flows and routing",
+      "burden": "Solver installation and problem modeling; broader and more scalable than bounded in-browser search",
+      "evidence_status": "primary page read; exact feature parity not fully executed"
+    },
+    {
+      "name": "Manual or composed workflow",
+      "url": null,
+      "capability": "A person follows the rules with a spreadsheet, scripts and tool documentation",
+      "burden": "Repeated setup, arithmetic, checks and trace keeping; actual human time savings have not been measured",
+      "evidence_status": "comparison baseline, not user observation"
+    }
+  ],
+  "research_scope": {
+    "languages": [
+      "English",
+      "Korean"
+    ],
+    "queries": [
+      "prerequisite learning path minimum time mastery planning 선행학습 경로"
+    ],
+    "scope": "Primary documentation and repository descriptions were read on the public web. Competitor code, plugins and packaged execution were not exhaustively tested. This is a bounded prior-art review, not a worldwide novelty search.",
+    "limitations": [
+      "Search results and documentation do not establish universal absence.",
+      "Competitor configuration/plugin parity is not exhausted.",
+      "No independent end-user interview or deployment evidence."
+    ],
+    "proposed_queries": [
+      "Prerequisite learning planner",
+      "prerequisite learning",
+      "현재 숙련도와 선행 조건에서 목표를 달성하는 최소 학습 시간 경로를 찾는다.",
+      "moodle",
+      "or-tools"
+    ],
+    "query_scope": "One actual bilingual search per resource, grouped in shared cached batches; additional suggested terms are explicitly proposed, not executed."
+  },
+  "checked_at": "2026-10-24",
+  "distinctive_capability": "Exact mastery-state dynamic programming over declared activity contracts. An offline executable can be called by a small model and checked against an explicit task contract.",
+  "counterevidence": [
+    "Underlying algorithms and task outcomes already exist in the alternatives.",
+    "An existing tool configured for this exact task may remove the need for a separate project.",
+    "Small synthetic tests cannot establish broad expertise or external demand."
+  ],
+  "validation_hypothesis": "The same small model completes the held-out structured job more accurately with this executable resource than without it.",
+  "prototype_budget": {
+    "batch_minutes": 330,
+    "additional_cost": 0,
+    "resource_slice_minutes": 5,
+    "note": "Shared implementation/research/test/publication budget is tracked at batch level; not a claim of actual elapsed work."
+  },
+  "stop_conditions": [
+    "No measured completion improvement",
+    "Existing configured tool gives the same accessibility and integration benefit",
+    "Setup burden exceeds saved effort",
+    "An invariant fails on real input"
+  ],
+  "validation_status": "local-regression-passed; model benchmark pending",
+  "validation_results": {
+    "worked_cases": 1,
+    "evaluation_cases": 1,
+    "root_required_field_rejection": true,
+    "fixture_role": "Development regression fixtures; not an untouched final model evaluation set."
+  },
+  "external_impact_evidence": [],
+  "decision": {
+    "action": "publish testable prototype",
+    "reason": "Independent task implementation and local regression pass. Publication is for feedback; no flagship or external-impact certification."
+  },
+  "input_contract": {
+    "format": "JSON object",
+    "required_root_keys": [
+      "concepts",
+      "activities",
+      "goals",
+      "budget_minutes"
+    ],
+    "money": "Declared decimal strings; exact minor-unit results are strings",
+    "timestamps": "Explicit RFC3339 offsets where applicable",
+    "reference": "cases.json gives the complete normal and edge-case structures"
+  },
+  "execution": {
+    "node": ">=22",
+    "runtime_dependencies": 0,
+    "cli": "node cli.mjs input.json",
+    "browser": "index.html / live static worker",
+    "side_effects": "Pure computation: no payments, deployments, outbound messages or file writes."
+  }
+}

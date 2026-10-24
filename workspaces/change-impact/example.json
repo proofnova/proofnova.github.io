@@ -1,0 +1,37 @@
+{
+  "projects": [
+    {
+      "id": "core",
+      "roots": [
+        "core"
+      ],
+      "dependencies": [],
+      "tests": [
+        "test-core"
+      ]
+    },
+    {
+      "id": "web",
+      "roots": [
+        "web"
+      ],
+      "dependencies": [
+        "core"
+      ],
+      "tests": [
+        "test-web"
+      ]
+    },
+    {
+      "id": "docs",
+      "roots": [
+        "docs"
+      ],
+      "dependencies": [],
+      "tests": []
+    }
+  ],
+  "changed_files": [
+    "core/a.js"
+  ]
+}

@@ -1,0 +1,1 @@
+export const data={"id":"patch-preflight","cases":[{"name":"exact context replacement","input":{"files":{"a.txt":"one\ntwo\n"},"patch":"--- a/a.txt\n+++ b/a.txt\n@@ -1,2 +1,2 @@\n one\n-two\n+three\n"}},{"name":"create file in memory","input":{"files":{},"patch":"--- /dev/null\n+++ b/new.txt\n@@ -0,0 +1,2 @@\n+hi\n+there\n"}}]};

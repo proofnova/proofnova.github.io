@@ -1,0 +1,137 @@
+{
+  "id": "csv-harmonizer",
+  "folder": "01-csv-harmonizer",
+  "domain": "data",
+  "title": "CSV harmonizer",
+  "job": "CSV 열 별칭·자료형·중복·충돌을 정리하고 격리 행과 출처를 반환한다.",
+  "method": "Explicit aliases, exact decimal coercion and key-level conflict quarantine.",
+  "recovery": "Resolve ambiguous aliases; correct only rejected rows; do not overwrite conflicting records.",
+  "required": [
+    "sources",
+    "schema",
+    "keys"
+  ],
+  "acceptance": "Ambiguous headers, malformed quoting and conflicting identities must not silently merge.",
+  "alternatives": [
+    "openrefine",
+    "duckdb",
+    "manual"
+  ],
+  "version": 1,
+  "novelty_status": "practical-differentiation-hypothesis",
+  "novelty_scope": "Algorithms and domain operations have established prior art. The evaluated contribution is the bounded executable resource and small-model integration, not invention of the underlying task.",
+  "repository": "https://github.com/proofnova/csv-harmonizer",
+  "site": "https://proofnova.github.io/csv-harmonizer/",
+  "idea_id": "fieldwork-csv-harmonizer",
+  "problem_evidence": [
+    {
+      "origin": "user",
+      "evidence": "User requested inexpensive AI resources that improve completion of specific domain jobs."
+    },
+    {
+      "origin": "public",
+      "evidence": "The linked existing tools and their manuals document the recurring task and established solutions. No user interview or unmeasured frustration count is invented."
+    }
+  ],
+  "stars_pattern_refs": [
+    "https://stars.github.com/profiles/rajbos/",
+    "https://stars.github.com/profiles/ba4bes/",
+    "https://stars.github.com/profiles/ruth-ikegah/"
+  ],
+  "nearest_alternatives": [
+    {
+      "name": "OpenRefine",
+      "url": "https://openrefine.org/docs",
+      "capability": "Interactive data transformation, clustering and reconciliation",
+      "burden": "Local application and expressions; inspect configured operations before building a replacement",
+      "evidence_status": "primary page read; exact feature parity not fully executed"
+    },
+    {
+      "name": "DuckDB",
+      "url": "https://duckdb.org/docs/stable/sql/constraints",
+      "capability": "SQL constraints and tabular queries; documentation redirected in this session",
+      "burden": "Exact feature details remain unconfirmed here; use SQL tooling rather than assuming an absent feature",
+      "evidence_status": "Access limited: feature details unverified"
+    },
+    {
+      "name": "Manual or composed workflow",
+      "url": null,
+      "capability": "A person follows the rules with a spreadsheet, scripts and tool documentation",
+      "burden": "Repeated setup, arithmetic, checks and trace keeping; actual human time savings have not been measured",
+      "evidence_status": "comparison baseline, not user observation"
+    }
+  ],
+  "research_scope": {
+    "languages": [
+      "English",
+      "Korean"
+    ],
+    "queries": [
+      "CSV normalization conflicting duplicate keys exact decimal aliases 대안"
+    ],
+    "scope": "Primary documentation and repository descriptions were read on the public web. Competitor code, plugins and packaged execution were not exhaustively tested. This is a bounded prior-art review, not a worldwide novelty search.",
+    "limitations": [
+      "Search results and documentation do not establish universal absence.",
+      "Competitor configuration/plugin parity is not exhausted.",
+      "No independent end-user interview or deployment evidence."
+    ],
+    "proposed_queries": [
+      "CSV harmonizer",
+      "csv harmonizer",
+      "CSV 열 별칭·자료형·중복·충돌을 정리하고 격리 행과 출처를 반환한다.",
+      "openrefine",
+      "duckdb"
+    ],
+    "query_scope": "One actual bilingual search per resource, grouped in shared cached batches; additional suggested terms are explicitly proposed, not executed."
+  },
+  "checked_at": "2026-10-24",
+  "distinctive_capability": "Explicit aliases, exact decimal coercion and key-level conflict quarantine. An offline executable can be called by a small model and checked against an explicit task contract.",
+  "counterevidence": [
+    "Underlying algorithms and task outcomes already exist in the alternatives.",
+    "An existing tool configured for this exact task may remove the need for a separate project.",
+    "Small synthetic tests cannot establish broad expertise or external demand."
+  ],
+  "validation_hypothesis": "The same small model completes the held-out structured job more accurately with this executable resource than without it.",
+  "prototype_budget": {
+    "batch_minutes": 330,
+    "additional_cost": 0,
+    "resource_slice_minutes": 5,
+    "note": "Shared implementation/research/test/publication budget is tracked at batch level; not a claim of actual elapsed work."
+  },
+  "stop_conditions": [
+    "No measured completion improvement",
+    "Existing configured tool gives the same accessibility and integration benefit",
+    "Setup burden exceeds saved effort",
+    "An invariant fails on real input"
+  ],
+  "validation_status": "local-regression-passed; model benchmark pending",
+  "validation_results": {
+    "worked_cases": 1,
+    "evaluation_cases": 1,
+    "root_required_field_rejection": true,
+    "fixture_role": "Development regression fixtures; not an untouched final model evaluation set."
+  },
+  "external_impact_evidence": [],
+  "decision": {
+    "action": "publish testable prototype",
+    "reason": "Independent task implementation and local regression pass. Publication is for feedback; no flagship or external-impact certification."
+  },
+  "input_contract": {
+    "format": "JSON object",
+    "required_root_keys": [
+      "sources",
+      "schema",
+      "keys"
+    ],
+    "money": "Declared decimal strings; exact minor-unit results are strings",
+    "timestamps": "Explicit RFC3339 offsets where applicable",
+    "reference": "cases.json gives the complete normal and edge-case structures"
+  },
+  "execution": {
+    "node": ">=22",
+    "runtime_dependencies": 0,
+    "cli": "node cli.mjs input.json",
+    "browser": "index.html / live static worker",
+    "side_effects": "Pure computation: no payments, deployments, outbound messages or file writes."
+  }
+}

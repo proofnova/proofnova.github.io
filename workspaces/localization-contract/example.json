@@ -1,0 +1,9 @@
+{
+  "source": {
+    "a": "{n, plural, one {{name} has one} other {{name} has #}}"
+  },
+  "target": {
+    "a": "{n, plural, other {{name}: #}}"
+  },
+  "locale": "ko"
+}

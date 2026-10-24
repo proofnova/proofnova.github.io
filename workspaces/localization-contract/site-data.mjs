@@ -1,0 +1,1 @@
+export const data={"id":"localization-contract","cases":[{"name":"nested plural preserves variables","input":{"source":{"a":"{n, plural, one {{name} has one} other {{name} has #}}"},"target":{"a":"{n, plural, other {{name}: #}}"},"locale":"ko"}},{"name":"missing nested variable","input":{"source":{"a":"Hello {name}"},"target":{"a":"안녕하세요"}}}]};

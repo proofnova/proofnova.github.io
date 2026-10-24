@@ -1,0 +1,21 @@
+{
+  "records": [
+    {
+      "id": "a",
+      "title": "A",
+      "year": 2024
+    },
+    {
+      "id": "b",
+      "title": "B"
+    }
+  ],
+  "include_all": [
+    {
+      "id": "year",
+      "field": "year",
+      "op": "gte",
+      "value": 2020
+    }
+  ]
+}

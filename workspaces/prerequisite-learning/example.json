@@ -1,0 +1,46 @@
+{
+  "concepts": [
+    {
+      "id": "a",
+      "prerequisites": []
+    },
+    {
+      "id": "b",
+      "prerequisites": [
+        "a"
+      ]
+    }
+  ],
+  "activities": [
+    {
+      "id": "a1",
+      "teaches": [
+        "a"
+      ],
+      "requires": [],
+      "minutes": 10
+    },
+    {
+      "id": "b1",
+      "teaches": [
+        "b"
+      ],
+      "requires": [
+        "a"
+      ],
+      "minutes": 15
+    },
+    {
+      "id": "slow",
+      "teaches": [
+        "a"
+      ],
+      "requires": [],
+      "minutes": 30
+    }
+  ],
+  "goals": [
+    "b"
+  ],
+  "budget_minutes": 30
+}

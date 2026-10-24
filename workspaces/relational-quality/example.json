@@ -1,0 +1,40 @@
+{
+  "tables": {
+    "p": {
+      "rows": [
+        {
+          "id": 1
+        },
+        {
+          "id": 1
+        }
+      ],
+      "primary_key": [
+        "id"
+      ]
+    },
+    "c": {
+      "rows": [
+        {
+          "id": 4,
+          "pid": 2
+        }
+      ],
+      "primary_key": [
+        "id"
+      ]
+    }
+  },
+  "foreign_keys": [
+    {
+      "from": "c",
+      "to": "p",
+      "fields": [
+        "pid"
+      ],
+      "target_fields": [
+        "id"
+      ]
+    }
+  ]
+}

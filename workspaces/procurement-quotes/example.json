@@ -1,0 +1,22 @@
+{
+  "quantity": 10,
+  "base_currency": "USD",
+  "quotes": [
+    {
+      "id": "a",
+      "currency": "USD",
+      "pack_units": 10,
+      "pack_price": "10.00",
+      "shipping": "15.00",
+      "lead_days": 1
+    },
+    {
+      "id": "b",
+      "currency": "USD",
+      "pack_units": 5,
+      "pack_price": "7.00",
+      "shipping": "0",
+      "lead_days": 1
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "stocks": [
+    {
+      "site": "A",
+      "item": "x",
+      "available": 1,
+      "target": 0
+    },
+    {
+      "site": "B",
+      "item": "x",
+      "available": 1,
+      "target": 0
+    },
+    {
+      "site": "C",
+      "item": "x",
+      "available": 0,
+      "target": 1
+    },
+    {
+      "site": "D",
+      "item": "x",
+      "available": 0,
+      "target": 1
+    }
+  ],
+  "routes": [
+    {
+      "item": "x",
+      "from": "A",
+      "to": "C",
+      "unit_cost": 1
+    },
+    {
+      "item": "x",
+      "from": "A",
+      "to": "D",
+      "unit_cost": 2
+    },
+    {
+      "item": "x",
+      "from": "B",
+      "to": "C",
+      "unit_cost": 2
+    },
+    {
+      "item": "x",
+      "from": "B",
+      "to": "D",
+      "unit_cost": 100
+    }
+  ]
+}

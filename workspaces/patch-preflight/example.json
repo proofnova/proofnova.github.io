@@ -1,0 +1,6 @@
+{
+  "files": {
+    "a.txt": "one\ntwo\n"
+  },
+  "patch": "--- a/a.txt\n+++ b/a.txt\n@@ -1,2 +1,2 @@\n one\n-two\n+three\n"
+}

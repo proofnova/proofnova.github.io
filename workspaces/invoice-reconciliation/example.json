@@ -1,0 +1,17 @@
+{
+  "invoices": [
+    {
+      "id": "i",
+      "currency": "USD",
+      "total": "10.00"
+    }
+  ],
+  "payments": [
+    {
+      "id": "p",
+      "currency": "USD",
+      "amount": "12.00",
+      "invoice_id": "i"
+    }
+  ]
+}

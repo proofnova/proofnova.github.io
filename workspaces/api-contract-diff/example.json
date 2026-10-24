@@ -1,0 +1,29 @@
+{
+  "before": {
+    "/x": {
+      "request": {
+        "type": "object",
+        "properties": {
+          "a": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  },
+  "after": {
+    "/x": {
+      "request": {
+        "type": "object",
+        "required": [
+          "a"
+        ],
+        "properties": {
+          "a": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

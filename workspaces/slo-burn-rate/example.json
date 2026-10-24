@@ -1,0 +1,24 @@
+{
+  "now": "2026-10-24T00:02:00Z",
+  "objective": 0.99,
+  "policies": [
+    {
+      "id": "p",
+      "long_minutes": 2,
+      "short_minutes": 1,
+      "burn_rate": 2
+    }
+  ],
+  "bins": [
+    {
+      "start": "2026-10-24T00:00:00Z",
+      "requests": 100,
+      "errors": 10
+    },
+    {
+      "start": "2026-10-24T00:01:00Z",
+      "requests": 100,
+      "errors": 10
+    }
+  ]
+}

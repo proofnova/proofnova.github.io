@@ -1,0 +1,30 @@
+{
+  "requirements": [
+    "linux",
+    "win"
+  ],
+  "jobs": [
+    {
+      "id": "a",
+      "cost": 4,
+      "covers": [
+        "linux"
+      ]
+    },
+    {
+      "id": "b",
+      "cost": 4,
+      "covers": [
+        "win"
+      ]
+    },
+    {
+      "id": "c",
+      "cost": 6,
+      "covers": [
+        "linux",
+        "win"
+      ]
+    }
+  ]
+}
