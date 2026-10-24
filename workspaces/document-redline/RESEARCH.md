@@ -2,7 +2,7 @@
 
 Checked 2026-10-24. Primary documentation and repository descriptions were read on the public web. Competitor code, plugins and packaged execution were not exhaustively tested. This is a bounded prior-art review, not a worldwide novelty search.
 
-Problem: 문서의 추가·삭제·이동·수정을 안정된 절 ID와 단어 차이로 분리한다. The user's requirement is model-assisted task completion at zero additional spending. Existing tools are evidence that the task exists; they are not evidence of a measured unmet market or an interview.
+Problem: Separate document additions, removals, moves and edits using stable section identities and word-level differences. The user's requirement is model-assisted task completion at zero additional spending. Existing tools are evidence that the task exists; they are not evidence of a measured unmet market or an interview.
 
 ## Closest alternatives
 

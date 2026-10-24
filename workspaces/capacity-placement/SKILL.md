@@ -1,11 +1,11 @@
 ---
 name: capacity-placement
-description: Capacity placement solver. CPU·메모리·라벨·분산 제약을 지키며 작업을 최소 비용 노드에 배치한다.
+description: Capacity placement solver. Assign workloads to minimum-cost nodes under CPU, memory, label and placement constraints.
 ---
 
 # Capacity placement solver
 
-CPU·메모리·라벨·분산 제약을 지키며 작업을 최소 비용 노드에 배치한다.
+Assign workloads to minimum-cost nodes under CPU, memory, label and placement constraints.
 
 Use this when the supplied structured input matches [resource.json](resource.json). Read [example.json](example.json) for nested field names. Ask for missing domain inputs rather than inventing defaults not declared by the implementation.
 

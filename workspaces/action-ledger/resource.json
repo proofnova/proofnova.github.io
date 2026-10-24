@@ -3,7 +3,7 @@
   "folder": "25-action-ledger",
   "domain": "research",
   "title": "Evidence-bound action ledger",
-  "job": "회의에서 추출한 실행 제안을 발언·담당자·기한 근거에 묶고 모호한 제안을 보류한다.",
+  "job": "Bind proposed meeting actions to source statements, owners and deadlines, holding ambiguous proposals for review.",
   "method": "Exact task/due excerpts, explicit owner aliases and bounded relative-date resolution.",
   "recovery": "Return unknown owners/dates for clarification; no invented commitment or outbound message is created.",
   "required": [
@@ -144,5 +144,11 @@
     "cli": "node cli.mjs input.json",
     "browser": "index.html / live static worker",
     "side_effects": "Pure computation: no payments, deployments, outbound messages or file writes."
+  },
+  "descriptions": {
+    "en": "Bind proposed meeting actions to source statements, owners and deadlines, holding ambiguous proposals for review.",
+    "ja": "会議の実行提案を発言・担当者・期限の根拠につなぎ、曖昧な提案を保留します。",
+    "zh": "将会议行动建议绑定到原始发言、负责人和截止日期，对模糊建议保留复核。",
+    "ko": "회의에서 추출한 실행 제안을 발언·담당자·기한 근거에 묶고 모호한 제안을 보류한다."
   }
 }

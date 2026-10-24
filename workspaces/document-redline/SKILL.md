@@ -1,11 +1,11 @@
 ---
 name: document-redline
-description: Anchored document redline. 문서의 추가·삭제·이동·수정을 안정된 절 ID와 단어 차이로 분리한다.
+description: Anchored document redline. Separate document additions, removals, moves and edits using stable section identities and word-level differences.
 ---
 
 # Anchored document redline
 
-문서의 추가·삭제·이동·수정을 안정된 절 ID와 단어 차이로 분리한다.
+Separate document additions, removals, moves and edits using stable section identities and word-level differences.
 
 Use this when the supplied structured input matches [resource.json](resource.json). Read [example.json](example.json) for nested field names. Ask for missing domain inputs rather than inventing defaults not declared by the implementation.
 

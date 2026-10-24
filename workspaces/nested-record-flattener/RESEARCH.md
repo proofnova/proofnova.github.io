@@ -2,7 +2,7 @@
 
 Checked 2026-10-24. Primary documentation and repository descriptions were read on the public web. Competitor code, plugins and packaged execution were not exhaustively tested. This is a bounded prior-art review, not a worldwide novelty search.
 
-Problem: 주문·이벤트의 중첩 배열을 부모 정보와 행 출처를 보존해 평탄화한다. The user's requirement is model-assisted task completion at zero additional spending. Existing tools are evidence that the task exists; they are not evidence of a measured unmet market or an interview.
+Problem: Flatten nested order and event arrays without losing parent context or row provenance. The user's requirement is model-assisted task completion at zero additional spending. Existing tools are evidence that the task exists; they are not evidence of a measured unmet market or an interview.
 
 ## Closest alternatives
 

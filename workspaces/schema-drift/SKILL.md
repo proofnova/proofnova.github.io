@@ -1,11 +1,11 @@
 ---
 name: schema-drift
-description: Schema drift analyst. 두 데이터 스냅샷의 필드 삭제·형식 변화·새 null·선택 필드를 분류한다.
+description: Schema drift analyst. Compare data snapshots and classify removed fields, type changes, new nulls and optional properties.
 ---
 
 # Schema drift analyst
 
-두 데이터 스냅샷의 필드 삭제·형식 변화·새 null·선택 필드를 분류한다.
+Compare data snapshots and classify removed fields, type changes, new nulls and optional properties.
 
 Use this when the supplied structured input matches [resource.json](resource.json). Read [example.json](example.json) for nested field names. Ask for missing domain inputs rather than inventing defaults not declared by the implementation.
 

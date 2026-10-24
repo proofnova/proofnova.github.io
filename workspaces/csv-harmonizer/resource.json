@@ -3,7 +3,7 @@
   "folder": "01-csv-harmonizer",
   "domain": "data",
   "title": "CSV harmonizer",
-  "job": "CSV 열 별칭·자료형·중복·충돌을 정리하고 격리 행과 출처를 반환한다.",
+  "job": "Normalize CSV aliases, types and duplicate identities while preserving rejected rows and source provenance.",
   "method": "Explicit aliases, exact decimal coercion and key-level conflict quarantine.",
   "recovery": "Resolve ambiguous aliases; correct only rejected rows; do not overwrite conflicting records.",
   "required": [
@@ -133,5 +133,11 @@
     "cli": "node cli.mjs input.json",
     "browser": "index.html / live static worker",
     "side_effects": "Pure computation: no payments, deployments, outbound messages or file writes."
+  },
+  "descriptions": {
+    "en": "Normalize CSV aliases, types and duplicate identities while preserving rejected rows and source provenance.",
+    "ja": "CSVの列名・型・重複を整理し、除外行と出典を保持します。",
+    "zh": "规范 CSV 列名、类型和重复标识，同时保留异常行与数据来源。",
+    "ko": "CSV 열 별칭·자료형·중복·충돌을 정리하고 격리 행과 출처를 반환한다."
   }
 }

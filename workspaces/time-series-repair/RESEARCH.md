@@ -2,7 +2,7 @@
 
 Checked 2026-10-24. Primary documentation and repository descriptions were read on the public web. Competitor code, plugins and packaged execution were not exhaustively tested. This is a bounded prior-art review, not a worldwide novelty search.
 
-Problem: 시간대·중복·누락·순서가 뒤섞인 계측 자료를 명시한 시간 격자로 정리한다. The user's requirement is model-assisted task completion at zero additional spending. Existing tools are evidence that the task exists; they are not evidence of a measured unmet market or an interview.
+Problem: Align time-series records to an explicit grid and identify duplicates, missing intervals and ordering problems. The user's requirement is model-assisted task completion at zero additional spending. Existing tools are evidence that the task exists; they are not evidence of a measured unmet market or an interview.
 
 ## Closest alternatives
 

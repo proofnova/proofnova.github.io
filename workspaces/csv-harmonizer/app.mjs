@@ -1,20 +1,16 @@
-import {data} from './site-data.mjs';
+import {data} from './site-data.mjs?v=77d6c3b48877';
+import {configureResource,t,onLanguage,getLanguage} from './language.mjs?v=1d6cc4e81b97';
 import {execute} from './browser.mjs';
-const input=document.querySelector('#input'),output=document.querySelector('#output'),feedback=document.querySelector('#feedback'),summary=document.querySelector('#summary'),button=document.querySelector('#run'),select=document.querySelector('#case');
-let worker=null;
-function load(index){input.value=JSON.stringify(data.cases[index].input,null,2);output.textContent='실행하면 결과와 입력 해시가 표시됩니다.';summary.replaceChildren();feedback.textContent='예제는 합성 데이터입니다. 입력을 수정해 직접 실행할 수 있습니다.';}
-function show(message){button.disabled=false;if(!message.ok){feedback.textContent='입력 또는 조건 확인: '+message.error;output.textContent=JSON.stringify(message,null,2);return;}output.textContent=JSON.stringify(message.output,null,2);summary.replaceChildren();for(const [key,val]of Object.entries(message.output.result.summary??{})){const span=document.createElement('span');span.textContent=key+' · '+String(val);summary.append(span);}feedback.textContent='계산 완료 · '+message.ms+' ms · 입력 해시 '+message.output.input_sha256.slice(0,16)+'… · 전체 결과의 findings/held/feasible 항목을 함께 확인하세요.';}
-data.cases.forEach((f,i)=>{const option=document.createElement('option');option.value=i;option.textContent=(i?'경계 사례 · ':'기본 예제 · ')+f.name;select.append(option);});select.addEventListener('change',()=>load(Number(select.value)));load(0);
-button.addEventListener('click',()=>{
- let value;try{if(input.value.length>1048576)throw new Error('입력은 1 MiB 이하여야 합니다.');value=JSON.parse(input.value);}catch(e){feedback.textContent='입력 확인: '+e.message;return;}
- button.disabled=true;feedback.textContent='브라우저 안에서 계산하고 있습니다…';worker?.terminate();
- function fallback(){const start=performance.now();try{show({ok:true,output:execute(value),ms:Math.round((performance.now()-start)*100)/100});}catch(e){show({ok:false,error:e.message,code:e.code??'INPUT_INVALID'});}}
- try{
-  worker=new Worker(new URL('./worker.mjs',import.meta.url),{type:'module'});
-  const timer=setTimeout(()=>{worker.terminate();button.disabled=false;feedback.textContent='10초 한도에 도달했습니다. 입력 크기나 search_limit을 줄여 다시 실행하세요. 불가능한 문제로 판정하지 않았습니다.';},10000);
-  worker.onmessage=({data:message})=>{clearTimeout(timer);worker.terminate();show(message);};
-  worker.onerror=()=>{clearTimeout(timer);worker.terminate();fallback();};
-  worker.postMessage(value);
- }catch{fallback();}
-});
-document.querySelector('#download').addEventListener('click',()=>{const blob=new Blob([output.textContent],{type:'application/json'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download=data.id+'-result.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);});
+configureResource(data.locales);
+const input=document.querySelector('#input'),output=document.querySelector('#output'),feedback=document.querySelector('#feedback'),summary=document.querySelector('#summary'),button=document.querySelector('#run'),select=document.querySelector('#case'),download=document.querySelector('#download');
+let worker=null,lastMessage=null,state='ready',lastError='',generation=0,timer=null;
+function invalidate(){generation++;worker?.terminate();clearTimeout(timer);button.disabled=false;download.disabled=true;}
+function renderFeedback(){feedback.textContent=state==='complete'?t('complete',{ms:lastMessage.ms,hash:lastMessage.output.input_sha256.slice(0,16)}):state==='error'?t('invalid',{error:lastError}):t(state);}
+function load(index){invalidate();input.value=JSON.stringify(data.cases[index].input,null,2);output.textContent=t('outputHint');summary.replaceChildren();state='ready';lastMessage=null;renderFeedback();}
+function show(message){lastMessage=message;button.disabled=false;download.disabled=!message.ok;summary.replaceChildren();if(!message.ok){lastError=message.error;state='error';output.textContent=JSON.stringify(message,null,2);renderFeedback();return;}output.textContent=JSON.stringify(message.output,null,2);for(const [key,val]of Object.entries(message.output.result.summary??{})){const span=document.createElement('span');span.textContent=key+' · '+String(val);summary.append(span);}state='complete';renderFeedback();}
+function renderOptions(){const selected=select.value;select.replaceChildren();data.cases.forEach((f,index)=>{const option=document.createElement('option');option.value=index;option.textContent=t(index?'edge':'basic')+' · '+f.name;select.append(option);});if(selected)select.value=selected;}
+renderOptions();select.addEventListener('change',()=>load(Number(select.value)));load(0);
+onLanguage(()=>{renderOptions();if(state==='ready'||state==='changed')output.textContent=t('outputHint');renderFeedback();for(const link of document.querySelectorAll('[data-readme-link]'))link.href='https://github.com/proofnova/'+data.id+'/blob/main/'+({en:'README.md',ko:'README.ko.md',ja:'README.ja.md',zh:'README.zh-CN.md'})[getLanguage()];});
+input.addEventListener('input',()=>{invalidate();lastMessage=null;state='changed';summary.replaceChildren();output.textContent=t('outputHint');renderFeedback();});
+button.addEventListener('click',()=>{invalidate();const runGeneration=generation;let value;try{if(input.value.length>1048576)throw Error(t('limit'));value=JSON.parse(input.value);}catch(error){state='error';lastError=error.message;summary.replaceChildren();output.textContent=JSON.stringify({ok:false,error:lastError},null,2);renderFeedback();return;}button.disabled=true;state='running';renderFeedback();function fallback(){if(runGeneration!==generation)return;const start=performance.now();try{show({ok:true,output:execute(value),ms:Math.round((performance.now()-start)*100)/100});}catch(error){show({ok:false,error:error.message,code:error.code??'INPUT_INVALID'});}}try{worker=new Worker(new URL('./worker.mjs',import.meta.url),{type:'module'});timer=setTimeout(()=>{if(runGeneration!==generation)return;generation++;worker.terminate();button.disabled=false;state='timeout';renderFeedback();},10000);worker.onmessage=({data:message})=>{if(runGeneration!==generation)return;clearTimeout(timer);worker.terminate();show(message);};worker.onerror=()=>{if(runGeneration!==generation)return;clearTimeout(timer);worker.terminate();fallback();};worker.postMessage(value);}catch{fallback();}});
+download.addEventListener('click',()=>{if(download.disabled)return;const blob=new Blob([output.textContent],{type:'application/json'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download=data.id+'-result.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);});

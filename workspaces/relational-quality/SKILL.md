@@ -1,11 +1,11 @@
 ---
 name: relational-quality
-description: Relational quality gate. 여러 표의 복합 키·필수 값·외래 키를 검사해 오류 행을 지정한다.
+description: Relational quality gate. Check composite keys, required values and foreign-key relationships across related tables.
 ---
 
 # Relational quality gate
 
-여러 표의 복합 키·필수 값·외래 키를 검사해 오류 행을 지정한다.
+Check composite keys, required values and foreign-key relationships across related tables.
 
 Use this when the supplied structured input matches [resource.json](resource.json). Read [example.json](example.json) for nested field names. Ask for missing domain inputs rather than inventing defaults not declared by the implementation.
 

@@ -3,7 +3,7 @@
   "folder": "02-nested-record-flattener",
   "domain": "data",
   "title": "Nested record flattener",
-  "job": "주문·이벤트의 중첩 배열을 부모 정보와 행 출처를 보존해 평탄화한다.",
+  "job": "Flatten nested order and event arrays without losing parent context or row provenance.",
   "method": "Expand one declared array with parent/child paths; avoid accidental Cartesian products.",
   "recovery": "Correct missing expansion/required paths; re-run the quarantined source record.",
   "required": [
@@ -133,5 +133,11 @@
     "cli": "node cli.mjs input.json",
     "browser": "index.html / live static worker",
     "side_effects": "Pure computation: no payments, deployments, outbound messages or file writes."
+  },
+  "descriptions": {
+    "en": "Flatten nested order and event arrays without losing parent context or row provenance.",
+    "ja": "注文やイベントの入れ子配列を、親情報と行の出典を保って展開します。",
+    "zh": "展开订单和事件的嵌套数组，保留父级信息和行级来源。",
+    "ko": "주문·이벤트의 중첩 배열을 부모 정보와 행 출처를 보존해 평탄화한다."
   }
 }

@@ -1,11 +1,11 @@
 ---
 name: inventory-rebalance
-description: Inventory rebalance solver. 여러 거점의 초과·부족 재고를 이동 한도 안에서 전역 최소 비용으로 재배치한다.
+description: Inventory rebalance solver. Rebalance surplus and shortage inventory across locations at minimum total cost under transfer limits.
 ---
 
 # Inventory rebalance solver
 
-여러 거점의 초과·부족 재고를 이동 한도 안에서 전역 최소 비용으로 재배치한다.
+Rebalance surplus and shortage inventory across locations at minimum total cost under transfer limits.
 
 Use this when the supplied structured input matches [resource.json](resource.json). Read [example.json](example.json) for nested field names. Ask for missing domain inputs rather than inventing defaults not declared by the implementation.
 

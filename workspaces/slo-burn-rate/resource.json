@@ -3,7 +3,7 @@
   "folder": "12-slo-burn-rate",
   "domain": "operations",
   "title": "Multi-window SLO analyst",
-  "job": "오류 예산 소모를 긴·짧은 구간에서 함께 계산하고 관측 누락을 분리한다.",
+  "job": "Evaluate paired long and short error-budget windows while separating missing observations from healthy signals.",
   "method": "Request-weighted burn rates and complete-bin coverage before alert decisions.",
   "recovery": "Recover missing bins before declaring clear; adjust explicit SLO/policies rather than changing denominators.",
   "required": [
@@ -135,5 +135,11 @@
     "cli": "node cli.mjs input.json",
     "browser": "index.html / live static worker",
     "side_effects": "Pure computation: no payments, deployments, outbound messages or file writes."
+  },
+  "descriptions": {
+    "en": "Evaluate paired long and short error-budget windows while separating missing observations from healthy signals.",
+    "ja": "長短の観測窓でエラーバジェットを計算し、観測不足と正常を区別します。",
+    "zh": "同时评估长短窗口的错误预算消耗，区分观测缺失与健康信号。",
+    "ko": "오류 예산 소모를 긴·짧은 구간에서 함께 계산하고 관측 누락을 분리한다."
   }
 }

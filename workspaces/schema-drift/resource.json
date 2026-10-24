@@ -3,7 +3,7 @@
   "folder": "04-schema-drift",
   "domain": "data",
   "title": "Schema drift analyst",
-  "job": "두 데이터 스냅샷의 필드 삭제·형식 변화·새 null·선택 필드를 분류한다.",
+  "job": "Compare data snapshots and classify removed fields, type changes, new nulls and optional properties.",
   "method": "Observed type/presence sets with conservative compatibility findings.",
   "recovery": "Inspect breaking fields, add a migration or expand evidence; an empty snapshot is inconclusive.",
   "required": [
@@ -131,5 +131,11 @@
     "cli": "node cli.mjs input.json",
     "browser": "index.html / live static worker",
     "side_effects": "Pure computation: no payments, deployments, outbound messages or file writes."
+  },
+  "descriptions": {
+    "en": "Compare data snapshots and classify removed fields, type changes, new nulls and optional properties.",
+    "ja": "データの削除項目・型変更・新しい空値・任意項目を分類します。",
+    "zh": "比较数据快照，区分字段删除、类型变化、新增空值和可选属性。",
+    "ko": "두 데이터 스냅샷의 필드 삭제·형식 변화·새 null·선택 필드를 분류한다."
   }
 }

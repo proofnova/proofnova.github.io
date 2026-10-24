@@ -3,7 +3,7 @@
   "folder": "09-release-propagation",
   "domain": "software",
   "title": "Release propagation planner",
-  "job": "워크스페이스 패키지의 버전과 의존 범위 변경을 전이 관계에 맞춰 계획한다.",
+  "job": "Plan version and dependency-range changes through a workspace dependency graph.",
   "method": "Stable SemVer range checks and topological propagation of required dependent patches.",
   "recovery": "Resolve unsupported ranges manually; regenerate the plan after changing dependency policy.",
   "required": [
@@ -131,5 +131,11 @@
     "cli": "node cli.mjs input.json",
     "browser": "index.html / live static worker",
     "side_effects": "Pure computation: no payments, deployments, outbound messages or file writes."
+  },
+  "descriptions": {
+    "en": "Plan version and dependency-range changes through a workspace dependency graph.",
+    "ja": "ワークスペースの依存関係に沿って、バージョンと依存範囲の変更を計画します。",
+    "zh": "沿工作区依赖图规划版本与依赖范围的传递变更。",
+    "ko": "워크스페이스 패키지의 버전과 의존 범위 변경을 전이 관계에 맞춰 계획한다."
   }
 }

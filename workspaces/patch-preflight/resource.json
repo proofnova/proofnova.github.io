@@ -3,7 +3,7 @@
   "folder": "10-patch-preflight",
   "domain": "software",
   "title": "Exact patch preflight",
-  "job": "AI가 만든 unified diff를 실제 원문에 맞춰 메모리에서 검증·적용한다.",
+  "job": "Validate and apply unified diffs against the exact original text in memory before changing files.",
   "method": "Exact hunk offsets/content/counts, path rejection and source/result fingerprints.",
   "recovery": "Regenerate a hunk against current bytes; do not fuzz-match stale changes or write files automatically.",
   "required": [
@@ -131,5 +131,11 @@
     "cli": "node cli.mjs input.json",
     "browser": "index.html / live static worker",
     "side_effects": "Pure computation: no payments, deployments, outbound messages or file writes."
+  },
+  "descriptions": {
+    "en": "Validate and apply unified diffs against the exact original text in memory before changing files.",
+    "ja": "ファイルを書き換える前に、unified diffを実際の原文と照合してメモリ上で適用します。",
+    "zh": "在修改文件前，针对准确原文验证 unified diff 并在内存中应用。",
+    "ko": "AI가 만든 unified diff를 실제 원문에 맞춰 메모리에서 검증·적용한다."
   }
 }

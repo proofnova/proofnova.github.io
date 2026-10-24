@@ -1,11 +1,11 @@
 ---
 name: csv-harmonizer
-description: CSV harmonizer. CSV 열 별칭·자료형·중복·충돌을 정리하고 격리 행과 출처를 반환한다.
+description: CSV harmonizer. Normalize CSV aliases, types and duplicate identities while preserving rejected rows and source provenance.
 ---
 
 # CSV harmonizer
 
-CSV 열 별칭·자료형·중복·충돌을 정리하고 격리 행과 출처를 반환한다.
+Normalize CSV aliases, types and duplicate identities while preserving rejected rows and source provenance.
 
 Use this when the supplied structured input matches [resource.json](resource.json). Read [example.json](example.json) for nested field names. Ask for missing domain inputs rather than inventing defaults not declared by the implementation.
 

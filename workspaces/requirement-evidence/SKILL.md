@@ -1,11 +1,11 @@
 ---
 name: requirement-evidence
-description: Requirement evidence ledger. 요구사항·하위 조건·테스트·현재 revision의 실행 근거를 연결해 미충족 항목을 찾는다.
+description: Requirement evidence ledger. Link requirements and child conditions to tests and execution evidence for the current revision.
 ---
 
 # Requirement evidence ledger
 
-요구사항·하위 조건·테스트·현재 revision의 실행 근거를 연결해 미충족 항목을 찾는다.
+Link requirements and child conditions to tests and execution evidence for the current revision.
 
 Use this when the supplied structured input matches [resource.json](resource.json). Read [example.json](example.json) for nested field names. Ask for missing domain inputs rather than inventing defaults not declared by the implementation.
 

@@ -1,11 +1,11 @@
 ---
 name: invoice-reconciliation
-description: Invoice/payment reconciliation. 분할·초과·중복·모호한 입금을 송장과 맞추고 잔액·미배분액을 보존한다.
+description: Invoice/payment reconciliation. Reconcile split, excess, duplicate and ambiguous payments while conserving invoice balances and unallocated money.
 ---
 
 # Invoice/payment reconciliation
 
-분할·초과·중복·모호한 입금을 송장과 맞추고 잔액·미배분액을 보존한다.
+Reconcile split, excess, duplicate and ambiguous payments while conserving invoice balances and unallocated money.
 
 Use this when the supplied structured input matches [resource.json](resource.json). Read [example.json](example.json) for nested field names. Ask for missing domain inputs rather than inventing defaults not declared by the implementation.
 

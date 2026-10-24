@@ -2,7 +2,7 @@
 
 Checked 2026-10-24. Primary documentation and repository descriptions were read on the public web. Competitor code, plugins and packaged execution were not exhaustively tested. This is a bounded prior-art review, not a worldwide novelty search.
 
-Problem: 현재 숙련도와 선행 조건에서 목표를 달성하는 최소 학습 시간 경로를 찾는다. The user's requirement is model-assisted task completion at zero additional spending. Existing tools are evidence that the task exists; they are not evidence of a measured unmet market or an interview.
+Problem: Find a minimum-time learning path from current mastery and prerequisite constraints to a declared goal. The user's requirement is model-assisted task completion at zero additional spending. Existing tools are evidence that the task exists; they are not evidence of a measured unmet market or an interview.
 
 ## Closest alternatives
 

@@ -2,7 +2,7 @@
 
 Checked 2026-10-24. Primary documentation and repository descriptions were read on the public web. Competitor code, plugins and packaged execution were not exhaustively tested. This is a bounded prior-art review, not a worldwide novelty search.
 
-Problem: 가용 시간·기술·최대 근무량·중복을 지키며 필요한 업무 구간을 배정한다. The user's requirement is model-assisted task completion at zero additional spending. Existing tools are evidence that the task exists; they are not evidence of a measured unmet market or an interview.
+Problem: Assign required shifts while respecting availability, skills, workload limits and overlapping assignments. The user's requirement is model-assisted task completion at zero additional spending. Existing tools are evidence that the task exists; they are not evidence of a measured unmet market or an interview.
 
 ## Closest alternatives
 

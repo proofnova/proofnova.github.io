@@ -1,11 +1,11 @@
 ---
 name: procurement-quotes
-description: Landed quote comparator. 묶음 수량·최소 주문·세금·배송·환율·납기를 반영한 실구매 비용을 비교한다.
+description: Landed quote comparator. Compare landed purchase costs including pack sizes, minimum orders, tax, shipping, exchange rates and lead times.
 ---
 
 # Landed quote comparator
 
-묶음 수량·최소 주문·세금·배송·환율·납기를 반영한 실구매 비용을 비교한다.
+Compare landed purchase costs including pack sizes, minimum orders, tax, shipping, exchange rates and lead times.
 
 Use this when the supplied structured input matches [resource.json](resource.json). Read [example.json](example.json) for nested field names. Ask for missing domain inputs rather than inventing defaults not declared by the implementation.
 

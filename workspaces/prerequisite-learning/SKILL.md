@@ -1,11 +1,11 @@
 ---
 name: prerequisite-learning
-description: Prerequisite learning planner. 현재 숙련도와 선행 조건에서 목표를 달성하는 최소 학습 시간 경로를 찾는다.
+description: Prerequisite learning planner. Find a minimum-time learning path from current mastery and prerequisite constraints to a declared goal.
 ---
 
 # Prerequisite learning planner
 
-현재 숙련도와 선행 조건에서 목표를 달성하는 최소 학습 시간 경로를 찾는다.
+Find a minimum-time learning path from current mastery and prerequisite constraints to a declared goal.
 
 Use this when the supplied structured input matches [resource.json](resource.json). Read [example.json](example.json) for nested field names. Ask for missing domain inputs rather than inventing defaults not declared by the implementation.
 

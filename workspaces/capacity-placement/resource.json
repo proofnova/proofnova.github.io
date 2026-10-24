@@ -3,7 +3,7 @@
   "folder": "14-capacity-placement",
   "domain": "operations",
   "title": "Capacity placement solver",
-  "job": "CPU·메모리·라벨·분산 제약을 지키며 작업을 최소 비용 노드에 배치한다.",
+  "job": "Assign workloads to minimum-cost nodes under CPU, memory, label and placement constraints.",
   "method": "Bounded exact branch search with explicit optimal/unknown status.",
   "recovery": "Add capacity or relax the declared selector; search truncation remains unknown rather than infeasible.",
   "required": [
@@ -131,5 +131,11 @@
     "cli": "node cli.mjs input.json",
     "browser": "index.html / live static worker",
     "side_effects": "Pure computation: no payments, deployments, outbound messages or file writes."
+  },
+  "descriptions": {
+    "en": "Assign workloads to minimum-cost nodes under CPU, memory, label and placement constraints.",
+    "ja": "CPU・メモリ・ラベル・分散条件を満たす、最小コストの配置を求めます。",
+    "zh": "在 CPU、内存、标签与分散约束下，寻找最低成本的工作负载部署方案。",
+    "ko": "CPU·메모리·라벨·분산 제약을 지키며 작업을 최소 비용 노드에 배치한다."
   }
 }

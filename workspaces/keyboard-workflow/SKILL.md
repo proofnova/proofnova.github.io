@@ -1,11 +1,11 @@
 ---
 name: keyboard-workflow
-description: Keyboard workflow auditor. 상태·컨트롤·키 조작 경로로 사용자 업무의 키보드 도달 가능성과 막힌 단계를 찾는다.
+description: Keyboard workflow auditor. Audit whether declared user tasks are reachable through keyboard controls, states and interaction paths.
 ---
 
 # Keyboard workflow auditor
 
-상태·컨트롤·키 조작 경로로 사용자 업무의 키보드 도달 가능성과 막힌 단계를 찾는다.
+Audit whether declared user tasks are reachable through keyboard controls, states and interaction paths.
 
 Use this when the supplied structured input matches [resource.json](resource.json). Read [example.json](example.json) for nested field names. Ask for missing domain inputs rather than inventing defaults not declared by the implementation.
 

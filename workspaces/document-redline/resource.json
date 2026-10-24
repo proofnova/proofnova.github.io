@@ -3,7 +3,7 @@
   "folder": "22-document-redline",
   "domain": "research",
   "title": "Anchored document redline",
-  "job": "문서의 추가·삭제·이동·수정을 안정된 절 ID와 단어 차이로 분리한다.",
+  "job": "Separate document additions, removals, moves and edits using stable section identities and word-level differences.",
   "method": "LCS order anchors distinguish true moves from index shifts caused by insertion.",
   "recovery": "Provide stable section IDs; split oversized comparisons rather than accepting a misleading partial diff.",
   "required": [
@@ -131,5 +131,11 @@
     "cli": "node cli.mjs input.json",
     "browser": "index.html / live static worker",
     "side_effects": "Pure computation: no payments, deployments, outbound messages or file writes."
+  },
+  "descriptions": {
+    "en": "Separate document additions, removals, moves and edits using stable section identities and word-level differences.",
+    "ja": "安定した節IDと単語の差分から、文書の追加・削除・移動・編集を区別します。",
+    "zh": "利用稳定的章节标识和词级差异，区分文档新增、删除、移动与修改。",
+    "ko": "문서의 추가·삭제·이동·수정을 안정된 절 ID와 단어 차이로 분리한다."
   }
 }

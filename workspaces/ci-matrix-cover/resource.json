@@ -3,7 +3,7 @@
   "folder": "08-ci-matrix-cover",
   "domain": "software",
   "title": "Minimum-cost CI matrix",
-  "job": "필수 환경·기능의 검증 범위를 전부 덮는 최소 비용 CI 작업 조합을 찾는다.",
+  "job": "Find the lowest-cost CI job combination that covers every declared environment and feature requirement.",
   "method": "Exact bitmask dynamic programming rather than greedy cheapest-first selection.",
   "recovery": "Add coverage for missing requirements or raise the explicit budget; never drop a required environment.",
   "required": [
@@ -131,5 +131,11 @@
     "cli": "node cli.mjs input.json",
     "browser": "index.html / live static worker",
     "side_effects": "Pure computation: no payments, deployments, outbound messages or file writes."
+  },
+  "descriptions": {
+    "en": "Find the lowest-cost CI job combination that covers every declared environment and feature requirement.",
+    "ja": "必要な環境と機能をすべて検証する、最小コストのCIジョブを選びます。",
+    "zh": "选择覆盖全部已声明环境和功能要求的最低成本 CI 任务组合。",
+    "ko": "필수 환경·기능의 검증 범위를 전부 덮는 최소 비용 CI 작업 조합을 찾는다."
   }
 }

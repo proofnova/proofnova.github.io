@@ -1,11 +1,11 @@
 ---
 name: api-contract-diff
-description: API contract diff. API 입력·출력 계약의 변경을 방향별로 판단하고 지원하지 않는 문법을 보류한다.
+description: API contract diff. Classify directional API input and output contract changes, and hold unsupported syntax for review.
 ---
 
 # API contract diff
 
-API 입력·출력 계약의 변경을 방향별로 판단하고 지원하지 않는 문법을 보류한다.
+Classify directional API input and output contract changes, and hold unsupported syntax for review.
 
 Use this when the supplied structured input matches [resource.json](resource.json). Read [example.json](example.json) for nested field names. Ask for missing domain inputs rather than inventing defaults not declared by the implementation.
 

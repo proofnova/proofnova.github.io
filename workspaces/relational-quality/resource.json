@@ -3,7 +3,7 @@
   "folder": "05-relational-quality",
   "domain": "data",
   "title": "Relational quality gate",
-  "job": "여러 표의 복합 키·필수 값·외래 키를 검사해 오류 행을 지정한다.",
+  "job": "Check composite keys, required values and foreign-key relationships across related tables.",
   "method": "Compound-key indexes and explicit nullable foreign-key policies.",
   "recovery": "Correct duplicated/empty keys before repairing orphan rows; keep source row indices.",
   "required": [
@@ -129,5 +129,11 @@
     "cli": "node cli.mjs input.json",
     "browser": "index.html / live static worker",
     "side_effects": "Pure computation: no payments, deployments, outbound messages or file writes."
+  },
+  "descriptions": {
+    "en": "Check composite keys, required values and foreign-key relationships across related tables.",
+    "ja": "複数の表の複合キー・必須値・外部キーを検査し、問題のある行を示します。",
+    "zh": "检查关联表中的复合键、必填值和外键关系，并定位异常行。",
+    "ko": "여러 표의 복합 키·필수 값·외래 키를 검사해 오류 행을 지정한다."
   }
 }

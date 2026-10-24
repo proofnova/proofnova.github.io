@@ -3,7 +3,7 @@
   "folder": "26-prerequisite-learning",
   "domain": "learning",
   "title": "Prerequisite learning planner",
-  "job": "현재 숙련도와 선행 조건에서 목표를 달성하는 최소 학습 시간 경로를 찾는다.",
+  "job": "Find a minimum-time learning path from current mastery and prerequisite constraints to a declared goal.",
   "method": "Exact mastery-state dynamic programming over declared activity contracts.",
   "recovery": "Add a missing prerequisite activity or revise the time budget; do not infer mastery from a plan.",
   "required": [
@@ -135,5 +135,11 @@
     "cli": "node cli.mjs input.json",
     "browser": "index.html / live static worker",
     "side_effects": "Pure computation: no payments, deployments, outbound messages or file writes."
+  },
+  "descriptions": {
+    "en": "Find a minimum-time learning path from current mastery and prerequisite constraints to a declared goal.",
+    "ja": "現在の習得状況と前提条件から、目標に至る最短学習時間の経路を求めます。",
+    "zh": "结合当前掌握程度与先修条件，寻找达成学习目标的最短时间路径。",
+    "ko": "현재 숙련도와 선행 조건에서 목표를 달성하는 최소 학습 시간 경로를 찾는다."
   }
 }

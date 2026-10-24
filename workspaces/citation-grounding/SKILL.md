@@ -1,11 +1,11 @@
 ---
 name: citation-grounding
-description: Citation grounding auditor. 주장의 인용문·문서 버전·행 범위를 확인하고 구조화된 상충 주장을 드러낸다.
+description: Citation grounding auditor. Check quotations against document versions and line ranges, and expose structured conflicting claims.
 ---
 
 # Citation grounding auditor
 
-주장의 인용문·문서 버전·행 범위를 확인하고 구조화된 상충 주장을 드러낸다.
+Check quotations against document versions and line ranges, and expose structured conflicting claims.
 
 Use this when the supplied structured input matches [resource.json](resource.json). Read [example.json](example.json) for nested field names. Ask for missing domain inputs rather than inventing defaults not declared by the implementation.
 

@@ -3,7 +3,7 @@
   "folder": "20-billing-auditor",
   "domain": "business",
   "title": "Proration and tier billing auditor",
-  "job": "기간 비례·구간 요금의 예상액을 계산하고 중복·누락·오청구 행을 찾는다.",
+  "job": "Audit prorated and tiered charges, identifying duplicate, missing and incorrectly calculated billing rows.",
   "method": "UTC-day proration, exact tier arithmetic and statement-line reconciliation.",
   "recovery": "Correct period boundaries, tiers or duplicate lines; day granularity is explicit and does not emulate a provider's second-level policy.",
   "required": [
@@ -133,5 +133,11 @@
     "cli": "node cli.mjs input.json",
     "browser": "index.html / live static worker",
     "side_effects": "Pure computation: no payments, deployments, outbound messages or file writes."
+  },
+  "descriptions": {
+    "en": "Audit prorated and tiered charges, identifying duplicate, missing and incorrectly calculated billing rows.",
+    "ja": "期間按分と段階料金を計算し、重複・欠落・誤計算のある請求行を特定します。",
+    "zh": "核算按比例和阶梯计费，识别重复、遗漏与计算错误的账单行。",
+    "ko": "기간 비례·구간 요금의 예상액을 계산하고 중복·누락·오청구 행을 찾는다."
   }
 }

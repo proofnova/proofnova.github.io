@@ -1,11 +1,11 @@
 ---
 name: research-screening
-description: Research screening ledger. 논문 중복·메타데이터·선정 규칙을 처리하고 누락 자료와 검토 불일치를 분리한다.
+description: Research screening ledger. Deduplicate research records, apply explicit screening rules and separate missing data from review disagreements.
 ---
 
 # Research screening ledger
 
-논문 중복·메타데이터·선정 규칙을 처리하고 누락 자료와 검토 불일치를 분리한다.
+Deduplicate research records, apply explicit screening rules and separate missing data from review disagreements.
 
 Use this when the supplied structured input matches [resource.json](resource.json). Read [example.json](example.json) for nested field names. Ask for missing domain inputs rather than inventing defaults not declared by the implementation.
 

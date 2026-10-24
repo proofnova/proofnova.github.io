@@ -3,7 +3,7 @@
   "folder": "30-time-window-itinerary",
   "domain": "learning",
   "title": "Time-window itinerary solver",
-  "job": "이동 시간·방문 가능 시간·체류·예산을 지키며 모든 방문을 마치는 최단 일정을 찾는다.",
+  "job": "Find a shortest complete itinerary under travel times, opening windows, visit durations and budget limits.",
   "method": "Bounded exact time-window search with waiting, asymmetric travel and explicit optimality.",
   "recovery": "Change the requested windows/travel data or budget when infeasible; do not fabricate live availability.",
   "required": [
@@ -137,5 +137,11 @@
     "cli": "node cli.mjs input.json",
     "browser": "index.html / live static worker",
     "side_effects": "Pure computation: no payments, deployments, outbound messages or file writes."
+  },
+  "descriptions": {
+    "en": "Find a shortest complete itinerary under travel times, opening windows, visit durations and budget limits.",
+    "ja": "移動時間・訪問可能時間・滞在時間・予算を守り、全訪問を終える最短日程を求めます。",
+    "zh": "在交通时间、开放时段、停留时长和预算限制下，寻找完成全部访问的最短行程。",
+    "ko": "이동 시간·방문 가능 시간·체류·예산을 지키며 모든 방문을 마치는 최단 일정을 찾는다."
   }
 }

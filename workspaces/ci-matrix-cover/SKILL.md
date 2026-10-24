@@ -1,11 +1,11 @@
 ---
 name: ci-matrix-cover
-description: Minimum-cost CI matrix. 필수 환경·기능의 검증 범위를 전부 덮는 최소 비용 CI 작업 조합을 찾는다.
+description: Minimum-cost CI matrix. Find the lowest-cost CI job combination that covers every declared environment and feature requirement.
 ---
 
 # Minimum-cost CI matrix
 
-필수 환경·기능의 검증 범위를 전부 덮는 최소 비용 CI 작업 조합을 찾는다.
+Find the lowest-cost CI job combination that covers every declared environment and feature requirement.
 
 Use this when the supplied structured input matches [resource.json](resource.json). Read [example.json](example.json) for nested field names. Ask for missing domain inputs rather than inventing defaults not declared by the implementation.
 

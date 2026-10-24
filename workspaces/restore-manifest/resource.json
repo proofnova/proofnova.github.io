@@ -3,7 +3,7 @@
   "folder": "15-restore-manifest",
   "domain": "operations",
   "title": "Restore manifest verifier",
-  "job": "백업 객체의 실제 바이트·조각·전체 파일 해시를 확인해 복원 가능 목록을 만든다.",
+  "job": "Verify backup bytes, chunks and whole-file hashes before declaring files ready to restore.",
   "method": "Canonical base64, per-chunk and reconstructed-file digest/size checks.",
   "recovery": "Recover the exact missing/corrupt objects and re-check; a verified manifest alone is not a real restore.",
   "required": [
@@ -123,5 +123,11 @@
     "cli": "node cli.mjs input.json",
     "browser": "index.html / live static worker",
     "side_effects": "Pure computation: no payments, deployments, outbound messages or file writes."
+  },
+  "descriptions": {
+    "en": "Verify backup bytes, chunks and whole-file hashes before declaring files ready to restore.",
+    "ja": "バックアップの実バイト・分割片・全体ハッシュから、復元可能性を検証します。",
+    "zh": "验证备份字节、分片和完整文件哈希，确认文件是否可以恢复。",
+    "ko": "백업 객체의 실제 바이트·조각·전체 파일 해시를 확인해 복원 가능 목록을 만든다."
   }
 }

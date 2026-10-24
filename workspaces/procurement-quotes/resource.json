@@ -3,7 +3,7 @@
   "folder": "17-procurement-quotes",
   "domain": "business",
   "title": "Landed quote comparator",
-  "job": "묶음 수량·최소 주문·세금·배송·환율·납기를 반영한 실구매 비용을 비교한다.",
+  "job": "Compare landed purchase costs including pack sizes, minimum orders, tax, shipping, exchange rates and lead times.",
   "method": "Rational FX and rounding with feasibility and Pareto dominance checks.",
   "recovery": "Supply explicit exchange rates or available stock; do not select an infeasible low sticker price.",
   "required": [
@@ -142,5 +142,11 @@
     "cli": "node cli.mjs input.json",
     "browser": "index.html / live static worker",
     "side_effects": "Pure computation: no payments, deployments, outbound messages or file writes."
+  },
+  "descriptions": {
+    "en": "Compare landed purchase costs including pack sizes, minimum orders, tax, shipping, exchange rates and lead times.",
+    "ja": "梱包数・最低注文数・税・送料・為替・納期を含めた実際の購入費を比較します。",
+    "zh": "计入包装数量、起订量、税费、运费、汇率和交期，比较实际采购成本。",
+    "ko": "묶음 수량·최소 주문·세금·배송·환율·납기를 반영한 실구매 비용을 비교한다."
   }
 }

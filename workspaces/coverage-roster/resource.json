@@ -3,7 +3,7 @@
   "folder": "19-coverage-roster",
   "domain": "business",
   "title": "Coverage roster solver",
-  "job": "가용 시간·기술·최대 근무량·중복을 지키며 필요한 업무 구간을 배정한다.",
+  "job": "Assign required shifts while respecting availability, skills, workload limits and overlapping assignments.",
   "method": "Bounded search maximizing covered slots before minimizing assigned cost.",
   "recovery": "Review unfilled slots and explicit availability; a truncated search does not prove a best roster.",
   "required": [
@@ -123,5 +123,11 @@
     "cli": "node cli.mjs input.json",
     "browser": "index.html / live static worker",
     "side_effects": "Pure computation: no payments, deployments, outbound messages or file writes."
+  },
+  "descriptions": {
+    "en": "Assign required shifts while respecting availability, skills, workload limits and overlapping assignments.",
+    "ja": "勤務可能時間・スキル・上限・重複を守り、必要な業務枠を割り当てます。",
+    "zh": "遵守可用时间、技能、工时上限和冲突限制，安排所需工作班次。",
+    "ko": "가용 시간·기술·최대 근무량·중복을 지키며 필요한 업무 구간을 배정한다."
   }
 }

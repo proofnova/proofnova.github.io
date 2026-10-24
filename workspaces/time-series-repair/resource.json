@@ -3,7 +3,7 @@
   "folder": "03-time-series-repair",
   "domain": "data",
   "title": "Time-series repair",
-  "job": "시간대·중복·누락·순서가 뒤섞인 계측 자료를 명시한 시간 격자로 정리한다.",
+  "job": "Align time-series records to an explicit grid and identify duplicates, missing intervals and ordering problems.",
   "method": "Offset-aware timestamps, weighted buckets and explicit missing intervals.",
   "recovery": "Supply explicit offsets; correct rejected values; preserve gaps instead of inventing observations.",
   "required": [
@@ -135,5 +135,11 @@
     "cli": "node cli.mjs input.json",
     "browser": "index.html / live static worker",
     "side_effects": "Pure computation: no payments, deployments, outbound messages or file writes."
+  },
+  "descriptions": {
+    "en": "Align time-series records to an explicit grid and identify duplicates, missing intervals and ordering problems.",
+    "ja": "時刻のずれ・重複・欠測・順序の乱れを、指定した時間軸で確認します。",
+    "zh": "按明确的时间网格整理时序记录，识别重复、缺失和顺序异常。",
+    "ko": "시간대·중복·누락·순서가 뒤섞인 계측 자료를 명시한 시간 격자로 정리한다."
   }
 }

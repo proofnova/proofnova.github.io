@@ -3,7 +3,7 @@
   "folder": "24-research-screening",
   "domain": "research",
   "title": "Research screening ledger",
-  "job": "논문 중복·메타데이터·선정 규칙을 처리하고 누락 자료와 검토 불일치를 분리한다.",
+  "job": "Deduplicate research records, apply explicit screening rules and separate missing data from review disagreements.",
   "method": "Three-valued screening rules, DOI grouping and explicit reviewer agreement arithmetic.",
   "recovery": "Resolve missing/conflicting metadata before inclusion; preserve disagreements for review.",
   "required": [
@@ -129,5 +129,11 @@
     "cli": "node cli.mjs input.json",
     "browser": "index.html / live static worker",
     "side_effects": "Pure computation: no payments, deployments, outbound messages or file writes."
+  },
+  "descriptions": {
+    "en": "Deduplicate research records, apply explicit screening rules and separate missing data from review disagreements.",
+    "ja": "研究記録の重複と選定規則を処理し、情報不足と判断の不一致を区別します。",
+    "zh": "去重研究记录，应用明确的筛选规则，区分信息缺失和审查分歧。",
+    "ko": "논문 중복·메타데이터·선정 규칙을 처리하고 누락 자료와 검토 불일치를 분리한다."
   }
 }

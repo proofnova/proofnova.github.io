@@ -3,7 +3,7 @@
   "folder": "16-invoice-reconciliation",
   "domain": "business",
   "title": "Invoice/payment reconciliation",
-  "job": "분할·초과·중복·모호한 입금을 송장과 맞추고 잔액·미배분액을 보존한다.",
+  "job": "Reconcile split, excess, duplicate and ambiguous payments while conserving invoice balances and unallocated money.",
   "method": "Exact minor-unit arithmetic, atomic allocation validation and transaction conflict quarantine.",
   "recovery": "Provide a verified invoice allocation for ambiguous amounts; resolve transaction conflicts before applying them.",
   "required": [
@@ -131,5 +131,11 @@
     "cli": "node cli.mjs input.json",
     "browser": "index.html / live static worker",
     "side_effects": "Pure computation: no payments, deployments, outbound messages or file writes."
+  },
+  "descriptions": {
+    "en": "Reconcile split, excess, duplicate and ambiguous payments while conserving invoice balances and unallocated money.",
+    "ja": "分割・過入金・重複・曖昧な入金を照合し、残高と未配賦額を保持します。",
+    "zh": "核对拆分、超额、重复和模糊付款，保持发票余额与未分配金额守恒。",
+    "ko": "분할·초과·중복·모호한 입금을 송장과 맞추고 잔액·미배분액을 보존한다."
   }
 }

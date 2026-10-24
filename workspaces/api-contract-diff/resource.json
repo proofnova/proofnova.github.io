@@ -3,7 +3,7 @@
   "folder": "07-api-contract-diff",
   "domain": "software",
   "title": "API contract diff",
-  "job": "API 입력·출력 계약의 변경을 방향별로 판단하고 지원하지 않는 문법을 보류한다.",
+  "job": "Classify directional API input and output contract changes, and hold unsupported syntax for review.",
   "method": "Request/response variance for explicit endpoint schemas; unsupported composition is surfaced.",
   "recovery": "Route unsupported schema composition to a full OpenAPI tool; review every breaking path.",
   "required": [
@@ -131,5 +131,11 @@
     "cli": "node cli.mjs input.json",
     "browser": "index.html / live static worker",
     "side_effects": "Pure computation: no payments, deployments, outbound messages or file writes."
+  },
+  "descriptions": {
+    "en": "Classify directional API input and output contract changes, and hold unsupported syntax for review.",
+    "ja": "APIの入力・出力の変更を方向別に評価し、未対応の構文は判断を保留します。",
+    "zh": "按输入与输出方向判断 API 契约变更，对不支持的语法保留人工复核。",
+    "ko": "API 입력·출력 계약의 변경을 방향별로 판단하고 지원하지 않는 문법을 보류한다."
   }
 }

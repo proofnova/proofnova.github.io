@@ -1,11 +1,11 @@
 ---
 name: action-ledger
-description: Evidence-bound action ledger. 회의에서 추출한 실행 제안을 발언·담당자·기한 근거에 묶고 모호한 제안을 보류한다.
+description: Evidence-bound action ledger. Bind proposed meeting actions to source statements, owners and deadlines, holding ambiguous proposals for review.
 ---
 
 # Evidence-bound action ledger
 
-회의에서 추출한 실행 제안을 발언·담당자·기한 근거에 묶고 모호한 제안을 보류한다.
+Bind proposed meeting actions to source statements, owners and deadlines, holding ambiguous proposals for review.
 
 Use this when the supplied structured input matches [resource.json](resource.json). Read [example.json](example.json) for nested field names. Ask for missing domain inputs rather than inventing defaults not declared by the implementation.
 

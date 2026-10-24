@@ -1,11 +1,11 @@
 ---
 name: billing-auditor
-description: Proration and tier billing auditor. 기간 비례·구간 요금의 예상액을 계산하고 중복·누락·오청구 행을 찾는다.
+description: Proration and tier billing auditor. Audit prorated and tiered charges, identifying duplicate, missing and incorrectly calculated billing rows.
 ---
 
 # Proration and tier billing auditor
 
-기간 비례·구간 요금의 예상액을 계산하고 중복·누락·오청구 행을 찾는다.
+Audit prorated and tiered charges, identifying duplicate, missing and incorrectly calculated billing rows.
 
 Use this when the supplied structured input matches [resource.json](resource.json). Read [example.json](example.json) for nested field names. Ask for missing domain inputs rather than inventing defaults not declared by the implementation.
 

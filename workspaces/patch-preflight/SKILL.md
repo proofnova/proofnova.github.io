@@ -1,11 +1,11 @@
 ---
 name: patch-preflight
-description: Exact patch preflight. AI가 만든 unified diff를 실제 원문에 맞춰 메모리에서 검증·적용한다.
+description: Exact patch preflight. Validate and apply unified diffs against the exact original text in memory before changing files.
 ---
 
 # Exact patch preflight
 
-AI가 만든 unified diff를 실제 원문에 맞춰 메모리에서 검증·적용한다.
+Validate and apply unified diffs against the exact original text in memory before changing files.
 
 Use this when the supplied structured input matches [resource.json](resource.json). Read [example.json](example.json) for nested field names. Ask for missing domain inputs rather than inventing defaults not declared by the implementation.
 

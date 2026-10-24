@@ -1,11 +1,11 @@
 ---
 name: change-impact
-description: Change impact planner. 변경 파일의 소유 프로젝트와 전이 의존성을 따라 실행할 테스트를 정한다.
+description: Change impact planner. Follow project ownership and transitive dependencies to identify tests affected by changed files.
 ---
 
 # Change impact planner
 
-변경 파일의 소유 프로젝트와 전이 의존성을 따라 실행할 테스트를 정한다.
+Follow project ownership and transitive dependencies to identify tests affected by changed files.
 
 Use this when the supplied structured input matches [resource.json](resource.json). Read [example.json](example.json) for nested field names. Ask for missing domain inputs rather than inventing defaults not declared by the implementation.
 

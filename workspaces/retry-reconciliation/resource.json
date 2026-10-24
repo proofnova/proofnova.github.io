@@ -3,7 +3,7 @@
   "folder": "13-retry-reconciliation",
   "domain": "operations",
   "title": "Retry and reconciliation planner",
-  "job": "작업 기록의 의존성·시도 한도·lease·불명확한 외부 결과를 다음 행동으로 바꾼다.",
+  "job": "Turn dependency, attempt-limit, lease and ambiguous external-result records into explicit next actions.",
   "method": "Deterministic bounded backoff with reconcile-before-replay for uncertain effects.",
   "recovery": "Reconcile unknown outcomes first; repair the idempotency contract or dependency before retrying.",
   "required": [
@@ -131,5 +131,11 @@
     "cli": "node cli.mjs input.json",
     "browser": "index.html / live static worker",
     "side_effects": "Pure computation: no payments, deployments, outbound messages or file writes."
+  },
+  "descriptions": {
+    "en": "Turn dependency, attempt-limit, lease and ambiguous external-result records into explicit next actions.",
+    "ja": "依存関係・試行上限・リース・外部結果の曖昧さから、次の処理を明示します。",
+    "zh": "根据依赖、重试上限、租约和不明确的外部结果，确定下一步操作。",
+    "ko": "작업 기록의 의존성·시도 한도·lease·불명확한 외부 결과를 다음 행동으로 바꾼다."
   }
 }

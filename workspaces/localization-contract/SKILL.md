@@ -1,11 +1,11 @@
 ---
 name: localization-contract
-description: ICU localization gate. 번역문의 중첩 ICU 인자·선택·복수형·보호 토큰 누락을 검사한다.
+description: ICU localization gate. Validate nested ICU message arguments, selectors, plural branches and protected tokens across translations.
 ---
 
 # ICU localization gate
 
-번역문의 중첩 ICU 인자·선택·복수형·보호 토큰 누락을 검사한다.
+Validate nested ICU message arguments, selectors, plural branches and protected tokens across translations.
 
 Use this when the supplied structured input matches [resource.json](resource.json). Read [example.json](example.json) for nested field names. Ask for missing domain inputs rather than inventing defaults not declared by the implementation.
 

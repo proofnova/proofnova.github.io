@@ -1,11 +1,11 @@
 ---
 name: time-series-repair
-description: Time-series repair. 시간대·중복·누락·순서가 뒤섞인 계측 자료를 명시한 시간 격자로 정리한다.
+description: Time-series repair. Align time-series records to an explicit grid and identify duplicates, missing intervals and ordering problems.
 ---
 
 # Time-series repair
 
-시간대·중복·누락·순서가 뒤섞인 계측 자료를 명시한 시간 격자로 정리한다.
+Align time-series records to an explicit grid and identify duplicates, missing intervals and ordering problems.
 
 Use this when the supplied structured input matches [resource.json](resource.json). Read [example.json](example.json) for nested field names. Ask for missing domain inputs rather than inventing defaults not declared by the implementation.
 

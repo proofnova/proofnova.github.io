@@ -3,7 +3,7 @@
   "folder": "11-trace-reconstruction",
   "domain": "operations",
   "title": "Trace reconstruction",
-  "job": "뒤섞인 분산 추적 span을 시간순으로 정리하고 부모·중복·경계 오류를 찾는다.",
+  "job": "Reconstruct distributed trace spans and identify missing parents, duplicates and invalid time boundaries.",
   "method": "Offset-normalized nesting checks and sweep-line parallel-span counts.",
   "recovery": "Restore missing parents or correct clocks; distinguish observed anomalies from inferred root cause.",
   "required": [
@@ -129,5 +129,11 @@
     "cli": "node cli.mjs input.json",
     "browser": "index.html / live static worker",
     "side_effects": "Pure computation: no payments, deployments, outbound messages or file writes."
+  },
+  "descriptions": {
+    "en": "Reconstruct distributed trace spans and identify missing parents, duplicates and invalid time boundaries.",
+    "ja": "分散トレースを整理し、親の欠落・重複・時間境界の不整合を検出します。",
+    "zh": "重建分布式追踪，识别父节点缺失、重复记录和时间边界异常。",
+    "ko": "뒤섞인 분산 추적 span을 시간순으로 정리하고 부모·중복·경계 오류를 찾는다."
   }
 }

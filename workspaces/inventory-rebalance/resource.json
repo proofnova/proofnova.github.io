@@ -3,7 +3,7 @@
   "folder": "18-inventory-rebalance",
   "domain": "business",
   "title": "Inventory rebalance solver",
-  "job": "여러 거점의 초과·부족 재고를 이동 한도 안에서 전역 최소 비용으로 재배치한다.",
+  "job": "Rebalance surplus and shortage inventory across locations at minimum total cost under transfer limits.",
   "method": "Residual-network min-cost flow that can undo a locally cheap assignment.",
   "recovery": "Inspect unresolved shortages or add a route/capacity; no actual order or transfer is submitted.",
   "required": [
@@ -131,5 +131,11 @@
     "cli": "node cli.mjs input.json",
     "browser": "index.html / live static worker",
     "side_effects": "Pure computation: no payments, deployments, outbound messages or file writes."
+  },
+  "descriptions": {
+    "en": "Rebalance surplus and shortage inventory across locations at minimum total cost under transfer limits.",
+    "ja": "移動上限を守りながら、拠点間の過剰・不足在庫を総コスト最小で再配置します。",
+    "zh": "在调拨限制内，以最低总成本平衡多个地点的库存盈余和短缺。",
+    "ko": "여러 거점의 초과·부족 재고를 이동 한도 안에서 전역 최소 비용으로 재배치한다."
   }
 }

@@ -1,11 +1,11 @@
 ---
 name: slo-burn-rate
-description: Multi-window SLO analyst. 오류 예산 소모를 긴·짧은 구간에서 함께 계산하고 관측 누락을 분리한다.
+description: Multi-window SLO analyst. Evaluate paired long and short error-budget windows while separating missing observations from healthy signals.
 ---
 
 # Multi-window SLO analyst
 
-오류 예산 소모를 긴·짧은 구간에서 함께 계산하고 관측 누락을 분리한다.
+Evaluate paired long and short error-budget windows while separating missing observations from healthy signals.
 
 Use this when the supplied structured input matches [resource.json](resource.json). Read [example.json](example.json) for nested field names. Ask for missing domain inputs rather than inventing defaults not declared by the implementation.
 

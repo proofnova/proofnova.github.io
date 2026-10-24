@@ -1,11 +1,11 @@
 ---
 name: trace-reconstruction
-description: Trace reconstruction. 뒤섞인 분산 추적 span을 시간순으로 정리하고 부모·중복·경계 오류를 찾는다.
+description: Trace reconstruction. Reconstruct distributed trace spans and identify missing parents, duplicates and invalid time boundaries.
 ---
 
 # Trace reconstruction
 
-뒤섞인 분산 추적 span을 시간순으로 정리하고 부모·중복·경계 오류를 찾는다.
+Reconstruct distributed trace spans and identify missing parents, duplicates and invalid time boundaries.
 
 Use this when the supplied structured input matches [resource.json](resource.json). Read [example.json](example.json) for nested field names. Ask for missing domain inputs rather than inventing defaults not declared by the implementation.
 

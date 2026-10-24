@@ -1,11 +1,11 @@
 ---
 name: coverage-roster
-description: Coverage roster solver. 가용 시간·기술·최대 근무량·중복을 지키며 필요한 업무 구간을 배정한다.
+description: Coverage roster solver. Assign required shifts while respecting availability, skills, workload limits and overlapping assignments.
 ---
 
 # Coverage roster solver
 
-가용 시간·기술·최대 근무량·중복을 지키며 필요한 업무 구간을 배정한다.
+Assign required shifts while respecting availability, skills, workload limits and overlapping assignments.
 
 Use this when the supplied structured input matches [resource.json](resource.json). Read [example.json](example.json) for nested field names. Ask for missing domain inputs rather than inventing defaults not declared by the implementation.
 

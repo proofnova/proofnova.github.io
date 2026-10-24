@@ -3,7 +3,7 @@
   "folder": "28-keyboard-workflow",
   "domain": "learning",
   "title": "Keyboard workflow auditor",
-  "job": "상태·컨트롤·키 조작 경로로 사용자 업무의 키보드 도달 가능성과 막힌 단계를 찾는다.",
+  "job": "Audit whether declared user tasks are reachable through keyboard controls, states and interaction paths.",
   "method": "Control-specific activation rules and shortest valid state-graph paths.",
   "recovery": "Fix accessible names/focus/key wiring, then repeat the real browser task as a separate check.",
   "required": [
@@ -135,5 +135,11 @@
     "cli": "node cli.mjs input.json",
     "browser": "index.html / live static worker",
     "side_effects": "Pure computation: no payments, deployments, outbound messages or file writes."
+  },
+  "descriptions": {
+    "en": "Audit whether declared user tasks are reachable through keyboard controls, states and interaction paths.",
+    "ja": "状態・操作部品・キー操作の経路から、業務全体をキーボードで完了できるか検査します。",
+    "zh": "根据状态、控件和键盘交互路径，检查用户能否完成已声明的任务。",
+    "ko": "상태·컨트롤·키 조작 경로로 사용자 업무의 키보드 도달 가능성과 막힌 단계를 찾는다."
   }
 }

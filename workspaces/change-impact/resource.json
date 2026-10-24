@@ -3,7 +3,7 @@
   "folder": "06-change-impact",
   "domain": "software",
   "title": "Change impact planner",
-  "job": "변경 파일의 소유 프로젝트와 전이 의존성을 따라 실행할 테스트를 정한다.",
+  "job": "Follow project ownership and transitive dependencies to identify tests affected by changed files.",
   "method": "Reverse dependency closure, topological order and conservative unknown-file fallback.",
   "recovery": "Fix the ownership map; unknown files trigger the full plan instead of skipping tests.",
   "required": [
@@ -131,5 +131,11 @@
     "cli": "node cli.mjs input.json",
     "browser": "index.html / live static worker",
     "side_effects": "Pure computation: no payments, deployments, outbound messages or file writes."
+  },
+  "descriptions": {
+    "en": "Follow project ownership and transitive dependencies to identify tests affected by changed files.",
+    "ja": "変更ファイルの所属と推移的依存関係から、実行すべきテストを求めます。",
+    "zh": "沿项目归属和传递依赖关系，找出文件变更影响的测试。",
+    "ko": "변경 파일의 소유 프로젝트와 전이 의존성을 따라 실행할 테스트를 정한다."
   }
 }

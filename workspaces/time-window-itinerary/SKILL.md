@@ -1,11 +1,11 @@
 ---
 name: time-window-itinerary
-description: Time-window itinerary solver. 이동 시간·방문 가능 시간·체류·예산을 지키며 모든 방문을 마치는 최단 일정을 찾는다.
+description: Time-window itinerary solver. Find a shortest complete itinerary under travel times, opening windows, visit durations and budget limits.
 ---
 
 # Time-window itinerary solver
 
-이동 시간·방문 가능 시간·체류·예산을 지키며 모든 방문을 마치는 최단 일정을 찾는다.
+Find a shortest complete itinerary under travel times, opening windows, visit durations and budget limits.
 
 Use this when the supplied structured input matches [resource.json](resource.json). Read [example.json](example.json) for nested field names. Ask for missing domain inputs rather than inventing defaults not declared by the implementation.
 

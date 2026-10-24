@@ -1,11 +1,11 @@
 ---
 name: restore-manifest
-description: Restore manifest verifier. 백업 객체의 실제 바이트·조각·전체 파일 해시를 확인해 복원 가능 목록을 만든다.
+description: Restore manifest verifier. Verify backup bytes, chunks and whole-file hashes before declaring files ready to restore.
 ---
 
 # Restore manifest verifier
 
-백업 객체의 실제 바이트·조각·전체 파일 해시를 확인해 복원 가능 목록을 만든다.
+Verify backup bytes, chunks and whole-file hashes before declaring files ready to restore.
 
 Use this when the supplied structured input matches [resource.json](resource.json). Read [example.json](example.json) for nested field names. Ask for missing domain inputs rather than inventing defaults not declared by the implementation.
 

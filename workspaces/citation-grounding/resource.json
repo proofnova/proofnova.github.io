@@ -3,7 +3,7 @@
   "folder": "21-citation-grounding",
   "domain": "research",
   "title": "Citation grounding auditor",
-  "job": "주장의 인용문·문서 버전·행 범위를 확인하고 구조화된 상충 주장을 드러낸다.",
+  "job": "Check quotations against document versions and line ranges, and expose structured conflicting claims.",
   "method": "Exact excerpt location and optional document hash binding without pretending to judge meaning.",
   "recovery": "Locate the actual source excerpt or repair its range/version; send semantic support questions to domain review.",
   "required": [
@@ -131,5 +131,11 @@
     "cli": "node cli.mjs input.json",
     "browser": "index.html / live static worker",
     "side_effects": "Pure computation: no payments, deployments, outbound messages or file writes."
+  },
+  "descriptions": {
+    "en": "Check quotations against document versions and line ranges, and expose structured conflicting claims.",
+    "ja": "引用文・文書の版・行範囲を照合し、構造化された主張の矛盾を示します。",
+    "zh": "核对引文、文档版本与行号范围，并揭示结构化主张中的冲突。",
+    "ko": "주장의 인용문·문서 버전·행 범위를 확인하고 구조화된 상충 주장을 드러낸다."
   }
 }

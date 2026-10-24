@@ -3,7 +3,7 @@
   "folder": "27-assessment-blueprint",
   "domain": "learning",
   "title": "Assessment blueprint assembler",
-  "job": "문항 품질·영역·난도·시간·중복 계열·정답 분포를 함께 만족하는 시험을 구성한다.",
+  "job": "Assemble assessments satisfying quality, topic, difficulty, timing, item-family and answer-distribution constraints.",
   "method": "Reject invalid questions before bounded selection and answer-balance optimization.",
   "recovery": "Repair invalid items or supply missing blueprint cells; keep the selected item IDs for audit.",
   "required": [
@@ -133,5 +133,11 @@
     "cli": "node cli.mjs input.json",
     "browser": "index.html / live static worker",
     "side_effects": "Pure computation: no payments, deployments, outbound messages or file writes."
+  },
+  "descriptions": {
+    "en": "Assemble assessments satisfying quality, topic, difficulty, timing, item-family and answer-distribution constraints.",
+    "ja": "品質・分野・難度・時間・同系列問題・正答分布を満たす試験を構成します。",
+    "zh": "组装满足质量、领域、难度、时长、题目家族和答案分布要求的试卷。",
+    "ko": "문항 품질·영역·난도·시간·중복 계열·정답 분포를 함께 만족하는 시험을 구성한다."
   }
 }

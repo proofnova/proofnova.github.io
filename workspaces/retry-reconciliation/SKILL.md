@@ -1,11 +1,11 @@
 ---
 name: retry-reconciliation
-description: Retry and reconciliation planner. 작업 기록의 의존성·시도 한도·lease·불명확한 외부 결과를 다음 행동으로 바꾼다.
+description: Retry and reconciliation planner. Turn dependency, attempt-limit, lease and ambiguous external-result records into explicit next actions.
 ---
 
 # Retry and reconciliation planner
 
-작업 기록의 의존성·시도 한도·lease·불명확한 외부 결과를 다음 행동으로 바꾼다.
+Turn dependency, attempt-limit, lease and ambiguous external-result records into explicit next actions.
 
 Use this when the supplied structured input matches [resource.json](resource.json). Read [example.json](example.json) for nested field names. Ask for missing domain inputs rather than inventing defaults not declared by the implementation.
 

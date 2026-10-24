@@ -1,11 +1,11 @@
 ---
 name: assessment-blueprint
-description: Assessment blueprint assembler. 문항 품질·영역·난도·시간·중복 계열·정답 분포를 함께 만족하는 시험을 구성한다.
+description: Assessment blueprint assembler. Assemble assessments satisfying quality, topic, difficulty, timing, item-family and answer-distribution constraints.
 ---
 
 # Assessment blueprint assembler
 
-문항 품질·영역·난도·시간·중복 계열·정답 분포를 함께 만족하는 시험을 구성한다.
+Assemble assessments satisfying quality, topic, difficulty, timing, item-family and answer-distribution constraints.
 
 Use this when the supplied structured input matches [resource.json](resource.json). Read [example.json](example.json) for nested field names. Ask for missing domain inputs rather than inventing defaults not declared by the implementation.
 

@@ -1,11 +1,11 @@
 ---
 name: nested-record-flattener
-description: Nested record flattener. 주문·이벤트의 중첩 배열을 부모 정보와 행 출처를 보존해 평탄화한다.
+description: Nested record flattener. Flatten nested order and event arrays without losing parent context or row provenance.
 ---
 
 # Nested record flattener
 
-주문·이벤트의 중첩 배열을 부모 정보와 행 출처를 보존해 평탄화한다.
+Flatten nested order and event arrays without losing parent context or row provenance.
 
 Use this when the supplied structured input matches [resource.json](resource.json). Read [example.json](example.json) for nested field names. Ask for missing domain inputs rather than inventing defaults not declared by the implementation.
 

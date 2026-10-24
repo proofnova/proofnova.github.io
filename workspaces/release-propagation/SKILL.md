@@ -1,11 +1,11 @@
 ---
 name: release-propagation
-description: Release propagation planner. 워크스페이스 패키지의 버전과 의존 범위 변경을 전이 관계에 맞춰 계획한다.
+description: Release propagation planner. Plan version and dependency-range changes through a workspace dependency graph.
 ---
 
 # Release propagation planner
 
-워크스페이스 패키지의 버전과 의존 범위 변경을 전이 관계에 맞춰 계획한다.
+Plan version and dependency-range changes through a workspace dependency graph.
 
 Use this when the supplied structured input matches [resource.json](resource.json). Read [example.json](example.json) for nested field names. Ask for missing domain inputs rather than inventing defaults not declared by the implementation.
 

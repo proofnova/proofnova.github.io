@@ -3,7 +3,7 @@
   "folder": "29-localization-contract",
   "domain": "learning",
   "title": "ICU localization gate",
-  "job": "번역문의 중첩 ICU 인자·선택·복수형·보호 토큰 누락을 검사한다.",
+  "job": "Validate nested ICU message arguments, selectors, plural branches and protected tokens across translations.",
   "method": "A bounded nested MessageFormat parser rather than a flat placeholder regex.",
   "recovery": "Repair the exact missing argument/category/brace; semantic translation review remains separate.",
   "required": [
@@ -139,5 +139,11 @@
     "cli": "node cli.mjs input.json",
     "browser": "index.html / live static worker",
     "side_effects": "Pure computation: no payments, deployments, outbound messages or file writes."
+  },
+  "descriptions": {
+    "en": "Validate nested ICU message arguments, selectors, plural branches and protected tokens across translations.",
+    "ja": "翻訳文の入れ子ICU引数・選択・複数形・保護トークンの欠落を確認します。",
+    "zh": "检查翻译中的嵌套 ICU 参数、选择器、复数分支和保护标记。",
+    "ko": "번역문의 중첩 ICU 인자·선택·복수형·보호 토큰 누락을 검사한다."
   }
 }

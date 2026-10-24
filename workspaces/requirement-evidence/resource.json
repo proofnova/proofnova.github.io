@@ -3,7 +3,7 @@
   "folder": "23-requirement-evidence",
   "domain": "research",
   "title": "Requirement evidence ledger",
-  "job": "요구사항·하위 조건·테스트·현재 revision의 실행 근거를 연결해 미충족 항목을 찾는다.",
+  "job": "Link requirements and child conditions to tests and execution evidence for the current revision.",
   "method": "Dependency-aware coverage, latest-result conflict detection and freshness/revision checks.",
   "recovery": "Run missing/stale tests on the current revision; a passed parent cannot cover a failed child.",
   "required": [
@@ -137,5 +137,11 @@
     "cli": "node cli.mjs input.json",
     "browser": "index.html / live static worker",
     "side_effects": "Pure computation: no payments, deployments, outbound messages or file writes."
+  },
+  "descriptions": {
+    "en": "Link requirements and child conditions to tests and execution evidence for the current revision.",
+    "ja": "要求と子条件を、現在の版に対応するテストと実行証拠につなぎます。",
+    "zh": "将需求和子条件关联到当前修订版的测试与执行证据。",
+    "ko": "요구사항·하위 조건·테스트·현재 revision의 실행 근거를 연결해 미충족 항목을 찾는다."
   }
 }
