@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-10-24T06:47:46.338Z",
+  "checked_at": "2026-10-24T07:47:35.220Z",
   "resources": [
     {
       "id": "csv-harmonizer",
@@ -125,61 +125,61 @@
       "id": "citation-grounding",
       "site": "./workspaces/citation-grounding/",
       "repository": "https://github.com/proofnova/citation-grounding",
-      "repository_published": false
+      "repository_published": true
     },
     {
       "id": "document-redline",
       "site": "./workspaces/document-redline/",
       "repository": "https://github.com/proofnova/document-redline",
-      "repository_published": false
+      "repository_published": true
     },
     {
       "id": "requirement-evidence",
       "site": "./workspaces/requirement-evidence/",
       "repository": "https://github.com/proofnova/requirement-evidence",
-      "repository_published": false
+      "repository_published": true
     },
     {
       "id": "research-screening",
       "site": "./workspaces/research-screening/",
       "repository": "https://github.com/proofnova/research-screening",
-      "repository_published": false
+      "repository_published": true
     },
     {
       "id": "action-ledger",
       "site": "./workspaces/action-ledger/",
       "repository": "https://github.com/proofnova/action-ledger",
-      "repository_published": false
+      "repository_published": true
     },
     {
       "id": "prerequisite-learning",
       "site": "./workspaces/prerequisite-learning/",
       "repository": "https://github.com/proofnova/prerequisite-learning",
-      "repository_published": false
+      "repository_published": true
     },
     {
       "id": "assessment-blueprint",
       "site": "./workspaces/assessment-blueprint/",
       "repository": "https://github.com/proofnova/assessment-blueprint",
-      "repository_published": false
+      "repository_published": true
     },
     {
       "id": "keyboard-workflow",
       "site": "./workspaces/keyboard-workflow/",
       "repository": "https://github.com/proofnova/keyboard-workflow",
-      "repository_published": false
+      "repository_published": true
     },
     {
       "id": "localization-contract",
       "site": "./workspaces/localization-contract/",
       "repository": "https://github.com/proofnova/localization-contract",
-      "repository_published": false
+      "repository_published": true
     },
     {
       "id": "time-window-itinerary",
       "site": "./workspaces/time-window-itinerary/",
       "repository": "https://github.com/proofnova/time-window-itinerary",
-      "repository_published": false
+      "repository_published": true
     }
   ],
   "note": "Workspace hosting does not replace the requirement for thirty independent repositories. GitHub temporarily limited repository creation."
