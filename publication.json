@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-10-24T06:33:55.255Z",
+  "checked_at": "2026-10-24T06:47:46.338Z",
   "resources": [
     {
       "id": "csv-harmonizer",
@@ -65,61 +65,61 @@
       "id": "trace-reconstruction",
       "site": "./workspaces/trace-reconstruction/",
       "repository": "https://github.com/proofnova/trace-reconstruction",
-      "repository_published": false
+      "repository_published": true
     },
     {
       "id": "slo-burn-rate",
       "site": "./workspaces/slo-burn-rate/",
       "repository": "https://github.com/proofnova/slo-burn-rate",
-      "repository_published": false
+      "repository_published": true
     },
     {
       "id": "retry-reconciliation",
       "site": "./workspaces/retry-reconciliation/",
       "repository": "https://github.com/proofnova/retry-reconciliation",
-      "repository_published": false
+      "repository_published": true
     },
     {
       "id": "capacity-placement",
       "site": "./workspaces/capacity-placement/",
       "repository": "https://github.com/proofnova/capacity-placement",
-      "repository_published": false
+      "repository_published": true
     },
     {
       "id": "restore-manifest",
       "site": "./workspaces/restore-manifest/",
       "repository": "https://github.com/proofnova/restore-manifest",
-      "repository_published": false
+      "repository_published": true
     },
     {
       "id": "invoice-reconciliation",
       "site": "./workspaces/invoice-reconciliation/",
       "repository": "https://github.com/proofnova/invoice-reconciliation",
-      "repository_published": false
+      "repository_published": true
     },
     {
       "id": "procurement-quotes",
       "site": "./workspaces/procurement-quotes/",
       "repository": "https://github.com/proofnova/procurement-quotes",
-      "repository_published": false
+      "repository_published": true
     },
     {
       "id": "inventory-rebalance",
       "site": "./workspaces/inventory-rebalance/",
       "repository": "https://github.com/proofnova/inventory-rebalance",
-      "repository_published": false
+      "repository_published": true
     },
     {
       "id": "coverage-roster",
       "site": "./workspaces/coverage-roster/",
       "repository": "https://github.com/proofnova/coverage-roster",
-      "repository_published": false
+      "repository_published": true
     },
     {
       "id": "billing-auditor",
       "site": "./workspaces/billing-auditor/",
       "repository": "https://github.com/proofnova/billing-auditor",
-      "repository_published": false
+      "repository_published": true
     },
     {
       "id": "citation-grounding",
