@@ -1,0 +1,215 @@
+{
+  "scope": "Thirty independent runnable resource archives. Archive availability does not mean thirty GitHub repositories were created.",
+  "resources": [
+    {
+      "id": "csv-harmonizer",
+      "file": "csv-harmonizer.zip",
+      "sha256": "a863f140a651c3640c9bc01a381026a5b714ac12e483d3654dd1781f71930c6b",
+      "bytes": 38042,
+      "files": 19
+    },
+    {
+      "id": "nested-record-flattener",
+      "file": "nested-record-flattener.zip",
+      "sha256": "2a27709459202323b5f3141129ea9ca75d2ae6cd49fb926c9ed53092a9af6b96",
+      "bytes": 37584,
+      "files": 19
+    },
+    {
+      "id": "time-series-repair",
+      "file": "time-series-repair.zip",
+      "sha256": "10b21ee4dd6d1b1171f1c67d39817f88eaecbbf7796013f8902bd2affe548186",
+      "bytes": 37131,
+      "files": 19
+    },
+    {
+      "id": "schema-drift",
+      "file": "schema-drift.zip",
+      "sha256": "d82b88f04fb4ed96dfbfec80c4c8bbaed62f443bcde9701be64aa9920d333e25",
+      "bytes": 36699,
+      "files": 19
+    },
+    {
+      "id": "relational-quality",
+      "file": "relational-quality.zip",
+      "sha256": "152860544f512fe905745934196f1513bcdf8f24a3945eaf6aff3c7dedea0fc8",
+      "bytes": 37835,
+      "files": 19
+    },
+    {
+      "id": "change-impact",
+      "file": "change-impact.zip",
+      "sha256": "6382e78590c116efcfa16ff5b50e926bb531b44a82f0bf821d47b40ca07fbc2d",
+      "bytes": 37194,
+      "files": 19
+    },
+    {
+      "id": "api-contract-diff",
+      "file": "api-contract-diff.zip",
+      "sha256": "79d45ebbed0a05a2e9476e37a56a2c65f7812a66bb7f924f4e82314a5838c09b",
+      "bytes": 39505,
+      "files": 19
+    },
+    {
+      "id": "ci-matrix-cover",
+      "file": "ci-matrix-cover.zip",
+      "sha256": "b2d7e82450fb5b97d3009177cd7e95fbd67de7a313660a4c609841eda593efb0",
+      "bytes": 38351,
+      "files": 20
+    },
+    {
+      "id": "release-propagation",
+      "file": "release-propagation.zip",
+      "sha256": "8ded134d945c19bd34e2f3998bb546b19357a5a0d0eb63cb92cda3f8b224f78d",
+      "bytes": 38161,
+      "files": 19
+    },
+    {
+      "id": "patch-preflight",
+      "file": "patch-preflight.zip",
+      "sha256": "6416cc28dc3cff070467a3ba88544a057066e0ee5baaf99a43b0111d5ba05dce",
+      "bytes": 38790,
+      "files": 19
+    },
+    {
+      "id": "trace-reconstruction",
+      "file": "trace-reconstruction.zip",
+      "sha256": "a76b5fe9039332f7d2add2d04c8a4f106cecd06a6327f1484fa46ae9eedce539",
+      "bytes": 38352,
+      "files": 19
+    },
+    {
+      "id": "slo-burn-rate",
+      "file": "slo-burn-rate.zip",
+      "sha256": "52bb8d75bbec6da4cc336bc951c3d2583f565468786c265f71b33859676c880e",
+      "bytes": 37901,
+      "files": 19
+    },
+    {
+      "id": "retry-reconciliation",
+      "file": "retry-reconciliation.zip",
+      "sha256": "e3a14de0c49476e2e3ff5043bd1ca4187402544dae00ad8ee97ec87be5e25de5",
+      "bytes": 38200,
+      "files": 19
+    },
+    {
+      "id": "capacity-placement",
+      "file": "capacity-placement.zip",
+      "sha256": "7b49a95104d287d9fd098d3544101ffd0bf7cd4e1cadb0f3cb18a5f2335c52d4",
+      "bytes": 37828,
+      "files": 19
+    },
+    {
+      "id": "restore-manifest",
+      "file": "restore-manifest.zip",
+      "sha256": "0111a8c4f21cb8f44ebbc4fb7761aeb56c49ceb9f341e671257e2ebdc80ed2f6",
+      "bytes": 37794,
+      "files": 19
+    },
+    {
+      "id": "invoice-reconciliation",
+      "file": "invoice-reconciliation.zip",
+      "sha256": "3da0d277c42d26ac9022ce3ee03bdc905211d0ab8596aa9f888198bbf9d495ec",
+      "bytes": 39061,
+      "files": 19
+    },
+    {
+      "id": "procurement-quotes",
+      "file": "procurement-quotes.zip",
+      "sha256": "b5ccc949da9022262a9853678e15880789b08895e8966a3688fe5b79337350b6",
+      "bytes": 39258,
+      "files": 19
+    },
+    {
+      "id": "inventory-rebalance",
+      "file": "inventory-rebalance.zip",
+      "sha256": "af437ddb813c4a432ca06db32c333163da8387c3a36d478fd0fd76bd5a2306ec",
+      "bytes": 39560,
+      "files": 20
+    },
+    {
+      "id": "coverage-roster",
+      "file": "coverage-roster.zip",
+      "sha256": "19369f54b701fba8f828227e83e5df5561296a3598f75f20635cecb318262fb4",
+      "bytes": 38429,
+      "files": 19
+    },
+    {
+      "id": "billing-auditor",
+      "file": "billing-auditor.zip",
+      "sha256": "a704b401fc6f16c1e6c1e0b907b3ac9edafa43dae5da83d4dd485f9eb5af4d65",
+      "bytes": 38995,
+      "files": 19
+    },
+    {
+      "id": "citation-grounding",
+      "file": "citation-grounding.zip",
+      "sha256": "956c415bc3e9366d5c5c23eba83dcb46a87a6a6744cd26294c4ecfb242cc4165",
+      "bytes": 39035,
+      "files": 19
+    },
+    {
+      "id": "document-redline",
+      "file": "document-redline.zip",
+      "sha256": "c49d73b0d032383e10df3b8ddd00ec615310f49feab9838d68373b6fc0ab2731",
+      "bytes": 37940,
+      "files": 19
+    },
+    {
+      "id": "requirement-evidence",
+      "file": "requirement-evidence.zip",
+      "sha256": "17b7e80346290c84a713d4dd92437c35fdb74fd8bd501ebba1927e8223d255d6",
+      "bytes": 39495,
+      "files": 19
+    },
+    {
+      "id": "research-screening",
+      "file": "research-screening.zip",
+      "sha256": "ca9393f2c6544a367ec66b1de47f4484eeca124b30a6fe795e37992342427f25",
+      "bytes": 39609,
+      "files": 19
+    },
+    {
+      "id": "action-ledger",
+      "file": "action-ledger.zip",
+      "sha256": "33a558a283308bb61ac7ab1199bea583326380b5b7f1f4d3e1d0d7abe0a212b0",
+      "bytes": 39661,
+      "files": 19
+    },
+    {
+      "id": "prerequisite-learning",
+      "file": "prerequisite-learning.zip",
+      "sha256": "552d6a8f65ead2485995db67ea4600828bf349700ae2873632aba651e154bac0",
+      "bytes": 39194,
+      "files": 19
+    },
+    {
+      "id": "assessment-blueprint",
+      "file": "assessment-blueprint.zip",
+      "sha256": "baa30108597563d46591c0392e8d8f7e703d0a723741915e51d10efaea7598a4",
+      "bytes": 39482,
+      "files": 19
+    },
+    {
+      "id": "keyboard-workflow",
+      "file": "keyboard-workflow.zip",
+      "sha256": "267bc6cad3619deb10f867b232024791e3885dfe882dc48bfcbe99f73c41236c",
+      "bytes": 39061,
+      "files": 19
+    },
+    {
+      "id": "localization-contract",
+      "file": "localization-contract.zip",
+      "sha256": "aab91d4ab0e96e66e71f9e87204f28c214afed7abba1f23d062b817b8ec7cfd8",
+      "bytes": 38499,
+      "files": 19
+    },
+    {
+      "id": "time-window-itinerary",
+      "file": "time-window-itinerary.zip",
+      "sha256": "ab4393285f434aa3578295bd66cd619d1f141f0b3f538de895bd22fe3225b081",
+      "bytes": 39926,
+      "files": 20
+    }
+  ]
+}
