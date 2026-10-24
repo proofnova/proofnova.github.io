@@ -1,9 +1,9 @@
-# Proofnova resource showcase
+# Proofnova AI Work Lab
 
-Static Korean showcase for thirty independent executable AI domain resources. No portfolio materials.
+Thirty independently runnable domain resources, AI skills and browser workspaces. No portfolio materials.
 
-Visit https://proofnova.github.io/ . Each resource links to its own repository and distinct live workspace.
+https://proofnova.github.io/
 
-Design references: Channel Talk, Toss and flex, visited 2026-10-24. Original HTML, CSS, illustrations and copy; no customer metrics or third-party assets copied.
+Latest design instruction (2026-10-24): unify the showcase and every resource with [Review Evidence Lab](https://proofnova.github.io/review-evidence-lab/). Shared paper background, forest green, panel geometry, typography and numbered workspaces. The reference site remains unchanged.
 
 The workspaces/ paths host each independently authored browser application while repository publication proceeds. This hosting does not count as thirty repositories. publication.json records verified repository availability; uncreated repositories are labeled pending.
