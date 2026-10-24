@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-10-24T07:47:35.220Z",
+  "checked_at": "2026-10-24T07:48:26.726Z",
   "resources": [
     {
       "id": "csv-harmonizer",
@@ -182,5 +182,5 @@
       "repository_published": true
     }
   ],
-  "note": "Workspace hosting does not replace the requirement for thirty independent repositories. GitHub temporarily limited repository creation."
+  "note": "All thirty independent resource repository pushes are verified. Root-hosted workspaces and runnable downloads remain available."
 }
