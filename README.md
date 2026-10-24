@@ -1,9 +1,9 @@
-# Proofnova AI Work Lab
+# Proofnova
 
 Thirty independently runnable domain resources, AI skills and browser workspaces. No portfolio materials.
 
 https://proofnova.github.io/
 
-Latest design instruction (2026-10-24): unify the showcase and every resource with [Review Evidence Lab](https://proofnova.github.io/review-evidence-lab/). Shared paper background, forest green, panel geometry, typography and numbered workspaces. The reference site remains unchanged.
+The latest user screenshot (27654.jpg, 2026-10-24) selects the original white and blue Proofnova design: large Korean headings, generous whitespace, rounded blue buttons and soft floating cards. The earlier green/paper interpretation was incorrect. See DESIGN.md.
 
 The workspaces/ paths host each independently authored browser application while repository publication proceeds. This hosting does not count as thirty repositories. publication.json records verified repository availability; uncreated repositories are labeled pending.
