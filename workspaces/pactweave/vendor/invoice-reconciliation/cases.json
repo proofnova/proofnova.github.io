@@ -1,0 +1,60 @@
+[
+  {
+    "id": "invoice-reconciliation",
+    "name": "overpayment conservation",
+    "input": {
+      "invoices": [
+        {
+          "id": "i",
+          "currency": "USD",
+          "total": "10.00"
+        }
+      ],
+      "payments": [
+        {
+          "id": "p",
+          "currency": "USD",
+          "amount": "12.00",
+          "invoice_id": "i"
+        }
+      ]
+    },
+    "expect": {
+      "summary.paid": 1,
+      "summary.allocations": 1,
+      "summary.unallocated": 1
+    },
+    "split": "worked"
+  },
+  {
+    "id": "invoice-reconciliation",
+    "name": "ambiguous equal amounts held",
+    "input": {
+      "invoices": [
+        {
+          "id": "a",
+          "currency": "USD",
+          "total": "10.00"
+        },
+        {
+          "id": "b",
+          "currency": "USD",
+          "total": "10.00"
+        }
+      ],
+      "payments": [
+        {
+          "id": "p",
+          "currency": "USD",
+          "amount": "10.00"
+        }
+      ]
+    },
+    "expect": {
+      "summary.paid": 0,
+      "summary.allocations": 0,
+      "summary.unallocated": 1
+    },
+    "split": "evaluation"
+  }
+]

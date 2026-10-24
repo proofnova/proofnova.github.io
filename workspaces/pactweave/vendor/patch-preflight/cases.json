@@ -1,0 +1,32 @@
+[
+  {
+    "id": "patch-preflight",
+    "name": "exact context replacement",
+    "input": {
+      "files": {
+        "a.txt": "one\ntwo\n"
+      },
+      "patch": "--- a/a.txt\n+++ b/a.txt\n@@ -1,2 +1,2 @@\n one\n-two\n+three\n"
+    },
+    "expect": {
+      "files.a.txt": "one\nthree\n",
+      "summary.files": 1,
+      "summary.hunks": 1
+    },
+    "split": "worked"
+  },
+  {
+    "id": "patch-preflight",
+    "name": "create file in memory",
+    "input": {
+      "files": {},
+      "patch": "--- /dev/null\n+++ b/new.txt\n@@ -0,0 +1,2 @@\n+hi\n+there\n"
+    },
+    "expect": {
+      "files.new.txt": "hi\nthere\n",
+      "summary.files": 1,
+      "summary.hunks": 1
+    },
+    "split": "evaluation"
+  }
+]

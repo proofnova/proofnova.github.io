@@ -1,0 +1,103 @@
+[
+  {
+    "id": "relational-quality",
+    "name": "orphan and duplicate",
+    "input": {
+      "tables": {
+        "p": {
+          "rows": [
+            {
+              "id": 1
+            },
+            {
+              "id": 1
+            }
+          ],
+          "primary_key": [
+            "id"
+          ]
+        },
+        "c": {
+          "rows": [
+            {
+              "id": 4,
+              "pid": 2
+            }
+          ],
+          "primary_key": [
+            "id"
+          ]
+        }
+      },
+      "foreign_keys": [
+        {
+          "from": "c",
+          "to": "p",
+          "fields": [
+            "pid"
+          ],
+          "target_fields": [
+            "id"
+          ]
+        }
+      ]
+    },
+    "expect": {
+      "summary.tables": 2,
+      "summary.rows": 3,
+      "summary.violations": 2
+    },
+    "split": "worked"
+  },
+  {
+    "id": "relational-quality",
+    "name": "nullable reference",
+    "input": {
+      "tables": {
+        "p": {
+          "rows": [
+            {
+              "id": 1
+            }
+          ],
+          "primary_key": [
+            "id"
+          ]
+        },
+        "c": {
+          "rows": [
+            {
+              "id": 2,
+              "pid": null
+            },
+            {
+              "id": 3,
+              "pid": 1
+            }
+          ],
+          "primary_key": [
+            "id"
+          ]
+        }
+      },
+      "foreign_keys": [
+        {
+          "from": "c",
+          "to": "p",
+          "fields": [
+            "pid"
+          ],
+          "target_fields": [
+            "id"
+          ],
+          "nullable": true
+        }
+      ]
+    },
+    "expect": {
+      "summary.violations": 0,
+      "valid": true
+    },
+    "split": "evaluation"
+  }
+]

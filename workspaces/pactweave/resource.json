@@ -1,0 +1,45 @@
+{
+  "id": "pactweave",
+  "name": "ProofNova PactWeave",
+  "version": "0.1.0",
+  "public_skill": "pactweave",
+  "cli": "pactweave",
+  "slogan": "One Skill. Every Workflow. Verified.",
+  "domain": "software",
+  "domains": [
+    "software",
+    "operations",
+    "data",
+    "business",
+    "research",
+    "learning"
+  ],
+  "repository": "https://github.com/proofnova/proofnova-pactweave",
+  "site": "https://proofnova.github.io/workspaces/pactweave/",
+  "default_language": "en",
+  "languages": ["en", "ko", "ja", "zh-CN"],
+  "architecture_credit": "Architecture and product direction designed by ProofNova",
+  "job": "Bind an immutable task contract, execute registered capabilities and verify each critical outcome with evidence.",
+  "method": "Model-free preprocessing, PactLoop, WeaveMesh, PactVault, source-bound session caching and on-demand BM25 retrieval.",
+  "required": ["request", "task", "acceptance_criteria"],
+  "acceptance": "No PASS without actual execution, current integrity checks and every critical outcome passing.",
+  "browser": {
+    "model_required": false,
+    "accounts": false,
+    "data_upload": false,
+    "persistence": "memory only",
+    "processes": "Local CLI Required"
+  },
+  "local": {
+    "node": ">=22",
+    "runtime_packages": 0,
+    "model_required": false,
+    "paid_calls": "disabled",
+    "automatic_downloads": "disabled"
+  },
+  "source_lock": "vendor/source-lock.json",
+  "evidence": "docs/verification.md",
+  "novelty_status": "practical-differentiation-hypothesis",
+  "external_impact_evidence": "Not yet verified",
+  "flagship": true
+}

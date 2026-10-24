@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "checked_at": "2026-10-24T16:55:52.6225587Z",
+  "repository": "https://github.com/proofnova/proofnova-pactweave",
+  "repository_verified": true,
+  "repository_commit": "f664689a85d93a3f42c87b12e431f2fceb001f43",
+  "public_skill": "pactweave",
+  "site": "https://proofnova.github.io/workspaces/pactweave/",
+  "showcase_position": 1,
+  "architecture_designer": "ProofNova",
+  "tests_passed": 142,
+  "browser_fixtures_passed": 60,
+  "browser_adapters": 30,
+  "languages": [
+    "en",
+    "ko",
+    "ja",
+    "zh-CN"
+  ],
+  "website_verification": "pending deployed UI check"
+}

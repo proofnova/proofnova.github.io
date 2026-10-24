@@ -1,0 +1,49 @@
+[
+  {
+    "id": "restore-manifest",
+    "name": "chunk plus reconstructed hash",
+    "input": {
+      "objects": {
+        "2cf24dba5fb0a30e26e83b2ac5b9e29e1b161e5c1fa7425e73043362938b9824": "aGVsbG8="
+      },
+      "files": [
+        {
+          "path": "a.txt",
+          "size": 5,
+          "sha256": "2cf24dba5fb0a30e26e83b2ac5b9e29e1b161e5c1fa7425e73043362938b9824",
+          "chunks": [
+            "2cf24dba5fb0a30e26e83b2ac5b9e29e1b161e5c1fa7425e73043362938b9824"
+          ]
+        }
+      ]
+    },
+    "expect": {
+      "summary.files": 1,
+      "summary.restorable": 1,
+      "summary.failures": 0
+    },
+    "split": "worked"
+  },
+  {
+    "id": "restore-manifest",
+    "name": "missing object cannot restore",
+    "input": {
+      "objects": {},
+      "files": [
+        {
+          "path": "a.txt",
+          "size": 5,
+          "sha256": "2cf24dba5fb0a30e26e83b2ac5b9e29e1b161e5c1fa7425e73043362938b9824",
+          "chunks": [
+            "2cf24dba5fb0a30e26e83b2ac5b9e29e1b161e5c1fa7425e73043362938b9824"
+          ]
+        }
+      ]
+    },
+    "expect": {
+      "summary.files": 1,
+      "summary.restorable": 0
+    },
+    "split": "evaluation"
+  }
+]

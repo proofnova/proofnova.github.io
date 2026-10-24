@@ -1,0 +1,37 @@
+[
+  {
+    "id": "localization-contract",
+    "name": "nested plural preserves variables",
+    "input": {
+      "source": {
+        "a": "{n, plural, one {{name} has one} other {{name} has #}}"
+      },
+      "target": {
+        "a": "{n, plural, other {{name}: #}}"
+      },
+      "locale": "ko"
+    },
+    "expect": {
+      "summary.valid": true,
+      "summary.findings": 0
+    },
+    "split": "worked"
+  },
+  {
+    "id": "localization-contract",
+    "name": "missing nested variable",
+    "input": {
+      "source": {
+        "a": "Hello {name}"
+      },
+      "target": {
+        "a": "안녕하세요"
+      }
+    },
+    "expect": {
+      "summary.valid": false,
+      "summary.findings": 1
+    },
+    "split": "evaluation"
+  }
+]

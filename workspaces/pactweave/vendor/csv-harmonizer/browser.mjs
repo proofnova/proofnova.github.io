@@ -1,0 +1,668 @@
+// Proofnova — MIT. Bundled first-party source, no runtime dependencies.
+// SHA-256, FIPS 180-4: synchronous adapter for the same bounded resource code.
+// Tested against Node's crypto for Unicode, empty and multi-block byte inputs.
+function sha256(value){
+ const bytes=typeof value==='string'?new TextEncoder().encode(value):value;
+ const k=[0x428a2f98,0x71374491,0xb5c0fbcf,0xe9b5dba5,0x3956c25b,0x59f111f1,0x923f82a4,0xab1c5ed5,0xd807aa98,0x12835b01,0x243185be,0x550c7dc3,0x72be5d74,0x80deb1fe,0x9bdc06a7,0xc19bf174,0xe49b69c1,0xefbe4786,0x0fc19dc6,0x240ca1cc,0x2de92c6f,0x4a7484aa,0x5cb0a9dc,0x76f988da,0x983e5152,0xa831c66d,0xb00327c8,0xbf597fc7,0xc6e00bf3,0xd5a79147,0x06ca6351,0x14292967,0x27b70a85,0x2e1b2138,0x4d2c6dfc,0x53380d13,0x650a7354,0x766a0abb,0x81c2c92e,0x92722c85,0xa2bfe8a1,0xa81a664b,0xc24b8b70,0xc76c51a3,0xd192e819,0xd6990624,0xf40e3585,0x106aa070,0x19a4c116,0x1e376c08,0x2748774c,0x34b0bcb5,0x391c0cb3,0x4ed8aa4a,0x5b9cca4f,0x682e6ff3,0x748f82ee,0x78a5636f,0x84c87814,0x8cc70208,0x90befffa,0xa4506ceb,0xbef9a3f7,0xc67178f2];
+ const h=[0x6a09e667,0xbb67ae85,0x3c6ef372,0xa54ff53a,0x510e527f,0x9b05688c,0x1f83d9ab,0x5be0cd19];
+ const padded=new Uint8Array(Math.ceil((bytes.length+9)/64)*64);padded.set(bytes);padded[bytes.length]=128;
+ const view=new DataView(padded.buffer),bitLength=BigInt(bytes.length)*8n;view.setUint32(padded.length-8,Number(bitLength>>32n));view.setUint32(padded.length-4,Number(bitLength&0xffffffffn));
+ const rotate=(x,n)=>(x>>>n)|(x<<(32-n)),w=new Uint32Array(64);
+ for(let offset=0;offset<padded.length;offset+=64){
+  for(let i=0;i<16;i++)w[i]=view.getUint32(offset+i*4);
+  for(let i=16;i<64;i++){const a=w[i-15],b=w[i-2];w[i]=(w[i-16]+(rotate(a,7)^rotate(a,18)^(a>>>3))+w[i-7]+(rotate(b,17)^rotate(b,19)^(b>>>10)))>>>0;}
+  let [a,b,c,d,e,f,g,z]=h;
+  for(let i=0;i<64;i++){const t1=(z+(rotate(e,6)^rotate(e,11)^rotate(e,25))+((e&f)^(~e&g))+k[i]+w[i])>>>0,t2=((rotate(a,2)^rotate(a,13)^rotate(a,22))+((a&b)^(a&c)^(b&c)))>>>0;z=g;g=f;f=e;e=(d+t1)>>>0;d=c;c=b;b=a;a=(t1+t2)>>>0;}
+  [a,b,c,d,e,f,g,z].forEach((x,i)=>h[i]=(h[i]+x)>>>0);
+ }
+ return h.map(x=>x.toString(16).padStart(8,'0')).join('');
+}
+const createHash=()=>{let data;return {update(value){data=value;return this;},digest(format){if(format!=='hex')throw new Error('Only hex supported');return sha256(data);}};};
+const BrowserBuffer={from(encoded,encoding){if(encoding!=='base64')throw new Error('Only base64 supported');return Uint8Array.from(atob(encoded),c=>c.charCodeAt(0));},concat(chunks){const result=new Uint8Array(chunks.reduce((n,c)=>n+c.length,0));let offset=0;for(const c of chunks){result.set(c,offset);offset+=c.length;}return result;}};
+
+const Buffer=BrowserBuffer;
+const __core=(()=>{
+
+class InputError extends Error {
+  constructor(message, code = "INPUT_INVALID") {
+    super(message);
+    this.code = code;
+  }
+}
+const requireThat = (ok, message, code) => {
+  if (!ok) throw new InputError(message, code);
+};
+const obj = (value, name = "input") => {
+  requireThat(
+    value !== null && typeof value === "object" && !Array.isArray(value),
+    `${name} must be an object`,
+  );
+  return value;
+};
+const arr = (value, name = "items", max = 10000) => {
+  requireThat(
+    Array.isArray(value) && value.length <= max,
+    `${name} must be an array of at most ${max} items`,
+  );
+  return value;
+};
+const str = (value, name = "value") => {
+  requireThat(
+    typeof value === "string" &&
+      value.trim().length > 0 &&
+      value.length <= 1000000,
+    `${name} must be nonempty text`,
+  );
+  return value;
+};
+const number = (
+  value,
+  name = "value",
+  min = -Infinity,
+  max = Infinity,
+) => {
+  requireThat(
+    Number.isFinite(value) && value >= min && value <= max,
+    `${name} must be a finite number in [${min},${max}]`,
+  );
+  return value;
+};
+const integer = (
+  value,
+  name = "value",
+  min = 0,
+  max = Number.MAX_SAFE_INTEGER,
+) => {
+  number(value, name, min, max);
+  requireThat(Number.isSafeInteger(value), `${name} must be a safe integer`);
+  return value;
+};
+const unique = (values, name = "IDs") => {
+  requireThat(new Set(values).size === values.length, `${name} must be unique`);
+  return values;
+};
+const sha = (value) =>
+  createHash("sha256")
+    .update(
+      typeof value === "string" || value instanceof Uint8Array
+        ? value
+        : JSON.stringify(value),
+    )
+    .digest("hex");
+const clone = (value) => structuredClone(value);
+const order = (values) =>
+  [...values].sort((a, b) => String(a).localeCompare(String(b), "en"));
+const rowsById = (items, name = "items") => {
+  arr(items, name);
+  unique(
+    items.map((item) => str(obj(item).id, `${name}.id`)),
+    `${name} IDs`,
+  );
+  return new Map(items.map((item) => [item.id, item]));
+};
+function timestamp(value, name = "timestamp") {
+  str(value, name);
+  const match =
+    /^(\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2}):(\d{2})(?:\.\d{1,3})?(Z|[+-]\d{2}:\d{2})$/.exec(
+      value,
+    );
+  requireThat(match, `${name} needs an explicit UTC offset and seconds`);
+  const [, y, m, d, h, minute, second, zone] = match;
+  const date = new Date(Date.UTC(+y, +m - 1, +d));
+  requireThat(
+    date.getUTCFullYear() === +y &&
+      date.getUTCMonth() === +m - 1 &&
+      date.getUTCDate() === +d &&
+      +h < 24 &&
+      +minute < 60 &&
+      +second < 60,
+    `${name} has invalid calendar fields`,
+  );
+  if (zone !== "Z") {
+    const [hours, minutes] = zone.slice(1).split(":").map(Number);
+    requireThat(
+      hours <= 14 && minutes < 60 && (hours < 14 || minutes === 0),
+      `${name} has an invalid offset`,
+    );
+  }
+  const result = Date.parse(value);
+  requireThat(Number.isFinite(result), `${name} is invalid`);
+  return result;
+}
+function minor(value, scale = 2) {
+  integer(scale, "scale", 0, 6);
+  requireThat(
+    typeof value === "string" &&
+      /^-?\d+(?:\.\d+)?$/.test(value) &&
+      value.length <= 40,
+    "Amounts must be exact decimal strings",
+  );
+  const sign = value.startsWith("-") ? -1n : 1n;
+  const [whole, fraction = ""] = value.replace(/^-/, "").split(".");
+  requireThat(
+    fraction.length <= scale,
+    `Amount has more than ${scale} fractional digits`,
+  );
+  return (
+    sign *
+    (BigInt(whole) * 10n ** BigInt(scale) +
+      BigInt(fraction.padEnd(scale, "0") || "0"))
+  );
+}
+function roundDiv(n, d) {
+  requireThat(d > 0n, "Positive divisor required");
+  const sign = n < 0n ? -1n : 1n;
+  n = n < 0n ? -n : n;
+  return sign * ((n + d / 2n) / d);
+}
+const stringMoney = (value) => String(value);
+function topology(nodes, edges) {
+  unique(nodes, "graph node IDs");
+  const known = new Set(nodes);
+  const outgoing = new Map(nodes.map((id) => [id, []]));
+  const count = new Map(nodes.map((id) => [id, 0]));
+  const seen = new Set();
+  for (const edge of arr(edges, "edges")) {
+    requireThat(
+      Array.isArray(edge) &&
+        edge.length === 2 &&
+        edge.every((id) => known.has(id)),
+      "Edge references unknown nodes",
+    );
+    const key = JSON.stringify(edge);
+    if (seen.has(key)) continue;
+    seen.add(key);
+    outgoing.get(edge[0]).push(edge[1]);
+    count.set(edge[1], count.get(edge[1]) + 1);
+  }
+  const queue = order(nodes.filter((id) => count.get(id) === 0)),
+    sorted = [];
+  while (queue.length) {
+    const id = queue.shift();
+    sorted.push(id);
+    for (const next of order(outgoing.get(id))) {
+      count.set(next, count.get(next) - 1);
+      if (count.get(next) === 0) {
+        queue.push(next);
+        queue.sort();
+      }
+    }
+  }
+  requireThat(
+    sorted.length === nodes.length,
+    "Dependency cycle detected",
+    "CYCLE_DETECTED",
+  );
+  return { sorted, outgoing };
+}
+function closure(seeds, adjacency) {
+  const reached = new Set(seeds),
+    queue = [...seeds];
+  while (queue.length) {
+    for (const item of adjacency.get(queue.shift()) ?? [])
+      if (!reached.has(item)) {
+        reached.add(item);
+        queue.push(item);
+      }
+  }
+  return reached;
+}
+const select = (record, keys) =>
+  Object.fromEntries(keys.map((key) => [key, record[key]]));
+const envelope = (resource, result, input) => ({
+  resource,
+  version: 1,
+  input_sha256: sha(input),
+  result,
+});
+
+function parseCSV(source) {
+  requireThat(typeof source === "string", "CSV must be text");
+  source = source.replace(/^\uFEFF/, "");
+  const records = [];
+  let row = [],
+    cell = "",
+    state = "start";
+  const finishCell = () => {
+    row.push(cell);
+    cell = "";
+    state = "start";
+  };
+  const finishRow = () => {
+    finishCell();
+    records.push(row);
+    row = [];
+  };
+  for (let i = 0; i < source.length; i++) {
+    const c = source[i];
+    if (state === "quoted") {
+      if (c === '"') {
+        if (source[i + 1] === '"') {
+          cell += '"';
+          i++;
+        } else state = "closed";
+      } else cell += c;
+      continue;
+    }
+    if (c === ",") {
+      finishCell();
+      continue;
+    }
+    if (c === "\n" || c === "\r") {
+      if (c === "\r" && source[i + 1] === "\n") i++;
+      finishRow();
+      continue;
+    }
+    if (state === "closed")
+      throw new InputError("Unexpected characters after quoted CSV field");
+    if (c === '"') {
+      requireThat(state === "start", "Quote in unquoted CSV field");
+      state = "quoted";
+    } else {
+      cell += c;
+      state = "plain";
+    }
+  }
+  requireThat(state !== "quoted", "Unterminated CSV quote");
+  if (cell.length || row.length || state === "closed") finishRow();
+  requireThat(records.length > 0, "CSV is empty");
+  const headers = records.shift();
+  unique(headers, "CSV headers");
+  return {
+    headers,
+    rows: records.map((values, index) => ({ values, row: index + 2 })),
+  };
+}
+
+return {InputError,requireThat,obj,arr,str,number,integer,unique,sha,clone,order,rowsById,timestamp,minor,roundDiv,stringMoney,topology,closure,select,envelope,parseCSV};})();
+const __diff=(()=>{
+const { requireThat }=__core;
+function lcs(a, b) {
+  requireThat(
+    a.length <= 2000 && b.length <= 2000 && a.length * b.length <= 1000000,
+    "Diff exceeds bounded comparison size",
+  );
+  const dp = Array.from(
+    { length: a.length + 1 },
+    () => new Uint16Array(b.length + 1),
+  );
+  for (let i = a.length - 1; i >= 0; i--)
+    for (let j = b.length - 1; j >= 0; j--)
+      dp[i][j] =
+        a[i] === b[j]
+          ? dp[i + 1][j + 1] + 1
+          : Math.max(dp[i + 1][j], dp[i][j + 1]);
+  const pairs = [];
+  let i = 0,
+    j = 0;
+  while (i < a.length && j < b.length) {
+    if (a[i] === b[j]) {
+      pairs.push([i++, j++]);
+    } else if (dp[i + 1][j] >= dp[i][j + 1]) i++;
+    else j++;
+  }
+  return pairs;
+}
+function wordDiff(a, b) {
+  const x = a.match(/\s+|\S+/g) ?? [],
+    y = b.match(/\s+|\S+/g) ?? [],
+    pairs = [...lcs(x, y), [x.length, y.length]],
+    result = [];
+  let i = 0,
+    j = 0;
+  for (const [p, q] of pairs) {
+    if (i < p) result.push({ op: "remove", text: x.slice(i, p).join("") });
+    if (j < q) result.push({ op: "add", text: y.slice(j, q).join("") });
+    if (p < x.length) result.push({ op: "equal", text: x[p] });
+    i = p + 1;
+    j = q + 1;
+  }
+  return result;
+}
+
+return {lcs,wordDiff};})();
+const __icu=(()=>{
+const { requireThat }=__core;
+function parseICU(message) {
+  requireThat(
+    typeof message === "string" && message.length <= 100000,
+    "ICU message must be bounded text",
+  );
+  let i = 0,
+    depth = 0;
+  const argumentsMap = new Map(),
+    plurals = [];
+  const whitespace = () => {
+    while (/\s/.test(message[i] ?? "") && i < message.length) i++;
+  };
+  const token = () => {
+    whitespace();
+    const start = i;
+    while (i < message.length && !/[\s{},]/.test(message[i])) i++;
+    return message.slice(start, i);
+  };
+  function body(nested = false) {
+    let quote = false;
+    while (i < message.length) {
+      const c = message[i];
+      if (c === "'") {
+        if (message[i + 1] === "'") {
+          i += 2;
+          continue;
+        }
+        if (quote || message[i + 1] === "{" || message[i + 1] === "}") {
+          quote = !quote;
+          i++;
+          continue;
+        }
+      }
+      if (!quote && c === "{") {
+        argument();
+        continue;
+      }
+      if (!quote && c === "}") {
+        requireThat(nested, "Unmatched ICU closing brace");
+        i++;
+        return;
+      }
+      i++;
+    }
+    requireThat(!nested, "Unclosed ICU option");
+    requireThat(!quote, "Unclosed ICU quote");
+  }
+  function argument() {
+    requireThat(++depth <= 30, "ICU nesting too deep");
+    i++;
+    const name = token();
+    requireThat(
+      /^[A-Za-z_][A-Za-z0-9_]*$/.test(name),
+      "Invalid ICU argument name",
+    );
+    whitespace();
+    let type = "simple";
+    if (message[i] === ",") {
+      i++;
+      type = token();
+      requireThat(
+        [
+          "plural",
+          "selectordinal",
+          "select",
+          "number",
+          "date",
+          "time",
+        ].includes(type),
+        "Unsupported ICU argument type",
+      );
+      whitespace();
+    }
+    const previous = argumentsMap.get(name);
+    requireThat(
+      !previous || previous === type,
+      "Argument used with inconsistent types",
+    );
+    argumentsMap.set(name, type);
+    if (["plural", "selectordinal", "select"].includes(type)) {
+      requireThat(message[i] === ",", "ICU selector needs options");
+      i++;
+      const options = [];
+      whitespace();
+      if (type !== "select" && message.slice(i, i + 7) === "offset:") {
+        i += 7;
+        const offset = token();
+        requireThat(/^\d+$/.test(offset), "Invalid plural offset");
+      }
+      let closed = false;
+      while (i < message.length) {
+        whitespace();
+        if (message[i] === "}") {
+          i++;
+          closed = true;
+          break;
+        }
+        const key = token();
+        requireThat(
+          key && !options.includes(key),
+          "Invalid or duplicate ICU option",
+        );
+        if (type !== "select")
+          requireThat(
+            /^(zero|one|two|few|many|other|=\d+)$/.test(key),
+            "Invalid plural category",
+          );
+        options.push(key);
+        whitespace();
+        requireThat(message[i] === "{", "ICU option needs a body");
+        i++;
+        body(true);
+      }
+      requireThat(closed, "Unclosed ICU selector");
+      requireThat(options.includes("other"), "ICU selector requires other");
+      if (type !== "select") plurals.push({ name, type, options });
+    } else {
+      if (message[i] === ",") {
+        i++;
+        while (i < message.length && message[i] !== "}") {
+          requireThat(message[i] !== "{", "Nested formatter style unsupported");
+          i++;
+        }
+      }
+      requireThat(message[i] === "}", "Unclosed ICU argument");
+      i++;
+    }
+    depth--;
+  }
+  body();
+  return { arguments: Object.fromEntries(argumentsMap), plurals };
+}
+
+return {parseICU};})();
+const __flow=(()=>{
+const { integer, requireThat }=__core;
+// Successive shortest augmenting paths; reverse arcs can undo an earlier greedy choice.
+function minCostFlow(nodeCount, arcs, source, sink) {
+  integer(nodeCount, "nodeCount", 2, 250);
+  const graph = Array.from({ length: nodeCount }, () => []),
+    tracked = [];
+  for (const arc of arcs) {
+    integer(arc.capacity, "capacity", 0, 10000000);
+    integer(arc.cost, "cost", 0, 1000000);
+    const forward = {
+        to: arc.to,
+        rev: graph[arc.to].length,
+        capacity: arc.capacity,
+        cost: arc.cost,
+        original: arc.capacity,
+      },
+      back = {
+        to: arc.from,
+        rev: graph[arc.from].length,
+        capacity: 0,
+        cost: -arc.cost,
+      };
+    graph[arc.from].push(forward);
+    graph[arc.to].push(back);
+    tracked.push({ arc, forward });
+  }
+  let flow = 0,
+    cost = 0,
+    rounds = 0;
+  while (true) {
+    requireThat(++rounds <= 10000, "Flow search exceeded bound");
+    const distance = Array(nodeCount).fill(Infinity),
+      previous = Array(nodeCount).fill(null);
+    distance[source] = 0;
+    for (let pass = 0; pass < nodeCount - 1; pass++) {
+      let changed = false;
+      for (let u = 0; u < nodeCount; u++)
+        if (Number.isFinite(distance[u]))
+          for (let e = 0; e < graph[u].length; e++) {
+            const edge = graph[u][e];
+            if (
+              edge.capacity > 0 &&
+              distance[u] + edge.cost < distance[edge.to]
+            ) {
+              distance[edge.to] = distance[u] + edge.cost;
+              previous[edge.to] = [u, e];
+              changed = true;
+            }
+          }
+      if (!changed) break;
+    }
+    if (!previous[sink]) break;
+    let amount = Infinity;
+    for (let v = sink; v !== source;) {
+      const [u, e] = previous[v];
+      amount = Math.min(amount, graph[u][e].capacity);
+      v = u;
+    }
+    for (let v = sink; v !== source;) {
+      const [u, e] = previous[v],
+        edge = graph[u][e];
+      edge.capacity -= amount;
+      graph[v][edge.rev].capacity += amount;
+      v = u;
+    }
+    flow += amount;
+    cost += amount * distance[sink];
+    requireThat(Number.isSafeInteger(cost), "Flow cost overflow");
+  }
+  return {
+    flow,
+    cost,
+    arcs: tracked.map(({ arc, forward }) => ({
+      ...arc,
+      flow: forward.original - forward.capacity,
+    })),
+  };
+}
+
+return {minCostFlow};})();
+const __resource=(()=>{const {
+  obj,
+  arr,
+  str,
+  unique,
+  requireThat,
+  parseCSV,
+  minor,
+  sha,
+}=__core;
+function run(input) {
+  obj(input);
+  const fields = arr(input.schema, "schema", 100);
+  for (const field of fields) requireThat(!field.type || ["string","integer","decimal","boolean"].includes(field.type), "Unknown field type");
+  const sources = arr(input.sources, "sources", 100);
+  unique(sources.map(source => str(source.id)), "source IDs");
+  unique(
+    fields.map((f) => str(f.name)),
+    "schema names",
+  );
+  const keys = arr(input.keys, "keys", 10);
+  requireThat(
+    keys.length && keys.every((k) => fields.some((f) => f.name === k)),
+    "Keys must be schema fields",
+  );
+  const accepted = new Map(),
+    rejected = [],
+    duplicates = [],
+    conflicts = [];
+  for (const source of sources) {
+    const id = str(source.id),
+      csv = parseCSV(source.csv),
+      mapping = new Map();
+    for (const field of fields) {
+      const aliases = new Set([field.name, ...(field.aliases ?? [])]);
+      const positions = csv.headers
+        .map((h, i) => (aliases.has(h.trim()) ? i : -1))
+        .filter((i) => i >= 0);
+      requireThat(positions.length <= 1, `Ambiguous columns for ${field.name}`);
+      if (field.required)
+        requireThat(positions.length === 1, `Missing column ${field.name}`);
+      mapping.set(field.name, positions[0]);
+    }
+    for (const row of csv.rows) {
+      const errors = [],
+        values = Object.create(null);
+      if (row.values.length !== csv.headers.length) errors.push("column-count");
+      for (const field of fields) {
+        const position = mapping.get(field.name),
+          raw = position === undefined ? "" : (row.values[position] ?? "");
+        const value = raw.trim();
+        if (!value) {
+          values[field.name] = null;
+          if (field.required) errors.push(`required:${field.name}`);
+          continue;
+        }
+        try {
+          if (field.type === "integer") {
+            requireThat(
+              /^-?\d+$/.test(value) && Number.isSafeInteger(Number(value)),
+              "integer",
+            );
+            values[field.name] = Number(value);
+          } else if (field.type === "decimal") {
+            values[field.name] = String(minor(value, field.scale ?? 2));
+          } else if (field.type === "boolean") {
+            requireThat(
+              ["true", "false", "1", "0"].includes(value.toLowerCase()),
+              "boolean",
+            );
+            values[field.name] = ["true", "1"].includes(value.toLowerCase());
+          } else {
+            requireThat(
+              !field.type || field.type === "string",
+              "Unknown field type",
+            );
+            values[field.name] = value;
+          }
+        } catch {
+          errors.push(`type:${field.name}`);
+        }
+      }
+      if (keys.some((key) => values[key] === null)) errors.push("missing-key");
+      const origin = { source: id, row: row.row };
+      if (errors.length) {
+        rejected.push({ ...origin, errors });
+        continue;
+      }
+      const key = JSON.stringify(keys.map((k) => values[k]));
+      if (!accepted.has(key)) {
+        accepted.set(key, { values, origins: [origin], digest: sha(values) });
+        continue;
+      }
+      const previous = accepted.get(key);
+      if (previous.digest === sha(values)) {
+        previous.origins.push(origin);
+        duplicates.push(origin);
+      } else {
+        conflicts.push({
+          key: JSON.parse(key),
+          previous: previous.values,
+          incoming: values,
+          origin,
+        });
+        previous.conflict = true;
+      }
+    }
+  }
+  const rows = [...accepted.values()]
+    .filter((row) => !row.conflict)
+    .map(({ values, origins }) => ({ values, origins }));
+  return {
+    rows,
+    rejected,
+    duplicates,
+    conflicts,
+    summary: {
+      accepted: rows.length,
+      rejected: rejected.length,
+      duplicates: duplicates.length,
+      conflicts: conflicts.length,
+    },
+  };
+}
+
+return {run};})();
+export function run(input){ __core.obj(input); for(const key of ["sources","schema","keys"]) __core.requireThat(Object.hasOwn(input,key),'Missing required field: '+key); return __resource.run(input); }
+export function execute(input){return __core.envelope("csv-harmonizer",run(input),input);}

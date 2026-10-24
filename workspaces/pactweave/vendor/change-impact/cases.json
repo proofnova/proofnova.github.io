@@ -1,0 +1,94 @@
+[
+  {
+    "id": "change-impact",
+    "name": "reverse dependency closure",
+    "input": {
+      "projects": [
+        {
+          "id": "core",
+          "roots": [
+            "core"
+          ],
+          "dependencies": [],
+          "tests": [
+            "test-core"
+          ]
+        },
+        {
+          "id": "web",
+          "roots": [
+            "web"
+          ],
+          "dependencies": [
+            "core"
+          ],
+          "tests": [
+            "test-web"
+          ]
+        },
+        {
+          "id": "docs",
+          "roots": [
+            "docs"
+          ],
+          "dependencies": [],
+          "tests": []
+        }
+      ],
+      "changed_files": [
+        "core/a.js"
+      ]
+    },
+    "expect": {
+      "summary.affected": 2,
+      "summary.tests": 2
+    },
+    "split": "worked"
+  },
+  {
+    "id": "change-impact",
+    "name": "unknown root requires full run",
+    "input": {
+      "projects": [
+        {
+          "id": "core",
+          "roots": [
+            "core"
+          ],
+          "dependencies": [],
+          "tests": [
+            "test-core"
+          ]
+        },
+        {
+          "id": "web",
+          "roots": [
+            "web"
+          ],
+          "dependencies": [
+            "core"
+          ],
+          "tests": [
+            "test-web"
+          ]
+        },
+        {
+          "id": "docs",
+          "roots": [
+            "docs"
+          ],
+          "dependencies": [],
+          "tests": []
+        }
+      ],
+      "changed_files": [
+        "global.config"
+      ]
+    },
+    "expect": {
+      "summary.affected": 3,
+      "summary.tests": 2
+    },
+    "split": "evaluation"
+  }
+]

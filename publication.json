@@ -1,6 +1,12 @@
 {
-  "checked_at": "2026-10-24T09:58:46.442Z",
+  "checked_at": "2026-10-24T16:55:58.061Z",
   "resources": [
+    {
+      "id": "pactweave",
+      "site": "./workspaces/pactweave/",
+      "repository": "https://github.com/proofnova/proofnova-pactweave",
+      "repository_published": true
+    },
     {
       "id": "csv-harmonizer",
       "site": "./workspaces/csv-harmonizer/",
@@ -182,5 +188,5 @@
       "repository_published": true
     }
   ],
-  "note": "All thirty independent resource repository pushes are verified. Root-hosted workspaces and runnable downloads remain available."
+  "note": "Thirty independent task-tool repositories plus the separately published PactWeave flagship. Root-hosted workspaces provide additional access."
 }

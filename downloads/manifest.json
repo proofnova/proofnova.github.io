@@ -1,6 +1,13 @@
 {
-  "scope": "Thirty independent runnable resource archives. Archive availability does not mean thirty GitHub repositories were created.",
+  "scope": "Thirty independent task tools and one PactWeave flagship source pack. Repository publication is recorded separately.",
   "resources": [
+    {
+      "id": "pactweave",
+      "file": "pactweave.zip",
+      "sha256": "2fac5bdc0035db71e37da1f8eb5e8037a2161dc06f1331c9a707f69c37ca5fcd",
+      "bytes": 5368423,
+      "files": 196
+    },
     {
       "id": "csv-harmonizer",
       "file": "csv-harmonizer.zip",

@@ -1,0 +1,72 @@
+[
+  {
+    "id": "ci-matrix-cover",
+    "name": "combined job beats separate",
+    "input": {
+      "requirements": [
+        "linux",
+        "win"
+      ],
+      "jobs": [
+        {
+          "id": "a",
+          "cost": 4,
+          "covers": [
+            "linux"
+          ]
+        },
+        {
+          "id": "b",
+          "cost": 4,
+          "covers": [
+            "win"
+          ]
+        },
+        {
+          "id": "c",
+          "cost": 6,
+          "covers": [
+            "linux",
+            "win"
+          ]
+        }
+      ]
+    },
+    "expect": {
+      "summary.selected": 1,
+      "summary.cost": 6,
+      "selected": [
+        "c"
+      ],
+      "feasible": true
+    },
+    "split": "worked"
+  },
+  {
+    "id": "ci-matrix-cover",
+    "name": "coverage cannot repair missing platform",
+    "input": {
+      "requirements": [
+        "linux",
+        "mac"
+      ],
+      "jobs": [
+        {
+          "id": "a",
+          "cost": 3,
+          "covers": [
+            "linux"
+          ]
+        }
+      ]
+    },
+    "expect": {
+      "feasible": false,
+      "missing": [
+        "mac"
+      ],
+      "summary.covered": 1
+    },
+    "split": "evaluation"
+  }
+]

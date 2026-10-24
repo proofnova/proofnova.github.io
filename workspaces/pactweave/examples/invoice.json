@@ -1,0 +1,31 @@
+{
+  "request": "Reconcile invoice i against its payment, preserve the overpayment, and verify that one invoice is paid.",
+  "project_id": "quickstart",
+  "session_id": "invoice-demo",
+  "task": {
+    "adapter": "invoice-reconciliation",
+    "input": {
+      "invoices": [{ "id": "i", "currency": "USD", "total": "10.00" }],
+      "payments": [
+        { "id": "p", "currency": "USD", "amount": "12.00", "invoice_id": "i" }
+      ]
+    }
+  },
+  "constraints": ["Use exact monetary amounts", "Do not discard overpayment"],
+  "acceptance_criteria": [
+    {
+      "id": "paid-count",
+      "path": "result.summary.paid",
+      "operator": "equals",
+      "expected": 1,
+      "critical": true
+    },
+    {
+      "id": "preserved-overpayment",
+      "path": "result.summary.unallocated",
+      "operator": "equals",
+      "expected": 1,
+      "critical": true
+    }
+  ]
+}

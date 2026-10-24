@@ -1,0 +1,117 @@
+[
+  {
+    "id": "prerequisite-learning",
+    "name": "prerequisite chain cheapest",
+    "input": {
+      "concepts": [
+        {
+          "id": "a",
+          "prerequisites": []
+        },
+        {
+          "id": "b",
+          "prerequisites": [
+            "a"
+          ]
+        }
+      ],
+      "activities": [
+        {
+          "id": "a1",
+          "teaches": [
+            "a"
+          ],
+          "requires": [],
+          "minutes": 10
+        },
+        {
+          "id": "b1",
+          "teaches": [
+            "b"
+          ],
+          "requires": [
+            "a"
+          ],
+          "minutes": 15
+        },
+        {
+          "id": "slow",
+          "teaches": [
+            "a"
+          ],
+          "requires": [],
+          "minutes": 30
+        }
+      ],
+      "goals": [
+        "b"
+      ],
+      "budget_minutes": 30
+    },
+    "expect": {
+      "summary.activities": 2,
+      "summary.minutes": 25,
+      "summary.within_budget": true
+    },
+    "split": "worked"
+  },
+  {
+    "id": "prerequisite-learning",
+    "name": "mastery skips known step",
+    "input": {
+      "concepts": [
+        {
+          "id": "a",
+          "prerequisites": []
+        },
+        {
+          "id": "b",
+          "prerequisites": [
+            "a"
+          ]
+        }
+      ],
+      "activities": [
+        {
+          "id": "a1",
+          "teaches": [
+            "a"
+          ],
+          "requires": [],
+          "minutes": 10
+        },
+        {
+          "id": "b1",
+          "teaches": [
+            "b"
+          ],
+          "requires": [
+            "a"
+          ],
+          "minutes": 15
+        },
+        {
+          "id": "slow",
+          "teaches": [
+            "a"
+          ],
+          "requires": [],
+          "minutes": 30
+        }
+      ],
+      "mastery": {
+        "a": 1
+      },
+      "goals": [
+        "b"
+      ],
+      "budget_minutes": 10
+    },
+    "expect": {
+      "summary.activities": 1,
+      "summary.minutes": 15,
+      "summary.within_budget": false
+    },
+    "split": "evaluation"
+  }
+]

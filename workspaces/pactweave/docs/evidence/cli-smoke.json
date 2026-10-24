@@ -1,0 +1,39 @@
+{
+  "checked_at": "2026-10-24T16:45:29.1454524Z",
+  "platform": "win32",
+  "node": "24.13.1",
+  "commands": [
+    "analyze",
+    "plan",
+    "run",
+    "resume",
+    "status",
+    "verify",
+    "explain",
+    "cache",
+    "wiki",
+    "rag",
+    "memory",
+    "doctor",
+    "stats",
+    "export"
+  ],
+  "commands_completed": 14,
+  "results": {
+    "run": "PASS",
+    "resume": "PASS",
+    "verify": "passed",
+    "wiki": "found with hashed citation",
+    "rag": "found with hashed citation",
+    "memory": "put/list/delete",
+    "cache": "stats/end-session",
+    "export": "default redacted",
+    "doctor": "detected installed/missing runtimes",
+    "json": "one parseable document per invocation"
+  },
+  "limits": [
+    "Synthetic local inputs only",
+    "Linux/macOS executions are configured in CI, not claimed locally executed",
+    "No external user impact verified"
+  ]
+}

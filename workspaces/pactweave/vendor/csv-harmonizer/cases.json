@@ -1,0 +1,68 @@
+[
+  {
+    "id": "csv-harmonizer",
+    "name": "aliases, duplicate and bad money",
+    "input": {
+      "schema": [
+        {
+          "name": "id",
+          "required": true
+        },
+        {
+          "name": "price",
+          "type": "decimal",
+          "required": true
+        }
+      ],
+      "keys": [
+        "id"
+      ],
+      "sources": [
+        {
+          "id": "a",
+          "csv": "id,price\na,1.20\na,1.20\nb,no\nc,2.10"
+        }
+      ]
+    },
+    "expect": {
+      "summary.accepted": 2,
+      "summary.duplicates": 1,
+      "summary.rejected": 1,
+      "rows.0.values.price": "120"
+    },
+    "split": "worked"
+  },
+  {
+    "id": "csv-harmonizer",
+    "name": "conflicting IDs must leave accepted set",
+    "input": {
+      "schema": [
+        {
+          "name": "id",
+          "required": true
+        },
+        {
+          "name": "price",
+          "type": "decimal",
+          "required": true
+        }
+      ],
+      "keys": [
+        "id"
+      ],
+      "sources": [
+        {
+          "id": "x",
+          "csv": "id,price\na,3.00\na,4.00\nb,5.00"
+        }
+      ]
+    },
+    "expect": {
+      "summary.accepted": 1,
+      "summary.conflicts": 1,
+      "rows.0.values.id": "b",
+      "rows.0.values.price": "500"
+    },
+    "split": "evaluation"
+  }
+]

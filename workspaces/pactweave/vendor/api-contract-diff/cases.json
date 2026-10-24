@@ -1,0 +1,73 @@
+[
+  {
+    "id": "api-contract-diff",
+    "name": "new required input",
+    "input": {
+      "before": {
+        "/x": {
+          "request": {
+            "type": "object",
+            "properties": {
+              "a": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      },
+      "after": {
+        "/x": {
+          "request": {
+            "type": "object",
+            "required": [
+              "a"
+            ],
+            "properties": {
+              "a": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    },
+    "expect": {
+      "summary.breaking": 1,
+      "compatible": false
+    },
+    "split": "worked"
+  },
+  {
+    "id": "api-contract-diff",
+    "name": "response enum widening",
+    "input": {
+      "before": {
+        "/x": {
+          "response": {
+            "type": "string",
+            "enum": [
+              "ok"
+            ]
+          }
+        }
+      },
+      "after": {
+        "/x": {
+          "response": {
+            "type": "string",
+            "enum": [
+              "ok",
+              "pending"
+            ]
+          }
+        }
+      }
+    },
+    "expect": {
+      "summary.breaking": 1,
+      "summary.unsupported": 0,
+      "compatible": false
+    },
+    "split": "evaluation"
+  }
+]

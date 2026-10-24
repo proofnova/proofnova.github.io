@@ -1,0 +1,318 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light" />
+    <meta
+      name="description"
+      content="ProofNova PactWeave: one local-first skill for contract-bound workflows, selective knowledge retrieval and evidence-backed verification. Try the real deterministic browser engine."
+    />
+    <title>ProofNova PactWeave — One Skill. Every Workflow. Verified.</title>
+    <link rel="stylesheet" href="./style.css" />
+    <script type="module" src="./app.mjs"></script>
+  </head>
+  <body>
+    <a class="skip" href="#workspace" data-i18n="skip">Skip to the workspace</a>
+    <header class="site-header">
+      <a
+        class="brand"
+        href="https://proofnova.github.io/"
+        aria-label="ProofNova home"
+        ><span>p.</span> proofnova</a
+      >
+      <nav aria-label="Main navigation">
+        <a href="#architecture" data-i18n="architecture">Architecture</a
+        ><a href="https://github.com/proofnova/proofnova-pactweave">GitHub ↗</a>
+      </nav>
+      <div class="language-switch" role="group" aria-label="Language">
+        <button type="button" data-lang="en" aria-pressed="true">English</button
+        ><button type="button" data-lang="ko" aria-pressed="false">
+          한국어</button
+        ><button type="button" data-lang="ja" aria-pressed="false">
+          日本語</button
+        ><button type="button" data-lang="zh" aria-pressed="false">
+          简体中文
+        </button>
+      </div>
+    </header>
+    <main>
+      <section class="hero wrap">
+        <div class="hero-copy">
+          <p class="eyebrow">PROOFNOVA PACTWEAVE</p>
+          <h1 data-i18n="headline">
+            One Skill.<br />Every Workflow.<br /><span>Verified.</span>
+          </h1>
+          <p class="lead" data-i18n="lead">
+            Turn a request into a contract. Run registered tools. Keep the
+            evidence that proves the result.
+          </p>
+          <div class="actions">
+            <a class="primary" href="#workspace" data-i18n="try"
+              >Try a real workflow ↗</a
+            ><a
+              class="quiet"
+              href="https://github.com/proofnova/proofnova-pactweave#quick-start"
+              data-i18n="quickstart"
+              >Local CLI quick start →</a
+            >
+          </div>
+          <p class="hero-note" data-i18n="policy">
+            No account · No API key · No data upload · No paid calls
+          </p>
+        </div>
+        <div class="hero-art" aria-label="Contract, execution and evidence">
+          <div class="orbit"></div>
+          <div class="pact-card">
+            <span>PACT / 001</span>
+            <h2>Request → Contract</h2>
+            <div><i>01</i> PactLoop <b>↻</b></div>
+            <div><i>02</i> WeaveMesh <b>◇</b></div>
+            <div><i>03</i> PactVault <b>▤</b></div>
+            <p data-i18n="artNote">A result needs evidence.</p>
+          </div>
+          <div class="verify-stamp">✓<small>CONTRACT-BOUND</small></div>
+        </div>
+      </section>
+      <section class="scope wrap" aria-labelledby="scope-title">
+        <div>
+          <p class="eyebrow" data-i18n="scopeEyebrow">HONEST BY DESIGN</p>
+          <h2 id="scope-title" data-i18n="scopeTitle">
+            One entry. Clear boundaries.
+          </h2>
+        </div>
+        <div class="scope-grid">
+          <article>
+            <span class="pill" data-i18n="browserPill">Browser available</span>
+            <h3 data-i18n="browserTitle">Real deterministic execution</h3>
+            <p data-i18n="browserText">
+              Intent analysis, contracts, registered pure tools, bounded review,
+              local document search and in-memory state run in your browser.
+            </p>
+          </article>
+          <article>
+            <span class="pill pale" data-i18n="localPill"
+              >Local CLI Required</span
+            >
+            <h3 data-i18n="localTitle">Your machine, your authority</h3>
+            <p data-i18n="localText">
+              Disk persistence, restart recovery, trusted project commands and
+              configured model providers require the local CLI. These are not
+              simulated here.
+            </p>
+          </article>
+          <article>
+            <span class="pill pale" data-i18n="unsupportedPill"
+              >Explicitly bounded</span
+            >
+            <h3 data-i18n="unsupportedTitle">Unknown tasks stay honest</h3>
+            <p data-i18n="unsupportedText">
+              A request outside registered capabilities returns BLOCKED with
+              missing inputs or prerequisites. Natural language is never turned
+              into arbitrary shell commands.
+            </p>
+          </article>
+        </div>
+      </section>
+      <section id="workspace" class="workspace-section">
+        <div class="wrap">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">LIVE WORKSPACE</p>
+              <h2 data-i18n="workspaceTitle">See what actually ran.</h2>
+            </div>
+            <p data-i18n="workspaceIntro">
+              Use the sample, inspect its contract, then change a criterion to
+              see a real failure.
+            </p>
+          </div>
+          <div class="workspace-grid">
+            <form id="workflow-form" class="panel input-panel">
+              <div class="panel-top">
+                <h3 data-i18n="inputTitle">Your workflow</h3>
+                <label class="sample-label" for="example" data-i18n="sample"
+                  >Sample</label
+                ><select id="example">
+                  <option value="invoice" data-i18n="sampleInvoice">
+                    Invoice reconciliation
+                  </option>
+                  <option value="blocked" data-i18n="sampleBlocked">
+                    Missing task: BLOCKED
+                  </option>
+                  <option value="failure" data-i18n="sampleFailure">
+                    Unmet criterion: not PASS
+                  </option>
+                </select>
+              </div>
+              <label for="request" data-i18n="request">User request</label
+              ><textarea id="request" rows="4" spellcheck="false">
+Reconcile this invoice and payment. Verify that exactly one invoice is paid, preserving unallocated money.</textarea
+              ><label for="spec" data-i18n="spec"
+                >Task specification (JSON)</label
+              >
+              <p id="spec-help" class="help" data-i18n="specHelp">
+                Explicit adapter, structured input and a measurable criterion.
+                Request text is kept separately above.
+              </p>
+              <textarea
+                id="spec"
+                rows="22"
+                spellcheck="false"
+                aria-describedby="spec-help"
+              ></textarea>
+              <div class="run-actions">
+                <button class="primary" type="submit" id="run" data-i18n="run">
+                  Run & verify ↗</button
+                ><button
+                  class="secondary"
+                  type="button"
+                  id="reset"
+                  data-i18n="reset"
+                >
+                  Reset sample
+                </button>
+              </div>
+              <p class="help" data-i18n="inputPrivacy">
+                Inputs stay in this page's memory. Reloading clears the
+                workflow. Only your language preference is saved.
+              </p>
+            </form>
+            <div class="panel results-panel">
+              <div class="panel-top">
+                <h3 data-i18n="resultsTitle">Execution evidence</h3>
+                <span id="state" class="state" data-state="READY">READY</span>
+              </div>
+              <p id="notice" role="status" aria-live="polite" data-i18n="ready">
+                Ready. Nothing has executed yet.
+              </p>
+              <div class="metrics" id="metrics" hidden></div>
+              <div id="result-sections" class="result-sections">
+                <details open>
+                  <summary data-i18n="intent">Request intent</summary>
+                  <pre id="intent-output">—</pre>
+                </details>
+                <details>
+                  <summary data-i18n="contract">Task Contract</summary>
+                  <pre id="contract-output">—</pre>
+                </details>
+                <details>
+                  <summary data-i18n="plan">Execution plan</summary>
+                  <pre id="plan-output">—</pre>
+                </details>
+                <details>
+                  <summary data-i18n="cache">Session cache</summary>
+                  <pre id="cache-output">—</pre>
+                </details>
+                <details>
+                  <summary data-i18n="knowledge">Wiki / RAG queries</summary>
+                  <pre id="knowledge-output">—</pre>
+                </details>
+                <details>
+                  <summary data-i18n="llm">LLM calls</summary>
+                  <pre id="llm-output">—</pre>
+                </details>
+                <details>
+                  <summary data-i18n="loop">PactLoop events</summary>
+                  <pre id="loop-output">—</pre>
+                </details>
+                <details open>
+                  <summary data-i18n="evidence">Verification evidence</summary>
+                  <pre id="evidence-output">—</pre>
+                </details>
+                <details>
+                  <summary data-i18n="json">Final JSON</summary>
+                  <pre id="json-output">—</pre>
+                </details>
+              </div>
+              <button
+                id="download"
+                type="button"
+                class="secondary"
+                disabled
+                data-i18n="download"
+              >
+                Download execution record
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="architecture" class="architecture-section wrap">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">ONE PUBLIC SKILL / PACTWEAVE</p>
+            <h2 data-i18n="architectureTitle">
+              A contract runs through everything.
+            </h2>
+          </div>
+          <p data-i18n="architectureIntro">
+            Knowledge and models are optional branches inside the loop, not
+            mandatory gates.
+          </p>
+        </div>
+        <figure>
+          <a href="./assets/architecture/pactweave-architecture-en.png"
+            ><img
+              src="./assets/architecture/pactweave-architecture-en.png"
+              alt="PactWeave architecture: intent, contract, context preprocessing, PactLoop with WeaveMesh and optional knowledge/model branches, then PactVault and evidence."
+              loading="lazy"
+          /></a>
+          <figcaption data-i18n="imageCaption">
+            Adapted from the user's architecture illustration. PactLoop,
+            WeaveMesh and PactVault are internal PactWeave modules; pactweave is
+            the only public skill.
+          </figcaption>
+        </figure>
+        <ol class="architecture-steps">
+          <li>
+            <b data-i18n="step1">Understand the original request</b>
+            <p data-i18n="step1text">
+              Preserve original bytes, find missing inputs and separate
+              assumptions from confirmed constraints.
+            </p>
+          </li>
+          <li>
+            <b data-i18n="step2">Bind the Task Contract</b>
+            <p data-i18n="step2text">
+              Acceptance criteria and permission boundaries survive every plan
+              and repair.
+            </p>
+          </li>
+          <li>
+            <b data-i18n="step3">Run PactLoop with WeaveMesh</b>
+            <p data-i18n="step3text">
+              Execute only registered capabilities. Retrieve knowledge or
+              request a configured model only when needed.
+            </p>
+          </li>
+          <li>
+            <b data-i18n="step4">Review, store and explain</b>
+            <p data-i18n="step4text">
+              Critical failures cannot be averaged away. Keep evidence and
+              explicit PASS or BLOCKED outcomes.
+            </p>
+          </li>
+        </ol>
+        <div class="docs-links">
+          <a href="./README.md">English</a><a href="./README.ko.md">한국어</a
+          ><a href="./README.ja.md">日本語</a
+          ><a href="./README.zh-CN.md">简体中文</a
+          ><a href="./docs/architecture.md" data-i18n="architectureDoc"
+            >Architecture documentation →</a
+          >
+        </div>
+      </section>
+    </main>
+    <footer class="wrap">
+      <a class="brand" href="https://proofnova.github.io/"
+        ><span>p.</span> proofnova</a
+      >
+      <p data-i18n="footer">Local-first tools. Evidence before claims.</p>
+      <a
+        href="https://github.com/proofnova/proofnova-pactweave"
+        data-i18n="source"
+        >Read the source ↗</a
+      >
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,74 @@
+[
+  {
+    "id": "action-ledger",
+    "name": "source grounded owner and relative date",
+    "input": {
+      "turns": [
+        {
+          "id": "t",
+          "speaker": "Ada",
+          "text": "I will send report tomorrow",
+          "at": "2026-10-24T00:00:00Z"
+        }
+      ],
+      "owners": [
+        {
+          "id": "a",
+          "aliases": [
+            "Ada"
+          ]
+        }
+      ],
+      "timezone": "UTC",
+      "proposals": [
+        {
+          "turn": "t",
+          "task_quote": "I will send report tomorrow",
+          "owner": "Ada",
+          "due_quote": "tomorrow"
+        }
+      ]
+    },
+    "expect": {
+      "summary.tasks": 1,
+      "summary.held": 0
+    },
+    "split": "worked"
+  },
+  {
+    "id": "action-ledger",
+    "name": "fabricated task is held",
+    "input": {
+      "turns": [
+        {
+          "id": "t",
+          "speaker": "Ada",
+          "text": "I will send report tomorrow",
+          "at": "2026-10-24T00:00:00Z"
+        }
+      ],
+      "owners": [
+        {
+          "id": "a",
+          "aliases": [
+            "Ada"
+          ]
+        }
+      ],
+      "timezone": "UTC",
+      "proposals": [
+        {
+          "turn": "t",
+          "task_quote": "deploy production today",
+          "owner": "Ada",
+          "due_quote": "today"
+        }
+      ]
+    },
+    "expect": {
+      "summary.tasks": 0,
+      "summary.held": 1
+    },
+    "split": "evaluation"
+  }
+]

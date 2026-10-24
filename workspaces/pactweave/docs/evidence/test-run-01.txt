@@ -1,0 +1,262 @@
+✔ all thirty adapters cover exactly the six declared domains (9.7583ms)
+✔ csv-harmonizer: pinned source files retain original hashes and first-party license (188.0711ms)
+✖ csv-harmonizer: independent original Node/browser/registry parity on all public fixtures (50.6305ms)
+✔ nested-record-flattener: pinned source files retain original hashes and first-party license (113.6017ms)
+✖ nested-record-flattener: independent original Node/browser/registry parity on all public fixtures (48.1196ms)
+✔ time-series-repair: pinned source files retain original hashes and first-party license (173.353ms)
+✔ time-series-repair: independent original Node/browser/registry parity on all public fixtures (84.9312ms)
+✔ schema-drift: pinned source files retain original hashes and first-party license (146.2054ms)
+✔ schema-drift: independent original Node/browser/registry parity on all public fixtures (68.2013ms)
+✔ relational-quality: pinned source files retain original hashes and first-party license (107.563ms)
+✔ relational-quality: independent original Node/browser/registry parity on all public fixtures (28.4483ms)
+✔ change-impact: pinned source files retain original hashes and first-party license (107.5521ms)
+✔ change-impact: independent original Node/browser/registry parity on all public fixtures (25.9661ms)
+✔ api-contract-diff: pinned source files retain original hashes and first-party license (114.4755ms)
+✔ api-contract-diff: independent original Node/browser/registry parity on all public fixtures (26.5252ms)
+✔ ci-matrix-cover: pinned source files retain original hashes and first-party license (513.8402ms)
+✔ ci-matrix-cover: independent original Node/browser/registry parity on all public fixtures (29.9534ms)
+✔ release-propagation: pinned source files retain original hashes and first-party license (279.8065ms)
+✔ release-propagation: independent original Node/browser/registry parity on all public fixtures (67.9623ms)
+✔ patch-preflight: pinned source files retain original hashes and first-party license (124.8958ms)
+✖ patch-preflight: independent original Node/browser/registry parity on all public fixtures (21.6374ms)
+✔ trace-reconstruction: pinned source files retain original hashes and first-party license (118.5877ms)
+✔ trace-reconstruction: independent original Node/browser/registry parity on all public fixtures (24.3095ms)
+✔ slo-burn-rate: pinned source files retain original hashes and first-party license (88.5381ms)
+✔ slo-burn-rate: independent original Node/browser/registry parity on all public fixtures (23.703ms)
+✔ retry-reconciliation: pinned source files retain original hashes and first-party license (98.6569ms)
+✔ retry-reconciliation: independent original Node/browser/registry parity on all public fixtures (26.204ms)
+✔ capacity-placement: pinned source files retain original hashes and first-party license (85.8528ms)
+✔ capacity-placement: independent original Node/browser/registry parity on all public fixtures (23.4982ms)
+✔ restore-manifest: pinned source files retain original hashes and first-party license (96.2238ms)
+✔ restore-manifest: independent original Node/browser/registry parity on all public fixtures (27.1216ms)
+✔ invoice-reconciliation: pinned source files retain original hashes and first-party license (43.4335ms)
+✔ invoice-reconciliation: independent original Node/browser/registry parity on all public fixtures (46.1912ms)
+✔ procurement-quotes: pinned source files retain original hashes and first-party license (100.1423ms)
+✔ procurement-quotes: independent original Node/browser/registry parity on all public fixtures (27.7825ms)
+✔ inventory-rebalance: pinned source files retain original hashes and first-party license (115.3323ms)
+✔ inventory-rebalance: independent original Node/browser/registry parity on all public fixtures (36.6427ms)
+✔ coverage-roster: pinned source files retain original hashes and first-party license (113.9228ms)
+✔ coverage-roster: independent original Node/browser/registry parity on all public fixtures (42.3978ms)
+✔ billing-auditor: pinned source files retain original hashes and first-party license (123.4951ms)
+✔ billing-auditor: independent original Node/browser/registry parity on all public fixtures (38.0595ms)
+✔ citation-grounding: pinned source files retain original hashes and first-party license (108.1231ms)
+✔ citation-grounding: independent original Node/browser/registry parity on all public fixtures (29.1194ms)
+✔ document-redline: pinned source files retain original hashes and first-party license (102.8296ms)
+✔ document-redline: independent original Node/browser/registry parity on all public fixtures (24.4986ms)
+✔ requirement-evidence: pinned source files retain original hashes and first-party license (95.6584ms)
+✔ requirement-evidence: independent original Node/browser/registry parity on all public fixtures (29.9132ms)
+✔ research-screening: pinned source files retain original hashes and first-party license (94.9107ms)
+✔ research-screening: independent original Node/browser/registry parity on all public fixtures (27.4981ms)
+✔ action-ledger: pinned source files retain original hashes and first-party license (91.5262ms)
+✔ action-ledger: independent original Node/browser/registry parity on all public fixtures (31.9258ms)
+✔ prerequisite-learning: pinned source files retain original hashes and first-party license (90.4539ms)
+✔ prerequisite-learning: independent original Node/browser/registry parity on all public fixtures (24.3535ms)
+✔ assessment-blueprint: pinned source files retain original hashes and first-party license (84.3393ms)
+✔ assessment-blueprint: independent original Node/browser/registry parity on all public fixtures (22.2188ms)
+✔ keyboard-workflow: pinned source files retain original hashes and first-party license (102.5446ms)
+✔ keyboard-workflow: independent original Node/browser/registry parity on all public fixtures (23.3253ms)
+✔ localization-contract: pinned source files retain original hashes and first-party license (87.6854ms)
+✔ localization-contract: independent original Node/browser/registry parity on all public fixtures (40.2179ms)
+✔ time-window-itinerary: pinned source files retain original hashes and first-party license (113.4215ms)
+✔ time-window-itinerary: independent original Node/browser/registry parity on all public fixtures (27.8135ms)
+✔ runtime source reader rejects tampered source before adapter import (9.3552ms)
+✔ untrusted JSON cannot replace or register executable adapters (4.4362ms)
+✔ Node persistent and browser memory engines produce the same actual result (2189.1833ms)
+✔ CLI JSON and meaningful missing-data exit code (1929.2372ms)
+✔ host test adapter requires both host and contract grants and runs real tests (565.4308ms)
+✔ short ambiguous request creates data questions and preserves original bytes (43.401ms)
+✔ unknown answer cannot expand authority; typed answers resume only missing data (10.7379ms)
+✔ contract rejects forged digest, empty and trivial criteria and conflicting actions (6.875ms)
+✔ preprocessing deduplicates supplemental records without losing immutable requirements (5.919ms)
+✔ host grants intersect contract scope and revoked grants fail closed (0.8625ms)
+✔ canonical hashes avoid insertion-order misses and reject unsafe data (4.3297ms)
+✔ PactLoop executes actual adapter and evidence, skips unneeded knowledge/models (180.829ms)
+✔ missing criteria block execution and expose stable question (11.8479ms)
+✔ a wrong outcome remains failure despite successful code execution (42.6072ms)
+✔ trusted repair changes input within fixed contract and preserves failed evidence (180.0399ms)
+✔ repair cannot replace acceptance or authority to manufacture PASS (54.4596ms)
+✔ same failure terminates at repeated-error bound and records both failures (97.1972ms)
+✔ resume ignores imported PASS and preserves spent counters (71.4495ms)
+✔ PASS resume rechecks saved evidence without rerunning actual task (34.222ms)
+✔ typed missing-input answers resume without replacing original or permissions (49.5539ms)
+✔ changed adapter version invalidates old PASS evidence (34.4588ms)
+✔ cancelled workflow never reports success (7.047ms)
+✔ knowledge is retrieved only for explicit gaps and is never authority (31.2643ms)
+✔ unknown executable names are unsupported rather than generated shell commands (7.6789ms)
+✔ JSON DAG execution uses explicit job output paths and independent tasks (22.3285ms)
+✔ pending effect checkpoint is blocked on resume instead of replaying (31.9732ms)
+✔ host model branch receives immutable contract and honors remaining call budget (28.8053ms)
+✔ gateway failures spend calls and remain saved for authoritative resume (11.8246ms)
+✔ host model branch permits cached reuse with zero remaining calls (23.3231ms)
+✔ effect adapter executes only at host and contract permission intersection (29.3529ms)
+✔ same in-process store/session cannot run concurrent workflows (25.8643ms)
+✔ required missing or empty knowledge cannot be bypassed by repeated resume (132.94ms)
+✔ citation without a current source identity cannot satisfy required knowledge (9.2679ms)
+✔ interrupted effect latch survives repeated BLOCKED resumes (355.4214ms)
+✔ persisted model requirement cannot disappear when host options are omitted (410.8467ms)
+✔ completed model response invalidates on source change and rechecks host policy (155.6328ms)
+✔ deleting an active workflow cannot be undone by its final save (23.0815ms)
+✔ required source removed while executor runs cannot admit a new PASS (35.7648ms)
+✔ independent pure handlers genuinely overlap while dependencies wait (38.3176ms)
+✔ shared resources and effects serialize; single job does not invent parallel work (40.322ms)
+✔ failed dependencies never run dependent tasks (3.1959ms)
+✔ unknown dependencies, cycles and duplicate IDs fail before executing handlers (1.7252ms)
+✔ cancelled mesh does not start handlers (0.6085ms)
+✔ direct mesh deadline bounds an unresolved asynchronous handler and blocks dependents (33.4661ms)
+✔ direct mesh cancellation releases pending handler and ignores late output (1.7022ms)
+✔ cache exact reuse, supplemental-only similarity and session isolation (60.2272ms)
+✔ cache TTL, explicit invalidation and session end erase response data (20.5546ms)
+✔ cache physically separate backend required; invalid identities rejected (3.9957ms)
+✔ Gateway default makes no calls, optional gap skips and cached exact result survives zero call budget (108.5417ms)
+✔ Gateway deduplicates in-flight identity and preserves actual usage without fabricating model benchmark (23.5515ms)
+✔ Gateway provider retries debit real calls, remaining workflow budget bounds retries (5.8422ms)
+✔ Gateway cancellation and authority revocation prevent response/cache admission (12.9774ms)
+✔ Gateway paid/default authority cannot be granted by dynamic policy narrowing callback (0.7512ms)
+✔ Gateway authoritative source changes invalidate pending results (12.0557ms)
+✖ Gateway model callback time cap aborts unresponsive provider (25.5969ms)
+✔ Ending a session while its provider is pending prevents cache resurrection and result return (18.5405ms)
+✔ Deleting an attached memory session while provider waits closes admission independently of cache entry existence (8.7661ms)
+✔ Cached final source freshness wait cannot bypass revocation or cancellation (5.4587ms)
+✔ Called final source freshness wait cannot return or retain newly admitted response after revocation (4.4918ms)
+✔ Coalesced final source freshness wait is reauthorized after the owning call completed (67.4392ms)
+✔ Adapter source locks remain in exact identity alongside refreshed knowledge without recursive source scopes (32.8428ms)
+✔ Knowledge retrieval is actually skipped without a declared gap (4.6194ms)
+✔ Wiki and BM25 RAG return actual spans and source hashes, with changed-source detection (187.3916ms)
+✔ CJK query matching works without embeddings or external packages (18.4641ms)
+✔ Retrieved prompt injection remains untrusted text and cannot grant network access (9.8848ms)
+✔ External absence is explicit; authorized public results require real source citations (3.2875ms)
+✔ Invalid retrieval sizes fail before searches or external requests (2.3197ms)
+✔ External retrieval intersects host grant with immutable contract permissions and forbids (6.3843ms)
+✔ External retrieval rechecks contract after callback rather than accepting changed authority (2.0428ms)
+✔ PactVault persists across restart, deduplicates equal content and protects original request (631.922ms)
+✔ PactVault rejects traversal and symlink/reparse root (363.6236ms)
+✔ PactVault corrupt data fails closed and explicit recovery restores valid history (816.6986ms)
+✔ PactVault deletion removes history, cache and index and cannot recover tombstoned data (564.3031ms)
+✔ PactVault deleted checkpoints cannot be recreated by delayed work or recovery (717.7652ms)
+✔ Memory deletion serializes with pending writes and permanently rejects the erased identity (2.225ms)
+✔ File cache closure persists without existing entries and enforces atomic stale-generation rejection (228.746ms)
+✔ Actual Node context retains adapter source changes in cache identity and closes pending session admissions (1315.8297ms)
+✔ PactVault default export redacts sensitive session material; raw export explicitly opt-in (152.205ms)
+✔ PactVault retention deletes only scoped old records and backup is redacted (324.9297ms)
+✔ PactVault concurrent external writer produces explicit conflict (26.6152ms)
+✔ Memory PactVault matches scoped values, redaction and original immutability (1.2717ms)
+ℹ tests 142
+ℹ suites 0
+ℹ pass 138
+ℹ fail 4
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 6190.829
+
+✖ failing tests:
+
+test at tests\adapters-parity.test.mjs:32:3
+✖ csv-harmonizer: independent original Node/browser/registry parity on all public fixtures (50.6305ms)
+  AssertionError [ERR_ASSERTION]: aliases, duplicate and bad money
+  + actual - expected
+  ... Skipped lines
+  
+    {
+      input_sha256: '3daf3d29c5d8f1c1aec780901047a528906ef540986c120aa830cb587b881d42',
+      resource: 'csv-harmonizer',
+      result: {
+        conflicts: [],
+  ...
+            ],
+  +         values: {
+  -         values: [Object: null prototype] {
+              id: 'a',
+              price: '120'
+            }
+          },
+          {
+  ...
+            ],
+  +         values: {
+  -         values: [Object: null prototype] {
+              id: 'c',
+              price: '210'
+            }
+          }
+        ],
+  
+      at TestContext.<anonymous> (file:///[checkout]/tests/adapters-parity.test.mjs:46:14)
+      at async Test.run (node:internal/test_runner/test:1110:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:785:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: { input_sha256: '3daf3d29c5d8f1c1aec780901047a528906ef540986c120aa830cb587b881d42', resource: 'csv-harmonizer', result: { conflicts: [], duplicates: [Array], rejected: [Array], rows: [Array], summary: [Object] }, version: 1 },
+    expected: { resource: 'csv-harmonizer', version: 1, input_sha256: '3daf3d29c5d8f1c1aec780901047a528906ef540986c120aa830cb587b881d42', result: { rows: [Array], rejected: [Array], duplicates: [Array], conflicts: [], summary: [Object] } },
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at tests\adapters-parity.test.mjs:32:3
+✖ nested-record-flattener: independent original Node/browser/registry parity on all public fixtures (48.1196ms)
+  AssertionError [ERR_ASSERTION]: parent lineage and missing child
+  + actual - expected
+  ... Skipped lines
+  
+    {
+      input_sha256: 'ee6c1bdaccfb87c939eadee46dd9030223bda10229a7fd35131d1bde7e010a4f',
+      resource: 'nested-record-flattener',
+      result: {
+        quarantine: [
+  ...
+            },
+  +         values: {
+  -         values: [Object: null prototype] {
+              n: 2,
+              parent: 'a'
+            }
+          }
+        ],
+  
+      at TestContext.<anonymous> (file:///[checkout]/tests/adapters-parity.test.mjs:46:14)
+      at async Test.run (node:internal/test_runner/test:1110:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:785:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: { input_sha256: 'ee6c1bdaccfb87c939eadee46dd9030223bda10229a7fd35131d1bde7e010a4f', resource: 'nested-record-flattener', result: { quarantine: [Array], rows: [Array], summary: [Object] }, version: 1 },
+    expected: { resource: 'nested-record-flattener', version: 1, input_sha256: 'ee6c1bdaccfb87c939eadee46dd9030223bda10229a7fd35131d1bde7e010a4f', result: { rows: [Array], quarantine: [Array], summary: [Object] } },
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at tests\adapters-parity.test.mjs:32:3
+✖ patch-preflight: independent original Node/browser/registry parity on all public fixtures (21.6374ms)
+  AssertionError [ERR_ASSERTION]: exact context replacement: files.a.txt
+  + actual - expected
+  
+  + undefined
+  - 'one\nthree\n'
+  
+      at TestContext.<anonymous> (file:///[checkout]/tests/adapters-parity.test.mjs:48:16)
+      at async Test.run (node:internal/test_runner/test:1110:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:785:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: 'one\nthree\n',
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at tests\foundation-cache-gateway.test.mjs:221:1
+✖ Gateway model callback time cap aborts unresponsive provider (25.5969ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  0 !== 1
+  
+      at TestContext.<anonymous> (file:///[checkout]/tests/foundation-cache-gateway.test.mjs:233:10)
+      at async Test.run (node:internal/test_runner/test:1110:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:785:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 0,
+    expected: 1,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+

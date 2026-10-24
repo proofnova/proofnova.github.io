@@ -1,0 +1,76 @@
+[
+  {
+    "id": "requirement-evidence",
+    "name": "child coverage aggregates",
+    "input": {
+      "requirements": [
+        {
+          "id": "parent",
+          "children": [
+            "child"
+          ]
+        },
+        {
+          "id": "child",
+          "tests": [
+            "t"
+          ]
+        }
+      ],
+      "now": "2026-10-24T00:02:00Z",
+      "max_age_seconds": 300,
+      "revision": "r1",
+      "evidence": [
+        {
+          "test_id": "t",
+          "revision": "r1",
+          "status": "passed",
+          "finished_at": "2026-10-24T00:00:00Z",
+          "artifact_sha256": "9f86d081884c7d659a2feaa0c55ad015a3bf4f1b2b0b822cd15d6c15b0f00a08"
+        }
+      ]
+    },
+    "expect": {
+      "summary.covered": 2,
+      "summary.uncovered": 0
+    },
+    "split": "worked"
+  },
+  {
+    "id": "requirement-evidence",
+    "name": "wrong revision cannot cover parent",
+    "input": {
+      "requirements": [
+        {
+          "id": "parent",
+          "children": [
+            "child"
+          ]
+        },
+        {
+          "id": "child",
+          "tests": [
+            "t"
+          ]
+        }
+      ],
+      "now": "2026-10-24T00:02:00Z",
+      "max_age_seconds": 300,
+      "revision": "r1",
+      "evidence": [
+        {
+          "test_id": "t",
+          "revision": "old",
+          "status": "passed",
+          "finished_at": "2026-10-24T00:00:00Z",
+          "artifact_sha256": "9f86d081884c7d659a2feaa0c55ad015a3bf4f1b2b0b822cd15d6c15b0f00a08"
+        }
+      ]
+    },
+    "expect": {
+      "summary.covered": 0,
+      "summary.uncovered": 2
+    },
+    "split": "evaluation"
+  }
+]

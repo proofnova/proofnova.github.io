@@ -1,0 +1,63 @@
+{
+  "name": "@proofnova/pactweave",
+  "version": "0.1.0",
+  "description": "A local-first, contract-driven workflow skill with bounded execution, negative review and evidence.",
+  "type": "module",
+  "license": "MIT",
+  "engines": {
+    "node": ">=22"
+  },
+  "bin": {
+    "pactweave": "./cli.mjs"
+  },
+  "exports": {
+    ".": "./run.mjs",
+    "./browser": "./browser.mjs"
+  },
+  "files": [
+    "src/",
+    "vendor/",
+    "examples/",
+    "references/",
+    "docs/",
+    "assets/",
+    "scripts/",
+    "tests/",
+    "benchmarks/",
+    "site-integrations/",
+    "SKILL.md",
+    "README*.md",
+    "LICENSE*",
+    "THIRD_PARTY_NOTICES.md",
+    "SECURITY.md",
+    "CONTRIBUTING.md",
+    "CHANGELOG.md",
+    "DESIGN.md",
+    "RESEARCH.md",
+    "cli.mjs",
+    "run.mjs",
+    "browser.mjs",
+    "index.html",
+    "app.mjs",
+    "style.css",
+    "resource.json"
+  ],
+  "scripts": {
+    "test": "node --test tests/*.test.mjs",
+    "benchmark": "node benchmarks/run.mjs",
+    "start": "node scripts/serve.mjs",
+    "doctor": "node cli.mjs doctor --json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/proofnova/proofnova-pactweave.git"
+  },
+  "homepage": "https://proofnova.github.io/workspaces/pactweave/",
+  "keywords": [
+    "agent-skill",
+    "local-first",
+    "workflow",
+    "verification",
+    "pactweave"
+  ]
+}

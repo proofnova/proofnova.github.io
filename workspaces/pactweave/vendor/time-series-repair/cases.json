@@ -1,0 +1,53 @@
+[
+  {
+    "id": "time-series-repair",
+    "name": "out of order duplicate bin",
+    "input": {
+      "start": "2026-10-24T00:00:00Z",
+      "end": "2026-10-24T00:02:00Z",
+      "interval_seconds": 60,
+      "samples": [
+        {
+          "at": "2026-10-24T00:01:10Z",
+          "value": 8
+        },
+        {
+          "at": "2026-10-24T00:01:30Z",
+          "value": 4
+        }
+      ]
+    },
+    "expect": {
+      "summary.buckets": 2,
+      "summary.missing": 1,
+      "summary.duplicate_buckets": 1,
+      "summary.rejected": 0
+    },
+    "split": "worked"
+  },
+  {
+    "id": "time-series-repair",
+    "name": "offset equivalence and excluded end",
+    "input": {
+      "start": "2026-10-24T00:00:00Z",
+      "end": "2026-10-24T00:02:00Z",
+      "interval_seconds": 60,
+      "samples": [
+        {
+          "at": "2026-10-24T09:00:00+09:00",
+          "value": 3
+        },
+        {
+          "at": "2026-10-24T00:02:00Z",
+          "value": 10
+        }
+      ]
+    },
+    "expect": {
+      "summary.buckets": 2,
+      "summary.missing": 1,
+      "summary.rejected": 1
+    },
+    "split": "evaluation"
+  }
+]

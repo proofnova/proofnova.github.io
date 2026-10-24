@@ -1,0 +1,88 @@
+[
+  {
+    "id": "keyboard-workflow",
+    "name": "reachable labeled control",
+    "input": {
+      "states": [
+        {
+          "id": "a",
+          "controls": [
+            {
+              "id": "go",
+              "role": "button",
+              "name": "Continue",
+              "focusable": true
+            }
+          ],
+          "tab_order": [
+            "go"
+          ]
+        },
+        {
+          "id": "b",
+          "controls": [],
+          "tab_order": []
+        }
+      ],
+      "actions": [
+        {
+          "from": "a",
+          "to": "b",
+          "via": "go",
+          "key": "Enter"
+        }
+      ],
+      "start": "a",
+      "goal": "b"
+    },
+    "expect": {
+      "summary.reachable": true,
+      "summary.steps": 1,
+      "summary.blocked_actions": 0
+    },
+    "split": "worked"
+  },
+  {
+    "id": "keyboard-workflow",
+    "name": "unnamed control cannot prove task reachable",
+    "input": {
+      "states": [
+        {
+          "id": "a",
+          "controls": [
+            {
+              "id": "go",
+              "role": "button",
+              "name": "",
+              "focusable": true
+            }
+          ],
+          "tab_order": [
+            "go"
+          ]
+        },
+        {
+          "id": "b",
+          "controls": [],
+          "tab_order": []
+        }
+      ],
+      "actions": [
+        {
+          "from": "a",
+          "to": "b",
+          "via": "go",
+          "key": "Enter"
+        }
+      ],
+      "start": "a",
+      "goal": "b"
+    },
+    "expect": {
+      "summary.reachable": false,
+      "summary.steps": 0,
+      "summary.blocked_actions": 1
+    },
+    "split": "evaluation"
+  }
+]

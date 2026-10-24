@@ -1,0 +1,51 @@
+[
+  {
+    "id": "trace-reconstruction",
+    "name": "nested spans and one error",
+    "input": {
+      "spans": [
+        {
+          "id": "r",
+          "trace": "t",
+          "start": "2026-10-24T00:00:00Z",
+          "duration_ms": 100
+        },
+        {
+          "id": "c",
+          "trace": "t",
+          "parent": "r",
+          "start": "2026-10-24T00:00:00.020Z",
+          "duration_ms": 20,
+          "status": "error"
+        }
+      ]
+    },
+    "expect": {
+      "summary.traces": 1,
+      "summary.errors": 1,
+      "summary.anomalies": 0
+    },
+    "split": "worked"
+  },
+  {
+    "id": "trace-reconstruction",
+    "name": "missing parent",
+    "input": {
+      "spans": [
+        {
+          "id": "c",
+          "trace": "t",
+          "parent": "missing",
+          "start": "2026-10-24T00:00:00Z",
+          "duration_ms": 3
+        }
+      ]
+    },
+    "expect": {
+      "summary.traces": 1,
+      "summary.errors": 0,
+      "summary.anomalies": 1
+    },
+    "split": "evaluation"
+  }
+]

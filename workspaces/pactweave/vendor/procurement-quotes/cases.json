@@ -1,0 +1,68 @@
+[
+  {
+    "id": "procurement-quotes",
+    "name": "shipping reverses sticker ranking",
+    "input": {
+      "quantity": 10,
+      "base_currency": "USD",
+      "quotes": [
+        {
+          "id": "a",
+          "currency": "USD",
+          "pack_units": 10,
+          "pack_price": "10.00",
+          "shipping": "15.00",
+          "lead_days": 1
+        },
+        {
+          "id": "b",
+          "currency": "USD",
+          "pack_units": 5,
+          "pack_price": "7.00",
+          "shipping": "0",
+          "lead_days": 1
+        }
+      ]
+    },
+    "expect": {
+      "summary.selected": "b",
+      "summary.total_minor": "1400",
+      "summary.feasible": 2
+    },
+    "split": "worked"
+  },
+  {
+    "id": "procurement-quotes",
+    "name": "minimum packs and deadline",
+    "input": {
+      "quantity": 7,
+      "base_currency": "USD",
+      "max_lead_days": 2,
+      "quotes": [
+        {
+          "id": "fast",
+          "currency": "USD",
+          "pack_units": 4,
+          "pack_price": "3.00",
+          "shipping": "1.00",
+          "lead_days": 1,
+          "min_packs": 3
+        },
+        {
+          "id": "slow",
+          "currency": "USD",
+          "pack_units": 10,
+          "pack_price": "1.00",
+          "shipping": "0",
+          "lead_days": 5
+        }
+      ]
+    },
+    "expect": {
+      "summary.selected": "fast",
+      "summary.total_minor": "1000",
+      "summary.feasible": 1
+    },
+    "split": "evaluation"
+  }
+]

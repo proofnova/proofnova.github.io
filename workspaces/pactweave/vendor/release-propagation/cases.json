@@ -1,0 +1,66 @@
+[
+  {
+    "id": "release-propagation",
+    "name": "breaking dependency propagates patch",
+    "input": {
+      "packages": [
+        {
+          "id": "a",
+          "version": "1.0.0"
+        },
+        {
+          "id": "b",
+          "version": "2.0.0",
+          "dependencies": {
+            "a": "^1.0.0"
+          }
+        }
+      ],
+      "changes": [
+        {
+          "id": "a",
+          "bump": "major"
+        }
+      ]
+    },
+    "expect": {
+      "versions.a": "2.0.0",
+      "versions.b": "2.0.1",
+      "summary.releases": 2,
+      "summary.dependency_updates": 1
+    },
+    "split": "worked"
+  },
+  {
+    "id": "release-propagation",
+    "name": "compatible minor keeps dependent",
+    "input": {
+      "packages": [
+        {
+          "id": "a",
+          "version": "1.0.0"
+        },
+        {
+          "id": "b",
+          "version": "2.0.0",
+          "dependencies": {
+            "a": "^1.0.0"
+          }
+        }
+      ],
+      "changes": [
+        {
+          "id": "a",
+          "bump": "minor"
+        }
+      ]
+    },
+    "expect": {
+      "versions.a": "1.1.0",
+      "versions.b": "2.0.0",
+      "summary.releases": 1,
+      "summary.dependency_updates": 0
+    },
+    "split": "evaluation"
+  }
+]

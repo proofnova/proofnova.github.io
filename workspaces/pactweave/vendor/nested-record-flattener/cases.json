@@ -1,0 +1,64 @@
+[
+  {
+    "id": "nested-record-flattener",
+    "name": "parent lineage and missing child",
+    "input": {
+      "records": [
+        {
+          "id": "a",
+          "items": [
+            {
+              "n": 2
+            },
+            {
+              "bad": 3
+            }
+          ]
+        }
+      ],
+      "expand": "items",
+      "columns": {
+        "parent": "$.id",
+        "n": "@.n"
+      },
+      "required": [
+        "n"
+      ]
+    },
+    "expect": {
+      "summary.rows": 1,
+      "summary.quarantined": 1,
+      "rows.0.values.parent": "a",
+      "rows.0.values.n": 2
+    },
+    "split": "worked"
+  },
+  {
+    "id": "nested-record-flattener",
+    "name": "empty child keeps parent",
+    "input": {
+      "records": [
+        {
+          "id": "z",
+          "items": []
+        },
+        {
+          "id": "x"
+        }
+      ],
+      "expand": "items",
+      "columns": {
+        "parent": "$.id",
+        "n": "@.n"
+      },
+      "keep_empty": true
+    },
+    "expect": {
+      "summary.rows": 1,
+      "summary.quarantined": 1,
+      "rows.0.values.parent": "z",
+      "rows.0.values.n": null
+    },
+    "split": "evaluation"
+  }
+]

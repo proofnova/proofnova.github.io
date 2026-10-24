@@ -1,0 +1,94 @@
+[
+  {
+    "id": "coverage-roster",
+    "name": "overlap cannot reuse worker",
+    "input": {
+      "workers": [
+        {
+          "id": "a",
+          "skills": [
+            "sql"
+          ],
+          "available": [
+            {
+              "start": "2026-10-24T00:00:00Z",
+              "end": "2026-10-24T00:02:00Z"
+            }
+          ],
+          "max_minutes": 2,
+          "cost_per_minute": 1
+        }
+      ],
+      "slots": [
+        {
+          "id": "x",
+          "start": "2026-10-24T00:00:00Z",
+          "end": "2026-10-24T00:02:00Z",
+          "skills": [
+            "sql"
+          ]
+        },
+        {
+          "id": "y",
+          "start": "2026-10-24T00:00:00Z",
+          "end": "2026-10-24T00:02:00Z",
+          "skills": [
+            "sql"
+          ]
+        }
+      ]
+    },
+    "expect": {
+      "summary.covered": 1,
+      "summary.unfilled": 1,
+      "summary.cost": 2
+    },
+    "split": "worked"
+  },
+  {
+    "id": "coverage-roster",
+    "name": "back to back slots fit",
+    "input": {
+      "workers": [
+        {
+          "id": "a",
+          "skills": [
+            "sql"
+          ],
+          "available": [
+            {
+              "start": "2026-10-24T00:00:00Z",
+              "end": "2026-10-24T00:02:00Z"
+            }
+          ],
+          "max_minutes": 2,
+          "cost_per_minute": 1
+        }
+      ],
+      "slots": [
+        {
+          "id": "x",
+          "start": "2026-10-24T00:00:00Z",
+          "end": "2026-10-24T00:01:00Z",
+          "skills": [
+            "sql"
+          ]
+        },
+        {
+          "id": "y",
+          "start": "2026-10-24T00:01:00Z",
+          "end": "2026-10-24T00:02:00Z",
+          "skills": [
+            "sql"
+          ]
+        }
+      ]
+    },
+    "expect": {
+      "summary.covered": 2,
+      "summary.unfilled": 0,
+      "summary.cost": 2
+    },
+    "split": "evaluation"
+  }
+]

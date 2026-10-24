@@ -1,0 +1,88 @@
+[
+  {
+    "id": "capacity-placement",
+    "name": "shared capacity saves node",
+    "input": {
+      "nodes": [
+        {
+          "id": "n1",
+          "cpu": 4,
+          "memory": 8,
+          "cost": 4,
+          "labels": {
+            "os": "linux"
+          }
+        },
+        {
+          "id": "n2",
+          "cpu": 4,
+          "memory": 8,
+          "cost": 6,
+          "labels": {
+            "os": "win"
+          }
+        }
+      ],
+      "jobs": [
+        {
+          "id": "a",
+          "cpu": 2,
+          "memory": 2
+        },
+        {
+          "id": "b",
+          "cpu": 2,
+          "memory": 2
+        }
+      ]
+    },
+    "expect": {
+      "summary.placed": 2,
+      "summary.cost": 4,
+      "summary.optimal": true
+    },
+    "split": "worked"
+  },
+  {
+    "id": "capacity-placement",
+    "name": "selector cannot fit",
+    "input": {
+      "nodes": [
+        {
+          "id": "n1",
+          "cpu": 4,
+          "memory": 8,
+          "cost": 4,
+          "labels": {
+            "os": "linux"
+          }
+        },
+        {
+          "id": "n2",
+          "cpu": 4,
+          "memory": 8,
+          "cost": 6,
+          "labels": {
+            "os": "win"
+          }
+        }
+      ],
+      "jobs": [
+        {
+          "id": "a",
+          "cpu": 5,
+          "memory": 2,
+          "selector": {
+            "os": "linux"
+          }
+        }
+      ]
+    },
+    "expect": {
+      "summary.placed": 0,
+      "feasible": false,
+      "summary.optimal": true
+    },
+    "split": "evaluation"
+  }
+]

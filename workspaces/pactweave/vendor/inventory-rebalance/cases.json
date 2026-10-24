@@ -1,0 +1,105 @@
+[
+  {
+    "id": "inventory-rebalance",
+    "name": "undo greedy cheapest arc",
+    "input": {
+      "stocks": [
+        {
+          "site": "A",
+          "item": "x",
+          "available": 1,
+          "target": 0
+        },
+        {
+          "site": "B",
+          "item": "x",
+          "available": 1,
+          "target": 0
+        },
+        {
+          "site": "C",
+          "item": "x",
+          "available": 0,
+          "target": 1
+        },
+        {
+          "site": "D",
+          "item": "x",
+          "available": 0,
+          "target": 1
+        }
+      ],
+      "routes": [
+        {
+          "item": "x",
+          "from": "A",
+          "to": "C",
+          "unit_cost": 1
+        },
+        {
+          "item": "x",
+          "from": "A",
+          "to": "D",
+          "unit_cost": 2
+        },
+        {
+          "item": "x",
+          "from": "B",
+          "to": "C",
+          "unit_cost": 2
+        },
+        {
+          "item": "x",
+          "from": "B",
+          "to": "D",
+          "unit_cost": 100
+        }
+      ]
+    },
+    "expect": {
+      "summary.moved": 2,
+      "summary.cost": 4,
+      "summary.shortage_units": 0
+    },
+    "split": "worked"
+  },
+  {
+    "id": "inventory-rebalance",
+    "name": "no route preserves shortage",
+    "input": {
+      "stocks": [
+        {
+          "site": "A",
+          "item": "x",
+          "available": 1,
+          "target": 0
+        },
+        {
+          "site": "B",
+          "item": "x",
+          "available": 1,
+          "target": 0
+        },
+        {
+          "site": "C",
+          "item": "x",
+          "available": 0,
+          "target": 1
+        },
+        {
+          "site": "D",
+          "item": "x",
+          "available": 0,
+          "target": 1
+        }
+      ],
+      "routes": []
+    },
+    "expect": {
+      "summary.moved": 0,
+      "summary.cost": 0,
+      "summary.shortage_units": 2
+    },
+    "split": "evaluation"
+  }
+]

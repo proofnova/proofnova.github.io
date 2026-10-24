@@ -1,0 +1,74 @@
+[
+  {
+    "id": "citation-grounding",
+    "name": "real excerpt and invented quote",
+    "input": {
+      "documents": [
+        {
+          "id": "d",
+          "text": "alpha\nbeta"
+        }
+      ],
+      "claims": [
+        {
+          "id": "a",
+          "citations": [
+            {
+              "document": "d",
+              "start_line": 2,
+              "end_line": 2,
+              "quote": "beta"
+            }
+          ]
+        },
+        {
+          "id": "b",
+          "citations": [
+            {
+              "document": "d",
+              "start_line": 1,
+              "end_line": 1,
+              "quote": "gamma"
+            }
+          ]
+        }
+      ]
+    },
+    "expect": {
+      "summary.located": 1,
+      "summary.unlocated": 1
+    },
+    "split": "worked"
+  },
+  {
+    "id": "citation-grounding",
+    "name": "changed digest invalidates quote",
+    "input": {
+      "documents": [
+        {
+          "id": "d",
+          "text": "alpha"
+        }
+      ],
+      "claims": [
+        {
+          "id": "a",
+          "citations": [
+            {
+              "document": "d",
+              "start_line": 1,
+              "end_line": 1,
+              "quote": "alpha",
+              "document_sha256": "cba06b5736faf67e54b07b561eae94395e774c517a7d910a54369e1263ccfbd4"
+            }
+          ]
+        }
+      ]
+    },
+    "expect": {
+      "summary.located": 0,
+      "summary.unlocated": 1
+    },
+    "split": "evaluation"
+  }
+]

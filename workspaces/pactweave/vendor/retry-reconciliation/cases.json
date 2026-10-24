@@ -1,0 +1,57 @@
+[
+  {
+    "id": "retry-reconciliation",
+    "name": "ready and uncertain",
+    "input": {
+      "now": "2026-10-24T00:00:00Z",
+      "tasks": [
+        {
+          "id": "a",
+          "status": "planned",
+          "attempts": 0
+        },
+        {
+          "id": "b",
+          "status": "uncertain",
+          "attempts": 1,
+          "side_effect": true
+        }
+      ]
+    },
+    "expect": {
+      "summary.run": 1,
+      "summary.reconcile": 1,
+      "summary.blocked": 0
+    },
+    "split": "worked"
+  },
+  {
+    "id": "retry-reconciliation",
+    "name": "dependency and attempt stop",
+    "input": {
+      "now": "2026-10-24T00:00:00Z",
+      "max_attempts": 3,
+      "tasks": [
+        {
+          "id": "a",
+          "status": "failed",
+          "attempts": 3
+        },
+        {
+          "id": "b",
+          "status": "planned",
+          "attempts": 0,
+          "dependencies": [
+            "a"
+          ]
+        }
+      ]
+    },
+    "expect": {
+      "summary.run": 0,
+      "summary.stopped": 1,
+      "summary.blocked": 1
+    },
+    "split": "evaluation"
+  }
+]

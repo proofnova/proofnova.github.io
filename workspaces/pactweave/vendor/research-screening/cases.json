@@ -1,0 +1,67 @@
+[
+  {
+    "id": "research-screening",
+    "name": "missing year needs review",
+    "input": {
+      "records": [
+        {
+          "id": "a",
+          "title": "A",
+          "year": 2024
+        },
+        {
+          "id": "b",
+          "title": "B"
+        }
+      ],
+      "include_all": [
+        {
+          "id": "year",
+          "field": "year",
+          "op": "gte",
+          "value": 2020
+        }
+      ]
+    },
+    "expect": {
+      "summary.include": 1,
+      "summary.manual": 1,
+      "summary.exclude": 0
+    },
+    "split": "worked"
+  },
+  {
+    "id": "research-screening",
+    "name": "duplicate DOI with old exclusion",
+    "input": {
+      "records": [
+        {
+          "id": "a",
+          "doi": "10.1/x",
+          "title": "A",
+          "year": 2018
+        },
+        {
+          "id": "b",
+          "doi": "https://doi.org/10.1/x",
+          "title": "A",
+          "year": 2018
+        }
+      ],
+      "include_all": [
+        {
+          "id": "year",
+          "field": "year",
+          "op": "gte",
+          "value": 2020
+        }
+      ]
+    },
+    "expect": {
+      "summary.include": 0,
+      "summary.exclude": 1,
+      "summary.duplicates": 1
+    },
+    "split": "evaluation"
+  }
+]

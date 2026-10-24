@@ -1,0 +1,4828 @@
+{
+  "schema_version": 1,
+  "checked_at": "2026-10-24T16:31:49.134Z",
+  "platform": "win32",
+  "node": "24.13.1",
+  "original_spec_digest": "a3cd1ec8d56c613b8a4c22602b73ef9207b78027cc07a01faca90c60a267df80",
+  "trials": [
+    {
+      "experiment": "deterministic-workflow",
+      "mode": "full",
+      "trial": 0,
+      "input": {
+        "request": "Reconcile invoice i against its payment, preserve the overpayment, and verify that one invoice is paid.",
+        "project_id": "quickstart",
+        "session_id": "invoice-demo",
+        "task": {
+          "adapter": "invoice-reconciliation",
+          "input": {
+            "invoices": [
+              {
+                "id": "i",
+                "currency": "USD",
+                "total": "10.00"
+              }
+            ],
+            "payments": [
+              {
+                "id": "p",
+                "currency": "USD",
+                "amount": "12.00",
+                "invoice_id": "i"
+              }
+            ]
+          }
+        },
+        "constraints": [
+          "Use exact monetary amounts",
+          "Do not discard overpayment"
+        ],
+        "acceptance_criteria": [
+          {
+            "id": "paid-count",
+            "path": "result.summary.paid",
+            "operator": "equals",
+            "expected": 1,
+            "critical": true
+          },
+          {
+            "id": "preserved-overpayment",
+            "path": "result.summary.unallocated",
+            "operator": "equals",
+            "expected": 1,
+            "critical": true
+          }
+        ]
+      },
+      "state": "PASS",
+      "expected_behavior_met": true,
+      "reason": null,
+      "output": {
+        "input_sha256": "35ff2e4423a6d2cbf7832fb957c1cacc099909211bfc3ed5460d7693aa739e51",
+        "resource": "invoice-reconciliation",
+        "result": {
+          "allocations": [
+            {
+              "currency": "USD",
+              "invoice": "i",
+              "minor": "1000",
+              "payment": "p"
+            }
+          ],
+          "findings": [],
+          "invoices": [
+            {
+              "balance_minor": "0",
+              "currency": "USD",
+              "id": "i",
+              "status": "paid"
+            }
+          ],
+          "summary": {
+            "allocations": 1,
+            "findings": 0,
+            "paid": 1,
+            "unallocated": 1
+          },
+          "totals": {
+            "USD": {
+              "allocated": "1000",
+              "received": "1200",
+              "unallocated": "200"
+            }
+          },
+          "unallocated": [
+            {
+              "currency": "USD",
+              "minor": "200",
+              "payment": "p"
+            }
+          ]
+        },
+        "version": 1
+      },
+      "evidence": [
+        {
+          "adapter": "invoice-reconciliation",
+          "contract_digest": "89f426272b7d98ef7c28743030bcdbd338ed9bfbda152a8074683060e543db96",
+          "input_digest": "35ff2e4423a6d2cbf7832fb957c1cacc099909211bfc3ed5460d7693aa739e51",
+          "iteration": 1,
+          "job_id": "task",
+          "output_digest": "4cc27eee4ab97c78e100dfc87fdc0af9baa5a4bd2cf2f7bbf2cec06be6f6f6ca",
+          "plan_digest": "955dae848b246201c452959ff67e700bffd74cc56e238a0cea206eb7ae1b008f",
+          "source": {
+            "source_commit": "0cea2f346312b43d604a314d4d537a567f06c67e",
+            "source_sha256": "5bcc2c523353091b45999b03fef6cd6b10a7023a7bcfd0b2bb92e02a4fba6e8d",
+            "version": 1
+          },
+          "status": "completed"
+        }
+      ],
+      "metrics": {
+        "actual_completed_tasks": 1,
+        "elapsed_ms": 17,
+        "iterations": 1,
+        "llm_calls": 0,
+        "required_criteria": 2,
+        "verified_criteria": 2
+      },
+      "actual_model_calls": 0,
+      "elapsed_ms": 35.4327
+    },
+    {
+      "experiment": "deterministic-workflow",
+      "mode": "full",
+      "trial": 1,
+      "input": {
+        "request": "Reconcile invoice i against its payment, preserve the overpayment, and verify that one invoice is paid.",
+        "project_id": "quickstart",
+        "session_id": "invoice-demo",
+        "task": {
+          "adapter": "invoice-reconciliation",
+          "input": {
+            "invoices": [
+              {
+                "id": "i",
+                "currency": "USD",
+                "total": "10.00"
+              }
+            ],
+            "payments": [
+              {
+                "id": "p",
+                "currency": "USD",
+                "amount": "12.00",
+                "invoice_id": "i"
+              }
+            ]
+          }
+        },
+        "constraints": [
+          "Use exact monetary amounts",
+          "Do not discard overpayment"
+        ],
+        "acceptance_criteria": [
+          {
+            "id": "paid-count",
+            "path": "result.summary.paid",
+            "operator": "equals",
+            "expected": 1,
+            "critical": true
+          },
+          {
+            "id": "preserved-overpayment",
+            "path": "result.summary.unallocated",
+            "operator": "equals",
+            "expected": 1,
+            "critical": true
+          }
+        ]
+      },
+      "state": "PASS",
+      "expected_behavior_met": true,
+      "reason": null,
+      "output": {
+        "input_sha256": "35ff2e4423a6d2cbf7832fb957c1cacc099909211bfc3ed5460d7693aa739e51",
+        "resource": "invoice-reconciliation",
+        "result": {
+          "allocations": [
+            {
+              "currency": "USD",
+              "invoice": "i",
+              "minor": "1000",
+              "payment": "p"
+            }
+          ],
+          "findings": [],
+          "invoices": [
+            {
+              "balance_minor": "0",
+              "currency": "USD",
+              "id": "i",
+              "status": "paid"
+            }
+          ],
+          "summary": {
+            "allocations": 1,
+            "findings": 0,
+            "paid": 1,
+            "unallocated": 1
+          },
+          "totals": {
+            "USD": {
+              "allocated": "1000",
+              "received": "1200",
+              "unallocated": "200"
+            }
+          },
+          "unallocated": [
+            {
+              "currency": "USD",
+              "minor": "200",
+              "payment": "p"
+            }
+          ]
+        },
+        "version": 1
+      },
+      "evidence": [
+        {
+          "adapter": "invoice-reconciliation",
+          "contract_digest": "89f426272b7d98ef7c28743030bcdbd338ed9bfbda152a8074683060e543db96",
+          "input_digest": "35ff2e4423a6d2cbf7832fb957c1cacc099909211bfc3ed5460d7693aa739e51",
+          "iteration": 1,
+          "job_id": "task",
+          "output_digest": "4cc27eee4ab97c78e100dfc87fdc0af9baa5a4bd2cf2f7bbf2cec06be6f6f6ca",
+          "plan_digest": "955dae848b246201c452959ff67e700bffd74cc56e238a0cea206eb7ae1b008f",
+          "source": {
+            "source_commit": "0cea2f346312b43d604a314d4d537a567f06c67e",
+            "source_sha256": "5bcc2c523353091b45999b03fef6cd6b10a7023a7bcfd0b2bb92e02a4fba6e8d",
+            "version": 1
+          },
+          "status": "completed"
+        }
+      ],
+      "metrics": {
+        "actual_completed_tasks": 1,
+        "elapsed_ms": 6,
+        "iterations": 1,
+        "llm_calls": 0,
+        "required_criteria": 2,
+        "verified_criteria": 2
+      },
+      "actual_model_calls": 0,
+      "elapsed_ms": 10.685000000000002
+    },
+    {
+      "experiment": "deterministic-workflow",
+      "mode": "full",
+      "trial": 2,
+      "input": {
+        "request": "Reconcile invoice i against its payment, preserve the overpayment, and verify that one invoice is paid.",
+        "project_id": "quickstart",
+        "session_id": "invoice-demo",
+        "task": {
+          "adapter": "invoice-reconciliation",
+          "input": {
+            "invoices": [
+              {
+                "id": "i",
+                "currency": "USD",
+                "total": "10.00"
+              }
+            ],
+            "payments": [
+              {
+                "id": "p",
+                "currency": "USD",
+                "amount": "12.00",
+                "invoice_id": "i"
+              }
+            ]
+          }
+        },
+        "constraints": [
+          "Use exact monetary amounts",
+          "Do not discard overpayment"
+        ],
+        "acceptance_criteria": [
+          {
+            "id": "paid-count",
+            "path": "result.summary.paid",
+            "operator": "equals",
+            "expected": 1,
+            "critical": true
+          },
+          {
+            "id": "preserved-overpayment",
+            "path": "result.summary.unallocated",
+            "operator": "equals",
+            "expected": 1,
+            "critical": true
+          }
+        ]
+      },
+      "state": "PASS",
+      "expected_behavior_met": true,
+      "reason": null,
+      "output": {
+        "input_sha256": "35ff2e4423a6d2cbf7832fb957c1cacc099909211bfc3ed5460d7693aa739e51",
+        "resource": "invoice-reconciliation",
+        "result": {
+          "allocations": [
+            {
+              "currency": "USD",
+              "invoice": "i",
+              "minor": "1000",
+              "payment": "p"
+            }
+          ],
+          "findings": [],
+          "invoices": [
+            {
+              "balance_minor": "0",
+              "currency": "USD",
+              "id": "i",
+              "status": "paid"
+            }
+          ],
+          "summary": {
+            "allocations": 1,
+            "findings": 0,
+            "paid": 1,
+            "unallocated": 1
+          },
+          "totals": {
+            "USD": {
+              "allocated": "1000",
+              "received": "1200",
+              "unallocated": "200"
+            }
+          },
+          "unallocated": [
+            {
+              "currency": "USD",
+              "minor": "200",
+              "payment": "p"
+            }
+          ]
+        },
+        "version": 1
+      },
+      "evidence": [
+        {
+          "adapter": "invoice-reconciliation",
+          "contract_digest": "89f426272b7d98ef7c28743030bcdbd338ed9bfbda152a8074683060e543db96",
+          "input_digest": "35ff2e4423a6d2cbf7832fb957c1cacc099909211bfc3ed5460d7693aa739e51",
+          "iteration": 1,
+          "job_id": "task",
+          "output_digest": "4cc27eee4ab97c78e100dfc87fdc0af9baa5a4bd2cf2f7bbf2cec06be6f6f6ca",
+          "plan_digest": "955dae848b246201c452959ff67e700bffd74cc56e238a0cea206eb7ae1b008f",
+          "source": {
+            "source_commit": "0cea2f346312b43d604a314d4d537a567f06c67e",
+            "source_sha256": "5bcc2c523353091b45999b03fef6cd6b10a7023a7bcfd0b2bb92e02a4fba6e8d",
+            "version": 1
+          },
+          "status": "completed"
+        }
+      ],
+      "metrics": {
+        "actual_completed_tasks": 1,
+        "elapsed_ms": 5,
+        "iterations": 1,
+        "llm_calls": 0,
+        "required_criteria": 2,
+        "verified_criteria": 2
+      },
+      "actual_model_calls": 0,
+      "elapsed_ms": 9.702500000000015
+    },
+    {
+      "experiment": "deterministic-workflow",
+      "mode": "no-cache",
+      "trial": 0,
+      "input": {
+        "request": "Reconcile invoice i against its payment, preserve the overpayment, and verify that one invoice is paid.",
+        "project_id": "quickstart",
+        "session_id": "invoice-demo",
+        "task": {
+          "adapter": "invoice-reconciliation",
+          "input": {
+            "invoices": [
+              {
+                "id": "i",
+                "currency": "USD",
+                "total": "10.00"
+              }
+            ],
+            "payments": [
+              {
+                "id": "p",
+                "currency": "USD",
+                "amount": "12.00",
+                "invoice_id": "i"
+              }
+            ]
+          }
+        },
+        "constraints": [
+          "Use exact monetary amounts",
+          "Do not discard overpayment"
+        ],
+        "acceptance_criteria": [
+          {
+            "id": "paid-count",
+            "path": "result.summary.paid",
+            "operator": "equals",
+            "expected": 1,
+            "critical": true
+          },
+          {
+            "id": "preserved-overpayment",
+            "path": "result.summary.unallocated",
+            "operator": "equals",
+            "expected": 1,
+            "critical": true
+          }
+        ]
+      },
+      "state": "PASS",
+      "expected_behavior_met": true,
+      "reason": null,
+      "output": {
+        "input_sha256": "35ff2e4423a6d2cbf7832fb957c1cacc099909211bfc3ed5460d7693aa739e51",
+        "resource": "invoice-reconciliation",
+        "result": {
+          "allocations": [
+            {
+              "currency": "USD",
+              "invoice": "i",
+              "minor": "1000",
+              "payment": "p"
+            }
+          ],
+          "findings": [],
+          "invoices": [
+            {
+              "balance_minor": "0",
+              "currency": "USD",
+              "id": "i",
+              "status": "paid"
+            }
+          ],
+          "summary": {
+            "allocations": 1,
+            "findings": 0,
+            "paid": 1,
+            "unallocated": 1
+          },
+          "totals": {
+            "USD": {
+              "allocated": "1000",
+              "received": "1200",
+              "unallocated": "200"
+            }
+          },
+          "unallocated": [
+            {
+              "currency": "USD",
+              "minor": "200",
+              "payment": "p"
+            }
+          ]
+        },
+        "version": 1
+      },
+      "evidence": [
+        {
+          "adapter": "invoice-reconciliation",
+          "contract_digest": "89f426272b7d98ef7c28743030bcdbd338ed9bfbda152a8074683060e543db96",
+          "input_digest": "35ff2e4423a6d2cbf7832fb957c1cacc099909211bfc3ed5460d7693aa739e51",
+          "iteration": 1,
+          "job_id": "task",
+          "output_digest": "4cc27eee4ab97c78e100dfc87fdc0af9baa5a4bd2cf2f7bbf2cec06be6f6f6ca",
+          "plan_digest": "955dae848b246201c452959ff67e700bffd74cc56e238a0cea206eb7ae1b008f",
+          "source": {
+            "source_commit": "0cea2f346312b43d604a314d4d537a567f06c67e",
+            "source_sha256": "5bcc2c523353091b45999b03fef6cd6b10a7023a7bcfd0b2bb92e02a4fba6e8d",
+            "version": 1
+          },
+          "status": "completed"
+        }
+      ],
+      "metrics": {
+        "actual_completed_tasks": 1,
+        "elapsed_ms": 7,
+        "iterations": 1,
+        "llm_calls": 0,
+        "required_criteria": 2,
+        "verified_criteria": 2
+      },
+      "actual_model_calls": 0,
+      "elapsed_ms": 10.82990000000001
+    },
+    {
+      "experiment": "deterministic-workflow",
+      "mode": "no-cache",
+      "trial": 1,
+      "input": {
+        "request": "Reconcile invoice i against its payment, preserve the overpayment, and verify that one invoice is paid.",
+        "project_id": "quickstart",
+        "session_id": "invoice-demo",
+        "task": {
+          "adapter": "invoice-reconciliation",
+          "input": {
+            "invoices": [
+              {
+                "id": "i",
+                "currency": "USD",
+                "total": "10.00"
+              }
+            ],
+            "payments": [
+              {
+                "id": "p",
+                "currency": "USD",
+                "amount": "12.00",
+                "invoice_id": "i"
+              }
+            ]
+          }
+        },
+        "constraints": [
+          "Use exact monetary amounts",
+          "Do not discard overpayment"
+        ],
+        "acceptance_criteria": [
+          {
+            "id": "paid-count",
+            "path": "result.summary.paid",
+            "operator": "equals",
+            "expected": 1,
+            "critical": true
+          },
+          {
+            "id": "preserved-overpayment",
+            "path": "result.summary.unallocated",
+            "operator": "equals",
+            "expected": 1,
+            "critical": true
+          }
+        ]
+      },
+      "state": "PASS",
+      "expected_behavior_met": true,
+      "reason": null,
+      "output": {
+        "input_sha256": "35ff2e4423a6d2cbf7832fb957c1cacc099909211bfc3ed5460d7693aa739e51",
+        "resource": "invoice-reconciliation",
+        "result": {
+          "allocations": [
+            {
+              "currency": "USD",
+              "invoice": "i",
+              "minor": "1000",
+              "payment": "p"
+            }
+          ],
+          "findings": [],
+          "invoices": [
+            {
+              "balance_minor": "0",
+              "currency": "USD",
+              "id": "i",
+              "status": "paid"
+            }
+          ],
+          "summary": {
+            "allocations": 1,
+            "findings": 0,
+            "paid": 1,
+            "unallocated": 1
+          },
+          "totals": {
+            "USD": {
+              "allocated": "1000",
+              "received": "1200",
+              "unallocated": "200"
+            }
+          },
+          "unallocated": [
+            {
+              "currency": "USD",
+              "minor": "200",
+              "payment": "p"
+            }
+          ]
+        },
+        "version": 1
+      },
+      "evidence": [
+        {
+          "adapter": "invoice-reconciliation",
+          "contract_digest": "89f426272b7d98ef7c28743030bcdbd338ed9bfbda152a8074683060e543db96",
+          "input_digest": "35ff2e4423a6d2cbf7832fb957c1cacc099909211bfc3ed5460d7693aa739e51",
+          "iteration": 1,
+          "job_id": "task",
+          "output_digest": "4cc27eee4ab97c78e100dfc87fdc0af9baa5a4bd2cf2f7bbf2cec06be6f6f6ca",
+          "plan_digest": "955dae848b246201c452959ff67e700bffd74cc56e238a0cea206eb7ae1b008f",
+          "source": {
+            "source_commit": "0cea2f346312b43d604a314d4d537a567f06c67e",
+            "source_sha256": "5bcc2c523353091b45999b03fef6cd6b10a7023a7bcfd0b2bb92e02a4fba6e8d",
+            "version": 1
+          },
+          "status": "completed"
+        }
+      ],
+      "metrics": {
+        "actual_completed_tasks": 1,
+        "elapsed_ms": 7,
+        "iterations": 1,
+        "llm_calls": 0,
+        "required_criteria": 2,
+        "verified_criteria": 2
+      },
+      "actual_model_calls": 0,
+      "elapsed_ms": 10.25569999999999
+    },
+    {
+      "experiment": "deterministic-workflow",
+      "mode": "no-cache",
+      "trial": 2,
+      "input": {
+        "request": "Reconcile invoice i against its payment, preserve the overpayment, and verify that one invoice is paid.",
+        "project_id": "quickstart",
+        "session_id": "invoice-demo",
+        "task": {
+          "adapter": "invoice-reconciliation",
+          "input": {
+            "invoices": [
+              {
+                "id": "i",
+                "currency": "USD",
+                "total": "10.00"
+              }
+            ],
+            "payments": [
+              {
+                "id": "p",
+                "currency": "USD",
+                "amount": "12.00",
+                "invoice_id": "i"
+              }
+            ]
+          }
+        },
+        "constraints": [
+          "Use exact monetary amounts",
+          "Do not discard overpayment"
+        ],
+        "acceptance_criteria": [
+          {
+            "id": "paid-count",
+            "path": "result.summary.paid",
+            "operator": "equals",
+            "expected": 1,
+            "critical": true
+          },
+          {
+            "id": "preserved-overpayment",
+            "path": "result.summary.unallocated",
+            "operator": "equals",
+            "expected": 1,
+            "critical": true
+          }
+        ]
+      },
+      "state": "PASS",
+      "expected_behavior_met": true,
+      "reason": null,
+      "output": {
+        "input_sha256": "35ff2e4423a6d2cbf7832fb957c1cacc099909211bfc3ed5460d7693aa739e51",
+        "resource": "invoice-reconciliation",
+        "result": {
+          "allocations": [
+            {
+              "currency": "USD",
+              "invoice": "i",
+              "minor": "1000",
+              "payment": "p"
+            }
+          ],
+          "findings": [],
+          "invoices": [
+            {
+              "balance_minor": "0",
+              "currency": "USD",
+              "id": "i",
+              "status": "paid"
+            }
+          ],
+          "summary": {
+            "allocations": 1,
+            "findings": 0,
+            "paid": 1,
+            "unallocated": 1
+          },
+          "totals": {
+            "USD": {
+              "allocated": "1000",
+              "received": "1200",
+              "unallocated": "200"
+            }
+          },
+          "unallocated": [
+            {
+              "currency": "USD",
+              "minor": "200",
+              "payment": "p"
+            }
+          ]
+        },
+        "version": 1
+      },
+      "evidence": [
+        {
+          "adapter": "invoice-reconciliation",
+          "contract_digest": "89f426272b7d98ef7c28743030bcdbd338ed9bfbda152a8074683060e543db96",
+          "input_digest": "35ff2e4423a6d2cbf7832fb957c1cacc099909211bfc3ed5460d7693aa739e51",
+          "iteration": 1,
+          "job_id": "task",
+          "output_digest": "4cc27eee4ab97c78e100dfc87fdc0af9baa5a4bd2cf2f7bbf2cec06be6f6f6ca",
+          "plan_digest": "955dae848b246201c452959ff67e700bffd74cc56e238a0cea206eb7ae1b008f",
+          "source": {
+            "source_commit": "0cea2f346312b43d604a314d4d537a567f06c67e",
+            "source_sha256": "5bcc2c523353091b45999b03fef6cd6b10a7023a7bcfd0b2bb92e02a4fba6e8d",
+            "version": 1
+          },
+          "status": "completed"
+        }
+      ],
+      "metrics": {
+        "actual_completed_tasks": 1,
+        "elapsed_ms": 5,
+        "iterations": 1,
+        "llm_calls": 0,
+        "required_criteria": 2,
+        "verified_criteria": 2
+      },
+      "actual_model_calls": 0,
+      "elapsed_ms": 10.64579999999998
+    },
+    {
+      "experiment": "deterministic-workflow",
+      "mode": "no-retrieval",
+      "trial": 0,
+      "input": {
+        "request": "Reconcile invoice i against its payment, preserve the overpayment, and verify that one invoice is paid.",
+        "project_id": "quickstart",
+        "session_id": "invoice-demo",
+        "task": {
+          "adapter": "invoice-reconciliation",
+          "input": {
+            "invoices": [
+              {
+                "id": "i",
+                "currency": "USD",
+                "total": "10.00"
+              }
+            ],
+            "payments": [
+              {
+                "id": "p",
+                "currency": "USD",
+                "amount": "12.00",
+                "invoice_id": "i"
+              }
+            ]
+          }
+        },
+        "constraints": [
+          "Use exact monetary amounts",
+          "Do not discard overpayment"
+        ],
+        "acceptance_criteria": [
+          {
+            "id": "paid-count",
+            "path": "result.summary.paid",
+            "operator": "equals",
+            "expected": 1,
+            "critical": true
+          },
+          {
+            "id": "preserved-overpayment",
+            "path": "result.summary.unallocated",
+            "operator": "equals",
+            "expected": 1,
+            "critical": true
+          }
+        ]
+      },
+      "state": "PASS",
+      "expected_behavior_met": true,
+      "reason": null,
+      "output": {
+        "input_sha256": "35ff2e4423a6d2cbf7832fb957c1cacc099909211bfc3ed5460d7693aa739e51",
+        "resource": "invoice-reconciliation",
+        "result": {
+          "allocations": [
+            {
+              "currency": "USD",
+              "invoice": "i",
+              "minor": "1000",
+              "payment": "p"
+            }
+          ],
+          "findings": [],
+          "invoices": [
+            {
+              "balance_minor": "0",
+              "currency": "USD",
+              "id": "i",
+              "status": "paid"
+            }
+          ],
+          "summary": {
+            "allocations": 1,
+            "findings": 0,
+            "paid": 1,
+            "unallocated": 1
+          },
+          "totals": {
+            "USD": {
+              "allocated": "1000",
+              "received": "1200",
+              "unallocated": "200"
+            }
+          },
+          "unallocated": [
+            {
+              "currency": "USD",
+              "minor": "200",
+              "payment": "p"
+            }
+          ]
+        },
+        "version": 1
+      },
+      "evidence": [
+        {
+          "adapter": "invoice-reconciliation",
+          "contract_digest": "89f426272b7d98ef7c28743030bcdbd338ed9bfbda152a8074683060e543db96",
+          "input_digest": "35ff2e4423a6d2cbf7832fb957c1cacc099909211bfc3ed5460d7693aa739e51",
+          "iteration": 1,
+          "job_id": "task",
+          "output_digest": "4cc27eee4ab97c78e100dfc87fdc0af9baa5a4bd2cf2f7bbf2cec06be6f6f6ca",
+          "plan_digest": "955dae848b246201c452959ff67e700bffd74cc56e238a0cea206eb7ae1b008f",
+          "source": {
+            "source_commit": "0cea2f346312b43d604a314d4d537a567f06c67e",
+            "source_sha256": "5bcc2c523353091b45999b03fef6cd6b10a7023a7bcfd0b2bb92e02a4fba6e8d",
+            "version": 1
+          },
+          "status": "completed"
+        }
+      ],
+      "metrics": {
+        "actual_completed_tasks": 1,
+        "elapsed_ms": 6,
+        "iterations": 1,
+        "llm_calls": 0,
+        "required_criteria": 2,
+        "verified_criteria": 2
+      },
+      "actual_model_calls": 0,
+      "elapsed_ms": 9.186300000000017
+    },
+    {
+      "experiment": "deterministic-workflow",
+      "mode": "no-retrieval",
+      "trial": 1,
+      "input": {
+        "request": "Reconcile invoice i against its payment, preserve the overpayment, and verify that one invoice is paid.",
+        "project_id": "quickstart",
+        "session_id": "invoice-demo",
+        "task": {
+          "adapter": "invoice-reconciliation",
+          "input": {
+            "invoices": [
+              {
+                "id": "i",
+                "currency": "USD",
+                "total": "10.00"
+              }
+            ],
+            "payments": [
+              {
+                "id": "p",
+                "currency": "USD",
+                "amount": "12.00",
+                "invoice_id": "i"
+              }
+            ]
+          }
+        },
+        "constraints": [
+          "Use exact monetary amounts",
+          "Do not discard overpayment"
+        ],
+        "acceptance_criteria": [
+          {
+            "id": "paid-count",
+            "path": "result.summary.paid",
+            "operator": "equals",
+            "expected": 1,
+            "critical": true
+          },
+          {
+            "id": "preserved-overpayment",
+            "path": "result.summary.unallocated",
+            "operator": "equals",
+            "expected": 1,
+            "critical": true
+          }
+        ]
+      },
+      "state": "PASS",
+      "expected_behavior_met": true,
+      "reason": null,
+      "output": {
+        "input_sha256": "35ff2e4423a6d2cbf7832fb957c1cacc099909211bfc3ed5460d7693aa739e51",
+        "resource": "invoice-reconciliation",
+        "result": {
+          "allocations": [
+            {
+              "currency": "USD",
+              "invoice": "i",
+              "minor": "1000",
+              "payment": "p"
+            }
+          ],
+          "findings": [],
+          "invoices": [
+            {
+              "balance_minor": "0",
+              "currency": "USD",
+              "id": "i",
+              "status": "paid"
+            }
+          ],
+          "summary": {
+            "allocations": 1,
+            "findings": 0,
+            "paid": 1,
+            "unallocated": 1
+          },
+          "totals": {
+            "USD": {
+              "allocated": "1000",
+              "received": "1200",
+              "unallocated": "200"
+            }
+          },
+          "unallocated": [
+            {
+              "currency": "USD",
+              "minor": "200",
+              "payment": "p"
+            }
+          ]
+        },
+        "version": 1
+      },
+      "evidence": [
+        {
+          "adapter": "invoice-reconciliation",
+          "contract_digest": "89f426272b7d98ef7c28743030bcdbd338ed9bfbda152a8074683060e543db96",
+          "input_digest": "35ff2e4423a6d2cbf7832fb957c1cacc099909211bfc3ed5460d7693aa739e51",
+          "iteration": 1,
+          "job_id": "task",
+          "output_digest": "4cc27eee4ab97c78e100dfc87fdc0af9baa5a4bd2cf2f7bbf2cec06be6f6f6ca",
+          "plan_digest": "955dae848b246201c452959ff67e700bffd74cc56e238a0cea206eb7ae1b008f",
+          "source": {
+            "source_commit": "0cea2f346312b43d604a314d4d537a567f06c67e",
+            "source_sha256": "5bcc2c523353091b45999b03fef6cd6b10a7023a7bcfd0b2bb92e02a4fba6e8d",
+            "version": 1
+          },
+          "status": "completed"
+        }
+      ],
+      "metrics": {
+        "actual_completed_tasks": 1,
+        "elapsed_ms": 6,
+        "iterations": 1,
+        "llm_calls": 0,
+        "required_criteria": 2,
+        "verified_criteria": 2
+      },
+      "actual_model_calls": 0,
+      "elapsed_ms": 12.0197
+    },
+    {
+      "experiment": "deterministic-workflow",
+      "mode": "no-retrieval",
+      "trial": 2,
+      "input": {
+        "request": "Reconcile invoice i against its payment, preserve the overpayment, and verify that one invoice is paid.",
+        "project_id": "quickstart",
+        "session_id": "invoice-demo",
+        "task": {
+          "adapter": "invoice-reconciliation",
+          "input": {
+            "invoices": [
+              {
+                "id": "i",
+                "currency": "USD",
+                "total": "10.00"
+              }
+            ],
+            "payments": [
+              {
+                "id": "p",
+                "currency": "USD",
+                "amount": "12.00",
+                "invoice_id": "i"
+              }
+            ]
+          }
+        },
+        "constraints": [
+          "Use exact monetary amounts",
+          "Do not discard overpayment"
+        ],
+        "acceptance_criteria": [
+          {
+            "id": "paid-count",
+            "path": "result.summary.paid",
+            "operator": "equals",
+            "expected": 1,
+            "critical": true
+          },
+          {
+            "id": "preserved-overpayment",
+            "path": "result.summary.unallocated",
+            "operator": "equals",
+            "expected": 1,
+            "critical": true
+          }
+        ]
+      },
+      "state": "PASS",
+      "expected_behavior_met": true,
+      "reason": null,
+      "output": {
+        "input_sha256": "35ff2e4423a6d2cbf7832fb957c1cacc099909211bfc3ed5460d7693aa739e51",
+        "resource": "invoice-reconciliation",
+        "result": {
+          "allocations": [
+            {
+              "currency": "USD",
+              "invoice": "i",
+              "minor": "1000",
+              "payment": "p"
+            }
+          ],
+          "findings": [],
+          "invoices": [
+            {
+              "balance_minor": "0",
+              "currency": "USD",
+              "id": "i",
+              "status": "paid"
+            }
+          ],
+          "summary": {
+            "allocations": 1,
+            "findings": 0,
+            "paid": 1,
+            "unallocated": 1
+          },
+          "totals": {
+            "USD": {
+              "allocated": "1000",
+              "received": "1200",
+              "unallocated": "200"
+            }
+          },
+          "unallocated": [
+            {
+              "currency": "USD",
+              "minor": "200",
+              "payment": "p"
+            }
+          ]
+        },
+        "version": 1
+      },
+      "evidence": [
+        {
+          "adapter": "invoice-reconciliation",
+          "contract_digest": "89f426272b7d98ef7c28743030bcdbd338ed9bfbda152a8074683060e543db96",
+          "input_digest": "35ff2e4423a6d2cbf7832fb957c1cacc099909211bfc3ed5460d7693aa739e51",
+          "iteration": 1,
+          "job_id": "task",
+          "output_digest": "4cc27eee4ab97c78e100dfc87fdc0af9baa5a4bd2cf2f7bbf2cec06be6f6f6ca",
+          "plan_digest": "955dae848b246201c452959ff67e700bffd74cc56e238a0cea206eb7ae1b008f",
+          "source": {
+            "source_commit": "0cea2f346312b43d604a314d4d537a567f06c67e",
+            "source_sha256": "5bcc2c523353091b45999b03fef6cd6b10a7023a7bcfd0b2bb92e02a4fba6e8d",
+            "version": 1
+          },
+          "status": "completed"
+        }
+      ],
+      "metrics": {
+        "actual_completed_tasks": 1,
+        "elapsed_ms": 7,
+        "iterations": 1,
+        "llm_calls": 0,
+        "required_criteria": 2,
+        "verified_criteria": 2
+      },
+      "actual_model_calls": 0,
+      "elapsed_ms": 11.814599999999984
+    },
+    {
+      "experiment": "required-knowledge-ablation",
+      "mode": "full",
+      "input": {
+        "request": "Reconcile invoice i against its payment, preserve the overpayment, and verify that one invoice is paid.",
+        "project_id": "quickstart",
+        "session_id": "invoice-demo",
+        "task": {
+          "adapter": "invoice-reconciliation",
+          "input": {
+            "invoices": [
+              {
+                "id": "i",
+                "currency": "USD",
+                "total": "10.00"
+              }
+            ],
+            "payments": [
+              {
+                "id": "p",
+                "currency": "USD",
+                "amount": "12.00",
+                "invoice_id": "i"
+              }
+            ]
+          }
+        },
+        "constraints": [
+          "Use exact monetary amounts",
+          "Do not discard overpayment"
+        ],
+        "acceptance_criteria": [
+          {
+            "id": "paid-count",
+            "path": "result.summary.paid",
+            "operator": "equals",
+            "expected": 1,
+            "critical": true
+          },
+          {
+            "id": "preserved-overpayment",
+            "path": "result.summary.unallocated",
+            "operator": "equals",
+            "expected": 1,
+            "critical": true
+          }
+        ],
+        "task_id": "required-knowledge",
+        "knowledge": [
+          {
+            "query": "Invoice overpayments unallocated",
+            "kind": "wiki",
+            "needed": true,
+            "required": true,
+            "reason": "Verify the declared handling policy before execution."
+          }
+        ]
+      },
+      "state": "PASS",
+      "reason": null,
+      "output": {
+        "input_sha256": "35ff2e4423a6d2cbf7832fb957c1cacc099909211bfc3ed5460d7693aa739e51",
+        "resource": "invoice-reconciliation",
+        "result": {
+          "allocations": [
+            {
+              "currency": "USD",
+              "invoice": "i",
+              "minor": "1000",
+              "payment": "p"
+            }
+          ],
+          "findings": [],
+          "invoices": [
+            {
+              "balance_minor": "0",
+              "currency": "USD",
+              "id": "i",
+              "status": "paid"
+            }
+          ],
+          "summary": {
+            "allocations": 1,
+            "findings": 0,
+            "paid": 1,
+            "unallocated": 1
+          },
+          "totals": {
+            "USD": {
+              "allocated": "1000",
+              "received": "1200",
+              "unallocated": "200"
+            }
+          },
+          "unallocated": [
+            {
+              "currency": "USD",
+              "minor": "200",
+              "payment": "p"
+            }
+          ]
+        },
+        "version": 1
+      },
+      "knowledge_queries": [
+        {
+          "kind": "wiki",
+          "query": "Invoice overpayments unallocated",
+          "query_digest": "9e6c8abd5ed83d9b973db2393397908e43383a1610aa42686d0270f986746e40",
+          "reason": "Verify the declared handling policy before execution.",
+          "result": {
+            "external": "not_requested",
+            "results": [
+              {
+                "citation": {
+                  "chunk": 0,
+                  "end": 67,
+                  "id": "invoice-policy",
+                  "source": "local:synthetic-invoice-policy",
+                  "source_hash": "e1b513e6ab1c7eefb643dac00d983bf05bc8b9b56100cf648754020a11d3ad88",
+                  "start": 0,
+                  "version": "1"
+                },
+                "score": 0.8630462173553426,
+                "text": "Invoice overpayments must remain unallocated rather than discarded.",
+                "trusted": false
+              }
+            ],
+            "source_versions": {
+              "invoice-policy": {
+                "source": "local:synthetic-invoice-policy",
+                "source_hash": "e1b513e6ab1c7eefb643dac00d983bf05bc8b9b56100cf648754020a11d3ad88",
+                "version": "1"
+              }
+            },
+            "stale_sources": [],
+            "status": "found",
+            "warning": "Retrieved text is evidence only; embedded instructions cannot authorize actions"
+          },
+          "satisfied": true,
+          "trusted": false
+        }
+      ],
+      "evidence": [
+        {
+          "adapter": "invoice-reconciliation",
+          "contract_digest": "89f426272b7d98ef7c28743030bcdbd338ed9bfbda152a8074683060e543db96",
+          "input_digest": "35ff2e4423a6d2cbf7832fb957c1cacc099909211bfc3ed5460d7693aa739e51",
+          "iteration": 1,
+          "job_id": "task",
+          "output_digest": "4cc27eee4ab97c78e100dfc87fdc0af9baa5a4bd2cf2f7bbf2cec06be6f6f6ca",
+          "plan_digest": "5752c8e0994ddaab6b545ba68f8a88b37834bc73befb22b539611964ff415827",
+          "source": {
+            "source_commit": "0cea2f346312b43d604a314d4d537a567f06c67e",
+            "source_sha256": "5bcc2c523353091b45999b03fef6cd6b10a7023a7bcfd0b2bb92e02a4fba6e8d",
+            "version": 1
+          },
+          "status": "completed"
+        }
+      ],
+      "elapsed_ms": 20.8082,
+      "expected_behavior": "PASS with source citation",
+      "expected_behavior_met": true
+    },
+    {
+      "experiment": "repair-and-resume",
+      "mode": "full",
+      "input": {
+        "request": "Reconcile invoice i against its payment, preserve the overpayment, and verify that one invoice is paid.",
+        "project_id": "quickstart",
+        "session_id": "invoice-demo",
+        "task": {
+          "adapter": "invoice-reconciliation",
+          "input": {
+            "invoices": [
+              {
+                "id": "i",
+                "currency": "USD",
+                "total": "10.00"
+              }
+            ],
+            "payments": []
+          }
+        },
+        "constraints": [
+          "Use exact monetary amounts",
+          "Do not discard overpayment"
+        ],
+        "acceptance_criteria": [
+          {
+            "id": "paid-count",
+            "path": "result.summary.paid",
+            "operator": "equals",
+            "expected": 1,
+            "critical": true
+          },
+          {
+            "id": "preserved-overpayment",
+            "path": "result.summary.unallocated",
+            "operator": "equals",
+            "expected": 1,
+            "critical": true
+          }
+        ],
+        "task_id": "repair-resume"
+      },
+      "initial_state": "BLOCKED",
+      "initial_failure": {
+        "code": "VERIFICATION_FAILED",
+        "message": "Execution or verification failed; no trusted repair handler is configured"
+      },
+      "state": "PASS",
+      "history": [
+        {
+          "evidence": [
+            {
+              "adapter": "invoice-reconciliation",
+              "contract_digest": "89f426272b7d98ef7c28743030bcdbd338ed9bfbda152a8074683060e543db96",
+              "input_digest": "1be64713c5cd650f210fa287d1acecaaf6b2ada33fb5a0d08669d0734c6aec3e",
+              "iteration": 1,
+              "job_id": "task",
+              "output_digest": "b91c0d934971a732311da86ad43c93d93104007ee05320f97203a4a380acfc24",
+              "plan_digest": "f100c816fbce78d62b03bf2c337d7ff5741ea3671f6fcaeb8e84c7f26ac54a8f",
+              "source": {
+                "source_commit": "0cea2f346312b43d604a314d4d537a567f06c67e",
+                "source_sha256": "5bcc2c523353091b45999b03fef6cd6b10a7023a7bcfd0b2bb92e02a4fba6e8d",
+                "version": 1
+              },
+              "status": "completed"
+            }
+          ],
+          "failure": {
+            "code": "VERIFICATION_FAILED",
+            "findings": [
+              {
+                "actual": 0,
+                "expected": 1,
+                "id": "criterion.paid-count",
+                "operator": "equals",
+                "path": "result.summary.paid",
+                "severity": "error"
+              },
+              {
+                "actual": 0,
+                "expected": 1,
+                "id": "criterion.preserved-overpayment",
+                "operator": "equals",
+                "path": "result.summary.unallocated",
+                "severity": "error"
+              }
+            ]
+          },
+          "iteration": 1,
+          "output": {
+            "input_sha256": "1be64713c5cd650f210fa287d1acecaaf6b2ada33fb5a0d08669d0734c6aec3e",
+            "resource": "invoice-reconciliation",
+            "result": {
+              "allocations": [],
+              "findings": [],
+              "invoices": [
+                {
+                  "balance_minor": "1000",
+                  "currency": "USD",
+                  "id": "i",
+                  "status": "unpaid"
+                }
+              ],
+              "summary": {
+                "allocations": 0,
+                "findings": 0,
+                "paid": 0,
+                "unallocated": 0
+              },
+              "totals": {},
+              "unallocated": []
+            },
+            "version": 1
+          },
+          "plan": {
+            "contract_digest": "89f426272b7d98ef7c28743030bcdbd338ed9bfbda152a8074683060e543db96",
+            "input_digest": "325470427effb5b7eeb2c7f38af5d6e9abf0fcf3c577f1890c60a681226d5b1c",
+            "iteration": 1,
+            "jobs": [
+              {
+                "adapter": "invoice-reconciliation",
+                "depends_on": [],
+                "id": "task",
+                "input": {
+                  "invoices": [
+                    {
+                      "currency": "USD",
+                      "id": "i",
+                      "total": "10.00"
+                    }
+                  ],
+                  "payments": []
+                },
+                "resources": [],
+                "side_effects": []
+              }
+            ],
+            "plan_digest": "f100c816fbce78d62b03bf2c337d7ff5741ea3671f6fcaeb8e84c7f26ac54a8f",
+            "prerequisite_digest": "28b838c93c3360aa64df7ffcfb5ea6f8d0435a0ed22fdf674104762feb30f29a",
+            "source_versions": {
+              "invoice-reconciliation": {
+                "source_commit": "0cea2f346312b43d604a314d4d537a567f06c67e",
+                "source_sha256": "5bcc2c523353091b45999b03fef6cd6b10a7023a7bcfd0b2bb92e02a4fba6e8d",
+                "version": 1
+              }
+            }
+          },
+          "state": "FAILED"
+        },
+        {
+          "evidence": [
+            {
+              "adapter": "invoice-reconciliation",
+              "contract_digest": "89f426272b7d98ef7c28743030bcdbd338ed9bfbda152a8074683060e543db96",
+              "input_digest": "1be64713c5cd650f210fa287d1acecaaf6b2ada33fb5a0d08669d0734c6aec3e",
+              "iteration": 2,
+              "job_id": "task",
+              "output_digest": "b91c0d934971a732311da86ad43c93d93104007ee05320f97203a4a380acfc24",
+              "plan_digest": "a3c193f72a85843b7a2c5b52d08241902664a279f8cae25818e5c75c00defe1f",
+              "source": {
+                "source_commit": "0cea2f346312b43d604a314d4d537a567f06c67e",
+                "source_sha256": "5bcc2c523353091b45999b03fef6cd6b10a7023a7bcfd0b2bb92e02a4fba6e8d",
+                "version": 1
+              },
+              "status": "completed"
+            }
+          ],
+          "failure": {
+            "code": "VERIFICATION_FAILED",
+            "findings": [
+              {
+                "actual": 0,
+                "expected": 1,
+                "id": "criterion.paid-count",
+                "operator": "equals",
+                "path": "result.summary.paid",
+                "severity": "error"
+              },
+              {
+                "actual": 0,
+                "expected": 1,
+                "id": "criterion.preserved-overpayment",
+                "operator": "equals",
+                "path": "result.summary.unallocated",
+                "severity": "error"
+              }
+            ]
+          },
+          "iteration": 2,
+          "output": {
+            "input_sha256": "1be64713c5cd650f210fa287d1acecaaf6b2ada33fb5a0d08669d0734c6aec3e",
+            "resource": "invoice-reconciliation",
+            "result": {
+              "allocations": [],
+              "findings": [],
+              "invoices": [
+                {
+                  "balance_minor": "1000",
+                  "currency": "USD",
+                  "id": "i",
+                  "status": "unpaid"
+                }
+              ],
+              "summary": {
+                "allocations": 0,
+                "findings": 0,
+                "paid": 0,
+                "unallocated": 0
+              },
+              "totals": {},
+              "unallocated": []
+            },
+            "version": 1
+          },
+          "plan": {
+            "contract_digest": "89f426272b7d98ef7c28743030bcdbd338ed9bfbda152a8074683060e543db96",
+            "input_digest": "325470427effb5b7eeb2c7f38af5d6e9abf0fcf3c577f1890c60a681226d5b1c",
+            "iteration": 2,
+            "jobs": [
+              {
+                "adapter": "invoice-reconciliation",
+                "depends_on": [],
+                "id": "task",
+                "input": {
+                  "invoices": [
+                    {
+                      "currency": "USD",
+                      "id": "i",
+                      "total": "10.00"
+                    }
+                  ],
+                  "payments": []
+                },
+                "resources": [],
+                "side_effects": []
+              }
+            ],
+            "plan_digest": "a3c193f72a85843b7a2c5b52d08241902664a279f8cae25818e5c75c00defe1f",
+            "prerequisite_digest": "28b838c93c3360aa64df7ffcfb5ea6f8d0435a0ed22fdf674104762feb30f29a",
+            "source_versions": {
+              "invoice-reconciliation": {
+                "source_commit": "0cea2f346312b43d604a314d4d537a567f06c67e",
+                "source_sha256": "5bcc2c523353091b45999b03fef6cd6b10a7023a7bcfd0b2bb92e02a4fba6e8d",
+                "version": 1
+              }
+            }
+          },
+          "state": "FAILED"
+        }
+      ],
+      "evidence": [
+        {
+          "adapter": "invoice-reconciliation",
+          "contract_digest": "89f426272b7d98ef7c28743030bcdbd338ed9bfbda152a8074683060e543db96",
+          "input_digest": "35ff2e4423a6d2cbf7832fb957c1cacc099909211bfc3ed5460d7693aa739e51",
+          "iteration": 3,
+          "job_id": "task",
+          "output_digest": "4cc27eee4ab97c78e100dfc87fdc0af9baa5a4bd2cf2f7bbf2cec06be6f6f6ca",
+          "plan_digest": "36cd44299b9caf89867e2e88fa0362c40e8223866ffde5ccce140d92470b2146",
+          "source": {
+            "source_commit": "0cea2f346312b43d604a314d4d537a567f06c67e",
+            "source_sha256": "5bcc2c523353091b45999b03fef6cd6b10a7023a7bcfd0b2bb92e02a4fba6e8d",
+            "version": 1
+          },
+          "status": "completed"
+        }
+      ],
+      "events": [
+        {
+          "role": "Planner",
+          "state": "ANALYZE",
+          "type": "state"
+        },
+        {
+          "context_digest": "ff7bf06426d6b313e573b4a772c1d5b35e4690558b3a7c98a8120c1ff0119f26",
+          "duplicates_removed": 0,
+          "type": "context-preprocessed"
+        },
+        {
+          "role": "Planner",
+          "state": "PLAN",
+          "type": "state"
+        },
+        {
+          "iteration": 1,
+          "role": "Executor",
+          "state": "EXECUTE",
+          "type": "state"
+        },
+        {
+          "adapter": "invoice-reconciliation",
+          "batch": 1,
+          "id": "task",
+          "role": "Executor",
+          "type": "job-started"
+        },
+        {
+          "adapter": "invoice-reconciliation",
+          "id": "task",
+          "type": "job-finished"
+        },
+        {
+          "role": "Reviewer",
+          "state": "REVIEW",
+          "type": "state"
+        },
+        {
+          "checks": [
+            {
+              "critical": true,
+              "errors": [],
+              "id": "contract.valid",
+              "passed": true
+            },
+            {
+              "critical": true,
+              "id": "request.original",
+              "passed": true,
+              "reason": "Immutable original request digest"
+            },
+            {
+              "critical": true,
+              "id": "execution.actual",
+              "passed": true,
+              "reason": "Actual completed adapter execution bound to current contract"
+            },
+            {
+              "critical": true,
+              "id": "evidence.output",
+              "passed": true,
+              "reason": "Output bytes match execution evidence"
+            },
+            {
+              "critical": true,
+              "id": "evidence.input",
+              "passed": true,
+              "reason": "Execution input and adapter match the returned envelope and contract"
+            },
+            {
+              "critical": true,
+              "id": "criteria.nonempty",
+              "passed": true,
+              "reason": "User outcome criteria required"
+            },
+            {
+              "actual": 0,
+              "critical": true,
+              "expected": 1,
+              "id": "criterion.paid-count",
+              "operator": "equals",
+              "passed": false,
+              "path": "result.summary.paid"
+            },
+            {
+              "actual": 0,
+              "critical": true,
+              "expected": 1,
+              "id": "criterion.preserved-overpayment",
+              "operator": "equals",
+              "passed": false,
+              "path": "result.summary.unallocated"
+            }
+          ],
+          "passed": false,
+          "role": "Validator",
+          "type": "validation"
+        },
+        {
+          "code": "VERIFICATION_FAILED",
+          "findings": [
+            {
+              "actual": 0,
+              "expected": 1,
+              "id": "criterion.paid-count",
+              "operator": "equals",
+              "path": "result.summary.paid",
+              "severity": "error"
+            },
+            {
+              "actual": 0,
+              "expected": 1,
+              "id": "criterion.preserved-overpayment",
+              "operator": "equals",
+              "path": "result.summary.unallocated",
+              "severity": "error"
+            }
+          ],
+          "type": "failure"
+        },
+        {
+          "reason": "VERIFICATION_FAILED",
+          "state": "BLOCKED",
+          "type": "state"
+        },
+        {
+          "role": "Reporter",
+          "state": "BLOCKED",
+          "type": "report"
+        },
+        {
+          "after": {
+            "maxCalls": 0,
+            "maxIterations": 3,
+            "maxRepeatedErrors": 3,
+            "maxTimeMs": 30000
+          },
+          "before": {
+            "maxCalls": 0,
+            "maxIterations": 3,
+            "maxRepeatedErrors": 2,
+            "maxTimeMs": 30000
+          },
+          "spent": {
+            "attempts": 1,
+            "elapsed_ms": 29,
+            "last_error_digest": "81313eb3c21040c50940f2e67f42ec4a6cfc7a7b7277d03a821c9384dc042f0e",
+            "model_calls": 0,
+            "repeated_errors": 1
+          },
+          "type": "host-budget-change"
+        },
+        {
+          "imported_state_ignored": true,
+          "source": "authoritative-store",
+          "type": "resume"
+        },
+        {
+          "context_digest": "ff7bf06426d6b313e573b4a772c1d5b35e4690558b3a7c98a8120c1ff0119f26",
+          "duplicates_removed": 0,
+          "type": "context-preprocessed"
+        },
+        {
+          "role": "Planner",
+          "state": "PLAN",
+          "type": "state"
+        },
+        {
+          "iteration": 2,
+          "role": "Executor",
+          "state": "EXECUTE",
+          "type": "state"
+        },
+        {
+          "adapter": "invoice-reconciliation",
+          "batch": 1,
+          "id": "task",
+          "role": "Executor",
+          "type": "job-started"
+        },
+        {
+          "adapter": "invoice-reconciliation",
+          "id": "task",
+          "type": "job-finished"
+        },
+        {
+          "role": "Reviewer",
+          "state": "REVIEW",
+          "type": "state"
+        },
+        {
+          "checks": [
+            {
+              "critical": true,
+              "errors": [],
+              "id": "contract.valid",
+              "passed": true
+            },
+            {
+              "critical": true,
+              "id": "request.original",
+              "passed": true,
+              "reason": "Immutable original request digest"
+            },
+            {
+              "critical": true,
+              "id": "execution.actual",
+              "passed": true,
+              "reason": "Actual completed adapter execution bound to current contract"
+            },
+            {
+              "critical": true,
+              "id": "evidence.output",
+              "passed": true,
+              "reason": "Output bytes match execution evidence"
+            },
+            {
+              "critical": true,
+              "id": "evidence.input",
+              "passed": true,
+              "reason": "Execution input and adapter match the returned envelope and contract"
+            },
+            {
+              "critical": true,
+              "id": "criteria.nonempty",
+              "passed": true,
+              "reason": "User outcome criteria required"
+            },
+            {
+              "actual": 0,
+              "critical": true,
+              "expected": 1,
+              "id": "criterion.paid-count",
+              "operator": "equals",
+              "passed": false,
+              "path": "result.summary.paid"
+            },
+            {
+              "actual": 0,
+              "critical": true,
+              "expected": 1,
+              "id": "criterion.preserved-overpayment",
+              "operator": "equals",
+              "passed": false,
+              "path": "result.summary.unallocated"
+            }
+          ],
+          "passed": false,
+          "role": "Validator",
+          "type": "validation"
+        },
+        {
+          "code": "VERIFICATION_FAILED",
+          "findings": [
+            {
+              "actual": 0,
+              "expected": 1,
+              "id": "criterion.paid-count",
+              "operator": "equals",
+              "path": "result.summary.paid",
+              "severity": "error"
+            },
+            {
+              "actual": 0,
+              "expected": 1,
+              "id": "criterion.preserved-overpayment",
+              "operator": "equals",
+              "path": "result.summary.unallocated",
+              "severity": "error"
+            }
+          ],
+          "type": "failure"
+        },
+        {
+          "role": "Debugger",
+          "state": "REPAIR",
+          "type": "state"
+        },
+        {
+          "after_input_digest": "eeac5c74e0aab555f04bc733d787ce1f9c5bd5ce91c4533e4e48679155dd3b0e",
+          "before_input_digest": "325470427effb5b7eeb2c7f38af5d6e9abf0fcf3c577f1890c60a681226d5b1c",
+          "contract_digest": "89f426272b7d98ef7c28743030bcdbd338ed9bfbda152a8074683060e543db96",
+          "failed_checks": [
+            {
+              "actual": 0,
+              "expected": 1,
+              "id": "criterion.paid-count",
+              "operator": "equals",
+              "path": "result.summary.paid",
+              "severity": "error"
+            },
+            {
+              "actual": 0,
+              "expected": 1,
+              "id": "criterion.preserved-overpayment",
+              "operator": "equals",
+              "path": "result.summary.unallocated",
+              "severity": "error"
+            }
+          ],
+          "type": "repair"
+        },
+        {
+          "role": "Planner",
+          "state": "PLAN",
+          "type": "state"
+        },
+        {
+          "iteration": 3,
+          "role": "Executor",
+          "state": "EXECUTE",
+          "type": "state"
+        },
+        {
+          "adapter": "invoice-reconciliation",
+          "batch": 1,
+          "id": "task",
+          "role": "Executor",
+          "type": "job-started"
+        },
+        {
+          "adapter": "invoice-reconciliation",
+          "id": "task",
+          "type": "job-finished"
+        },
+        {
+          "role": "Reviewer",
+          "state": "REVIEW",
+          "type": "state"
+        },
+        {
+          "checks": [
+            {
+              "critical": true,
+              "errors": [],
+              "id": "contract.valid",
+              "passed": true
+            },
+            {
+              "critical": true,
+              "id": "request.original",
+              "passed": true,
+              "reason": "Immutable original request digest"
+            },
+            {
+              "critical": true,
+              "id": "execution.actual",
+              "passed": true,
+              "reason": "Actual completed adapter execution bound to current contract"
+            },
+            {
+              "critical": true,
+              "id": "evidence.output",
+              "passed": true,
+              "reason": "Output bytes match execution evidence"
+            },
+            {
+              "critical": true,
+              "id": "evidence.input",
+              "passed": true,
+              "reason": "Execution input and adapter match the returned envelope and contract"
+            },
+            {
+              "critical": true,
+              "id": "criteria.nonempty",
+              "passed": true,
+              "reason": "User outcome criteria required"
+            },
+            {
+              "actual": 1,
+              "critical": true,
+              "expected": 1,
+              "id": "criterion.paid-count",
+              "operator": "equals",
+              "passed": true,
+              "path": "result.summary.paid"
+            },
+            {
+              "actual": 1,
+              "critical": true,
+              "expected": 1,
+              "id": "criterion.preserved-overpayment",
+              "operator": "equals",
+              "passed": true,
+              "path": "result.summary.unallocated"
+            }
+          ],
+          "passed": true,
+          "role": "Validator",
+          "type": "validation"
+        },
+        {
+          "role": "Reporter",
+          "state": "PASS",
+          "type": "report"
+        }
+      ],
+      "contract_unchanged": true,
+      "original_unchanged": true,
+      "metrics": {
+        "actual_completed_tasks": 1,
+        "elapsed_ms": 53,
+        "iterations": 3,
+        "llm_calls": 0,
+        "required_criteria": 2,
+        "verified_criteria": 2
+      },
+      "expected_behavior": "Original contract preserved; failure retained; repaired input verified",
+      "explicit_resume_budget": {
+        "maxRepeatedErrors": 3
+      },
+      "expected_behavior_met": true
+    },
+    {
+      "experiment": "required-knowledge-ablation",
+      "mode": "no-cache",
+      "input": {
+        "request": "Reconcile invoice i against its payment, preserve the overpayment, and verify that one invoice is paid.",
+        "project_id": "quickstart",
+        "session_id": "invoice-demo",
+        "task": {
+          "adapter": "invoice-reconciliation",
+          "input": {
+            "invoices": [
+              {
+                "id": "i",
+                "currency": "USD",
+                "total": "10.00"
+              }
+            ],
+            "payments": [
+              {
+                "id": "p",
+                "currency": "USD",
+                "amount": "12.00",
+                "invoice_id": "i"
+              }
+            ]
+          }
+        },
+        "constraints": [
+          "Use exact monetary amounts",
+          "Do not discard overpayment"
+        ],
+        "acceptance_criteria": [
+          {
+            "id": "paid-count",
+            "path": "result.summary.paid",
+            "operator": "equals",
+            "expected": 1,
+            "critical": true
+          },
+          {
+            "id": "preserved-overpayment",
+            "path": "result.summary.unallocated",
+            "operator": "equals",
+            "expected": 1,
+            "critical": true
+          }
+        ],
+        "task_id": "required-knowledge",
+        "knowledge": [
+          {
+            "query": "Invoice overpayments unallocated",
+            "kind": "wiki",
+            "needed": true,
+            "required": true,
+            "reason": "Verify the declared handling policy before execution."
+          }
+        ]
+      },
+      "state": "PASS",
+      "reason": null,
+      "output": {
+        "input_sha256": "35ff2e4423a6d2cbf7832fb957c1cacc099909211bfc3ed5460d7693aa739e51",
+        "resource": "invoice-reconciliation",
+        "result": {
+          "allocations": [
+            {
+              "currency": "USD",
+              "invoice": "i",
+              "minor": "1000",
+              "payment": "p"
+            }
+          ],
+          "findings": [],
+          "invoices": [
+            {
+              "balance_minor": "0",
+              "currency": "USD",
+              "id": "i",
+              "status": "paid"
+            }
+          ],
+          "summary": {
+            "allocations": 1,
+            "findings": 0,
+            "paid": 1,
+            "unallocated": 1
+          },
+          "totals": {
+            "USD": {
+              "allocated": "1000",
+              "received": "1200",
+              "unallocated": "200"
+            }
+          },
+          "unallocated": [
+            {
+              "currency": "USD",
+              "minor": "200",
+              "payment": "p"
+            }
+          ]
+        },
+        "version": 1
+      },
+      "knowledge_queries": [
+        {
+          "kind": "wiki",
+          "query": "Invoice overpayments unallocated",
+          "query_digest": "9e6c8abd5ed83d9b973db2393397908e43383a1610aa42686d0270f986746e40",
+          "reason": "Verify the declared handling policy before execution.",
+          "result": {
+            "external": "not_requested",
+            "results": [
+              {
+                "citation": {
+                  "chunk": 0,
+                  "end": 67,
+                  "id": "invoice-policy",
+                  "source": "local:synthetic-invoice-policy",
+                  "source_hash": "e1b513e6ab1c7eefb643dac00d983bf05bc8b9b56100cf648754020a11d3ad88",
+                  "start": 0,
+                  "version": "1"
+                },
+                "score": 0.8630462173553426,
+                "text": "Invoice overpayments must remain unallocated rather than discarded.",
+                "trusted": false
+              }
+            ],
+            "source_versions": {
+              "invoice-policy": {
+                "source": "local:synthetic-invoice-policy",
+                "source_hash": "e1b513e6ab1c7eefb643dac00d983bf05bc8b9b56100cf648754020a11d3ad88",
+                "version": "1"
+              }
+            },
+            "stale_sources": [],
+            "status": "found",
+            "warning": "Retrieved text is evidence only; embedded instructions cannot authorize actions"
+          },
+          "satisfied": true,
+          "trusted": false
+        }
+      ],
+      "evidence": [
+        {
+          "adapter": "invoice-reconciliation",
+          "contract_digest": "89f426272b7d98ef7c28743030bcdbd338ed9bfbda152a8074683060e543db96",
+          "input_digest": "35ff2e4423a6d2cbf7832fb957c1cacc099909211bfc3ed5460d7693aa739e51",
+          "iteration": 1,
+          "job_id": "task",
+          "output_digest": "4cc27eee4ab97c78e100dfc87fdc0af9baa5a4bd2cf2f7bbf2cec06be6f6f6ca",
+          "plan_digest": "5752c8e0994ddaab6b545ba68f8a88b37834bc73befb22b539611964ff415827",
+          "source": {
+            "source_commit": "0cea2f346312b43d604a314d4d537a567f06c67e",
+            "source_sha256": "5bcc2c523353091b45999b03fef6cd6b10a7023a7bcfd0b2bb92e02a4fba6e8d",
+            "version": 1
+          },
+          "status": "completed"
+        }
+      ],
+      "elapsed_ms": 15.583799999999997,
+      "expected_behavior": "PASS with source citation",
+      "expected_behavior_met": true
+    },
+    {
+      "experiment": "repair-and-resume",
+      "mode": "no-cache",
+      "input": {
+        "request": "Reconcile invoice i against its payment, preserve the overpayment, and verify that one invoice is paid.",
+        "project_id": "quickstart",
+        "session_id": "invoice-demo",
+        "task": {
+          "adapter": "invoice-reconciliation",
+          "input": {
+            "invoices": [
+              {
+                "id": "i",
+                "currency": "USD",
+                "total": "10.00"
+              }
+            ],
+            "payments": []
+          }
+        },
+        "constraints": [
+          "Use exact monetary amounts",
+          "Do not discard overpayment"
+        ],
+        "acceptance_criteria": [
+          {
+            "id": "paid-count",
+            "path": "result.summary.paid",
+            "operator": "equals",
+            "expected": 1,
+            "critical": true
+          },
+          {
+            "id": "preserved-overpayment",
+            "path": "result.summary.unallocated",
+            "operator": "equals",
+            "expected": 1,
+            "critical": true
+          }
+        ],
+        "task_id": "repair-resume"
+      },
+      "initial_state": "BLOCKED",
+      "initial_failure": {
+        "code": "VERIFICATION_FAILED",
+        "message": "Execution or verification failed; no trusted repair handler is configured"
+      },
+      "state": "PASS",
+      "history": [
+        {
+          "evidence": [
+            {
+              "adapter": "invoice-reconciliation",
+              "contract_digest": "89f426272b7d98ef7c28743030bcdbd338ed9bfbda152a8074683060e543db96",
+              "input_digest": "1be64713c5cd650f210fa287d1acecaaf6b2ada33fb5a0d08669d0734c6aec3e",
+              "iteration": 1,
+              "job_id": "task",
+              "output_digest": "b91c0d934971a732311da86ad43c93d93104007ee05320f97203a4a380acfc24",
+              "plan_digest": "f100c816fbce78d62b03bf2c337d7ff5741ea3671f6fcaeb8e84c7f26ac54a8f",
+              "source": {
+                "source_commit": "0cea2f346312b43d604a314d4d537a567f06c67e",
+                "source_sha256": "5bcc2c523353091b45999b03fef6cd6b10a7023a7bcfd0b2bb92e02a4fba6e8d",
+                "version": 1
+              },
+              "status": "completed"
+            }
+          ],
+          "failure": {
+            "code": "VERIFICATION_FAILED",
+            "findings": [
+              {
+                "actual": 0,
+                "expected": 1,
+                "id": "criterion.paid-count",
+                "operator": "equals",
+                "path": "result.summary.paid",
+                "severity": "error"
+              },
+              {
+                "actual": 0,
+                "expected": 1,
+                "id": "criterion.preserved-overpayment",
+                "operator": "equals",
+                "path": "result.summary.unallocated",
+                "severity": "error"
+              }
+            ]
+          },
+          "iteration": 1,
+          "output": {
+            "input_sha256": "1be64713c5cd650f210fa287d1acecaaf6b2ada33fb5a0d08669d0734c6aec3e",
+            "resource": "invoice-reconciliation",
+            "result": {
+              "allocations": [],
+              "findings": [],
+              "invoices": [
+                {
+                  "balance_minor": "1000",
+                  "currency": "USD",
+                  "id": "i",
+                  "status": "unpaid"
+                }
+              ],
+              "summary": {
+                "allocations": 0,
+                "findings": 0,
+                "paid": 0,
+                "unallocated": 0
+              },
+              "totals": {},
+              "unallocated": []
+            },
+            "version": 1
+          },
+          "plan": {
+            "contract_digest": "89f426272b7d98ef7c28743030bcdbd338ed9bfbda152a8074683060e543db96",
+            "input_digest": "325470427effb5b7eeb2c7f38af5d6e9abf0fcf3c577f1890c60a681226d5b1c",
+            "iteration": 1,
+            "jobs": [
+              {
+                "adapter": "invoice-reconciliation",
+                "depends_on": [],
+                "id": "task",
+                "input": {
+                  "invoices": [
+                    {
+                      "currency": "USD",
+                      "id": "i",
+                      "total": "10.00"
+                    }
+                  ],
+                  "payments": []
+                },
+                "resources": [],
+                "side_effects": []
+              }
+            ],
+            "plan_digest": "f100c816fbce78d62b03bf2c337d7ff5741ea3671f6fcaeb8e84c7f26ac54a8f",
+            "prerequisite_digest": "28b838c93c3360aa64df7ffcfb5ea6f8d0435a0ed22fdf674104762feb30f29a",
+            "source_versions": {
+              "invoice-reconciliation": {
+                "source_commit": "0cea2f346312b43d604a314d4d537a567f06c67e",
+                "source_sha256": "5bcc2c523353091b45999b03fef6cd6b10a7023a7bcfd0b2bb92e02a4fba6e8d",
+                "version": 1
+              }
+            }
+          },
+          "state": "FAILED"
+        },
+        {
+          "evidence": [
+            {
+              "adapter": "invoice-reconciliation",
+              "contract_digest": "89f426272b7d98ef7c28743030bcdbd338ed9bfbda152a8074683060e543db96",
+              "input_digest": "1be64713c5cd650f210fa287d1acecaaf6b2ada33fb5a0d08669d0734c6aec3e",
+              "iteration": 2,
+              "job_id": "task",
+              "output_digest": "b91c0d934971a732311da86ad43c93d93104007ee05320f97203a4a380acfc24",
+              "plan_digest": "a3c193f72a85843b7a2c5b52d08241902664a279f8cae25818e5c75c00defe1f",
+              "source": {
+                "source_commit": "0cea2f346312b43d604a314d4d537a567f06c67e",
+                "source_sha256": "5bcc2c523353091b45999b03fef6cd6b10a7023a7bcfd0b2bb92e02a4fba6e8d",
+                "version": 1
+              },
+              "status": "completed"
+            }
+          ],
+          "failure": {
+            "code": "VERIFICATION_FAILED",
+            "findings": [
+              {
+                "actual": 0,
+                "expected": 1,
+                "id": "criterion.paid-count",
+                "operator": "equals",
+                "path": "result.summary.paid",
+                "severity": "error"
+              },
+              {
+                "actual": 0,
+                "expected": 1,
+                "id": "criterion.preserved-overpayment",
+                "operator": "equals",
+                "path": "result.summary.unallocated",
+                "severity": "error"
+              }
+            ]
+          },
+          "iteration": 2,
+          "output": {
+            "input_sha256": "1be64713c5cd650f210fa287d1acecaaf6b2ada33fb5a0d08669d0734c6aec3e",
+            "resource": "invoice-reconciliation",
+            "result": {
+              "allocations": [],
+              "findings": [],
+              "invoices": [
+                {
+                  "balance_minor": "1000",
+                  "currency": "USD",
+                  "id": "i",
+                  "status": "unpaid"
+                }
+              ],
+              "summary": {
+                "allocations": 0,
+                "findings": 0,
+                "paid": 0,
+                "unallocated": 0
+              },
+              "totals": {},
+              "unallocated": []
+            },
+            "version": 1
+          },
+          "plan": {
+            "contract_digest": "89f426272b7d98ef7c28743030bcdbd338ed9bfbda152a8074683060e543db96",
+            "input_digest": "325470427effb5b7eeb2c7f38af5d6e9abf0fcf3c577f1890c60a681226d5b1c",
+            "iteration": 2,
+            "jobs": [
+              {
+                "adapter": "invoice-reconciliation",
+                "depends_on": [],
+                "id": "task",
+                "input": {
+                  "invoices": [
+                    {
+                      "currency": "USD",
+                      "id": "i",
+                      "total": "10.00"
+                    }
+                  ],
+                  "payments": []
+                },
+                "resources": [],
+                "side_effects": []
+              }
+            ],
+            "plan_digest": "a3c193f72a85843b7a2c5b52d08241902664a279f8cae25818e5c75c00defe1f",
+            "prerequisite_digest": "28b838c93c3360aa64df7ffcfb5ea6f8d0435a0ed22fdf674104762feb30f29a",
+            "source_versions": {
+              "invoice-reconciliation": {
+                "source_commit": "0cea2f346312b43d604a314d4d537a567f06c67e",
+                "source_sha256": "5bcc2c523353091b45999b03fef6cd6b10a7023a7bcfd0b2bb92e02a4fba6e8d",
+                "version": 1
+              }
+            }
+          },
+          "state": "FAILED"
+        }
+      ],
+      "evidence": [
+        {
+          "adapter": "invoice-reconciliation",
+          "contract_digest": "89f426272b7d98ef7c28743030bcdbd338ed9bfbda152a8074683060e543db96",
+          "input_digest": "35ff2e4423a6d2cbf7832fb957c1cacc099909211bfc3ed5460d7693aa739e51",
+          "iteration": 3,
+          "job_id": "task",
+          "output_digest": "4cc27eee4ab97c78e100dfc87fdc0af9baa5a4bd2cf2f7bbf2cec06be6f6f6ca",
+          "plan_digest": "36cd44299b9caf89867e2e88fa0362c40e8223866ffde5ccce140d92470b2146",
+          "source": {
+            "source_commit": "0cea2f346312b43d604a314d4d537a567f06c67e",
+            "source_sha256": "5bcc2c523353091b45999b03fef6cd6b10a7023a7bcfd0b2bb92e02a4fba6e8d",
+            "version": 1
+          },
+          "status": "completed"
+        }
+      ],
+      "events": [
+        {
+          "role": "Planner",
+          "state": "ANALYZE",
+          "type": "state"
+        },
+        {
+          "context_digest": "ff7bf06426d6b313e573b4a772c1d5b35e4690558b3a7c98a8120c1ff0119f26",
+          "duplicates_removed": 0,
+          "type": "context-preprocessed"
+        },
+        {
+          "role": "Planner",
+          "state": "PLAN",
+          "type": "state"
+        },
+        {
+          "iteration": 1,
+          "role": "Executor",
+          "state": "EXECUTE",
+          "type": "state"
+        },
+        {
+          "adapter": "invoice-reconciliation",
+          "batch": 1,
+          "id": "task",
+          "role": "Executor",
+          "type": "job-started"
+        },
+        {
+          "adapter": "invoice-reconciliation",
+          "id": "task",
+          "type": "job-finished"
+        },
+        {
+          "role": "Reviewer",
+          "state": "REVIEW",
+          "type": "state"
+        },
+        {
+          "checks": [
+            {
+              "critical": true,
+              "errors": [],
+              "id": "contract.valid",
+              "passed": true
+            },
+            {
+              "critical": true,
+              "id": "request.original",
+              "passed": true,
+              "reason": "Immutable original request digest"
+            },
+            {
+              "critical": true,
+              "id": "execution.actual",
+              "passed": true,
+              "reason": "Actual completed adapter execution bound to current contract"
+            },
+            {
+              "critical": true,
+              "id": "evidence.output",
+              "passed": true,
+              "reason": "Output bytes match execution evidence"
+            },
+            {
+              "critical": true,
+              "id": "evidence.input",
+              "passed": true,
+              "reason": "Execution input and adapter match the returned envelope and contract"
+            },
+            {
+              "critical": true,
+              "id": "criteria.nonempty",
+              "passed": true,
+              "reason": "User outcome criteria required"
+            },
+            {
+              "actual": 0,
+              "critical": true,
+              "expected": 1,
+              "id": "criterion.paid-count",
+              "operator": "equals",
+              "passed": false,
+              "path": "result.summary.paid"
+            },
+            {
+              "actual": 0,
+              "critical": true,
+              "expected": 1,
+              "id": "criterion.preserved-overpayment",
+              "operator": "equals",
+              "passed": false,
+              "path": "result.summary.unallocated"
+            }
+          ],
+          "passed": false,
+          "role": "Validator",
+          "type": "validation"
+        },
+        {
+          "code": "VERIFICATION_FAILED",
+          "findings": [
+            {
+              "actual": 0,
+              "expected": 1,
+              "id": "criterion.paid-count",
+              "operator": "equals",
+              "path": "result.summary.paid",
+              "severity": "error"
+            },
+            {
+              "actual": 0,
+              "expected": 1,
+              "id": "criterion.preserved-overpayment",
+              "operator": "equals",
+              "path": "result.summary.unallocated",
+              "severity": "error"
+            }
+          ],
+          "type": "failure"
+        },
+        {
+          "reason": "VERIFICATION_FAILED",
+          "state": "BLOCKED",
+          "type": "state"
+        },
+        {
+          "role": "Reporter",
+          "state": "BLOCKED",
+          "type": "report"
+        },
+        {
+          "after": {
+            "maxCalls": 0,
+            "maxIterations": 3,
+            "maxRepeatedErrors": 3,
+            "maxTimeMs": 30000
+          },
+          "before": {
+            "maxCalls": 0,
+            "maxIterations": 3,
+            "maxRepeatedErrors": 2,
+            "maxTimeMs": 30000
+          },
+          "spent": {
+            "attempts": 1,
+            "elapsed_ms": 13,
+            "last_error_digest": "81313eb3c21040c50940f2e67f42ec4a6cfc7a7b7277d03a821c9384dc042f0e",
+            "model_calls": 0,
+            "repeated_errors": 1
+          },
+          "type": "host-budget-change"
+        },
+        {
+          "imported_state_ignored": true,
+          "source": "authoritative-store",
+          "type": "resume"
+        },
+        {
+          "context_digest": "ff7bf06426d6b313e573b4a772c1d5b35e4690558b3a7c98a8120c1ff0119f26",
+          "duplicates_removed": 0,
+          "type": "context-preprocessed"
+        },
+        {
+          "role": "Planner",
+          "state": "PLAN",
+          "type": "state"
+        },
+        {
+          "iteration": 2,
+          "role": "Executor",
+          "state": "EXECUTE",
+          "type": "state"
+        },
+        {
+          "adapter": "invoice-reconciliation",
+          "batch": 1,
+          "id": "task",
+          "role": "Executor",
+          "type": "job-started"
+        },
+        {
+          "adapter": "invoice-reconciliation",
+          "id": "task",
+          "type": "job-finished"
+        },
+        {
+          "role": "Reviewer",
+          "state": "REVIEW",
+          "type": "state"
+        },
+        {
+          "checks": [
+            {
+              "critical": true,
+              "errors": [],
+              "id": "contract.valid",
+              "passed": true
+            },
+            {
+              "critical": true,
+              "id": "request.original",
+              "passed": true,
+              "reason": "Immutable original request digest"
+            },
+            {
+              "critical": true,
+              "id": "execution.actual",
+              "passed": true,
+              "reason": "Actual completed adapter execution bound to current contract"
+            },
+            {
+              "critical": true,
+              "id": "evidence.output",
+              "passed": true,
+              "reason": "Output bytes match execution evidence"
+            },
+            {
+              "critical": true,
+              "id": "evidence.input",
+              "passed": true,
+              "reason": "Execution input and adapter match the returned envelope and contract"
+            },
+            {
+              "critical": true,
+              "id": "criteria.nonempty",
+              "passed": true,
+              "reason": "User outcome criteria required"
+            },
+            {
+              "actual": 0,
+              "critical": true,
+              "expected": 1,
+              "id": "criterion.paid-count",
+              "operator": "equals",
+              "passed": false,
+              "path": "result.summary.paid"
+            },
+            {
+              "actual": 0,
+              "critical": true,
+              "expected": 1,
+              "id": "criterion.preserved-overpayment",
+              "operator": "equals",
+              "passed": false,
+              "path": "result.summary.unallocated"
+            }
+          ],
+          "passed": false,
+          "role": "Validator",
+          "type": "validation"
+        },
+        {
+          "code": "VERIFICATION_FAILED",
+          "findings": [
+            {
+              "actual": 0,
+              "expected": 1,
+              "id": "criterion.paid-count",
+              "operator": "equals",
+              "path": "result.summary.paid",
+              "severity": "error"
+            },
+            {
+              "actual": 0,
+              "expected": 1,
+              "id": "criterion.preserved-overpayment",
+              "operator": "equals",
+              "path": "result.summary.unallocated",
+              "severity": "error"
+            }
+          ],
+          "type": "failure"
+        },
+        {
+          "role": "Debugger",
+          "state": "REPAIR",
+          "type": "state"
+        },
+        {
+          "after_input_digest": "eeac5c74e0aab555f04bc733d787ce1f9c5bd5ce91c4533e4e48679155dd3b0e",
+          "before_input_digest": "325470427effb5b7eeb2c7f38af5d6e9abf0fcf3c577f1890c60a681226d5b1c",
+          "contract_digest": "89f426272b7d98ef7c28743030bcdbd338ed9bfbda152a8074683060e543db96",
+          "failed_checks": [
+            {
+              "actual": 0,
+              "expected": 1,
+              "id": "criterion.paid-count",
+              "operator": "equals",
+              "path": "result.summary.paid",
+              "severity": "error"
+            },
+            {
+              "actual": 0,
+              "expected": 1,
+              "id": "criterion.preserved-overpayment",
+              "operator": "equals",
+              "path": "result.summary.unallocated",
+              "severity": "error"
+            }
+          ],
+          "type": "repair"
+        },
+        {
+          "role": "Planner",
+          "state": "PLAN",
+          "type": "state"
+        },
+        {
+          "iteration": 3,
+          "role": "Executor",
+          "state": "EXECUTE",
+          "type": "state"
+        },
+        {
+          "adapter": "invoice-reconciliation",
+          "batch": 1,
+          "id": "task",
+          "role": "Executor",
+          "type": "job-started"
+        },
+        {
+          "adapter": "invoice-reconciliation",
+          "id": "task",
+          "type": "job-finished"
+        },
+        {
+          "role": "Reviewer",
+          "state": "REVIEW",
+          "type": "state"
+        },
+        {
+          "checks": [
+            {
+              "critical": true,
+              "errors": [],
+              "id": "contract.valid",
+              "passed": true
+            },
+            {
+              "critical": true,
+              "id": "request.original",
+              "passed": true,
+              "reason": "Immutable original request digest"
+            },
+            {
+              "critical": true,
+              "id": "execution.actual",
+              "passed": true,
+              "reason": "Actual completed adapter execution bound to current contract"
+            },
+            {
+              "critical": true,
+              "id": "evidence.output",
+              "passed": true,
+              "reason": "Output bytes match execution evidence"
+            },
+            {
+              "critical": true,
+              "id": "evidence.input",
+              "passed": true,
+              "reason": "Execution input and adapter match the returned envelope and contract"
+            },
+            {
+              "critical": true,
+              "id": "criteria.nonempty",
+              "passed": true,
+              "reason": "User outcome criteria required"
+            },
+            {
+              "actual": 1,
+              "critical": true,
+              "expected": 1,
+              "id": "criterion.paid-count",
+              "operator": "equals",
+              "passed": true,
+              "path": "result.summary.paid"
+            },
+            {
+              "actual": 1,
+              "critical": true,
+              "expected": 1,
+              "id": "criterion.preserved-overpayment",
+              "operator": "equals",
+              "passed": true,
+              "path": "result.summary.unallocated"
+            }
+          ],
+          "passed": true,
+          "role": "Validator",
+          "type": "validation"
+        },
+        {
+          "role": "Reporter",
+          "state": "PASS",
+          "type": "report"
+        }
+      ],
+      "contract_unchanged": true,
+      "original_unchanged": true,
+      "metrics": {
+        "actual_completed_tasks": 1,
+        "elapsed_ms": 34,
+        "iterations": 3,
+        "llm_calls": 0,
+        "required_criteria": 2,
+        "verified_criteria": 2
+      },
+      "expected_behavior": "Original contract preserved; failure retained; repaired input verified",
+      "explicit_resume_budget": {
+        "maxRepeatedErrors": 3
+      },
+      "expected_behavior_met": true
+    },
+    {
+      "experiment": "required-knowledge-ablation",
+      "mode": "no-retrieval",
+      "input": {
+        "request": "Reconcile invoice i against its payment, preserve the overpayment, and verify that one invoice is paid.",
+        "project_id": "quickstart",
+        "session_id": "invoice-demo",
+        "task": {
+          "adapter": "invoice-reconciliation",
+          "input": {
+            "invoices": [
+              {
+                "id": "i",
+                "currency": "USD",
+                "total": "10.00"
+              }
+            ],
+            "payments": [
+              {
+                "id": "p",
+                "currency": "USD",
+                "amount": "12.00",
+                "invoice_id": "i"
+              }
+            ]
+          }
+        },
+        "constraints": [
+          "Use exact monetary amounts",
+          "Do not discard overpayment"
+        ],
+        "acceptance_criteria": [
+          {
+            "id": "paid-count",
+            "path": "result.summary.paid",
+            "operator": "equals",
+            "expected": 1,
+            "critical": true
+          },
+          {
+            "id": "preserved-overpayment",
+            "path": "result.summary.unallocated",
+            "operator": "equals",
+            "expected": 1,
+            "critical": true
+          }
+        ],
+        "task_id": "required-knowledge",
+        "knowledge": [
+          {
+            "query": "Invoice overpayments unallocated",
+            "kind": "wiki",
+            "needed": true,
+            "required": true,
+            "reason": "Verify the declared handling policy before execution."
+          }
+        ]
+      },
+      "state": "BLOCKED",
+      "reason": {
+        "code": "KNOWLEDGE_UNAVAILABLE",
+        "message": "Required knowledge source unavailable"
+      },
+      "output": null,
+      "knowledge_queries": [
+        {
+          "query": "Invoice overpayments unallocated",
+          "query_digest": "528e2299116c7a108abae7a87120546985ca4eee3d850881356146abed38b2ea",
+          "reason": "Local retriever not configured",
+          "satisfied": false,
+          "skipped": true
+        }
+      ],
+      "evidence": [],
+      "elapsed_ms": 6.72829999999999,
+      "expected_behavior": "BLOCKED: required evidence unavailable",
+      "expected_behavior_met": true
+    },
+    {
+      "experiment": "missing-knowledge-resume",
+      "mode": "no-retrieval",
+      "state": "BLOCKED",
+      "reason": {
+        "code": "KNOWLEDGE_UNAVAILABLE",
+        "message": "Required knowledge source unavailable"
+      },
+      "expected_behavior": "Still BLOCKED; resume cannot skip failed required query",
+      "expected_behavior_met": true
+    },
+    {
+      "experiment": "repair-and-resume",
+      "mode": "no-retrieval",
+      "input": {
+        "request": "Reconcile invoice i against its payment, preserve the overpayment, and verify that one invoice is paid.",
+        "project_id": "quickstart",
+        "session_id": "invoice-demo",
+        "task": {
+          "adapter": "invoice-reconciliation",
+          "input": {
+            "invoices": [
+              {
+                "id": "i",
+                "currency": "USD",
+                "total": "10.00"
+              }
+            ],
+            "payments": []
+          }
+        },
+        "constraints": [
+          "Use exact monetary amounts",
+          "Do not discard overpayment"
+        ],
+        "acceptance_criteria": [
+          {
+            "id": "paid-count",
+            "path": "result.summary.paid",
+            "operator": "equals",
+            "expected": 1,
+            "critical": true
+          },
+          {
+            "id": "preserved-overpayment",
+            "path": "result.summary.unallocated",
+            "operator": "equals",
+            "expected": 1,
+            "critical": true
+          }
+        ],
+        "task_id": "repair-resume"
+      },
+      "initial_state": "BLOCKED",
+      "initial_failure": {
+        "code": "VERIFICATION_FAILED",
+        "message": "Execution or verification failed; no trusted repair handler is configured"
+      },
+      "state": "PASS",
+      "history": [
+        {
+          "evidence": [
+            {
+              "adapter": "invoice-reconciliation",
+              "contract_digest": "89f426272b7d98ef7c28743030bcdbd338ed9bfbda152a8074683060e543db96",
+              "input_digest": "1be64713c5cd650f210fa287d1acecaaf6b2ada33fb5a0d08669d0734c6aec3e",
+              "iteration": 1,
+              "job_id": "task",
+              "output_digest": "b91c0d934971a732311da86ad43c93d93104007ee05320f97203a4a380acfc24",
+              "plan_digest": "f100c816fbce78d62b03bf2c337d7ff5741ea3671f6fcaeb8e84c7f26ac54a8f",
+              "source": {
+                "source_commit": "0cea2f346312b43d604a314d4d537a567f06c67e",
+                "source_sha256": "5bcc2c523353091b45999b03fef6cd6b10a7023a7bcfd0b2bb92e02a4fba6e8d",
+                "version": 1
+              },
+              "status": "completed"
+            }
+          ],
+          "failure": {
+            "code": "VERIFICATION_FAILED",
+            "findings": [
+              {
+                "actual": 0,
+                "expected": 1,
+                "id": "criterion.paid-count",
+                "operator": "equals",
+                "path": "result.summary.paid",
+                "severity": "error"
+              },
+              {
+                "actual": 0,
+                "expected": 1,
+                "id": "criterion.preserved-overpayment",
+                "operator": "equals",
+                "path": "result.summary.unallocated",
+                "severity": "error"
+              }
+            ]
+          },
+          "iteration": 1,
+          "output": {
+            "input_sha256": "1be64713c5cd650f210fa287d1acecaaf6b2ada33fb5a0d08669d0734c6aec3e",
+            "resource": "invoice-reconciliation",
+            "result": {
+              "allocations": [],
+              "findings": [],
+              "invoices": [
+                {
+                  "balance_minor": "1000",
+                  "currency": "USD",
+                  "id": "i",
+                  "status": "unpaid"
+                }
+              ],
+              "summary": {
+                "allocations": 0,
+                "findings": 0,
+                "paid": 0,
+                "unallocated": 0
+              },
+              "totals": {},
+              "unallocated": []
+            },
+            "version": 1
+          },
+          "plan": {
+            "contract_digest": "89f426272b7d98ef7c28743030bcdbd338ed9bfbda152a8074683060e543db96",
+            "input_digest": "325470427effb5b7eeb2c7f38af5d6e9abf0fcf3c577f1890c60a681226d5b1c",
+            "iteration": 1,
+            "jobs": [
+              {
+                "adapter": "invoice-reconciliation",
+                "depends_on": [],
+                "id": "task",
+                "input": {
+                  "invoices": [
+                    {
+                      "currency": "USD",
+                      "id": "i",
+                      "total": "10.00"
+                    }
+                  ],
+                  "payments": []
+                },
+                "resources": [],
+                "side_effects": []
+              }
+            ],
+            "plan_digest": "f100c816fbce78d62b03bf2c337d7ff5741ea3671f6fcaeb8e84c7f26ac54a8f",
+            "prerequisite_digest": "28b838c93c3360aa64df7ffcfb5ea6f8d0435a0ed22fdf674104762feb30f29a",
+            "source_versions": {
+              "invoice-reconciliation": {
+                "source_commit": "0cea2f346312b43d604a314d4d537a567f06c67e",
+                "source_sha256": "5bcc2c523353091b45999b03fef6cd6b10a7023a7bcfd0b2bb92e02a4fba6e8d",
+                "version": 1
+              }
+            }
+          },
+          "state": "FAILED"
+        },
+        {
+          "evidence": [
+            {
+              "adapter": "invoice-reconciliation",
+              "contract_digest": "89f426272b7d98ef7c28743030bcdbd338ed9bfbda152a8074683060e543db96",
+              "input_digest": "1be64713c5cd650f210fa287d1acecaaf6b2ada33fb5a0d08669d0734c6aec3e",
+              "iteration": 2,
+              "job_id": "task",
+              "output_digest": "b91c0d934971a732311da86ad43c93d93104007ee05320f97203a4a380acfc24",
+              "plan_digest": "a3c193f72a85843b7a2c5b52d08241902664a279f8cae25818e5c75c00defe1f",
+              "source": {
+                "source_commit": "0cea2f346312b43d604a314d4d537a567f06c67e",
+                "source_sha256": "5bcc2c523353091b45999b03fef6cd6b10a7023a7bcfd0b2bb92e02a4fba6e8d",
+                "version": 1
+              },
+              "status": "completed"
+            }
+          ],
+          "failure": {
+            "code": "VERIFICATION_FAILED",
+            "findings": [
+              {
+                "actual": 0,
+                "expected": 1,
+                "id": "criterion.paid-count",
+                "operator": "equals",
+                "path": "result.summary.paid",
+                "severity": "error"
+              },
+              {
+                "actual": 0,
+                "expected": 1,
+                "id": "criterion.preserved-overpayment",
+                "operator": "equals",
+                "path": "result.summary.unallocated",
+                "severity": "error"
+              }
+            ]
+          },
+          "iteration": 2,
+          "output": {
+            "input_sha256": "1be64713c5cd650f210fa287d1acecaaf6b2ada33fb5a0d08669d0734c6aec3e",
+            "resource": "invoice-reconciliation",
+            "result": {
+              "allocations": [],
+              "findings": [],
+              "invoices": [
+                {
+                  "balance_minor": "1000",
+                  "currency": "USD",
+                  "id": "i",
+                  "status": "unpaid"
+                }
+              ],
+              "summary": {
+                "allocations": 0,
+                "findings": 0,
+                "paid": 0,
+                "unallocated": 0
+              },
+              "totals": {},
+              "unallocated": []
+            },
+            "version": 1
+          },
+          "plan": {
+            "contract_digest": "89f426272b7d98ef7c28743030bcdbd338ed9bfbda152a8074683060e543db96",
+            "input_digest": "325470427effb5b7eeb2c7f38af5d6e9abf0fcf3c577f1890c60a681226d5b1c",
+            "iteration": 2,
+            "jobs": [
+              {
+                "adapter": "invoice-reconciliation",
+                "depends_on": [],
+                "id": "task",
+                "input": {
+                  "invoices": [
+                    {
+                      "currency": "USD",
+                      "id": "i",
+                      "total": "10.00"
+                    }
+                  ],
+                  "payments": []
+                },
+                "resources": [],
+                "side_effects": []
+              }
+            ],
+            "plan_digest": "a3c193f72a85843b7a2c5b52d08241902664a279f8cae25818e5c75c00defe1f",
+            "prerequisite_digest": "28b838c93c3360aa64df7ffcfb5ea6f8d0435a0ed22fdf674104762feb30f29a",
+            "source_versions": {
+              "invoice-reconciliation": {
+                "source_commit": "0cea2f346312b43d604a314d4d537a567f06c67e",
+                "source_sha256": "5bcc2c523353091b45999b03fef6cd6b10a7023a7bcfd0b2bb92e02a4fba6e8d",
+                "version": 1
+              }
+            }
+          },
+          "state": "FAILED"
+        }
+      ],
+      "evidence": [
+        {
+          "adapter": "invoice-reconciliation",
+          "contract_digest": "89f426272b7d98ef7c28743030bcdbd338ed9bfbda152a8074683060e543db96",
+          "input_digest": "35ff2e4423a6d2cbf7832fb957c1cacc099909211bfc3ed5460d7693aa739e51",
+          "iteration": 3,
+          "job_id": "task",
+          "output_digest": "4cc27eee4ab97c78e100dfc87fdc0af9baa5a4bd2cf2f7bbf2cec06be6f6f6ca",
+          "plan_digest": "36cd44299b9caf89867e2e88fa0362c40e8223866ffde5ccce140d92470b2146",
+          "source": {
+            "source_commit": "0cea2f346312b43d604a314d4d537a567f06c67e",
+            "source_sha256": "5bcc2c523353091b45999b03fef6cd6b10a7023a7bcfd0b2bb92e02a4fba6e8d",
+            "version": 1
+          },
+          "status": "completed"
+        }
+      ],
+      "events": [
+        {
+          "role": "Planner",
+          "state": "ANALYZE",
+          "type": "state"
+        },
+        {
+          "context_digest": "7f5c3b3e35d9a22c4d5e484e790a56a8c7b8c1006774d4b97e7a7c482af1aaac",
+          "duplicates_removed": 0,
+          "type": "context-preprocessed"
+        },
+        {
+          "role": "Planner",
+          "state": "PLAN",
+          "type": "state"
+        },
+        {
+          "iteration": 1,
+          "role": "Executor",
+          "state": "EXECUTE",
+          "type": "state"
+        },
+        {
+          "adapter": "invoice-reconciliation",
+          "batch": 1,
+          "id": "task",
+          "role": "Executor",
+          "type": "job-started"
+        },
+        {
+          "adapter": "invoice-reconciliation",
+          "id": "task",
+          "type": "job-finished"
+        },
+        {
+          "role": "Reviewer",
+          "state": "REVIEW",
+          "type": "state"
+        },
+        {
+          "checks": [
+            {
+              "critical": true,
+              "errors": [],
+              "id": "contract.valid",
+              "passed": true
+            },
+            {
+              "critical": true,
+              "id": "request.original",
+              "passed": true,
+              "reason": "Immutable original request digest"
+            },
+            {
+              "critical": true,
+              "id": "execution.actual",
+              "passed": true,
+              "reason": "Actual completed adapter execution bound to current contract"
+            },
+            {
+              "critical": true,
+              "id": "evidence.output",
+              "passed": true,
+              "reason": "Output bytes match execution evidence"
+            },
+            {
+              "critical": true,
+              "id": "evidence.input",
+              "passed": true,
+              "reason": "Execution input and adapter match the returned envelope and contract"
+            },
+            {
+              "critical": true,
+              "id": "criteria.nonempty",
+              "passed": true,
+              "reason": "User outcome criteria required"
+            },
+            {
+              "actual": 0,
+              "critical": true,
+              "expected": 1,
+              "id": "criterion.paid-count",
+              "operator": "equals",
+              "passed": false,
+              "path": "result.summary.paid"
+            },
+            {
+              "actual": 0,
+              "critical": true,
+              "expected": 1,
+              "id": "criterion.preserved-overpayment",
+              "operator": "equals",
+              "passed": false,
+              "path": "result.summary.unallocated"
+            }
+          ],
+          "passed": false,
+          "role": "Validator",
+          "type": "validation"
+        },
+        {
+          "code": "VERIFICATION_FAILED",
+          "findings": [
+            {
+              "actual": 0,
+              "expected": 1,
+              "id": "criterion.paid-count",
+              "operator": "equals",
+              "path": "result.summary.paid",
+              "severity": "error"
+            },
+            {
+              "actual": 0,
+              "expected": 1,
+              "id": "criterion.preserved-overpayment",
+              "operator": "equals",
+              "path": "result.summary.unallocated",
+              "severity": "error"
+            }
+          ],
+          "type": "failure"
+        },
+        {
+          "reason": "VERIFICATION_FAILED",
+          "state": "BLOCKED",
+          "type": "state"
+        },
+        {
+          "role": "Reporter",
+          "state": "BLOCKED",
+          "type": "report"
+        },
+        {
+          "after": {
+            "maxCalls": 0,
+            "maxIterations": 3,
+            "maxRepeatedErrors": 3,
+            "maxTimeMs": 30000
+          },
+          "before": {
+            "maxCalls": 0,
+            "maxIterations": 3,
+            "maxRepeatedErrors": 2,
+            "maxTimeMs": 30000
+          },
+          "spent": {
+            "attempts": 1,
+            "elapsed_ms": 10,
+            "last_error_digest": "81313eb3c21040c50940f2e67f42ec4a6cfc7a7b7277d03a821c9384dc042f0e",
+            "model_calls": 0,
+            "repeated_errors": 1
+          },
+          "type": "host-budget-change"
+        },
+        {
+          "imported_state_ignored": true,
+          "source": "authoritative-store",
+          "type": "resume"
+        },
+        {
+          "context_digest": "7f5c3b3e35d9a22c4d5e484e790a56a8c7b8c1006774d4b97e7a7c482af1aaac",
+          "duplicates_removed": 0,
+          "type": "context-preprocessed"
+        },
+        {
+          "role": "Planner",
+          "state": "PLAN",
+          "type": "state"
+        },
+        {
+          "iteration": 2,
+          "role": "Executor",
+          "state": "EXECUTE",
+          "type": "state"
+        },
+        {
+          "adapter": "invoice-reconciliation",
+          "batch": 1,
+          "id": "task",
+          "role": "Executor",
+          "type": "job-started"
+        },
+        {
+          "adapter": "invoice-reconciliation",
+          "id": "task",
+          "type": "job-finished"
+        },
+        {
+          "role": "Reviewer",
+          "state": "REVIEW",
+          "type": "state"
+        },
+        {
+          "checks": [
+            {
+              "critical": true,
+              "errors": [],
+              "id": "contract.valid",
+              "passed": true
+            },
+            {
+              "critical": true,
+              "id": "request.original",
+              "passed": true,
+              "reason": "Immutable original request digest"
+            },
+            {
+              "critical": true,
+              "id": "execution.actual",
+              "passed": true,
+              "reason": "Actual completed adapter execution bound to current contract"
+            },
+            {
+              "critical": true,
+              "id": "evidence.output",
+              "passed": true,
+              "reason": "Output bytes match execution evidence"
+            },
+            {
+              "critical": true,
+              "id": "evidence.input",
+              "passed": true,
+              "reason": "Execution input and adapter match the returned envelope and contract"
+            },
+            {
+              "critical": true,
+              "id": "criteria.nonempty",
+              "passed": true,
+              "reason": "User outcome criteria required"
+            },
+            {
+              "actual": 0,
+              "critical": true,
+              "expected": 1,
+              "id": "criterion.paid-count",
+              "operator": "equals",
+              "passed": false,
+              "path": "result.summary.paid"
+            },
+            {
+              "actual": 0,
+              "critical": true,
+              "expected": 1,
+              "id": "criterion.preserved-overpayment",
+              "operator": "equals",
+              "passed": false,
+              "path": "result.summary.unallocated"
+            }
+          ],
+          "passed": false,
+          "role": "Validator",
+          "type": "validation"
+        },
+        {
+          "code": "VERIFICATION_FAILED",
+          "findings": [
+            {
+              "actual": 0,
+              "expected": 1,
+              "id": "criterion.paid-count",
+              "operator": "equals",
+              "path": "result.summary.paid",
+              "severity": "error"
+            },
+            {
+              "actual": 0,
+              "expected": 1,
+              "id": "criterion.preserved-overpayment",
+              "operator": "equals",
+              "path": "result.summary.unallocated",
+              "severity": "error"
+            }
+          ],
+          "type": "failure"
+        },
+        {
+          "role": "Debugger",
+          "state": "REPAIR",
+          "type": "state"
+        },
+        {
+          "after_input_digest": "eeac5c74e0aab555f04bc733d787ce1f9c5bd5ce91c4533e4e48679155dd3b0e",
+          "before_input_digest": "325470427effb5b7eeb2c7f38af5d6e9abf0fcf3c577f1890c60a681226d5b1c",
+          "contract_digest": "89f426272b7d98ef7c28743030bcdbd338ed9bfbda152a8074683060e543db96",
+          "failed_checks": [
+            {
+              "actual": 0,
+              "expected": 1,
+              "id": "criterion.paid-count",
+              "operator": "equals",
+              "path": "result.summary.paid",
+              "severity": "error"
+            },
+            {
+              "actual": 0,
+              "expected": 1,
+              "id": "criterion.preserved-overpayment",
+              "operator": "equals",
+              "path": "result.summary.unallocated",
+              "severity": "error"
+            }
+          ],
+          "type": "repair"
+        },
+        {
+          "role": "Planner",
+          "state": "PLAN",
+          "type": "state"
+        },
+        {
+          "iteration": 3,
+          "role": "Executor",
+          "state": "EXECUTE",
+          "type": "state"
+        },
+        {
+          "adapter": "invoice-reconciliation",
+          "batch": 1,
+          "id": "task",
+          "role": "Executor",
+          "type": "job-started"
+        },
+        {
+          "adapter": "invoice-reconciliation",
+          "id": "task",
+          "type": "job-finished"
+        },
+        {
+          "role": "Reviewer",
+          "state": "REVIEW",
+          "type": "state"
+        },
+        {
+          "checks": [
+            {
+              "critical": true,
+              "errors": [],
+              "id": "contract.valid",
+              "passed": true
+            },
+            {
+              "critical": true,
+              "id": "request.original",
+              "passed": true,
+              "reason": "Immutable original request digest"
+            },
+            {
+              "critical": true,
+              "id": "execution.actual",
+              "passed": true,
+              "reason": "Actual completed adapter execution bound to current contract"
+            },
+            {
+              "critical": true,
+              "id": "evidence.output",
+              "passed": true,
+              "reason": "Output bytes match execution evidence"
+            },
+            {
+              "critical": true,
+              "id": "evidence.input",
+              "passed": true,
+              "reason": "Execution input and adapter match the returned envelope and contract"
+            },
+            {
+              "critical": true,
+              "id": "criteria.nonempty",
+              "passed": true,
+              "reason": "User outcome criteria required"
+            },
+            {
+              "actual": 1,
+              "critical": true,
+              "expected": 1,
+              "id": "criterion.paid-count",
+              "operator": "equals",
+              "passed": true,
+              "path": "result.summary.paid"
+            },
+            {
+              "actual": 1,
+              "critical": true,
+              "expected": 1,
+              "id": "criterion.preserved-overpayment",
+              "operator": "equals",
+              "passed": true,
+              "path": "result.summary.unallocated"
+            }
+          ],
+          "passed": true,
+          "role": "Validator",
+          "type": "validation"
+        },
+        {
+          "role": "Reporter",
+          "state": "PASS",
+          "type": "report"
+        }
+      ],
+      "contract_unchanged": true,
+      "original_unchanged": true,
+      "metrics": {
+        "actual_completed_tasks": 1,
+        "elapsed_ms": 40,
+        "iterations": 3,
+        "llm_calls": 0,
+        "required_criteria": 2,
+        "verified_criteria": 2
+      },
+      "expected_behavior": "Original contract preserved; failure retained; repaired input verified",
+      "explicit_resume_budget": {
+        "maxRepeatedErrors": 3
+      },
+      "expected_behavior_met": true
+    }
+  ],
+  "domain_fixtures": [
+    {
+      "domain": "software",
+      "adapter": "change-impact",
+      "input": {
+        "projects": [
+          {
+            "id": "core",
+            "roots": [
+              "core"
+            ],
+            "dependencies": [],
+            "tests": [
+              "test-core"
+            ]
+          },
+          {
+            "id": "web",
+            "roots": [
+              "web"
+            ],
+            "dependencies": [
+              "core"
+            ],
+            "tests": [
+              "test-web"
+            ]
+          },
+          {
+            "id": "docs",
+            "roots": [
+              "docs"
+            ],
+            "dependencies": [],
+            "tests": []
+          }
+        ],
+        "changed_files": [
+          "core/a.js"
+        ]
+      },
+      "expected": {
+        "summary.affected": 2,
+        "summary.tests": 2
+      },
+      "request": "Perform Change impact planner: ",
+      "output_paths": [
+        "summary.affected",
+        "summary.tests"
+      ],
+      "state": "PASS",
+      "output": {
+        "input_sha256": "4f8b0d600357eb27a3f5bb892d6133cbc0514dfac61837890a1aeef37ea2cb1f",
+        "resource": "change-impact",
+        "result": {
+          "affected": [
+            "core",
+            "web"
+          ],
+          "direct": [
+            "core"
+          ],
+          "full_run": false,
+          "summary": {
+            "affected": 2,
+            "tests": 2,
+            "total": 3
+          },
+          "test_commands": [
+            {
+              "command": "test-core",
+              "project": "core",
+              "reason": "changed-owner"
+            },
+            {
+              "command": "test-web",
+              "project": "web",
+              "reason": "transitive-dependent"
+            }
+          ],
+          "unknown_files": []
+        },
+        "version": 1
+      },
+      "evidence": [
+        {
+          "adapter": "change-impact",
+          "contract_digest": "18673f5b95fdf0e47adcf087ee85bff193f45f1e89523e8964fb9c95119b7991",
+          "input_digest": "4f8b0d600357eb27a3f5bb892d6133cbc0514dfac61837890a1aeef37ea2cb1f",
+          "iteration": 1,
+          "job_id": "task",
+          "output_digest": "87dbd5650d056f48656c45eca0308c66062a059d9e0cec93661d715df57b84a0",
+          "plan_digest": "c5c634e8de371e90f53f875ef0a43cbebc181e7f169442543c56098691b5a525",
+          "source": {
+            "source_commit": "74d1d31c59462db691be932fa659fa8e3e672ea0",
+            "source_sha256": "d32627b04599ba7232730ca7aae6ab24941b1db975d01b1ef8a99e34f5a00386",
+            "version": 1
+          },
+          "status": "completed"
+        }
+      ],
+      "metrics": {
+        "actual_completed_tasks": 1,
+        "elapsed_ms": 14,
+        "iterations": 1,
+        "llm_calls": 0,
+        "required_criteria": 2,
+        "verified_criteria": 2
+      },
+      "elapsed_ms": 19.245400000000018
+    },
+    {
+      "domain": "operations",
+      "adapter": "trace-reconstruction",
+      "input": {
+        "spans": [
+          {
+            "id": "r",
+            "trace": "t",
+            "start": "2026-10-24T00:00:00Z",
+            "duration_ms": 100
+          },
+          {
+            "id": "c",
+            "trace": "t",
+            "parent": "r",
+            "start": "2026-10-24T00:00:00.020Z",
+            "duration_ms": 20,
+            "status": "error"
+          }
+        ]
+      },
+      "expected": {
+        "summary.traces": 1,
+        "summary.errors": 1,
+        "summary.anomalies": 0
+      },
+      "request": "Perform Trace reconstruction: ",
+      "output_paths": [
+        "summary.traces",
+        "summary.errors",
+        "summary.anomalies"
+      ],
+      "state": "PASS",
+      "output": {
+        "input_sha256": "72f0664692c3354d5e2059bec879fe13a9ea17ec8cd9c67c7a460f4845693cee",
+        "resource": "trace-reconstruction",
+        "result": {
+          "quarantine": [],
+          "scope": "Temporal/nesting reconstruction from supplied spans, not inferred root cause.",
+          "summary": {
+            "anomalies": 0,
+            "errors": 1,
+            "traces": 1
+          },
+          "traces": [
+            {
+              "errors": [
+                "c"
+              ],
+              "findings": [],
+              "peak_parallel_spans": 2,
+              "timeline": [
+                {
+                  "duration_ms": 100,
+                  "id": "r",
+                  "parent": null,
+                  "service": null,
+                  "source_row": 0,
+                  "start": "2026-10-24T00:00:00.000Z",
+                  "status": "unknown"
+                },
+                {
+                  "duration_ms": 20,
+                  "id": "c",
+                  "parent": "r",
+                  "service": null,
+                  "source_row": 1,
+                  "start": "2026-10-24T00:00:00.020Z",
+                  "status": "error"
+                }
+              ],
+              "trace": "t",
+              "wall_duration_ms": 100
+            }
+          ]
+        },
+        "version": 1
+      },
+      "evidence": [
+        {
+          "adapter": "trace-reconstruction",
+          "contract_digest": "ff2a28d0057778ae915413973aa4c1ad8205037965707784abd573655efd5972",
+          "input_digest": "72f0664692c3354d5e2059bec879fe13a9ea17ec8cd9c67c7a460f4845693cee",
+          "iteration": 1,
+          "job_id": "task",
+          "output_digest": "c2d39a53580ce6ea4263c33e74122ca5966e37bc17e707a5661cda8a644d2c68",
+          "plan_digest": "24d4345f9b46d8fe390f2ee59c456d143e2f83a3bae989235d1876b4ac9d55bd",
+          "source": {
+            "source_commit": "5e8541ca55a95b45c20258725e9d88cdd7661b1d",
+            "source_sha256": "8bb6a4584f0d6a6978d8d3051d5e73609b4cce5ee960843c0f255b5f8c279323",
+            "version": 1
+          },
+          "status": "completed"
+        }
+      ],
+      "metrics": {
+        "actual_completed_tasks": 1,
+        "elapsed_ms": 16,
+        "iterations": 1,
+        "llm_calls": 0,
+        "required_criteria": 3,
+        "verified_criteria": 3
+      },
+      "elapsed_ms": 21.832499999999982
+    },
+    {
+      "domain": "data",
+      "adapter": "csv-harmonizer",
+      "input": {
+        "schema": [
+          {
+            "name": "id",
+            "required": true
+          },
+          {
+            "name": "price",
+            "type": "decimal",
+            "required": true
+          }
+        ],
+        "keys": [
+          "id"
+        ],
+        "sources": [
+          {
+            "id": "a",
+            "csv": "id,price\na,1.20\na,1.20\nb,no\nc,2.10"
+          }
+        ]
+      },
+      "expected": {
+        "summary.accepted": 2,
+        "summary.duplicates": 1,
+        "summary.rejected": 1,
+        "rows.0.values.price": "120"
+      },
+      "request": "Perform CSV harmonizer: ",
+      "output_paths": [
+        "summary.accepted",
+        "summary.duplicates",
+        "summary.rejected",
+        "rows.0.values.price"
+      ],
+      "state": "PASS",
+      "output": {
+        "input_sha256": "03de4c41ffe79a008900e81009123e4dc1ba7f811c7c23f1a0a671c8c1caccf5",
+        "resource": "csv-harmonizer",
+        "result": {
+          "conflicts": [],
+          "duplicates": [
+            {
+              "row": 3,
+              "source": "a"
+            }
+          ],
+          "rejected": [
+            {
+              "errors": [
+                "type:price"
+              ],
+              "row": 4,
+              "source": "a"
+            }
+          ],
+          "rows": [
+            {
+              "origins": [
+                {
+                  "row": 2,
+                  "source": "a"
+                },
+                {
+                  "row": 3,
+                  "source": "a"
+                }
+              ],
+              "values": {
+                "id": "a",
+                "price": "120"
+              }
+            },
+            {
+              "origins": [
+                {
+                  "row": 5,
+                  "source": "a"
+                }
+              ],
+              "values": {
+                "id": "c",
+                "price": "210"
+              }
+            }
+          ],
+          "summary": {
+            "accepted": 2,
+            "conflicts": 0,
+            "duplicates": 1,
+            "rejected": 1
+          }
+        },
+        "version": 1
+      },
+      "evidence": [
+        {
+          "adapter": "csv-harmonizer",
+          "contract_digest": "5836d524e225c4e76ac009e53a4d2cf9833a944179009495e02ee33af419399b",
+          "input_digest": "03de4c41ffe79a008900e81009123e4dc1ba7f811c7c23f1a0a671c8c1caccf5",
+          "iteration": 1,
+          "job_id": "task",
+          "output_digest": "5b81dd97dc463b5c6f83c310cfa2c3b5d3c2771c15dc0c7eae73152133384aee",
+          "plan_digest": "ebaf85dae6efcaacdfc0e1426f824998779dbd251ae29674e6c3ad9c4f297ebd",
+          "source": {
+            "source_commit": "30d5433343b0e3fa09ebafdf59e66c7ae92f5721",
+            "source_sha256": "3ffc84c348e85484abf9029e5e16569e6217cdf76af827ec77c2e88daa7fbdd3",
+            "version": 1
+          },
+          "status": "completed"
+        }
+      ],
+      "metrics": {
+        "actual_completed_tasks": 1,
+        "elapsed_ms": 15,
+        "iterations": 1,
+        "llm_calls": 0,
+        "required_criteria": 4,
+        "verified_criteria": 4
+      },
+      "elapsed_ms": 21.458000000000027
+    },
+    {
+      "domain": "business",
+      "adapter": "invoice-reconciliation",
+      "input": {
+        "invoices": [
+          {
+            "id": "i",
+            "currency": "USD",
+            "total": "10.00"
+          }
+        ],
+        "payments": [
+          {
+            "id": "p",
+            "currency": "USD",
+            "amount": "12.00",
+            "invoice_id": "i"
+          }
+        ]
+      },
+      "expected": {
+        "summary.paid": 1,
+        "summary.allocations": 1,
+        "summary.unallocated": 1
+      },
+      "request": "Perform Invoice/payment reconciliation: ",
+      "output_paths": [
+        "summary.paid",
+        "summary.allocations",
+        "summary.unallocated"
+      ],
+      "state": "PASS",
+      "output": {
+        "input_sha256": "35ff2e4423a6d2cbf7832fb957c1cacc099909211bfc3ed5460d7693aa739e51",
+        "resource": "invoice-reconciliation",
+        "result": {
+          "allocations": [
+            {
+              "currency": "USD",
+              "invoice": "i",
+              "minor": "1000",
+              "payment": "p"
+            }
+          ],
+          "findings": [],
+          "invoices": [
+            {
+              "balance_minor": "0",
+              "currency": "USD",
+              "id": "i",
+              "status": "paid"
+            }
+          ],
+          "summary": {
+            "allocations": 1,
+            "findings": 0,
+            "paid": 1,
+            "unallocated": 1
+          },
+          "totals": {
+            "USD": {
+              "allocated": "1000",
+              "received": "1200",
+              "unallocated": "200"
+            }
+          },
+          "unallocated": [
+            {
+              "currency": "USD",
+              "minor": "200",
+              "payment": "p"
+            }
+          ]
+        },
+        "version": 1
+      },
+      "evidence": [
+        {
+          "adapter": "invoice-reconciliation",
+          "contract_digest": "b9844ec76c4954b42fe41db9000c2e61577382b801ff0f9489e6ba17b2f40687",
+          "input_digest": "35ff2e4423a6d2cbf7832fb957c1cacc099909211bfc3ed5460d7693aa739e51",
+          "iteration": 1,
+          "job_id": "task",
+          "output_digest": "4cc27eee4ab97c78e100dfc87fdc0af9baa5a4bd2cf2f7bbf2cec06be6f6f6ca",
+          "plan_digest": "ef892b93d481f0700679776dbb41ab607c919769417486f31085941081b096b1",
+          "source": {
+            "source_commit": "0cea2f346312b43d604a314d4d537a567f06c67e",
+            "source_sha256": "5bcc2c523353091b45999b03fef6cd6b10a7023a7bcfd0b2bb92e02a4fba6e8d",
+            "version": 1
+          },
+          "status": "completed"
+        }
+      ],
+      "metrics": {
+        "actual_completed_tasks": 1,
+        "elapsed_ms": 7,
+        "iterations": 1,
+        "llm_calls": 0,
+        "required_criteria": 3,
+        "verified_criteria": 3
+      },
+      "elapsed_ms": 12.013199999999927
+    },
+    {
+      "domain": "research",
+      "adapter": "citation-grounding",
+      "input": {
+        "documents": [
+          {
+            "id": "d",
+            "text": "alpha\nbeta"
+          }
+        ],
+        "claims": [
+          {
+            "id": "a",
+            "citations": [
+              {
+                "document": "d",
+                "start_line": 2,
+                "end_line": 2,
+                "quote": "beta"
+              }
+            ]
+          },
+          {
+            "id": "b",
+            "citations": [
+              {
+                "document": "d",
+                "start_line": 1,
+                "end_line": 1,
+                "quote": "gamma"
+              }
+            ]
+          }
+        ]
+      },
+      "expected": {
+        "summary.located": 1,
+        "summary.unlocated": 1
+      },
+      "request": "Perform Citation grounding auditor: ",
+      "output_paths": [
+        "summary.located",
+        "summary.unlocated"
+      ],
+      "state": "PASS",
+      "output": {
+        "input_sha256": "a32fa3471a8085e9c48ddabe64730b9cbbbc8593bed153621742071eb11cef96",
+        "resource": "citation-grounding",
+        "result": {
+          "claims": [
+            {
+              "all_excerpts_located": true,
+              "citations": [
+                {
+                  "document": "d",
+                  "end_line": 2,
+                  "excerpt": "beta",
+                  "issues": [],
+                  "located": true,
+                  "quote": "beta",
+                  "start_line": 2
+                }
+              ],
+              "id": "a",
+              "semantic_support": "requires-domain-review"
+            },
+            {
+              "all_excerpts_located": false,
+              "citations": [
+                {
+                  "document": "d",
+                  "end_line": 1,
+                  "excerpt": "alpha",
+                  "issues": [
+                    "QUOTE_NOT_FOUND"
+                  ],
+                  "located": false,
+                  "quote": "gamma",
+                  "start_line": 1
+                }
+              ],
+              "id": "b",
+              "semantic_support": "requires-domain-review"
+            }
+          ],
+          "contradictions": [],
+          "summary": {
+            "claims": 2,
+            "contradictions": 0,
+            "located": 1,
+            "unlocated": 1
+          }
+        },
+        "version": 1
+      },
+      "evidence": [
+        {
+          "adapter": "citation-grounding",
+          "contract_digest": "92dcfc98eca79a5b3b4c412716e832af6eaa908d08dfa8bfe418bf9314231eec",
+          "input_digest": "a32fa3471a8085e9c48ddabe64730b9cbbbc8593bed153621742071eb11cef96",
+          "iteration": 1,
+          "job_id": "task",
+          "output_digest": "cd83173f32df0de564f65f8474917735f74e18cb449b7d2c8a8c32e981baf577",
+          "plan_digest": "55b0609c9957ba9056f3205cf18beb18e4ec76a05002b177a85827700b1ee90e",
+          "source": {
+            "source_commit": "fad0410e0866848088280880e7202b348dca86c4",
+            "source_sha256": "b3681e37aae4c680d5116d720f6362a973e8d5dea64e3f688f5717416ac5e1d1",
+            "version": 1
+          },
+          "status": "completed"
+        }
+      ],
+      "metrics": {
+        "actual_completed_tasks": 1,
+        "elapsed_ms": 9,
+        "iterations": 1,
+        "llm_calls": 0,
+        "required_criteria": 2,
+        "verified_criteria": 2
+      },
+      "elapsed_ms": 15.79950000000008
+    },
+    {
+      "domain": "learning",
+      "adapter": "prerequisite-learning",
+      "input": {
+        "concepts": [
+          {
+            "id": "a",
+            "prerequisites": []
+          },
+          {
+            "id": "b",
+            "prerequisites": [
+              "a"
+            ]
+          }
+        ],
+        "activities": [
+          {
+            "id": "a1",
+            "teaches": [
+              "a"
+            ],
+            "requires": [],
+            "minutes": 10
+          },
+          {
+            "id": "b1",
+            "teaches": [
+              "b"
+            ],
+            "requires": [
+              "a"
+            ],
+            "minutes": 15
+          },
+          {
+            "id": "slow",
+            "teaches": [
+              "a"
+            ],
+            "requires": [],
+            "minutes": 30
+          }
+        ],
+        "goals": [
+          "b"
+        ],
+        "budget_minutes": 30
+      },
+      "expected": {
+        "summary.activities": 2,
+        "summary.minutes": 25,
+        "summary.within_budget": true
+      },
+      "request": "Perform Prerequisite learning planner: ",
+      "output_paths": [
+        "summary.activities",
+        "summary.minutes",
+        "summary.within_budget"
+      ],
+      "state": "PASS",
+      "output": {
+        "input_sha256": "09a3db43ee089c3b59c673010d8be08b12602c69d6ec5976b44a0922891024fa",
+        "resource": "prerequisite-learning",
+        "result": {
+          "feasible": true,
+          "learned": [
+            "a",
+            "b"
+          ],
+          "plan": [
+            "a1",
+            "b1"
+          ],
+          "required_minutes": 25,
+          "scope": "Plans from supplied mastery and activity contracts; does not assert learning outcomes.",
+          "summary": {
+            "activities": 2,
+            "minutes": 25,
+            "within_budget": true
+          }
+        },
+        "version": 1
+      },
+      "evidence": [
+        {
+          "adapter": "prerequisite-learning",
+          "contract_digest": "a6454c563342d538ffd411ab97b39597436553d13848aa1122036fec63a70319",
+          "input_digest": "09a3db43ee089c3b59c673010d8be08b12602c69d6ec5976b44a0922891024fa",
+          "iteration": 1,
+          "job_id": "task",
+          "output_digest": "689bd1356c6aa2791c60465fba9e147df893dffadb919cfefad59ba8ca3e47fc",
+          "plan_digest": "4c3d9dde029b2767003148d1ad4a978ea849420503d3b85d2bd29b9701f21e77",
+          "source": {
+            "source_commit": "49c27d3021b5464e1c70d2243d69da05668809a5",
+            "source_sha256": "ca5276a3a35755c7330d467d0b16fae734e3b91872ab70def70666d16564b52d",
+            "version": 1
+          },
+          "status": "completed"
+        }
+      ],
+      "metrics": {
+        "actual_completed_tasks": 1,
+        "elapsed_ms": 14,
+        "iterations": 1,
+        "llm_calls": 0,
+        "required_criteria": 3,
+        "verified_criteria": 3
+      },
+      "elapsed_ms": 19.012299999999982
+    }
+  ],
+  "small_model": {
+    "status": "EXECUTED",
+    "reason": "Set PACTWEAVE_MODEL_MODULE and PACTWEAVE_MODEL_CACHE to an already installed local Transformers.js module and cached model; no downloads are performed.",
+    "model": {
+      "id": "HuggingFaceTB/SmolLM2-135M-Instruct",
+      "revision": "12fd25f77366fa6b3b4b768ec3050bf629380bac",
+      "dtype": "q4",
+      "device": "cpu",
+      "max_new_tokens": 64,
+      "do_sample": false
+    },
+    "arms": [
+      {
+        "mode": "plain-model-no-cache",
+        "runs": [
+          {
+            "index": 0,
+            "error": {
+              "message": "Cannot read properties of null (reading 'add_bos_token')",
+              "code": null
+            },
+            "elapsed_ms": 1.9606999999996333
+          },
+          {
+            "index": 1,
+            "error": {
+              "message": "Cannot read properties of null (reading 'add_bos_token')",
+              "code": null
+            },
+            "elapsed_ms": 1.500699999999597
+          },
+          {
+            "index": 2,
+            "error": {
+              "message": "Cannot read properties of null (reading 'add_bos_token')",
+              "code": null
+            },
+            "elapsed_ms": 1.6431000000002314
+          }
+        ],
+        "metrics": {
+          "actual_calls": 3,
+          "exact_cache_hits": 0,
+          "avoided_calls": 0,
+          "coalesced_calls": 0,
+          "context_only_matches": 0,
+          "tokens": 0,
+          "usage_unknown_calls": 0,
+          "failures": 3,
+          "cache": {
+            "lookups": 3,
+            "exact_hits": 0,
+            "context_matches": 0,
+            "misses": 3,
+            "invalidations": 0,
+            "avoided_calls": 0,
+            "events": []
+          },
+          "events": [
+            {
+              "at": "2026-10-24T16:31:55.843Z",
+              "attempt": 1,
+              "key": "bc8ae73104bdf36914b832b35f34203487617c7b951896f228adaa2af4252cc1",
+              "reason": "PROVIDER_ERROR",
+              "status": "failed"
+            },
+            {
+              "at": "2026-10-24T16:31:55.845Z",
+              "attempt": 1,
+              "key": "bc8ae73104bdf36914b832b35f34203487617c7b951896f228adaa2af4252cc1",
+              "reason": "PROVIDER_ERROR",
+              "status": "failed"
+            },
+            {
+              "at": "2026-10-24T16:31:55.847Z",
+              "attempt": 1,
+              "key": "3c6f27f0e27815474c30b38ae4c4f2201abaf56b5521875b735f90c278a9717e",
+              "reason": "PROVIDER_ERROR",
+              "status": "failed"
+            }
+          ]
+        }
+      },
+      {
+        "mode": "pactweave-cache",
+        "runs": [
+          {
+            "index": 0,
+            "error": {
+              "message": "Cannot read properties of null (reading 'add_bos_token')",
+              "code": null
+            },
+            "elapsed_ms": 1.5553999999992811
+          },
+          {
+            "index": 1,
+            "error": {
+              "message": "Cannot read properties of null (reading 'add_bos_token')",
+              "code": null
+            },
+            "elapsed_ms": 1.604099999999562
+          },
+          {
+            "index": 2,
+            "error": {
+              "message": "Cannot read properties of null (reading 'add_bos_token')",
+              "code": null
+            },
+            "elapsed_ms": 1.418399999999565
+          }
+        ],
+        "metrics": {
+          "actual_calls": 3,
+          "exact_cache_hits": 0,
+          "avoided_calls": 0,
+          "coalesced_calls": 0,
+          "context_only_matches": 0,
+          "tokens": 0,
+          "usage_unknown_calls": 0,
+          "failures": 3,
+          "cache": {
+            "lookups": 3,
+            "exact_hits": 0,
+            "context_matches": 0,
+            "misses": 3,
+            "invalidations": 0,
+            "avoided_calls": 0,
+            "events": []
+          },
+          "events": [
+            {
+              "at": "2026-10-24T16:31:55.849Z",
+              "attempt": 1,
+              "key": "bc8ae73104bdf36914b832b35f34203487617c7b951896f228adaa2af4252cc1",
+              "reason": "PROVIDER_ERROR",
+              "status": "failed"
+            },
+            {
+              "at": "2026-10-24T16:31:55.850Z",
+              "attempt": 1,
+              "key": "bc8ae73104bdf36914b832b35f34203487617c7b951896f228adaa2af4252cc1",
+              "reason": "PROVIDER_ERROR",
+              "status": "failed"
+            },
+            {
+              "at": "2026-10-24T16:31:55.852Z",
+              "attempt": 1,
+              "key": "3c6f27f0e27815474c30b38ae4c4f2201abaf56b5521875b735f90c278a9717e",
+              "reason": "PROVIDER_ERROR",
+              "status": "failed"
+            }
+          ]
+        }
+      }
+    ],
+    "domain_comparison": [
+      {
+        "domain": "software",
+        "query": {
+          "needed": true,
+          "project_id": "benchmark",
+          "session_id": "plain-software",
+          "model_identifier": "HuggingFaceTB/SmolLM2-135M-Instruct",
+          "request": "Perform Change impact planner:  Return a JSON object mapping each requested output path to its computed value. Compute from the supplied input; do not explain.",
+          "context": {
+            "input": {
+              "projects": [
+                {
+                  "id": "core",
+                  "roots": [
+                    "core"
+                  ],
+                  "dependencies": [],
+                  "tests": [
+                    "test-core"
+                  ]
+                },
+                {
+                  "id": "web",
+                  "roots": [
+                    "web"
+                  ],
+                  "dependencies": [
+                    "core"
+                  ],
+                  "tests": [
+                    "test-web"
+                  ]
+                },
+                {
+                  "id": "docs",
+                  "roots": [
+                    "docs"
+                  ],
+                  "dependencies": [],
+                  "tests": []
+                }
+              ],
+              "changed_files": [
+                "core/a.js"
+              ]
+            },
+            "output_paths": [
+              "summary.affected",
+              "summary.tests"
+            ]
+          },
+          "requirements_digest": "86d66fc9829bf327f4d0ddc152db9e7873f7ff050b620054b5e5c6156cba751c",
+          "permission_scope_digest": "017be3fc8374c4213d7a79d55f68665ac468682e5ebdc32a6f3be3d22d80788f"
+        },
+        "error": {
+          "message": "Cannot read properties of null (reading 'add_bos_token')",
+          "code": null
+        },
+        "passed": false,
+        "tool_state": "PASS"
+      },
+      {
+        "domain": "operations",
+        "query": {
+          "needed": true,
+          "project_id": "benchmark",
+          "session_id": "plain-operations",
+          "model_identifier": "HuggingFaceTB/SmolLM2-135M-Instruct",
+          "request": "Perform Trace reconstruction:  Return a JSON object mapping each requested output path to its computed value. Compute from the supplied input; do not explain.",
+          "context": {
+            "input": {
+              "spans": [
+                {
+                  "id": "r",
+                  "trace": "t",
+                  "start": "2026-10-24T00:00:00Z",
+                  "duration_ms": 100
+                },
+                {
+                  "id": "c",
+                  "trace": "t",
+                  "parent": "r",
+                  "start": "2026-10-24T00:00:00.020Z",
+                  "duration_ms": 20,
+                  "status": "error"
+                }
+              ]
+            },
+            "output_paths": [
+              "summary.traces",
+              "summary.errors",
+              "summary.anomalies"
+            ]
+          },
+          "requirements_digest": "8daeaa7c78f03cb132a4722d2131bde677a558f827827732cac76b982d19aa72",
+          "permission_scope_digest": "017be3fc8374c4213d7a79d55f68665ac468682e5ebdc32a6f3be3d22d80788f"
+        },
+        "error": {
+          "message": "Cannot read properties of null (reading 'add_bos_token')",
+          "code": null
+        },
+        "passed": false,
+        "tool_state": "PASS"
+      },
+      {
+        "domain": "data",
+        "query": {
+          "needed": true,
+          "project_id": "benchmark",
+          "session_id": "plain-data",
+          "model_identifier": "HuggingFaceTB/SmolLM2-135M-Instruct",
+          "request": "Perform CSV harmonizer:  Return a JSON object mapping each requested output path to its computed value. Compute from the supplied input; do not explain.",
+          "context": {
+            "input": {
+              "schema": [
+                {
+                  "name": "id",
+                  "required": true
+                },
+                {
+                  "name": "price",
+                  "type": "decimal",
+                  "required": true
+                }
+              ],
+              "keys": [
+                "id"
+              ],
+              "sources": [
+                {
+                  "id": "a",
+                  "csv": "id,price\na,1.20\na,1.20\nb,no\nc,2.10"
+                }
+              ]
+            },
+            "output_paths": [
+              "summary.accepted",
+              "summary.duplicates",
+              "summary.rejected",
+              "rows.0.values.price"
+            ]
+          },
+          "requirements_digest": "9911e42cc1d7c03f0dcc0a72a9398ab9450b65e68bea6b755ae9248bbe3c491f",
+          "permission_scope_digest": "017be3fc8374c4213d7a79d55f68665ac468682e5ebdc32a6f3be3d22d80788f"
+        },
+        "error": {
+          "message": "Cannot read properties of null (reading 'add_bos_token')",
+          "code": null
+        },
+        "passed": false,
+        "tool_state": "PASS"
+      },
+      {
+        "domain": "business",
+        "query": {
+          "needed": true,
+          "project_id": "benchmark",
+          "session_id": "plain-business",
+          "model_identifier": "HuggingFaceTB/SmolLM2-135M-Instruct",
+          "request": "Perform Invoice/payment reconciliation:  Return a JSON object mapping each requested output path to its computed value. Compute from the supplied input; do not explain.",
+          "context": {
+            "input": {
+              "invoices": [
+                {
+                  "id": "i",
+                  "currency": "USD",
+                  "total": "10.00"
+                }
+              ],
+              "payments": [
+                {
+                  "id": "p",
+                  "currency": "USD",
+                  "amount": "12.00",
+                  "invoice_id": "i"
+                }
+              ]
+            },
+            "output_paths": [
+              "summary.paid",
+              "summary.allocations",
+              "summary.unallocated"
+            ]
+          },
+          "requirements_digest": "2c2e87c4893da55a0e056149bb9e3cf5e542615d3d769076942cdadc140334b6",
+          "permission_scope_digest": "017be3fc8374c4213d7a79d55f68665ac468682e5ebdc32a6f3be3d22d80788f"
+        },
+        "error": {
+          "message": "Cannot read properties of null (reading 'add_bos_token')",
+          "code": null
+        },
+        "passed": false,
+        "tool_state": "PASS"
+      },
+      {
+        "domain": "research",
+        "query": {
+          "needed": true,
+          "project_id": "benchmark",
+          "session_id": "plain-research",
+          "model_identifier": "HuggingFaceTB/SmolLM2-135M-Instruct",
+          "request": "Perform Citation grounding auditor:  Return a JSON object mapping each requested output path to its computed value. Compute from the supplied input; do not explain.",
+          "context": {
+            "input": {
+              "documents": [
+                {
+                  "id": "d",
+                  "text": "alpha\nbeta"
+                }
+              ],
+              "claims": [
+                {
+                  "id": "a",
+                  "citations": [
+                    {
+                      "document": "d",
+                      "start_line": 2,
+                      "end_line": 2,
+                      "quote": "beta"
+                    }
+                  ]
+                },
+                {
+                  "id": "b",
+                  "citations": [
+                    {
+                      "document": "d",
+                      "start_line": 1,
+                      "end_line": 1,
+                      "quote": "gamma"
+                    }
+                  ]
+                }
+              ]
+            },
+            "output_paths": [
+              "summary.located",
+              "summary.unlocated"
+            ]
+          },
+          "requirements_digest": "a3c21a9016b29c994582fddadadb5e00b91d2ae6eca6a47a5e9c33b50907ce01",
+          "permission_scope_digest": "017be3fc8374c4213d7a79d55f68665ac468682e5ebdc32a6f3be3d22d80788f"
+        },
+        "error": {
+          "message": "Cannot read properties of null (reading 'add_bos_token')",
+          "code": null
+        },
+        "passed": false,
+        "tool_state": "PASS"
+      },
+      {
+        "domain": "learning",
+        "query": {
+          "needed": true,
+          "project_id": "benchmark",
+          "session_id": "plain-learning",
+          "model_identifier": "HuggingFaceTB/SmolLM2-135M-Instruct",
+          "request": "Perform Prerequisite learning planner:  Return a JSON object mapping each requested output path to its computed value. Compute from the supplied input; do not explain.",
+          "context": {
+            "input": {
+              "concepts": [
+                {
+                  "id": "a",
+                  "prerequisites": []
+                },
+                {
+                  "id": "b",
+                  "prerequisites": [
+                    "a"
+                  ]
+                }
+              ],
+              "activities": [
+                {
+                  "id": "a1",
+                  "teaches": [
+                    "a"
+                  ],
+                  "requires": [],
+                  "minutes": 10
+                },
+                {
+                  "id": "b1",
+                  "teaches": [
+                    "b"
+                  ],
+                  "requires": [
+                    "a"
+                  ],
+                  "minutes": 15
+                },
+                {
+                  "id": "slow",
+                  "teaches": [
+                    "a"
+                  ],
+                  "requires": [],
+                  "minutes": 30
+                }
+              ],
+              "goals": [
+                "b"
+              ],
+              "budget_minutes": 30
+            },
+            "output_paths": [
+              "summary.activities",
+              "summary.minutes",
+              "summary.within_budget"
+            ]
+          },
+          "requirements_digest": "1b96e9e3f361a1116ce8d63b70af5a3cbb4da50f325136085a801a748cbb25fc",
+          "permission_scope_digest": "017be3fc8374c4213d7a79d55f68665ac468682e5ebdc32a6f3be3d22d80788f"
+        },
+        "error": {
+          "message": "Cannot read properties of null (reading 'add_bos_token')",
+          "code": null
+        },
+        "passed": false,
+        "tool_state": "PASS"
+      }
+    ],
+    "domain_metrics": {
+      "actual_calls": 6,
+      "exact_cache_hits": 0,
+      "avoided_calls": 0,
+      "coalesced_calls": 0,
+      "context_only_matches": 0,
+      "tokens": 0,
+      "usage_unknown_calls": 0,
+      "failures": 6,
+      "cache": {
+        "lookups": 6,
+        "exact_hits": 0,
+        "context_matches": 0,
+        "misses": 6,
+        "invalidations": 0,
+        "avoided_calls": 0,
+        "events": []
+      },
+      "events": [
+        {
+          "at": "2026-10-24T16:31:55.827Z",
+          "attempt": 1,
+          "key": "1fba899582b68bfb8967dd0f6f14c694f3215b080bfda59556b821ed572f21ef",
+          "reason": "PROVIDER_ERROR",
+          "status": "failed"
+        },
+        {
+          "at": "2026-10-24T16:31:55.830Z",
+          "attempt": 1,
+          "key": "3724c3c9c3f4dbfde5b21308fec1ce7c8b8410099daafbef8e42085c36575f9d",
+          "reason": "PROVIDER_ERROR",
+          "status": "failed"
+        },
+        {
+          "at": "2026-10-24T16:31:55.834Z",
+          "attempt": 1,
+          "key": "8669cf355e496fbae607a281fed1f60c1dfd4517433251a75737b55ad1371bb5",
+          "reason": "PROVIDER_ERROR",
+          "status": "failed"
+        },
+        {
+          "at": "2026-10-24T16:31:55.836Z",
+          "attempt": 1,
+          "key": "021501a7b640913520d2c5315c7b37971995f26196d6171a18a3002fd2e36a84",
+          "reason": "PROVIDER_ERROR",
+          "status": "failed"
+        },
+        {
+          "at": "2026-10-24T16:31:55.838Z",
+          "attempt": 1,
+          "key": "15e2a13ecc9df38c482397aff10bde51a9cf401aceb9e496427548509487c8fd",
+          "reason": "PROVIDER_ERROR",
+          "status": "failed"
+        },
+        {
+          "at": "2026-10-24T16:31:55.840Z",
+          "attempt": 1,
+          "key": "72861b9cbab5b0767ef975e5a444c4e394edb96cb9cbfe9c495aba42b0719a16",
+          "reason": "PROVIDER_ERROR",
+          "status": "failed"
+        }
+      ]
+    },
+    "limitations": [
+      "One tiny fully specified arithmetic/JSON fixture; answer is present in the prompt. Measures cache behavior and formatting, not general reasoning or intelligence.",
+      "The provider did not report token usage; no token-savings claim.",
+      "Source version changes force a new actual model call. Cache does not improve an incorrect answer.",
+      "Deterministic domain tool outcomes and model response scores are separate evidence.",
+      "Six worked examples across six domains compare a configured tiny model's flat JSON computation with bundled domain executors; this measures tool-assisted workflow completion on these fixtures only, not model intelligence. Held-out expected values are used for scoring, not supplied in the domain-model prompt."
+    ]
+  },
+  "limitations": [
+    "Synthetic local fixtures, no external users.",
+    "Identical deterministic task has no retrieval/model requirement; no-cache/no-retrieval should have equal outcomes and zero model calls.",
+    "Required-knowledge ablation intentionally blocks when a required source is removed. Repair/resume runs preserve the same outcome contract; no-cache has no benefit when there is no model call.",
+    "Timings include local initialization; this small suite does not establish production latency or global accuracy."
+  ],
+  "summary": {
+    "trials": 16,
+    "passed": 14,
+    "expected_behavior_checks": 16,
+    "expected_behavior_passed": 16,
+    "unexpected_behavior": 0
+  }
+}

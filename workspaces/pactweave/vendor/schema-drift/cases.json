@@ -1,0 +1,54 @@
+[
+  {
+    "id": "schema-drift",
+    "name": "new optional and removed",
+    "input": {
+      "before": [
+        {
+          "a": 1,
+          "b": 2
+        }
+      ],
+      "after": [
+        {
+          "a": 1
+        },
+        {
+          "a": 2,
+          "c": 3
+        }
+      ]
+    },
+    "expect": {
+      "summary.changes": 2,
+      "summary.breaking": 1,
+      "compatible": false
+    },
+    "split": "worked"
+  },
+  {
+    "id": "schema-drift",
+    "name": "type and new null",
+    "input": {
+      "before": [
+        {
+          "a": 1
+        }
+      ],
+      "after": [
+        {
+          "a": "one"
+        },
+        {
+          "a": null
+        }
+      ]
+    },
+    "expect": {
+      "summary.changes": 2,
+      "summary.breaking": 2,
+      "compatible": false
+    },
+    "split": "evaluation"
+  }
+]

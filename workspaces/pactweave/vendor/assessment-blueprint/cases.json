@@ -1,0 +1,103 @@
+[
+  {
+    "id": "assessment-blueprint",
+    "name": "bad options are rejected",
+    "input": {
+      "items": [
+        {
+          "id": "a",
+          "topic": "sql",
+          "difficulty": "easy",
+          "options": [
+            "yes",
+            "no"
+          ],
+          "correct": 0,
+          "minutes": 2
+        },
+        {
+          "id": "b",
+          "topic": "sql",
+          "difficulty": "easy",
+          "options": [
+            "yes",
+            "no"
+          ],
+          "correct": 1,
+          "minutes": 2
+        },
+        {
+          "id": "bad",
+          "topic": "sql",
+          "difficulty": "easy",
+          "options": [
+            "same",
+            "same"
+          ],
+          "correct": 0,
+          "minutes": 2
+        }
+      ],
+      "blueprint": [
+        {
+          "topic": "sql",
+          "difficulty": "easy",
+          "count": 2
+        }
+      ],
+      "max_minutes": 5
+    },
+    "expect": {
+      "summary.selected": 2,
+      "summary.minutes": 4,
+      "summary.rejected": 1,
+      "summary.feasible": true
+    },
+    "split": "worked"
+  },
+  {
+    "id": "assessment-blueprint",
+    "name": "family duplication cannot fill blueprint",
+    "input": {
+      "items": [
+        {
+          "id": "a",
+          "topic": "sql",
+          "difficulty": "easy",
+          "options": [
+            "yes",
+            "no"
+          ],
+          "correct": 0,
+          "minutes": 2,
+          "family": "f"
+        },
+        {
+          "id": "b",
+          "topic": "sql",
+          "difficulty": "easy",
+          "options": [
+            "yes",
+            "no"
+          ],
+          "correct": 1,
+          "minutes": 2,
+          "family": "f"
+        }
+      ],
+      "blueprint": [
+        {
+          "topic": "sql",
+          "difficulty": "easy",
+          "count": 2
+        }
+      ],
+      "max_minutes": 5
+    },
+    "expect": {
+      "summary.selected": 0,
+      "summary.feasible": false
+    },
+    "split": "evaluation"
+  }
+]

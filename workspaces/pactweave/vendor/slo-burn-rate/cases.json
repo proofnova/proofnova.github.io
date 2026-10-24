@@ -1,0 +1,65 @@
+[
+  {
+    "id": "slo-burn-rate",
+    "name": "weighted error burn",
+    "input": {
+      "now": "2026-10-24T00:02:00Z",
+      "objective": 0.99,
+      "policies": [
+        {
+          "id": "p",
+          "long_minutes": 2,
+          "short_minutes": 1,
+          "burn_rate": 2
+        }
+      ],
+      "bins": [
+        {
+          "start": "2026-10-24T00:00:00Z",
+          "requests": 100,
+          "errors": 10
+        },
+        {
+          "start": "2026-10-24T00:01:00Z",
+          "requests": 100,
+          "errors": 10
+        }
+      ]
+    },
+    "expect": {
+      "summary.firing": 1,
+      "summary.insufficient": 0,
+      "summary.clear": 0
+    },
+    "split": "worked"
+  },
+  {
+    "id": "slo-burn-rate",
+    "name": "missing minute is not clear",
+    "input": {
+      "now": "2026-10-24T00:02:00Z",
+      "objective": 0.99,
+      "policies": [
+        {
+          "id": "p",
+          "long_minutes": 2,
+          "short_minutes": 1,
+          "burn_rate": 2
+        }
+      ],
+      "bins": [
+        {
+          "start": "2026-10-24T00:01:00Z",
+          "requests": 100,
+          "errors": 0
+        }
+      ]
+    },
+    "expect": {
+      "summary.firing": 0,
+      "summary.insufficient": 1,
+      "summary.clear": 0
+    },
+    "split": "evaluation"
+  }
+]

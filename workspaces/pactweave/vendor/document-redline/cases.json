@@ -1,0 +1,68 @@
+[
+  {
+    "id": "document-redline",
+    "name": "insertion is not every section moving",
+    "input": {
+      "before": [
+        {
+          "id": "a",
+          "body": "A"
+        },
+        {
+          "id": "b",
+          "body": "B"
+        }
+      ],
+      "after": [
+        {
+          "id": "x",
+          "body": "X"
+        },
+        {
+          "id": "a",
+          "body": "A"
+        },
+        {
+          "id": "b",
+          "body": "B"
+        }
+      ]
+    },
+    "expect": {
+      "summary.added": 1,
+      "summary.removed": 0,
+      "summary.edited": 0,
+      "summary.moved": 0
+    },
+    "split": "worked"
+  },
+  {
+    "id": "document-redline",
+    "name": "edit and removal",
+    "input": {
+      "before": [
+        {
+          "id": "a",
+          "body": "one two"
+        },
+        {
+          "id": "b",
+          "body": "B"
+        }
+      ],
+      "after": [
+        {
+          "id": "a",
+          "body": "one three"
+        }
+      ]
+    },
+    "expect": {
+      "summary.added": 0,
+      "summary.removed": 1,
+      "summary.edited": 1,
+      "summary.moved": 0
+    },
+    "split": "evaluation"
+  }
+]
