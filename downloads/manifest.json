@@ -211,5 +211,11 @@
       "bytes": 39926,
       "files": 20
     }
-  ]
+  ],
+  "evaluation_archive": {
+    "file": "small-model-evaluation.zip",
+    "sha256": "e6b2c0b219e6160f4ef102bf989d53687e349c6326e55fb61ff110a0530a0961",
+    "bytes": 51817,
+    "scope": "Six frozen synthetic jobs and reproducible four-arm small-model adapter protocol; no completed-run claim is implied by the source archive."
+  }
 }
