@@ -8,9 +8,9 @@
 
 アーキテクチャと製品方針は ProofNova の設計です。PactLoop、WeaveMesh、PactVault は独立実装の内部モジュールであり、唯一の公開スキルは `pactweave` です。
 
-![ProofNova PactWeave 日本語アーキテクチャ](assets/architecture/pactweave-architecture-ja.png)
+![ProofNova PactWeave 日本語アーキテクチャ](assets/architecture/pactweave-architecture-ja.svg?v=redraw-20261025)
 
-画像の言語： [English](assets/architecture/pactweave-architecture-en.png) · [한국어](assets/architecture/pactweave-architecture-ko.png) · [日本語](assets/architecture/pactweave-architecture-ja.png) · [简体中文](assets/architecture/pactweave-architecture-zh-CN.png)
+画像の言語： [English](assets/architecture/pactweave-architecture-en.svg?v=redraw-20261025) · [한국어](assets/architecture/pactweave-architecture-ko.svg?v=redraw-20261025) · [日本語](assets/architecture/pactweave-architecture-ja.svg?v=redraw-20261025) · [简体中文](assets/architecture/pactweave-architecture-zh-CN.svg?v=redraw-20261025)
 
 ## クイックスタート
 

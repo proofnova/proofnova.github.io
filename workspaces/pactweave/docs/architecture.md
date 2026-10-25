@@ -4,9 +4,9 @@
 
 Architecture and product direction designed by ProofNova. PactLoop, WeaveMesh and PactVault are the independent internal implementations of that architecture. The only public skill is `pactweave`.
 
-![ProofNova PactWeave architecture](../assets/architecture/pactweave-architecture-en.png)
+![ProofNova PactWeave architecture](../assets/architecture/pactweave-architecture-en.svg?v=redraw-20261025)
 
-Image editions: [English](../assets/architecture/pactweave-architecture-en.png) · [한국어](../assets/architecture/pactweave-architecture-ko.png) · [日本語](../assets/architecture/pactweave-architecture-ja.png) · [简体中文](../assets/architecture/pactweave-architecture-zh-CN.png)
+Image editions: [English](../assets/architecture/pactweave-architecture-en.svg?v=redraw-20261025) · [한국어](../assets/architecture/pactweave-architecture-ko.svg?v=redraw-20261025) · [日本語](../assets/architecture/pactweave-architecture-ja.svg?v=redraw-20261025) · [简体中文](../assets/architecture/pactweave-architecture-zh-CN.svg?v=redraw-20261025)
 
 Original request → intent analysis → Task Contract → model-free context preprocessing → PactLoop plan/execute/review/repair → evidence and final report. Wiki, RAG and the LLM Gateway branch from planning, execution or review only when an explicit information gap requires them. They are not compulsory steps before every task.
 

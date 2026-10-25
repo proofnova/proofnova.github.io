@@ -1,0 +1,169 @@
+{
+  "lang": "en",
+  "title": "ProofNova PactWeave",
+  "tagline": "One Skill. Every Workflow. Verified.",
+  "request": {
+    "title": "User request",
+    "body": [
+      "Natural-language request",
+      "Files, images and links",
+      "Additional context"
+    ]
+  },
+  "intent": {
+    "title": "1 · Intent analysis",
+    "body": [
+      "Understand the request structure",
+      "Structure request and metadata",
+      "Identify goals, scope and constraints",
+      "Preserve original text and metadata",
+      "Prepare initial plan and requirements"
+    ]
+  },
+  "contract": {
+    "title": "2 · Task Contract",
+    "body": [
+      "Define a precise task plan",
+      "Specify success criteria and constraints",
+      "Determine tools and knowledge sources",
+      "Clarify missing information if needed",
+      "Reconfirm only when required"
+    ]
+  },
+  "preprocess": {
+    "title": "3 · Model-free context",
+    "body": [
+      "Structure and deduplicate context",
+      "Extract relevant content and constraints",
+      "Prepare context for registered tools"
+    ]
+  },
+  "loop": {
+    "title": "PactLoop",
+    "subtitle": "Bounded plan → execute → review → repair"
+  },
+  "plan": {
+    "title": "Plan & reconfirm",
+    "body": [
+      "Confirm the original request and refine the plan",
+      "Choose tools and knowledge sources",
+      "Gather missing information only when needed"
+    ]
+  },
+  "execute": {
+    "title": "WeaveMesh · run registered tools",
+    "body": [
+      "Orchestrate registered tools for the task",
+      "Use registered pure tools",
+      "Trusted local commands require the CLI",
+      "Never generate arbitrary commands"
+    ]
+  },
+  "review": {
+    "title": "Test & adversarial review",
+    "body": [
+      "Verify accuracy, completeness and consistency",
+      "Check facts, logic, edge cases and counterexamples",
+      "Assess whether the Task Contract is satisfied"
+    ]
+  },
+  "repair": {
+    "title": "Repair",
+    "body": ["Fix issues and retry within limits"]
+  },
+  "passed": {
+    "title": "PASS / BLOCKED",
+    "body": ["Verified result or explicit unmet requirement"]
+  },
+  "gateway": {
+    "title": "LLM Gateway",
+    "subtitle": "Only when needed · approved providers · disabled by default"
+  },
+  "decision": {
+    "title": "Need an LLM?",
+    "yes": "Yes",
+    "no": "No"
+  },
+  "cache": {
+    "title": "Session LLM Cache",
+    "body": [
+      "Store this session’s responses",
+      "Match request and context",
+      "Separate from Wiki / RAG material"
+    ]
+  },
+  "hit": {
+    "title": "Exact valid hit",
+    "body": ["Reuse the cached response"]
+  },
+  "miss": {
+    "title": "Cache miss",
+    "body": ["Call an approved model", "Store the response in this session"]
+  },
+  "knowledge": {
+    "title": "On-demand knowledge",
+    "subtitle": "Retrieve only needed information from verifiable sources"
+  },
+  "wiki": {
+    "title": "Wiki · verified guidance",
+    "body": [
+      "Internal and public documentation",
+      "Guides, policies and best practices",
+      "Project knowledge when available",
+      "Domain knowledge and references"
+    ]
+  },
+  "rag": {
+    "title": "RAG · source document search",
+    "body": [
+      "Local document search first",
+      "External adapter is optional",
+      "Collect relevant sources",
+      "Use cited sources as evidence",
+      "Find current task information"
+    ]
+  },
+  "vault": {
+    "title": "PactVault · persistent context",
+    "subtitle": "Across sessions · separate from the LLM response cache"
+  },
+  "resources": {
+    "title": "Resources",
+    "body": [
+      "Wiki and project documentation",
+      "External sources and summaries",
+      "Versioned project and output files"
+    ]
+  },
+  "memory": {
+    "title": "Memory",
+    "body": [
+      "Key facts, preferences and decisions",
+      "Lessons from previous work",
+      "Reusable knowledge and patterns"
+    ]
+  },
+  "skills": {
+    "title": "Skills",
+    "body": [
+      "Available tools and their usage",
+      "Tool guides and examples",
+      "Tool configuration and schemas"
+    ]
+  },
+  "sessions": {
+    "title": "Sessions",
+    "body": [
+      "Requests, contracts, plans and results",
+      "Intermediate steps and logs",
+      "Repairs and final reports"
+    ]
+  },
+  "optionalModel": "LLM\nas needed",
+  "optionalKnowledge": "Sources\nif needed",
+  "store": "Store / retrieve",
+  "footer": {
+    "local": "Local CLI: persistent storage and approved host adapters.",
+    "browser": "Browser: deterministic tools and memory-only state."
+  }
+}

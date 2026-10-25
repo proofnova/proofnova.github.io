@@ -1,0 +1,227 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1280" viewBox="0 0 1600 1280" role="img" aria-labelledby="title description" xml:lang="en">
+<title id="title">ProofNova PactWeave — One Skill. Every Workflow. Verified.</title><desc id="description">Bounded plan → execute → review → repair. Local CLI: persistent storage and approved host adapters. Browser: deterministic tools and memory-only state.</desc>
+<style>text{font-family:"Segoe UI","Noto Sans","Noto Sans CJK KR","Noto Sans CJK JP","Noto Sans CJK SC","Malgun Gothic","Yu Gothic","Microsoft YaHei",sans-serif}text{font-kerning:normal}</style>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto-start-reverse" markerUnits="userSpaceOnUse"><path d="M1 1 L7 4 L1 7" fill="none" stroke="#2e5e87" stroke-width="1.8"/></marker><marker id="repair-arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1 L7 4 L1 7" fill="none" stroke="#b45355" stroke-width="1.8"/></marker></defs>
+<rect width="1600" height="1280" fill="#ffffff"/><rect x="40" y="28" width="1520" height="78" rx="14" fill="#0c4a7c"/>
+<text x="65" y="62" font-size="28" font-weight="750" fill="#ffffff">ProofNova PactWeave</text>
+<text x="65" y="87" font-size="16" font-weight="400" fill="#dcebf8">One Skill. Every Workflow. Verified.</text>
+<g data-node="request" data-x="40" data-y="135" data-width="230" data-height="205"><rect x="40" y="135" width="230" height="205" rx="12" fill="#eef5fc" stroke="#cbdced" stroke-width="1.5"/>
+<text x="58" y="164" font-size="18" font-weight="700" fill="#17324d">User request</text>
+<text x="58" y="187" font-size="14" font-weight="400" fill="#17324d">•</text>
+<text x="73" y="187" font-size="14" font-weight="400" fill="#17324d">Natural-language</text>
+<text x="73" y="206.88" font-size="14" font-weight="400" fill="#17324d">request</text>
+<text x="58" y="228.76" font-size="14" font-weight="400" fill="#17324d">•</text>
+<text x="73" y="228.76" font-size="14" font-weight="400" fill="#17324d">Files, images and links</text>
+<text x="58" y="250.64" font-size="14" font-weight="400" fill="#17324d">•</text>
+<text x="73" y="250.64" font-size="14" font-weight="400" fill="#17324d">Additional context</text>
+</g>
+<g data-node="intent" data-x="300" data-y="135" data-width="370" data-height="205"><rect x="300" y="135" width="370" height="205" rx="12" fill="#eaf7f1" stroke="#cce3d8" stroke-width="1.5"/>
+<text x="318" y="164" font-size="18" font-weight="700" fill="#17324d">1 · Intent analysis</text>
+<text x="318" y="187" font-size="14" font-weight="400" fill="#17324d">•</text>
+<text x="333" y="187" font-size="14" font-weight="400" fill="#17324d">Understand the request structure</text>
+<text x="318" y="208.88" font-size="14" font-weight="400" fill="#17324d">•</text>
+<text x="333" y="208.88" font-size="14" font-weight="400" fill="#17324d">Structure request and metadata</text>
+<text x="318" y="230.76" font-size="14" font-weight="400" fill="#17324d">•</text>
+<text x="333" y="230.76" font-size="14" font-weight="400" fill="#17324d">Identify goals, scope and constraints</text>
+<text x="318" y="252.64" font-size="14" font-weight="400" fill="#17324d">•</text>
+<text x="333" y="252.64" font-size="14" font-weight="400" fill="#17324d">Preserve original text and metadata</text>
+<text x="318" y="274.52" font-size="14" font-weight="400" fill="#17324d">•</text>
+<text x="333" y="274.52" font-size="14" font-weight="400" fill="#17324d">Prepare initial plan and requirements</text>
+</g>
+<g data-node="contract" data-x="700" data-y="135" data-width="390" data-height="205"><rect x="700" y="135" width="390" height="205" rx="12" fill="#f4effa" stroke="#dfd5eb" stroke-width="1.5"/>
+<text x="718" y="164" font-size="18" font-weight="700" fill="#17324d">2 · Task Contract</text>
+<text x="718" y="187" font-size="14" font-weight="400" fill="#17324d">•</text>
+<text x="733" y="187" font-size="14" font-weight="400" fill="#17324d">Define a precise task plan</text>
+<text x="718" y="208.88" font-size="14" font-weight="400" fill="#17324d">•</text>
+<text x="733" y="208.88" font-size="14" font-weight="400" fill="#17324d">Specify success criteria and constraints</text>
+<text x="718" y="230.76" font-size="14" font-weight="400" fill="#17324d">•</text>
+<text x="733" y="230.76" font-size="14" font-weight="400" fill="#17324d">Determine tools and knowledge sources</text>
+<text x="718" y="252.64" font-size="14" font-weight="400" fill="#17324d">•</text>
+<text x="733" y="252.64" font-size="14" font-weight="400" fill="#17324d">Clarify missing information if needed</text>
+<text x="718" y="274.52" font-size="14" font-weight="400" fill="#17324d">•</text>
+<text x="733" y="274.52" font-size="14" font-weight="400" fill="#17324d">Reconfirm only when required</text>
+</g>
+<g data-node="preprocess" data-x="1120" data-y="135" data-width="440" data-height="205"><rect x="1120" y="135" width="440" height="205" rx="12" fill="#f4effa" stroke="#dfd5eb" stroke-width="1.5"/>
+<text x="1138" y="164" font-size="18" font-weight="700" fill="#17324d">3 · Model-free context</text>
+<text x="1138" y="187" font-size="14" font-weight="400" fill="#17324d">•</text>
+<text x="1153" y="187" font-size="14" font-weight="400" fill="#17324d">Structure and deduplicate context</text>
+<text x="1138" y="208.88" font-size="14" font-weight="400" fill="#17324d">•</text>
+<text x="1153" y="208.88" font-size="14" font-weight="400" fill="#17324d">Extract relevant content and constraints</text>
+<text x="1138" y="230.76" font-size="14" font-weight="400" fill="#17324d">•</text>
+<text x="1153" y="230.76" font-size="14" font-weight="400" fill="#17324d">Prepare context for registered tools</text>
+</g>
+<polyline points="270,235 300,235" fill="none" stroke="#2e5e87" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
+<polyline points="670,235 700,235" fill="none" stroke="#2e5e87" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
+<polyline points="1090,235 1120,235" fill="none" stroke="#2e5e87" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
+<polyline points="1340,340 1340,362 800,362 800,385" fill="none" stroke="#2e5e87" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
+<rect x="500" y="385" width="600" height="585" rx="16" fill="#ffffff" stroke="#cbdced" stroke-width="1.5"/><path d="M516 385 H1084 Q1100 385 1100 401 V435 H500 V401 Q500 385 516 385" fill="#0c4a7c"/>
+<text x="520" y="410" font-size="20" font-weight="700" fill="#ffffff">PactLoop</text>
+<text x="520" y="428" font-size="12" font-weight="400" fill="#dcebf8">Bounded plan → execute → review → repair</text>
+<g data-node="plan" data-x="520" data-y="452" data-width="560" data-height="108"><rect x="520" y="452" width="560" height="108" rx="12" fill="#eef5fc" stroke="#cbdced" stroke-width="1.5"/>
+<text x="538" y="481" font-size="18" font-weight="700" fill="#17324d">Plan &amp; reconfirm</text>
+<text x="538" y="504" font-size="13.5" font-weight="400" fill="#17324d">•</text>
+<text x="553" y="504" font-size="13.5" font-weight="400" fill="#17324d">Confirm the original request and refine the plan</text>
+<text x="538" y="525.17" font-size="13.5" font-weight="400" fill="#17324d">•</text>
+<text x="553" y="525.17" font-size="13.5" font-weight="400" fill="#17324d">Choose tools and knowledge sources</text>
+<text x="538" y="546.3399999999999" font-size="13.5" font-weight="400" fill="#17324d">•</text>
+<text x="553" y="546.3399999999999" font-size="13.5" font-weight="400" fill="#17324d">Gather missing information only when needed</text>
+</g>
+<g data-node="execute" data-x="520" data-y="585" data-width="560" data-height="130"><rect x="520" y="585" width="560" height="130" rx="12" fill="#fff6e1" stroke="#ecdfbd" stroke-width="1.5"/>
+<text x="538" y="614" font-size="18" font-weight="700" fill="#17324d">WeaveMesh · run registered tools</text>
+<text x="538" y="637" font-size="13.5" font-weight="400" fill="#17324d">•</text>
+<text x="553" y="637" font-size="13.5" font-weight="400" fill="#17324d">Orchestrate registered tools for the task</text>
+<text x="538" y="658.17" font-size="13.5" font-weight="400" fill="#17324d">•</text>
+<text x="553" y="658.17" font-size="13.5" font-weight="400" fill="#17324d">Use registered pure tools</text>
+<text x="538" y="679.3399999999999" font-size="13.5" font-weight="400" fill="#17324d">•</text>
+<text x="553" y="679.3399999999999" font-size="13.5" font-weight="400" fill="#17324d">Trusted local commands require the CLI</text>
+<text x="538" y="700.5099999999999" font-size="13.5" font-weight="400" fill="#17324d">•</text>
+<text x="553" y="700.5099999999999" font-size="13.5" font-weight="400" fill="#17324d">Never generate arbitrary commands</text>
+</g>
+<g data-node="review" data-x="520" data-y="740" data-width="560" data-height="110"><rect x="520" y="740" width="560" height="110" rx="12" fill="#fceef3" stroke="#ecd4de" stroke-width="1.5"/>
+<text x="538" y="769" font-size="18" font-weight="700" fill="#17324d">Test &amp; adversarial review</text>
+<text x="538" y="792" font-size="13.5" font-weight="400" fill="#17324d">•</text>
+<text x="553" y="792" font-size="13.5" font-weight="400" fill="#17324d">Verify accuracy, completeness and consistency</text>
+<text x="538" y="813.17" font-size="13.5" font-weight="400" fill="#17324d">•</text>
+<text x="553" y="813.17" font-size="13.5" font-weight="400" fill="#17324d">Check facts, logic, edge cases and counterexamples</text>
+<text x="538" y="834.3399999999999" font-size="13.5" font-weight="400" fill="#17324d">•</text>
+<text x="553" y="834.3399999999999" font-size="13.5" font-weight="400" fill="#17324d">Assess whether the Task Contract is satisfied</text>
+</g>
+<g data-node="repair" data-x="520" data-y="875" data-width="265" data-height="85"><rect x="520" y="875" width="265" height="85" rx="12" fill="#fceef3" stroke="#ecd4de" stroke-width="1.5"/>
+<text x="538" y="904" font-size="16" font-weight="700" fill="#17324d">Repair</text>
+<text x="538" y="927" font-size="12.5" font-weight="400" fill="#17324d">•</text>
+<text x="553" y="927" font-size="12.5" font-weight="400" fill="#17324d">Fix issues and retry within limits</text>
+</g>
+<g data-node="passed" data-x="815" data-y="875" data-width="265" data-height="85"><rect x="815" y="875" width="265" height="85" rx="12" fill="#eaf7f1" stroke="#cce3d8" stroke-width="1.5"/>
+<text x="833" y="904" font-size="16" font-weight="700" fill="#17324d">PASS / BLOCKED</text>
+<text x="833" y="927" font-size="12.5" font-weight="400" fill="#17324d">•</text>
+<text x="848" y="927" font-size="12.5" font-weight="400" fill="#17324d">Verified result or explicit unmet</text>
+<text x="848" y="944.75" font-size="12.5" font-weight="400" fill="#17324d">requirement</text>
+</g>
+<polyline points="800,560 800,585" fill="none" stroke="#2e5e87" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
+<polyline points="800,715 800,740" fill="none" stroke="#2e5e87" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
+<polyline points="800,850 800,863 652,863 652,875" fill="none" stroke="#b45355" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#repair-arrow)"/>
+<polyline points="800,850 800,863 947,863 947,875" fill="none" stroke="#2e5e87" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
+<polyline points="520,912 508,912 508,506 520,506" fill="none" stroke="#b45355" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#repair-arrow)"/>
+<g data-node="gateway" data-x="40" data-y="385" data-width="400" data-height="585"><rect x="40" y="385" width="400" height="585" rx="12" fill="#eaf7f1" stroke="#cce3d8" stroke-width="1.5"/>
+<text x="58" y="414" font-size="18" font-weight="700" fill="#17324d">LLM Gateway</text>
+</g>
+<text x="60" y="442" font-size="13.5" font-weight="400" fill="#17324d">Only when needed · approved providers · disabled by</text>
+<text x="60" y="461.17" font-size="13.5" font-weight="400" fill="#17324d">default</text>
+<polygon points="240,478 333,513 240,548 147,513" fill="#ffffff" stroke="#cbdced" stroke-width="1.5"/>
+<text x="240" y="518" text-anchor="middle" font-size="14.5" font-weight="650" fill="#17324d">Need an LLM?</text>
+<g data-node="cache" data-x="60" data-y="575" data-width="360" data-height="150"><rect x="60" y="575" width="360" height="150" rx="12" fill="#f4effa" stroke="#dfd5eb" stroke-width="1.5"/>
+<text x="78" y="604" font-size="16" font-weight="700" fill="#17324d">Session LLM Cache</text>
+<text x="78" y="627" font-size="13.5" font-weight="400" fill="#17324d">•</text>
+<text x="93" y="627" font-size="13.5" font-weight="400" fill="#17324d">Store this session’s responses</text>
+<text x="78" y="648.17" font-size="13.5" font-weight="400" fill="#17324d">•</text>
+<text x="93" y="648.17" font-size="13.5" font-weight="400" fill="#17324d">Match request and context</text>
+<text x="78" y="669.3399999999999" font-size="13.5" font-weight="400" fill="#17324d">•</text>
+<text x="93" y="669.3399999999999" font-size="13.5" font-weight="400" fill="#17324d">Separate from Wiki / RAG material</text>
+</g>
+<g data-node="hit" data-x="60" data-y="765" data-width="170" data-height="140"><rect x="60" y="765" width="170" height="140" rx="12" fill="#eaf7f1" stroke="#cce3d8" stroke-width="1.5"/>
+<text x="78" y="794" font-size="15" font-weight="700" fill="#17324d">Exact valid hit</text>
+<text x="78" y="817" font-size="12.5" font-weight="400" fill="#17324d">•</text>
+<text x="93" y="817" font-size="12.5" font-weight="400" fill="#17324d">Reuse the cached</text>
+<text x="93" y="834.75" font-size="12.5" font-weight="400" fill="#17324d">response</text>
+</g>
+<g data-node="miss" data-x="250" data-y="765" data-width="170" data-height="140"><rect x="250" y="765" width="170" height="140" rx="12" fill="#fceef3" stroke="#ecd4de" stroke-width="1.5"/>
+<text x="268" y="794" font-size="15" font-weight="700" fill="#17324d">Cache miss</text>
+<text x="268" y="817" font-size="12.5" font-weight="400" fill="#17324d">•</text>
+<text x="283" y="817" font-size="12.5" font-weight="400" fill="#17324d">Call an approved</text>
+<text x="283" y="834.75" font-size="12.5" font-weight="400" fill="#17324d">model</text>
+<text x="268" y="854.5" font-size="12.5" font-weight="400" fill="#17324d">•</text>
+<text x="283" y="854.5" font-size="12.5" font-weight="400" fill="#17324d">Store the</text>
+<text x="283" y="872.25" font-size="12.5" font-weight="400" fill="#17324d">response in this</text>
+<text x="283" y="890" font-size="12.5" font-weight="400" fill="#17324d">session</text>
+</g>
+<polyline points="240,548 240,575" fill="none" stroke="#2e5e87" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
+<text x="250" y="565" font-size="11.5" font-weight="400" fill="#17324d">Yes</text>
+<polyline points="147,513 50,513 50,473 460,473 460,535 500,535" fill="none" stroke="#2e5e87" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="6 5" marker-end="url(#arrow)"/>
+<text x="65" y="502" font-size="11.5" font-weight="400" fill="#17324d">No</text>
+<polyline points="240,725 240,745 145,745 145,765" fill="none" stroke="#2e5e87" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
+<polyline points="240,725 240,745 335,745 335,765" fill="none" stroke="#2e5e87" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
+<polyline points="420,835 430,835 430,650 420,650" fill="none" stroke="#2e5e87" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="6 5" marker-end="url(#arrow)"/>
+<g data-node="knowledge" data-x="1160" data-y="385" data-width="400" data-height="585"><rect x="1160" y="385" width="400" height="585" rx="12" fill="#eaf7f1" stroke="#cce3d8" stroke-width="1.5"/>
+<text x="1178" y="414" font-size="18" font-weight="700" fill="#17324d">On-demand knowledge</text>
+</g>
+<text x="1180" y="442" font-size="13.5" font-weight="400" fill="#17324d">Retrieve only needed information from verifiable</text>
+<text x="1180" y="461.17" font-size="13.5" font-weight="400" fill="#17324d">sources</text>
+<g data-node="wiki" data-x="1180" data-y="485" data-width="360" data-height="180"><rect x="1180" y="485" width="360" height="180" rx="12" fill="#eef5fc" stroke="#cbdced" stroke-width="1.5"/>
+<text x="1198" y="514" font-size="17" font-weight="700" fill="#17324d">Wiki · verified guidance</text>
+<text x="1198" y="537" font-size="13.5" font-weight="400" fill="#17324d">•</text>
+<text x="1213" y="537" font-size="13.5" font-weight="400" fill="#17324d">Internal and public documentation</text>
+<text x="1198" y="558.17" font-size="13.5" font-weight="400" fill="#17324d">•</text>
+<text x="1213" y="558.17" font-size="13.5" font-weight="400" fill="#17324d">Guides, policies and best practices</text>
+<text x="1198" y="579.3399999999999" font-size="13.5" font-weight="400" fill="#17324d">•</text>
+<text x="1213" y="579.3399999999999" font-size="13.5" font-weight="400" fill="#17324d">Project knowledge when available</text>
+<text x="1198" y="600.5099999999999" font-size="13.5" font-weight="400" fill="#17324d">•</text>
+<text x="1213" y="600.5099999999999" font-size="13.5" font-weight="400" fill="#17324d">Domain knowledge and references</text>
+</g>
+<g data-node="rag" data-x="1180" data-y="695" data-width="360" data-height="235"><rect x="1180" y="695" width="360" height="235" rx="12" fill="#f4effa" stroke="#dfd5eb" stroke-width="1.5"/>
+<text x="1198" y="724" font-size="17" font-weight="700" fill="#17324d">RAG · source document search</text>
+<text x="1198" y="747" font-size="13.5" font-weight="400" fill="#17324d">•</text>
+<text x="1213" y="747" font-size="13.5" font-weight="400" fill="#17324d">Local document search first</text>
+<text x="1198" y="768.17" font-size="13.5" font-weight="400" fill="#17324d">•</text>
+<text x="1213" y="768.17" font-size="13.5" font-weight="400" fill="#17324d">External adapter is optional</text>
+<text x="1198" y="789.3399999999999" font-size="13.5" font-weight="400" fill="#17324d">•</text>
+<text x="1213" y="789.3399999999999" font-size="13.5" font-weight="400" fill="#17324d">Collect relevant sources</text>
+<text x="1198" y="810.5099999999999" font-size="13.5" font-weight="400" fill="#17324d">•</text>
+<text x="1213" y="810.5099999999999" font-size="13.5" font-weight="400" fill="#17324d">Use cited sources as evidence</text>
+<text x="1198" y="831.6799999999998" font-size="13.5" font-weight="400" fill="#17324d">•</text>
+<text x="1213" y="831.6799999999998" font-size="13.5" font-weight="400" fill="#17324d">Find current task information</text>
+</g>
+<polyline points="440,655 500,655" fill="none" stroke="#2e5e87" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="6 5" marker-end="url(#arrow)" marker-start="url(#arrow)"/>
+<text x="447" y="615" font-size="10" font-weight="600" fill="#17324d">LLM</text>
+<text x="447" y="629.2" font-size="10" font-weight="600" fill="#17324d">as needed</text>
+<polyline points="1100,655 1160,655" fill="none" stroke="#2e5e87" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="6 5" marker-end="url(#arrow)" marker-start="url(#arrow)"/>
+<text x="1107" y="615" font-size="10" font-weight="600" fill="#17324d">Sources</text>
+<text x="1107" y="629.2" font-size="10" font-weight="600" fill="#17324d">if needed</text>
+<rect x="40" y="1010" width="1520" height="170" rx="14" fill="#f8faff" stroke="#cbdced" stroke-width="1.5"/>
+<text x="60" y="1040" font-size="19" font-weight="700" fill="#17324d">PactVault · persistent context</text>
+<text x="830" y="1039" font-size="12.5" font-weight="400" fill="#17324d">Across sessions · separate from the LLM response cache</text>
+<g data-node="resources" data-x="60" data-y="1055" data-width="350" data-height="112"><rect x="60" y="1055" width="350" height="112" rx="12" fill="#eef5fc" stroke="#cbdced" stroke-width="1.5"/>
+<text x="78" y="1084" font-size="16" font-weight="700" fill="#17324d">Resources</text>
+<text x="78" y="1107" font-size="12.5" font-weight="400" fill="#17324d">•</text>
+<text x="93" y="1107" font-size="12.5" font-weight="400" fill="#17324d">Wiki and project documentation</text>
+<text x="78" y="1126.75" font-size="12.5" font-weight="400" fill="#17324d">•</text>
+<text x="93" y="1126.75" font-size="12.5" font-weight="400" fill="#17324d">External sources and summaries</text>
+<text x="78" y="1146.5" font-size="12.5" font-weight="400" fill="#17324d">•</text>
+<text x="93" y="1146.5" font-size="12.5" font-weight="400" fill="#17324d">Versioned project and output files</text>
+</g>
+<g data-node="memory" data-x="440" data-y="1055" data-width="350" data-height="112"><rect x="440" y="1055" width="350" height="112" rx="12" fill="#eaf7f1" stroke="#cce3d8" stroke-width="1.5"/>
+<text x="458" y="1084" font-size="16" font-weight="700" fill="#17324d">Memory</text>
+<text x="458" y="1107" font-size="12.5" font-weight="400" fill="#17324d">•</text>
+<text x="473" y="1107" font-size="12.5" font-weight="400" fill="#17324d">Key facts, preferences and decisions</text>
+<text x="458" y="1126.75" font-size="12.5" font-weight="400" fill="#17324d">•</text>
+<text x="473" y="1126.75" font-size="12.5" font-weight="400" fill="#17324d">Lessons from previous work</text>
+<text x="458" y="1146.5" font-size="12.5" font-weight="400" fill="#17324d">•</text>
+<text x="473" y="1146.5" font-size="12.5" font-weight="400" fill="#17324d">Reusable knowledge and patterns</text>
+</g>
+<g data-node="skills" data-x="820" data-y="1055" data-width="350" data-height="112"><rect x="820" y="1055" width="350" height="112" rx="12" fill="#fff6e1" stroke="#ecdfbd" stroke-width="1.5"/>
+<text x="838" y="1084" font-size="16" font-weight="700" fill="#17324d">Skills</text>
+<text x="838" y="1107" font-size="12.5" font-weight="400" fill="#17324d">•</text>
+<text x="853" y="1107" font-size="12.5" font-weight="400" fill="#17324d">Available tools and their usage</text>
+<text x="838" y="1126.75" font-size="12.5" font-weight="400" fill="#17324d">•</text>
+<text x="853" y="1126.75" font-size="12.5" font-weight="400" fill="#17324d">Tool guides and examples</text>
+<text x="838" y="1146.5" font-size="12.5" font-weight="400" fill="#17324d">•</text>
+<text x="853" y="1146.5" font-size="12.5" font-weight="400" fill="#17324d">Tool configuration and schemas</text>
+</g>
+<g data-node="sessions" data-x="1200" data-y="1055" data-width="340" data-height="112"><rect x="1200" y="1055" width="340" height="112" rx="12" fill="#fceef3" stroke="#ecd4de" stroke-width="1.5"/>
+<text x="1218" y="1084" font-size="16" font-weight="700" fill="#17324d">Sessions</text>
+<text x="1218" y="1107" font-size="12.5" font-weight="400" fill="#17324d">•</text>
+<text x="1233" y="1107" font-size="12.5" font-weight="400" fill="#17324d">Requests, contracts, plans and results</text>
+<text x="1218" y="1126.75" font-size="12.5" font-weight="400" fill="#17324d">•</text>
+<text x="1233" y="1126.75" font-size="12.5" font-weight="400" fill="#17324d">Intermediate steps and logs</text>
+<text x="1218" y="1146.5" font-size="12.5" font-weight="400" fill="#17324d">•</text>
+<text x="1233" y="1146.5" font-size="12.5" font-weight="400" fill="#17324d">Repairs and final reports</text>
+</g>
+<polyline points="240,970 240,1010" fill="none" stroke="#2e5e87" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="6 5" marker-end="url(#arrow)" marker-start="url(#arrow)"/>
+<text x="252" y="995" font-size="11" font-weight="400" fill="#17324d">Store / retrieve</text>
+<polyline points="800,970 800,1010" fill="none" stroke="#2e5e87" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="6 5" marker-end="url(#arrow)" marker-start="url(#arrow)"/>
+<text x="812" y="995" font-size="11" font-weight="400" fill="#17324d">Store / retrieve</text>
+<polyline points="1360,970 1360,1010" fill="none" stroke="#2e5e87" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="6 5" marker-end="url(#arrow)" marker-start="url(#arrow)"/>
+<text x="1372" y="995" font-size="11" font-weight="400" fill="#17324d">Store / retrieve</text>
+<rect x="40" y="1200" width="1520" height="58" rx="12" fill="#eef5fc"/>
+<text x="60" y="1225" font-size="13.5" font-weight="600" fill="#17324d">Local CLI: persistent storage and approved host adapters.</text>
+<text x="820" y="1225" font-size="13.5" font-weight="600" fill="#17324d">Browser: deterministic tools and memory-only state.</text>
+</svg>

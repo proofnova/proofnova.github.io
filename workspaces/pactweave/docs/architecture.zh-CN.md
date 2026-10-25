@@ -4,9 +4,9 @@
 
 架构与产品方向由 ProofNova 设计。PactLoop、WeaveMesh、PactVault 是该架构的独立内部实现，唯一公开技能为 `pactweave`。
 
-![ProofNova PactWeave 简体中文架构](../assets/architecture/pactweave-architecture-zh-CN.png)
+![ProofNova PactWeave 简体中文架构](../assets/architecture/pactweave-architecture-zh-CN.svg?v=redraw-20261025)
 
-图片语言： [English](../assets/architecture/pactweave-architecture-en.png) · [한국어](../assets/architecture/pactweave-architecture-ko.png) · [日本語](../assets/architecture/pactweave-architecture-ja.png) · [简体中文](../assets/architecture/pactweave-architecture-zh-CN.png)
+图片语言： [English](../assets/architecture/pactweave-architecture-en.svg?v=redraw-20261025) · [한국어](../assets/architecture/pactweave-architecture-ko.svg?v=redraw-20261025) · [日本語](../assets/architecture/pactweave-architecture-ja.svg?v=redraw-20261025) · [简体中文](../assets/architecture/pactweave-architecture-zh-CN.svg?v=redraw-20261025)
 
 原始请求 → 意图分析 → 任务契约 → 无模型上下文预处理 → PactLoop 规划、执行、审查、修复 → 证据与最终报告。Wiki、RAG 和 LLM Gateway 仅在规划、执行、审查中出现明确知识缺口时按需使用，不是每项任务的强制启动阶段。
 

@@ -4,9 +4,9 @@
 
 アーキテクチャと製品方針は ProofNova の設計です。PactLoop、WeaveMesh、PactVault は独立実装の内部モジュールであり、唯一の公開スキルは `pactweave` です。
 
-![ProofNova PactWeave 日本語アーキテクチャ](../assets/architecture/pactweave-architecture-ja.png)
+![ProofNova PactWeave 日本語アーキテクチャ](../assets/architecture/pactweave-architecture-ja.svg?v=redraw-20261025)
 
-画像の言語： [English](../assets/architecture/pactweave-architecture-en.png) · [한국어](../assets/architecture/pactweave-architecture-ko.png) · [日本語](../assets/architecture/pactweave-architecture-ja.png) · [简体中文](../assets/architecture/pactweave-architecture-zh-CN.png)
+画像の言語： [English](../assets/architecture/pactweave-architecture-en.svg?v=redraw-20261025) · [한국어](../assets/architecture/pactweave-architecture-ko.svg?v=redraw-20261025) · [日本語](../assets/architecture/pactweave-architecture-ja.svg?v=redraw-20261025) · [简体中文](../assets/architecture/pactweave-architecture-zh-CN.svg?v=redraw-20261025)
 
 依頼原文 → 意図分析 → タスク契約 → モデル不要の文脈前処理 → PactLoop の計画・実行・レビュー・修復 → 根拠と最終報告。Wiki、RAG、LLM Gateway は計画・実行・レビュー中の情報不足に応じて使う分岐です。全依頼に強制する初期段階ではありません。
 

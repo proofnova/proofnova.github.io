@@ -4,9 +4,9 @@
 
 아키텍처와 제품 방향은 ProofNova가 설계했습니다. PactLoop·WeaveMesh·PactVault는 해당 설계를 독립적으로 구현하는 내부 모듈이며, 공개 스킬은 `pactweave` 하나입니다.
 
-![ProofNova PactWeave 한국어 아키텍처](../assets/architecture/pactweave-architecture-ko.png)
+![ProofNova PactWeave 한국어 아키텍처](../assets/architecture/pactweave-architecture-ko.svg?v=redraw-20261025)
 
-이미지 언어: [English](../assets/architecture/pactweave-architecture-en.png) · [한국어](../assets/architecture/pactweave-architecture-ko.png) · [日本語](../assets/architecture/pactweave-architecture-ja.png) · [简体中文](../assets/architecture/pactweave-architecture-zh-CN.png)
+이미지 언어: [English](../assets/architecture/pactweave-architecture-en.svg?v=redraw-20261025) · [한국어](../assets/architecture/pactweave-architecture-ko.svg?v=redraw-20261025) · [日本語](../assets/architecture/pactweave-architecture-ja.svg?v=redraw-20261025) · [简体中文](../assets/architecture/pactweave-architecture-zh-CN.svg?v=redraw-20261025)
 
 원본 요청 → 의도 분석 → 작업 계약 → 무모델 문맥 전처리 → PactLoop 계획·실행·검토·수정 → 근거와 최종 보고 순서를 유지합니다. Wiki·RAG·LLM Gateway는 계획·실행·검토 중 명시적인 정보 공백이 있을 때만 사용하는 분기이며, 모든 작업의 필수 시작 단계가 아닙니다.
 

@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
-  "checked_at": "2026-10-25T01:45:07.175945+00:00",
+  "checked_at": "2026-10-25T12:42:49.223107+00:00",
   "repository": "https://github.com/proofnova/proofnova-pactweave",
   "repository_verified": true,
-  "repository_commit": "67d66c7ec46c64e437dd1908f03860aaef6a7660",
+  "repository_commit": "fa31bbd61caf241b33e95f4c55549bce94c7ca6c",
   "public_skill": "pactweave",
   "site": "https://proofnova.github.io/workspaces/pactweave/",
   "showcase_position": 1,
@@ -11,69 +11,73 @@
   "tests_passed": 142,
   "browser_fixtures_passed": 60,
   "browser_adapters": 30,
-  "languages": [
-    "en",
-    "ko",
-    "ja",
-    "zh-CN"
-  ],
-  "website_verification": "Published root resource list observed with PactWeave first; linked HTTPS invoice demo executed PASS, model calls 0.",
+  "languages": ["en", "ko", "ja", "zh-CN"],
+  "website_verification": "Previous release verified on public HTTPS. Current native-vector edition passed local UI and packet checks; public deployment verification follows this site commit.",
   "ci_verification": {
-    "source_commit": "67d66c7ec46c64e437dd1908f03860aaef6a7660",
-    "run_id": 40151759046,
-    "url": "https://github.com/proofnova/proofnova-pactweave/actions/runs/40151759046",
+    "source_commit": "fa31bbd61caf241b33e95f4c55549bce94c7ca6c",
+    "run_id": 40194164618,
+    "url": "https://github.com/proofnova/proofnova-pactweave/actions/runs/40194164618",
     "conclusion": "success",
     "jobs": [
       {
-        "id": 121044570010,
-        "name": "windows / Node22",
+        "id": 121171321453,
+        "name": "test (ubuntu-latest, 24)",
         "conclusion": "success"
       },
       {
-        "id": 121044570078,
-        "name": "windows / Node24",
+        "id": 121171321574,
+        "name": "test (ubuntu-latest, 22)",
         "conclusion": "success"
       },
       {
-        "id": 121044570087,
-        "name": "ubuntu / Node24",
+        "id": 121171321584,
+        "name": "test (macos-latest, 22)",
         "conclusion": "success"
       },
       {
-        "id": 121044570099,
-        "name": "macos / Node22",
+        "id": 121171321658,
+        "name": "test (windows-latest, 24)",
         "conclusion": "success"
       },
       {
-        "id": 121044570155,
-        "name": "ubuntu / Node22",
+        "id": 121171321664,
+        "name": "test (windows-latest, 22)",
         "conclusion": "success"
       },
       {
-        "id": 121044570173,
-        "name": "macos / Node24",
+        "id": 121171321672,
+        "name": "test (macos-latest, 24)",
         "conclusion": "success"
       }
     ]
   },
   "source_pack": {
-    "source_commit": "67d66c7ec46c64e437dd1908f03860aaef6a7660",
-    "files": 201,
-    "bytes": 11257144,
-    "sha256": "902ad2c25c08d05c50c6f29fe37d9e8960a485130250ae6b3bb759da9f2c5eae",
+    "source_commit": "fa31bbd61caf241b33e95f4c55549bce94c7ca6c",
+    "files": 210,
+    "bytes": 4611813,
+    "sha256": "2ffc6798769b7f1175db56cc661b5a0b675ed80af10af3e96e5440dcf766bc02",
     "crc": "PASS",
-    "all_source_bytes": "PASS"
+    "all_source_bytes": "PASS",
+    "architecture_assets": [
+      "proofnova-pactweave/assets/architecture/pactweave-architecture-en.png",
+      "proofnova-pactweave/assets/architecture/pactweave-architecture-en.svg",
+      "proofnova-pactweave/assets/architecture/pactweave-architecture-ja.png",
+      "proofnova-pactweave/assets/architecture/pactweave-architecture-ja.svg",
+      "proofnova-pactweave/assets/architecture/pactweave-architecture-ko.png",
+      "proofnova-pactweave/assets/architecture/pactweave-architecture-ko.svg",
+      "proofnova-pactweave/assets/architecture/pactweave-architecture-zh-CN.png",
+      "proofnova-pactweave/assets/architecture/pactweave-architecture-zh-CN.svg"
+    ]
   },
-  "architecture_image_languages": [
-    "en",
-    "ko",
-    "ja",
-    "zh-CN"
-  ],
+  "architecture_image_languages": ["en", "ko", "ja", "zh-CN"],
   "architecture_image_local_verification": {
     "image_and_doc_switches": 4,
     "existing_workflow_preserved": true,
     "mobile_390px": 4,
-    "same_language_README_and_architecture_docs": 8
+    "same_language_README_and_architecture_docs": 8,
+    "final_focused_tests_passed": 3,
+    "svg_text_overflow": 0,
+    "method": "Complete native vector redraw; four SVG masters and fresh lossless PNG exports; consistent shared geometry and flat colors.",
+    "browser_results": "Four editions loaded at 1600x1280; PASS task JSON and input preserved during language changes."
   }
 }

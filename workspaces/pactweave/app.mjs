@@ -57,7 +57,7 @@ const translations = {
       "Knowledge and models are optional branches inside the loop, not mandatory gates.",
     imageLanguages: "Image editions:",
     imageCaption:
-      "Adapted from the user's architecture illustration. Architecture and product direction designed by ProofNova. PactLoop, WeaveMesh and PactVault are internal modules; pactweave is the only public skill.",
+      "Architecture and product direction designed by ProofNova. Drawn from shared vector geometry in four languages. PactLoop, WeaveMesh and PactVault are internal modules; pactweave is the only public skill.",
     step1: "Understand the original request",
     step1text:
       "Preserve original bytes, find missing inputs and separate assumptions from confirmed constraints.",
@@ -149,7 +149,7 @@ const translations = {
       "지식 검색과 모델은 반복 중 필요할 때만 사용하는 분기입니다. 필수 관문이 아닙니다.",
     imageLanguages: "이미지 언어:",
     imageCaption:
-      "사용자가 제공한 아키텍처 그림을 수정했습니다. 아키텍처와 제품 방향은 ProofNova가 설계했습니다. PactLoop·WeaveMesh·PactVault는 내부 모듈이며 공개 스킬은 pactweave 하나입니다.",
+      "아키텍처와 제품 방향은 ProofNova가 설계했습니다. 같은 도형과 색상 규칙으로 네 언어의 벡터 도식을 새로 그렸습니다. PactLoop·WeaveMesh·PactVault는 내부 모듈이며 공개 스킬은 pactweave 하나입니다.",
     step1: "원본 요청 이해",
     step1text:
       "원문을 보존하고 누락 입력을 찾으며 가정과 확정된 제약을 구분합니다.",
@@ -240,7 +240,7 @@ const translations = {
       "知識検索とモデルはループ内で必要な場合だけ使う分岐であり、必須の入口ではありません。",
     imageLanguages: "画像の言語：",
     imageCaption:
-      "ユーザー提供の設計図を編集しました。アーキテクチャと製品方針は ProofNova の設計です。PactLoop、WeaveMesh、PactVault は内部モジュールで、公開スキルは pactweave ひとつです。",
+      "アーキテクチャと製品方針は ProofNova の設計です。共通の図形と配色で4言語のベクター図を描いています。PactLoop、WeaveMesh、PactVault は内部モジュールで、公開スキルは pactweave ひとつです。",
     step1: "元の依頼を理解",
     step1text:
       "原文を保持し、不足入力を見つけ、仮定と確定した制約を分離します。",
@@ -327,7 +327,7 @@ const translations = {
     architectureIntro: "知识检索与模型是循环中按需使用的分支，不是强制入口。",
     imageLanguages: "图片语言：",
     imageCaption:
-      "根据用户提供的架构图编辑。架构与产品方向由 ProofNova 设计。PactLoop、WeaveMesh、PactVault 是内部模块；唯一公开技能是 pactweave。",
+      "架构与产品方向由 ProofNova 设计。四种语言的矢量图采用统一的图形与配色。PactLoop、WeaveMesh、PactVault 是内部模块；唯一公开技能是 pactweave。",
     step1: "理解原始请求",
     step1text: "保留原文，识别缺失输入，区分假设与已确认的约束。",
     step2: "绑定任务契约",
@@ -478,7 +478,7 @@ function resetSample() {
 }
 function applyLanguage() {
   const architecture = architectureLocales[language] ?? architectureLocales.en;
-  const imagePath = `./assets/architecture/pactweave-architecture-${architecture.file}.png`;
+  const imagePath = `./assets/architecture/pactweave-architecture-${architecture.file}.svg?v=redraw-20261025`;
   $("architecture-image").setAttribute("src", imagePath);
   $("architecture-image").setAttribute("alt", architecture.alt);
   $("architecture-image-link").setAttribute("href", imagePath);

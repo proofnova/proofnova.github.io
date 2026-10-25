@@ -6,9 +6,9 @@ Architecture and product direction designed by ProofNova. The public entry point
 
 Original request → request-intent-analyzer → requirements-contract → context-preprocessor → PactLoop → evidence and final report. The request's original bytes and digest remain invariant. Before every plan and repair, PactLoop validates the contract. Optional knowledge and Gateway operations occur inside planning, execution or review when needed; they never replace the first three stages.
 
-![ProofNova PactWeave architecture](assets/architecture/pactweave-architecture-en.png)
+![ProofNova PactWeave architecture](assets/architecture/pactweave-architecture-en.svg?v=redraw-20261025)
 
-The illustration is an edited version of the user's supplied architecture. [English](docs/architecture.md), [한국어](docs/architecture.ko.md), [日本語](docs/architecture.ja.md) and [简体中文](docs/architecture.zh-CN.md) descriptions explain the same architecture. The feature matrix governs actual runtime support when an illustration simplifies a detail.
+The illustration is a new native vector rendering of ProofNova's architecture, built from localized text and shared shapes by [the diagram generator](scripts/draw-architecture.mjs). [English](docs/architecture.md), [한국어](docs/architecture.ko.md), [日本語](docs/architecture.ja.md) and [简体中文](docs/architecture.zh-CN.md) descriptions explain the same architecture. The feature matrix governs actual runtime support when an illustration simplifies a detail.
 
 ## Task identity and evidence
 
@@ -28,11 +28,11 @@ Registered tools declare version/source locks, required input, output contract, 
 
 ## Three different context mechanisms
 
-| Mechanism | Purpose | Trust and lifetime |
-| --- | --- | --- |
-| PactVault | Resources, verified Memory, Skills and Sessions | Scoped local persistent records on Node; memory-only counterpart in browser |
-| Session LLM Cache | Prior provider request/response reuse | Separate local backend; exact identity, TTL, source/contract/permission freshness required |
-| Wiki/RAG retrieval | Evidence for a current information gap | Local chunking/BM25 and citations; retrieved text remains untrusted data |
+| Mechanism          | Purpose                                         | Trust and lifetime                                                                         |
+| ------------------ | ----------------------------------------------- | ------------------------------------------------------------------------------------------ |
+| PactVault          | Resources, verified Memory, Skills and Sessions | Scoped local persistent records on Node; memory-only counterpart in browser                |
+| Session LLM Cache  | Prior provider request/response reuse           | Separate local backend; exact identity, TTL, source/contract/permission freshness required |
+| Wiki/RAG retrieval | Evidence for a current information gap          | Local chunking/BM25 and citations; retrieved text remains untrusted data                   |
 
 Context preprocessing deduplicates supplemental records and bounds context size without discarding immutable requests, confirmed decisions or safety constraints. Similar past model responses can inform context but never become accepted output by string similarity. Exact avoided calls, coalesced in-flight calls and context-only matches are separate metrics.
 

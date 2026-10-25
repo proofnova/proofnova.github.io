@@ -8,9 +8,9 @@
 
 아키텍처와 제품 방향은 ProofNova가 설계했습니다. PactLoop·WeaveMesh·PactVault는 해당 설계를 독립적으로 구현하는 내부 모듈이며, 공개 스킬은 `pactweave` 하나입니다.
 
-![ProofNova PactWeave 한국어 아키텍처](assets/architecture/pactweave-architecture-ko.png)
+![ProofNova PactWeave 한국어 아키텍처](assets/architecture/pactweave-architecture-ko.svg?v=redraw-20261025)
 
-이미지 언어: [English](assets/architecture/pactweave-architecture-en.png) · [한국어](assets/architecture/pactweave-architecture-ko.png) · [日本語](assets/architecture/pactweave-architecture-ja.png) · [简体中文](assets/architecture/pactweave-architecture-zh-CN.png)
+이미지 언어: [English](assets/architecture/pactweave-architecture-en.svg?v=redraw-20261025) · [한국어](assets/architecture/pactweave-architecture-ko.svg?v=redraw-20261025) · [日本語](assets/architecture/pactweave-architecture-ja.svg?v=redraw-20261025) · [简体中文](assets/architecture/pactweave-architecture-zh-CN.svg?v=redraw-20261025)
 
 ## 빠른 시작
 

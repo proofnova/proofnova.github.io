@@ -1,0 +1,221 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1280" viewBox="0 0 1600 1280" role="img" aria-labelledby="title description" xml:lang="ko">
+<title id="title">ProofNova PactWeave — 하나의 스킬. 모든 워크플로. 근거로 검증.</title><desc id="description">제한된 계획 → 실행 → 검토 → 수정. 로컬 CLI: 영속 저장과 승인된 호스트 어댑터. 브라우저: 결정적 도구와 메모리만 사용.</desc>
+<style>text{font-family:"Segoe UI","Noto Sans","Noto Sans CJK KR","Noto Sans CJK JP","Noto Sans CJK SC","Malgun Gothic","Yu Gothic","Microsoft YaHei",sans-serif}text{font-kerning:normal}</style>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto-start-reverse" markerUnits="userSpaceOnUse"><path d="M1 1 L7 4 L1 7" fill="none" stroke="#2e5e87" stroke-width="1.8"/></marker><marker id="repair-arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1 L7 4 L1 7" fill="none" stroke="#b45355" stroke-width="1.8"/></marker></defs>
+<rect width="1600" height="1280" fill="#ffffff"/><rect x="40" y="28" width="1520" height="78" rx="14" fill="#0c4a7c"/>
+<text x="65" y="62" font-size="28" font-weight="750" fill="#ffffff">ProofNova PactWeave</text>
+<text x="65" y="87" font-size="16" font-weight="400" fill="#dcebf8">하나의 스킬. 모든 워크플로. 근거로 검증.</text>
+<g data-node="request" data-x="40" data-y="135" data-width="230" data-height="205"><rect x="40" y="135" width="230" height="205" rx="12" fill="#eef5fc" stroke="#cbdced" stroke-width="1.5"/>
+<text x="58" y="164" font-size="18" font-weight="700" fill="#17324d">사용자 요청</text>
+<text x="58" y="187" font-size="14" font-weight="400" fill="#17324d">•</text>
+<text x="73" y="187" font-size="14" font-weight="400" fill="#17324d">자연어 요청</text>
+<text x="58" y="208.88" font-size="14" font-weight="400" fill="#17324d">•</text>
+<text x="73" y="208.88" font-size="14" font-weight="400" fill="#17324d">파일·이미지·링크</text>
+<text x="58" y="230.76" font-size="14" font-weight="400" fill="#17324d">•</text>
+<text x="73" y="230.76" font-size="14" font-weight="400" fill="#17324d">추가 맥락 정보</text>
+</g>
+<g data-node="intent" data-x="300" data-y="135" data-width="370" data-height="205"><rect x="300" y="135" width="370" height="205" rx="12" fill="#eaf7f1" stroke="#cce3d8" stroke-width="1.5"/>
+<text x="318" y="164" font-size="18" font-weight="700" fill="#17324d">1 · 요청 의도 분석</text>
+<text x="318" y="187" font-size="14" font-weight="400" fill="#17324d">•</text>
+<text x="333" y="187" font-size="14" font-weight="400" fill="#17324d">요청 구조 파악</text>
+<text x="318" y="208.88" font-size="14" font-weight="400" fill="#17324d">•</text>
+<text x="333" y="208.88" font-size="14" font-weight="400" fill="#17324d">요청과 메타데이터 구조화</text>
+<text x="318" y="230.76" font-size="14" font-weight="400" fill="#17324d">•</text>
+<text x="333" y="230.76" font-size="14" font-weight="400" fill="#17324d">목표·범위·제약 식별</text>
+<text x="318" y="252.64" font-size="14" font-weight="400" fill="#17324d">•</text>
+<text x="333" y="252.64" font-size="14" font-weight="400" fill="#17324d">원문과 명시된 정보 보존</text>
+<text x="318" y="274.52" font-size="14" font-weight="400" fill="#17324d">•</text>
+<text x="333" y="274.52" font-size="14" font-weight="400" fill="#17324d">초기 계획과 요구사항 정리</text>
+</g>
+<g data-node="contract" data-x="700" data-y="135" data-width="390" data-height="205"><rect x="700" y="135" width="390" height="205" rx="12" fill="#f4effa" stroke="#dfd5eb" stroke-width="1.5"/>
+<text x="718" y="164" font-size="18" font-weight="700" fill="#17324d">2 · 작업 계약</text>
+<text x="718" y="187" font-size="14" font-weight="400" fill="#17324d">•</text>
+<text x="733" y="187" font-size="14" font-weight="400" fill="#17324d">정확한 작업 계획 수립</text>
+<text x="718" y="208.88" font-size="14" font-weight="400" fill="#17324d">•</text>
+<text x="733" y="208.88" font-size="14" font-weight="400" fill="#17324d">성공 기준과 제약 조건 명시</text>
+<text x="718" y="230.76" font-size="14" font-weight="400" fill="#17324d">•</text>
+<text x="733" y="230.76" font-size="14" font-weight="400" fill="#17324d">도구와 지식 출처 결정</text>
+<text x="718" y="252.64" font-size="14" font-weight="400" fill="#17324d">•</text>
+<text x="733" y="252.64" font-size="14" font-weight="400" fill="#17324d">필요할 때 누락 정보 확인</text>
+<text x="718" y="274.52" font-size="14" font-weight="400" fill="#17324d">•</text>
+<text x="733" y="274.52" font-size="14" font-weight="400" fill="#17324d">필요한 경우에만 재확인</text>
+</g>
+<g data-node="preprocess" data-x="1120" data-y="135" data-width="440" data-height="205"><rect x="1120" y="135" width="440" height="205" rx="12" fill="#f4effa" stroke="#dfd5eb" stroke-width="1.5"/>
+<text x="1138" y="164" font-size="18" font-weight="700" fill="#17324d">3 · 무모델 문맥 정리</text>
+<text x="1138" y="187" font-size="14" font-weight="400" fill="#17324d">•</text>
+<text x="1153" y="187" font-size="14" font-weight="400" fill="#17324d">문맥 구조화와 중복 제거</text>
+<text x="1138" y="208.88" font-size="14" font-weight="400" fill="#17324d">•</text>
+<text x="1153" y="208.88" font-size="14" font-weight="400" fill="#17324d">관련 내용과 제약 추출</text>
+<text x="1138" y="230.76" font-size="14" font-weight="400" fill="#17324d">•</text>
+<text x="1153" y="230.76" font-size="14" font-weight="400" fill="#17324d">등록 도구를 위한 문맥 준비</text>
+</g>
+<polyline points="270,235 300,235" fill="none" stroke="#2e5e87" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
+<polyline points="670,235 700,235" fill="none" stroke="#2e5e87" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
+<polyline points="1090,235 1120,235" fill="none" stroke="#2e5e87" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
+<polyline points="1340,340 1340,362 800,362 800,385" fill="none" stroke="#2e5e87" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
+<rect x="500" y="385" width="600" height="585" rx="16" fill="#ffffff" stroke="#cbdced" stroke-width="1.5"/><path d="M516 385 H1084 Q1100 385 1100 401 V435 H500 V401 Q500 385 516 385" fill="#0c4a7c"/>
+<text x="520" y="410" font-size="20" font-weight="700" fill="#ffffff">PactLoop</text>
+<text x="520" y="428" font-size="12" font-weight="400" fill="#dcebf8">제한된 계획 → 실행 → 검토 → 수정</text>
+<g data-node="plan" data-x="520" data-y="452" data-width="560" data-height="108"><rect x="520" y="452" width="560" height="108" rx="12" fill="#eef5fc" stroke="#cbdced" stroke-width="1.5"/>
+<text x="538" y="481" font-size="18" font-weight="700" fill="#17324d">계획 및 재확인</text>
+<text x="538" y="504" font-size="13.5" font-weight="400" fill="#17324d">•</text>
+<text x="553" y="504" font-size="13.5" font-weight="400" fill="#17324d">원본 요청을 확인하고 계획 보완</text>
+<text x="538" y="525.17" font-size="13.5" font-weight="400" fill="#17324d">•</text>
+<text x="553" y="525.17" font-size="13.5" font-weight="400" fill="#17324d">도구와 지식 출처 선택</text>
+<text x="538" y="546.3399999999999" font-size="13.5" font-weight="400" fill="#17324d">•</text>
+<text x="553" y="546.3399999999999" font-size="13.5" font-weight="400" fill="#17324d">필요한 경우에만 누락 정보 수집</text>
+</g>
+<g data-node="execute" data-x="520" data-y="585" data-width="560" data-height="130"><rect x="520" y="585" width="560" height="130" rx="12" fill="#fff6e1" stroke="#ecdfbd" stroke-width="1.5"/>
+<text x="538" y="614" font-size="18" font-weight="700" fill="#17324d">WeaveMesh · 등록 도구 실행</text>
+<text x="538" y="637" font-size="13.5" font-weight="400" fill="#17324d">•</text>
+<text x="553" y="637" font-size="13.5" font-weight="400" fill="#17324d">작업에 맞는 등록 도구 조율</text>
+<text x="538" y="658.17" font-size="13.5" font-weight="400" fill="#17324d">•</text>
+<text x="553" y="658.17" font-size="13.5" font-weight="400" fill="#17324d">등록된 순수 도구 사용</text>
+<text x="538" y="679.3399999999999" font-size="13.5" font-weight="400" fill="#17324d">•</text>
+<text x="553" y="679.3399999999999" font-size="13.5" font-weight="400" fill="#17324d">승인된 로컬 명령은 CLI에서 실행</text>
+<text x="538" y="700.5099999999999" font-size="13.5" font-weight="400" fill="#17324d">•</text>
+<text x="553" y="700.5099999999999" font-size="13.5" font-weight="400" fill="#17324d">임의의 명령 생성 금지</text>
+</g>
+<g data-node="review" data-x="520" data-y="740" data-width="560" data-height="110"><rect x="520" y="740" width="560" height="110" rx="12" fill="#fceef3" stroke="#ecd4de" stroke-width="1.5"/>
+<text x="538" y="769" font-size="18" font-weight="700" fill="#17324d">테스트 및 부정적 검토</text>
+<text x="538" y="792" font-size="13.5" font-weight="400" fill="#17324d">•</text>
+<text x="553" y="792" font-size="13.5" font-weight="400" fill="#17324d">정확성·완전성·일관성 검증</text>
+<text x="538" y="813.17" font-size="13.5" font-weight="400" fill="#17324d">•</text>
+<text x="553" y="813.17" font-size="13.5" font-weight="400" fill="#17324d">사실·논리·경계 조건·반례 확인</text>
+<text x="538" y="834.3399999999999" font-size="13.5" font-weight="400" fill="#17324d">•</text>
+<text x="553" y="834.3399999999999" font-size="13.5" font-weight="400" fill="#17324d">작업 계약의 충족 여부 판단</text>
+</g>
+<g data-node="repair" data-x="520" data-y="875" data-width="265" data-height="85"><rect x="520" y="875" width="265" height="85" rx="12" fill="#fceef3" stroke="#ecd4de" stroke-width="1.5"/>
+<text x="538" y="904" font-size="16" font-weight="700" fill="#17324d">수정 후 재실행</text>
+<text x="538" y="927" font-size="12.5" font-weight="400" fill="#17324d">•</text>
+<text x="553" y="927" font-size="12.5" font-weight="400" fill="#17324d">문제 수정 후 한도 안에서 재시도</text>
+</g>
+<g data-node="passed" data-x="815" data-y="875" data-width="265" data-height="85"><rect x="815" y="875" width="265" height="85" rx="12" fill="#eaf7f1" stroke="#cce3d8" stroke-width="1.5"/>
+<text x="833" y="904" font-size="16" font-weight="700" fill="#17324d">통과 / 차단</text>
+<text x="833" y="927" font-size="12.5" font-weight="400" fill="#17324d">•</text>
+<text x="848" y="927" font-size="12.5" font-weight="400" fill="#17324d">검증된 결과 또는 명시적인 미충족</text>
+<text x="848" y="944.75" font-size="12.5" font-weight="400" fill="#17324d">요건</text>
+</g>
+<polyline points="800,560 800,585" fill="none" stroke="#2e5e87" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
+<polyline points="800,715 800,740" fill="none" stroke="#2e5e87" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
+<polyline points="800,850 800,863 652,863 652,875" fill="none" stroke="#b45355" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#repair-arrow)"/>
+<polyline points="800,850 800,863 947,863 947,875" fill="none" stroke="#2e5e87" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
+<polyline points="520,912 508,912 508,506 520,506" fill="none" stroke="#b45355" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#repair-arrow)"/>
+<g data-node="gateway" data-x="40" data-y="385" data-width="400" data-height="585"><rect x="40" y="385" width="400" height="585" rx="12" fill="#eaf7f1" stroke="#cce3d8" stroke-width="1.5"/>
+<text x="58" y="414" font-size="18" font-weight="700" fill="#17324d">LLM Gateway</text>
+</g>
+<text x="60" y="442" font-size="13.5" font-weight="400" fill="#17324d">필요할 때만 · 승인된 제공자 · 기본 비활성</text>
+<polygon points="240,478 333,513 240,548 147,513" fill="#ffffff" stroke="#cbdced" stroke-width="1.5"/>
+<text x="240" y="518" text-anchor="middle" font-size="14.5" font-weight="650" fill="#17324d">LLM이 필요한가?</text>
+<g data-node="cache" data-x="60" data-y="575" data-width="360" data-height="150"><rect x="60" y="575" width="360" height="150" rx="12" fill="#f4effa" stroke="#dfd5eb" stroke-width="1.5"/>
+<text x="78" y="604" font-size="16" font-weight="700" fill="#17324d">세션 LLM 응답 캐시</text>
+<text x="78" y="627" font-size="13.5" font-weight="400" fill="#17324d">•</text>
+<text x="93" y="627" font-size="13.5" font-weight="400" fill="#17324d">이 세션의 응답만 저장</text>
+<text x="78" y="648.17" font-size="13.5" font-weight="400" fill="#17324d">•</text>
+<text x="93" y="648.17" font-size="13.5" font-weight="400" fill="#17324d">요청과 문맥을 기준으로 확인</text>
+<text x="78" y="669.3399999999999" font-size="13.5" font-weight="400" fill="#17324d">•</text>
+<text x="93" y="669.3399999999999" font-size="13.5" font-weight="400" fill="#17324d">Wiki / RAG 자료와 별도 관리</text>
+</g>
+<g data-node="hit" data-x="60" data-y="765" data-width="170" data-height="140"><rect x="60" y="765" width="170" height="140" rx="12" fill="#eaf7f1" stroke="#cce3d8" stroke-width="1.5"/>
+<text x="78" y="794" font-size="15" font-weight="700" fill="#17324d">유효한 정확 일치</text>
+<text x="78" y="817" font-size="12.5" font-weight="400" fill="#17324d">•</text>
+<text x="93" y="817" font-size="12.5" font-weight="400" fill="#17324d">캐시된 응답 재사용</text>
+</g>
+<g data-node="miss" data-x="250" data-y="765" data-width="170" data-height="140"><rect x="250" y="765" width="170" height="140" rx="12" fill="#fceef3" stroke="#ecd4de" stroke-width="1.5"/>
+<text x="268" y="794" font-size="15" font-weight="700" fill="#17324d">캐시 미스</text>
+<text x="268" y="817" font-size="12.5" font-weight="400" fill="#17324d">•</text>
+<text x="283" y="817" font-size="12.5" font-weight="400" fill="#17324d">승인된 모델 호출</text>
+<text x="268" y="836.75" font-size="12.5" font-weight="400" fill="#17324d">•</text>
+<text x="283" y="836.75" font-size="12.5" font-weight="400" fill="#17324d">응답을 현재 세션에</text>
+<text x="283" y="854.5" font-size="12.5" font-weight="400" fill="#17324d">저장</text>
+</g>
+<polyline points="240,548 240,575" fill="none" stroke="#2e5e87" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
+<text x="250" y="565" font-size="11.5" font-weight="400" fill="#17324d">예</text>
+<polyline points="147,513 50,513 50,473 460,473 460,535 500,535" fill="none" stroke="#2e5e87" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="6 5" marker-end="url(#arrow)"/>
+<text x="65" y="502" font-size="11.5" font-weight="400" fill="#17324d">아니요</text>
+<polyline points="240,725 240,745 145,745 145,765" fill="none" stroke="#2e5e87" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
+<polyline points="240,725 240,745 335,745 335,765" fill="none" stroke="#2e5e87" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
+<polyline points="420,835 430,835 430,650 420,650" fill="none" stroke="#2e5e87" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="6 5" marker-end="url(#arrow)"/>
+<g data-node="knowledge" data-x="1160" data-y="385" data-width="400" data-height="585"><rect x="1160" y="385" width="400" height="585" rx="12" fill="#eaf7f1" stroke="#cce3d8" stroke-width="1.5"/>
+<text x="1178" y="414" font-size="18" font-weight="700" fill="#17324d">온디맨드 지식</text>
+</g>
+<text x="1180" y="442" font-size="13.5" font-weight="400" fill="#17324d">필요한 정보만 검증 가능한 출처로 조회</text>
+<g data-node="wiki" data-x="1180" data-y="485" data-width="360" data-height="180"><rect x="1180" y="485" width="360" height="180" rx="12" fill="#eef5fc" stroke="#cbdced" stroke-width="1.5"/>
+<text x="1198" y="514" font-size="17" font-weight="700" fill="#17324d">Wiki · 검증된 지침</text>
+<text x="1198" y="537" font-size="13.5" font-weight="400" fill="#17324d">•</text>
+<text x="1213" y="537" font-size="13.5" font-weight="400" fill="#17324d">내부 및 공개 문서</text>
+<text x="1198" y="558.17" font-size="13.5" font-weight="400" fill="#17324d">•</text>
+<text x="1213" y="558.17" font-size="13.5" font-weight="400" fill="#17324d">가이드·정책·모범 사례</text>
+<text x="1198" y="579.3399999999999" font-size="13.5" font-weight="400" fill="#17324d">•</text>
+<text x="1213" y="579.3399999999999" font-size="13.5" font-weight="400" fill="#17324d">사용 가능한 프로젝트 지식</text>
+<text x="1198" y="600.5099999999999" font-size="13.5" font-weight="400" fill="#17324d">•</text>
+<text x="1213" y="600.5099999999999" font-size="13.5" font-weight="400" fill="#17324d">도메인 지식과 참고 자료</text>
+</g>
+<g data-node="rag" data-x="1180" data-y="695" data-width="360" data-height="235"><rect x="1180" y="695" width="360" height="235" rx="12" fill="#f4effa" stroke="#dfd5eb" stroke-width="1.5"/>
+<text x="1198" y="724" font-size="17" font-weight="700" fill="#17324d">RAG · 근거 문서 검색</text>
+<text x="1198" y="747" font-size="13.5" font-weight="400" fill="#17324d">•</text>
+<text x="1213" y="747" font-size="13.5" font-weight="400" fill="#17324d">로컬 문서부터 검색</text>
+<text x="1198" y="768.17" font-size="13.5" font-weight="400" fill="#17324d">•</text>
+<text x="1213" y="768.17" font-size="13.5" font-weight="400" fill="#17324d">외부 어댑터는 선택 사항</text>
+<text x="1198" y="789.3399999999999" font-size="13.5" font-weight="400" fill="#17324d">•</text>
+<text x="1213" y="789.3399999999999" font-size="13.5" font-weight="400" fill="#17324d">관련 출처와 자료 수집</text>
+<text x="1198" y="810.5099999999999" font-size="13.5" font-weight="400" fill="#17324d">•</text>
+<text x="1213" y="810.5099999999999" font-size="13.5" font-weight="400" fill="#17324d">인용 출처를 검증 근거로 사용</text>
+<text x="1198" y="831.6799999999998" font-size="13.5" font-weight="400" fill="#17324d">•</text>
+<text x="1213" y="831.6799999999998" font-size="13.5" font-weight="400" fill="#17324d">작업에 필요한 최신 정보 확인</text>
+</g>
+<polyline points="440,655 500,655" fill="none" stroke="#2e5e87" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="6 5" marker-end="url(#arrow)" marker-start="url(#arrow)"/>
+<text x="447" y="615" font-size="10" font-weight="600" fill="#17324d">필요 시</text>
+<text x="447" y="629.2" font-size="10" font-weight="600" fill="#17324d">LLM 호출</text>
+<polyline points="1100,655 1160,655" fill="none" stroke="#2e5e87" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="6 5" marker-end="url(#arrow)" marker-start="url(#arrow)"/>
+<text x="1107" y="615" font-size="10" font-weight="600" fill="#17324d">필요 시</text>
+<text x="1107" y="629.2" font-size="10" font-weight="600" fill="#17324d">지식 조회</text>
+<rect x="40" y="1010" width="1520" height="170" rx="14" fill="#f8faff" stroke="#cbdced" stroke-width="1.5"/>
+<text x="60" y="1040" font-size="19" font-weight="700" fill="#17324d">PactVault · 영속 문맥 저장소</text>
+<text x="830" y="1039" font-size="12.5" font-weight="400" fill="#17324d">세션 간 저장 · LLM 응답 캐시와 분리</text>
+<g data-node="resources" data-x="60" data-y="1055" data-width="350" data-height="112"><rect x="60" y="1055" width="350" height="112" rx="12" fill="#eef5fc" stroke="#cbdced" stroke-width="1.5"/>
+<text x="78" y="1084" font-size="16" font-weight="700" fill="#17324d">자료</text>
+<text x="78" y="1107" font-size="12.5" font-weight="400" fill="#17324d">•</text>
+<text x="93" y="1107" font-size="12.5" font-weight="400" fill="#17324d">Wiki와 프로젝트 문서</text>
+<text x="78" y="1126.75" font-size="12.5" font-weight="400" fill="#17324d">•</text>
+<text x="93" y="1126.75" font-size="12.5" font-weight="400" fill="#17324d">외부 출처와 요약</text>
+<text x="78" y="1146.5" font-size="12.5" font-weight="400" fill="#17324d">•</text>
+<text x="93" y="1146.5" font-size="12.5" font-weight="400" fill="#17324d">버전별 프로젝트 및 출력 파일</text>
+</g>
+<g data-node="memory" data-x="440" data-y="1055" data-width="350" data-height="112"><rect x="440" y="1055" width="350" height="112" rx="12" fill="#eaf7f1" stroke="#cce3d8" stroke-width="1.5"/>
+<text x="458" y="1084" font-size="16" font-weight="700" fill="#17324d">장기 기억</text>
+<text x="458" y="1107" font-size="12.5" font-weight="400" fill="#17324d">•</text>
+<text x="473" y="1107" font-size="12.5" font-weight="400" fill="#17324d">핵심 사실·선호·의사결정</text>
+<text x="458" y="1126.75" font-size="12.5" font-weight="400" fill="#17324d">•</text>
+<text x="473" y="1126.75" font-size="12.5" font-weight="400" fill="#17324d">과거 작업에서 얻은 교훈</text>
+<text x="458" y="1146.5" font-size="12.5" font-weight="400" fill="#17324d">•</text>
+<text x="473" y="1146.5" font-size="12.5" font-weight="400" fill="#17324d">재사용 가능한 지식과 패턴</text>
+</g>
+<g data-node="skills" data-x="820" data-y="1055" data-width="350" data-height="112"><rect x="820" y="1055" width="350" height="112" rx="12" fill="#fff6e1" stroke="#ecdfbd" stroke-width="1.5"/>
+<text x="838" y="1084" font-size="16" font-weight="700" fill="#17324d">도구 정의</text>
+<text x="838" y="1107" font-size="12.5" font-weight="400" fill="#17324d">•</text>
+<text x="853" y="1107" font-size="12.5" font-weight="400" fill="#17324d">사용 가능한 도구와 사용법</text>
+<text x="838" y="1126.75" font-size="12.5" font-weight="400" fill="#17324d">•</text>
+<text x="853" y="1126.75" font-size="12.5" font-weight="400" fill="#17324d">도구 가이드와 예제</text>
+<text x="838" y="1146.5" font-size="12.5" font-weight="400" fill="#17324d">•</text>
+<text x="853" y="1146.5" font-size="12.5" font-weight="400" fill="#17324d">도구 설정과 스키마</text>
+</g>
+<g data-node="sessions" data-x="1200" data-y="1055" data-width="340" data-height="112"><rect x="1200" y="1055" width="340" height="112" rx="12" fill="#fceef3" stroke="#ecd4de" stroke-width="1.5"/>
+<text x="1218" y="1084" font-size="16" font-weight="700" fill="#17324d">세션 이력</text>
+<text x="1218" y="1107" font-size="12.5" font-weight="400" fill="#17324d">•</text>
+<text x="1233" y="1107" font-size="12.5" font-weight="400" fill="#17324d">요청·계약·계획·결과</text>
+<text x="1218" y="1126.75" font-size="12.5" font-weight="400" fill="#17324d">•</text>
+<text x="1233" y="1126.75" font-size="12.5" font-weight="400" fill="#17324d">중간 단계와 로그</text>
+<text x="1218" y="1146.5" font-size="12.5" font-weight="400" fill="#17324d">•</text>
+<text x="1233" y="1146.5" font-size="12.5" font-weight="400" fill="#17324d">수정 이력과 최종 보고</text>
+</g>
+<polyline points="240,970 240,1010" fill="none" stroke="#2e5e87" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="6 5" marker-end="url(#arrow)" marker-start="url(#arrow)"/>
+<text x="252" y="995" font-size="11" font-weight="400" fill="#17324d">저장 / 조회</text>
+<polyline points="800,970 800,1010" fill="none" stroke="#2e5e87" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="6 5" marker-end="url(#arrow)" marker-start="url(#arrow)"/>
+<text x="812" y="995" font-size="11" font-weight="400" fill="#17324d">저장 / 조회</text>
+<polyline points="1360,970 1360,1010" fill="none" stroke="#2e5e87" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="6 5" marker-end="url(#arrow)" marker-start="url(#arrow)"/>
+<text x="1372" y="995" font-size="11" font-weight="400" fill="#17324d">저장 / 조회</text>
+<rect x="40" y="1200" width="1520" height="58" rx="12" fill="#eef5fc"/>
+<text x="60" y="1225" font-size="13.5" font-weight="600" fill="#17324d">로컬 CLI: 영속 저장과 승인된 호스트 어댑터.</text>
+<text x="820" y="1225" font-size="13.5" font-weight="600" fill="#17324d">브라우저: 결정적 도구와 메모리만 사용.</text>
+</svg>

@@ -1,13 +1,13 @@
 {
-  "output_sha256": "22678a1268176ce0ca8bae9a5cfbe974c900d6cdcfdb522df55433010c3e8ce6",
+  "output_sha256": "0b8e977d27eb4ee0fdba5c44840ac52a0959e28b54b685a37d39ceb91d8a135e",
   "required_order": "Request -> intent -> task contract -> model-free preprocessing -> PactLoop -> evidence",
   "internal_modules": ["PactLoop", "WeaveMesh", "PactVault"],
   "schema_version": 1,
   "public_skill": "pactweave",
   "boundaries": "Browser deterministic/memory-only; disk/process/host model capabilities require local CLI",
-  "source": "User-supplied architecture illustration, 27668.jpg. Original not redistributed.",
-  "method": "Built-in imagegen edit, 3 passes; final inspected visually",
-  "asset": "pactweave-architecture-en.png",
+  "source": "Architecture and product direction designed by ProofNova; user-provided architecture illustration used as conceptual reference. Original illustration not redistributed.",
+  "method": "New native SVG artwork authored from structured text and shared geometry; generated with Node.js standard libraries. No raster pixels reused.",
+  "asset": "pactweave-architecture-en.svg",
   "warnings": [
     "Diagram summarizes architecture, not evidence of universal task capability.",
     "Feature matrix and executable results govern support.",
@@ -22,6 +22,36 @@
   "source_sha256": "10f1dee2ae67cce03aa9a651078fcddb33e6e89d6acfeddff9980e42e266e940",
   "product_direction": "Architecture and product direction designed by ProofNova",
   "localized_assets": [
+    {
+      "language": "en",
+      "asset": "pactweave-architecture-en.svg",
+      "sha256": "0b8e977d27eb4ee0fdba5c44840ac52a0959e28b54b685a37d39ceb91d8a135e",
+      "method": "Shared native SVG generator with escaped, localized text and consistent shapes/colors."
+    },
+    {
+      "language": "ko",
+      "asset": "pactweave-architecture-ko.svg",
+      "sha256": "5dd6d65f9cdac5830d8b96c4a8029485a0071f0158c322e40933f44a06735bf1",
+      "method": "Shared native SVG generator with escaped, localized text and consistent shapes/colors."
+    },
+    {
+      "language": "ja",
+      "asset": "pactweave-architecture-ja.svg",
+      "sha256": "8112c8cead9fdb9109a1d05514c303d69940b79c5cda61876fa7ef84578f8f9f",
+      "method": "Shared native SVG generator with escaped, localized text and consistent shapes/colors."
+    },
+    {
+      "language": "zh-CN",
+      "asset": "pactweave-architecture-zh-CN.svg",
+      "sha256": "9f865e5f70d861b9a1f27dfd1ca5ef2aa4182db478843ce14c527fbf9e3530aa",
+      "method": "Shared native SVG generator with escaped, localized text and consistent shapes/colors."
+    }
+  ],
+  "language_switch": "Fixed local map selects four SVG editions with versioned URLs; full-size and documentation links follow the chosen locale.",
+  "generator": "../../scripts/draw-architecture.mjs",
+  "copy_directory": "copy/",
+  "generator_sha256": "25fac5ee6be109cba111111a6ab6efbbf945a95ce5f004a36165b5b4d869f057",
+  "previous_raster_assets": [
     {
       "language": "en",
       "asset": "pactweave-architecture-en.png",
@@ -51,5 +81,44 @@
       "reference_asset": "pactweave-architecture-en.png"
     }
   ],
-  "language_switch": "Fixed local asset map: UI en/ko/ja/zh maps to en/ko/ja/zh-CN image editions; full-size links and matching documentation follow the same selection."
+  "previous_raster_note": "Historical imagegen editions are retained in Git history and private build backups. Current PNGs are fresh lossless exports of the native SVG masters.",
+  "raster_exports": [
+    {
+      "language": "en",
+      "asset": "pactweave-architecture-en.png",
+      "source_asset": "pactweave-architecture-en.svg",
+      "sha256": "d4f7ac5f6b52664b95fcbfe8febe8789893c221ccf7831d9b4f3d173b13cc20d",
+      "width": 1600,
+      "height": 1280,
+      "method": "Lossless PNG rendered directly from native SVG using preinstalled Sharp 0.35.5; no existing bitmap edited."
+    },
+    {
+      "language": "ko",
+      "asset": "pactweave-architecture-ko.png",
+      "source_asset": "pactweave-architecture-ko.svg",
+      "sha256": "3d4dcb698f67bad87155f92f2ef5586233994b6b56cab00e839e7179a044142b",
+      "width": 1600,
+      "height": 1280,
+      "method": "Lossless PNG rendered directly from native SVG using preinstalled Sharp 0.35.5; no existing bitmap edited."
+    },
+    {
+      "language": "ja",
+      "asset": "pactweave-architecture-ja.png",
+      "source_asset": "pactweave-architecture-ja.svg",
+      "sha256": "91a48630d21f54d980776dbcdad857f50a1c93abdbc44b453845cc118452399f",
+      "width": 1600,
+      "height": 1280,
+      "method": "Lossless PNG rendered directly from native SVG using preinstalled Sharp 0.35.5; no existing bitmap edited."
+    },
+    {
+      "language": "zh-CN",
+      "asset": "pactweave-architecture-zh-CN.png",
+      "source_asset": "pactweave-architecture-zh-CN.svg",
+      "sha256": "4c4a0d7827fef4213b2117abfce5058330dd7c11db5ddfd1daae49a5aac27ddb",
+      "width": 1600,
+      "height": 1280,
+      "method": "Lossless PNG rendered directly from native SVG using preinstalled Sharp 0.35.5; no existing bitmap edited."
+    }
+  ],
+  "png_export_dependency": "Publishing-time renderer only; SVG generation and runtime require no Sharp package."
 }

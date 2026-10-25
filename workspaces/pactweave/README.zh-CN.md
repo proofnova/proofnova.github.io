@@ -8,9 +8,9 @@
 
 架构与产品方向由 ProofNova 设计。PactLoop、WeaveMesh、PactVault 是该架构的独立内部实现，唯一公开技能为 `pactweave`。
 
-![ProofNova PactWeave 简体中文架构](assets/architecture/pactweave-architecture-zh-CN.png)
+![ProofNova PactWeave 简体中文架构](assets/architecture/pactweave-architecture-zh-CN.svg?v=redraw-20261025)
 
-图片语言： [English](assets/architecture/pactweave-architecture-en.png) · [한국어](assets/architecture/pactweave-architecture-ko.png) · [日本語](assets/architecture/pactweave-architecture-ja.png) · [简体中文](assets/architecture/pactweave-architecture-zh-CN.png)
+图片语言： [English](assets/architecture/pactweave-architecture-en.svg?v=redraw-20261025) · [한국어](assets/architecture/pactweave-architecture-ko.svg?v=redraw-20261025) · [日本語](assets/architecture/pactweave-architecture-ja.svg?v=redraw-20261025) · [简体中文](assets/architecture/pactweave-architecture-zh-CN.svg?v=redraw-20261025)
 
 ## 快速开始
 
