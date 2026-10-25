@@ -20,5 +20,36 @@
     "../../docs/architecture.zh-CN.md"
   ],
   "source_sha256": "10f1dee2ae67cce03aa9a651078fcddb33e6e89d6acfeddff9980e42e266e940",
-  "product_direction": "Architecture and product direction designed by ProofNova"
+  "product_direction": "Architecture and product direction designed by ProofNova",
+  "localized_assets": [
+    {
+      "language": "en",
+      "asset": "pactweave-architecture-en.png",
+      "sha256": "22678a1268176ce0ca8bae9a5cfbe974c900d6cdcfdb522df55433010c3e8ce6",
+      "method": "Existing inspected English illustration, unchanged",
+      "reference_asset": "pactweave-architecture-en.png"
+    },
+    {
+      "language": "ko",
+      "asset": "pactweave-architecture-ko.png",
+      "sha256": "51e0db8487856f2b5f4b483c60d8841e54126b218c58deefd1cf8a562c75109e",
+      "method": "Built-in imagegen text-localization edit of the English illustration; visually inspected",
+      "reference_asset": "pactweave-architecture-en.png"
+    },
+    {
+      "language": "ja",
+      "asset": "pactweave-architecture-ja.png",
+      "sha256": "84432c179f6d7e87b9a19a466fea7543ced0b0518d61a0fece017e913555e0ca",
+      "method": "Built-in imagegen text-localization edit of the English illustration; visually inspected",
+      "reference_asset": "pactweave-architecture-en.png"
+    },
+    {
+      "language": "zh-CN",
+      "asset": "pactweave-architecture-zh-CN.png",
+      "sha256": "877f3f195972715bf79019337f4ddb4502c1f73ef2d163d63cacf9e74d1eedc9",
+      "method": "Built-in imagegen text-localization edit of the English illustration; visually inspected",
+      "reference_asset": "pactweave-architecture-en.png"
+    }
+  ],
+  "language_switch": "Fixed local asset map: UI en/ko/ja/zh maps to en/ko/ja/zh-CN image editions; full-size links and matching documentation follow the same selection."
 }

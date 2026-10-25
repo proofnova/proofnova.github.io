@@ -10,7 +10,7 @@
     />
     <title>ProofNova PactWeave — One Skill. Every Workflow. Verified.</title>
     <link rel="stylesheet" href="./style.css" />
-    <script type="module" src="./app.mjs"></script>
+    <script type="module" src="./app.mjs?v=architecture-locales-1"></script>
   </head>
   <body>
     <a class="skip" href="#workspace" data-i18n="skip">Skip to the workspace</a>
@@ -251,8 +251,11 @@ Reconcile this invoice and payment. Verify that exactly one invoice is paid, pre
           </p>
         </div>
         <figure>
-          <a href="./assets/architecture/pactweave-architecture-en.png"
+          <a
+            id="architecture-image-link"
+            href="./assets/architecture/pactweave-architecture-en.png"
             ><img
+              id="architecture-image"
               src="./assets/architecture/pactweave-architecture-en.png"
               alt="PactWeave architecture: intent, contract, context preprocessing, PactLoop with WeaveMesh and optional knowledge/model branches, then PactVault and evidence."
               loading="lazy"
@@ -262,6 +265,35 @@ Reconcile this invoice and payment. Verify that exactly one invoice is paid, pre
             WeaveMesh and PactVault are internal PactWeave modules; pactweave is
             the only public skill.
           </figcaption>
+          <nav class="docs-links" aria-labelledby="architecture-images-label">
+            <span id="architecture-images-label" data-i18n="imageLanguages"
+              >Image editions:</span
+            >
+            <a
+              href="./assets/architecture/pactweave-architecture-en.png"
+              lang="en"
+              hreflang="en"
+              >English</a
+            >
+            <a
+              href="./assets/architecture/pactweave-architecture-ko.png"
+              lang="ko"
+              hreflang="ko"
+              >한국어</a
+            >
+            <a
+              href="./assets/architecture/pactweave-architecture-ja.png"
+              lang="ja"
+              hreflang="ja"
+              >日本語</a
+            >
+            <a
+              href="./assets/architecture/pactweave-architecture-zh-CN.png"
+              lang="zh-CN"
+              hreflang="zh-CN"
+              >简体中文</a
+            >
+          </nav>
         </figure>
         <ol class="architecture-steps">
           <li>
@@ -297,7 +329,10 @@ Reconcile this invoice and payment. Verify that exactly one invoice is paid, pre
           <a href="./README.md">English</a><a href="./README.ko.md">한국어</a
           ><a href="./README.ja.md">日本語</a
           ><a href="./README.zh-CN.md">简体中文</a
-          ><a href="./docs/architecture.md" data-i18n="architectureDoc"
+          ><a
+            id="architecture-document"
+            href="./docs/architecture.md"
+            data-i18n="architectureDoc"
             >Architecture documentation →</a
           >
         </div>

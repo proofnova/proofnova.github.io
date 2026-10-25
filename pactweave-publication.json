@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
-  "checked_at": "2026-10-24T17:07:23.951193+00:00",
+  "checked_at": "2026-10-25T01:45:07.175945+00:00",
   "repository": "https://github.com/proofnova/proofnova-pactweave",
   "repository_verified": true,
-  "repository_commit": "f11584f6bfd16a6f63fb46f957a4674897d5f090",
+  "repository_commit": "67d66c7ec46c64e437dd1908f03860aaef6a7660",
   "public_skill": "pactweave",
   "site": "https://proofnova.github.io/workspaces/pactweave/",
   "showcase_position": 1,
@@ -19,57 +19,61 @@
   ],
   "website_verification": "Published root resource list observed with PactWeave first; linked HTTPS invoice demo executed PASS, model calls 0.",
   "ci_verification": {
-    "source_commit": "f11584f6bfd16a6f63fb46f957a4674897d5f090",
-    "run_id": 40114580480,
-    "url": "https://github.com/proofnova/proofnova-pactweave/actions/runs/40114580480",
-    "checked_at": "2026-10-24T17:07:23.951193+00:00",
+    "source_commit": "67d66c7ec46c64e437dd1908f03860aaef6a7660",
+    "run_id": 40151759046,
+    "url": "https://github.com/proofnova/proofnova-pactweave/actions/runs/40151759046",
+    "conclusion": "success",
     "jobs": [
       {
-        "id": 120933115599,
-        "name": "windows-latest / Node 24",
-        "status": "completed",
+        "id": 121044570010,
+        "name": "windows / Node22",
         "conclusion": "success"
       },
       {
-        "id": 120933115806,
-        "name": "ubuntu-latest / Node 24",
-        "status": "completed",
+        "id": 121044570078,
+        "name": "windows / Node24",
         "conclusion": "success"
       },
       {
-        "id": 120933115810,
-        "name": "macos-latest / Node 22",
-        "status": "completed",
+        "id": 121044570087,
+        "name": "ubuntu / Node24",
         "conclusion": "success"
       },
       {
-        "id": 120933115814,
-        "name": "windows-latest / Node 22",
-        "status": "completed",
+        "id": 121044570099,
+        "name": "macos / Node22",
         "conclusion": "success"
       },
       {
-        "id": 120933115875,
-        "name": "macos-latest / Node 24",
-        "status": "completed",
+        "id": 121044570155,
+        "name": "ubuntu / Node22",
         "conclusion": "success"
       },
       {
-        "id": 120933115898,
-        "name": "ubuntu-latest / Node 22",
-        "status": "completed",
+        "id": 121044570173,
+        "name": "macos / Node24",
         "conclusion": "success"
       }
-    ],
-    "previous_failed_run": 40113763254,
-    "production_security_policy_changed": false
+    ]
   },
   "source_pack": {
-    "files": 198,
+    "source_commit": "67d66c7ec46c64e437dd1908f03860aaef6a7660",
+    "files": 201,
+    "bytes": 11257144,
+    "sha256": "902ad2c25c08d05c50c6f29fe37d9e8960a485130250ae6b3bb759da9f2c5eae",
     "crc": "PASS",
-    "source_member_bytes": "PASS",
-    "sha256": "31fcb33cd1a74fc79abcda3c8befe183ee2c9c8abd3a6a7073872d86ac6cf160",
-    "bytes": 5385559,
-    "source_commit": "f11584f6bfd16a6f63fb46f957a4674897d5f090"
+    "all_source_bytes": "PASS"
+  },
+  "architecture_image_languages": [
+    "en",
+    "ko",
+    "ja",
+    "zh-CN"
+  ],
+  "architecture_image_local_verification": {
+    "image_and_doc_switches": 4,
+    "existing_workflow_preserved": true,
+    "mobile_390px": 4,
+    "same_language_README_and_architecture_docs": 8
   }
 }

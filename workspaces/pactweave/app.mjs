@@ -55,6 +55,7 @@ const translations = {
     architectureTitle: "A contract runs through everything.",
     architectureIntro:
       "Knowledge and models are optional branches inside the loop, not mandatory gates.",
+    imageLanguages: "Image editions:",
     imageCaption:
       "Adapted from the user's architecture illustration. Architecture and product direction designed by ProofNova. PactLoop, WeaveMesh and PactVault are internal modules; pactweave is the only public skill.",
     step1: "Understand the original request",
@@ -146,6 +147,7 @@ const translations = {
     architectureTitle: "모든 단계에 계약을 유지합니다.",
     architectureIntro:
       "지식 검색과 모델은 반복 중 필요할 때만 사용하는 분기입니다. 필수 관문이 아닙니다.",
+    imageLanguages: "이미지 언어:",
     imageCaption:
       "사용자가 제공한 아키텍처 그림을 수정했습니다. 아키텍처와 제품 방향은 ProofNova가 설계했습니다. PactLoop·WeaveMesh·PactVault는 내부 모듈이며 공개 스킬은 pactweave 하나입니다.",
     step1: "원본 요청 이해",
@@ -236,6 +238,7 @@ const translations = {
     architectureTitle: "契約をすべての段階で維持。",
     architectureIntro:
       "知識検索とモデルはループ内で必要な場合だけ使う分岐であり、必須の入口ではありません。",
+    imageLanguages: "画像の言語：",
     imageCaption:
       "ユーザー提供の設計図を編集しました。アーキテクチャと製品方針は ProofNova の設計です。PactLoop、WeaveMesh、PactVault は内部モジュールで、公開スキルは pactweave ひとつです。",
     step1: "元の依頼を理解",
@@ -322,6 +325,7 @@ const translations = {
     download: "下载执行记录",
     architectureTitle: "让契约贯穿每个阶段。",
     architectureIntro: "知识检索与模型是循环中按需使用的分支，不是强制入口。",
+    imageLanguages: "图片语言：",
     imageCaption:
       "根据用户提供的架构图编辑。架构与产品方向由 ProofNova 设计。PactLoop、WeaveMesh、PactVault 是内部模块；唯一公开技能是 pactweave。",
     step1: "理解原始请求",
@@ -370,6 +374,28 @@ let noticeDetail = "";
 let sampleUntouched = true;
 const text = (key) =>
   translations[language][key] ?? translations.en[key] ?? key;
+const architectureLocales = {
+  en: {
+    file: "en",
+    document: "architecture.md",
+    alt: "PactWeave architecture: request, intent, task contract, model-free context preprocessing, PactLoop with WeaveMesh, optional knowledge and models, then PactVault and verification evidence.",
+  },
+  ko: {
+    file: "ko",
+    document: "architecture.ko.md",
+    alt: "PactWeave 아키텍처: 사용자 요청, 의도 분석, 작업 계약, 무모델 문맥 정리, WeaveMesh를 실행하는 PactLoop, 선택적 지식·모델 조회, PactVault와 검증 근거.",
+  },
+  ja: {
+    file: "ja",
+    document: "architecture.ja.md",
+    alt: "PactWeaveアーキテクチャ：ユーザーの依頼、意図分析、タスク契約、モデル不要の文脈整理、WeaveMeshを実行するPactLoop、必要時の知識・モデル参照、PactVaultと検証根拠。",
+  },
+  zh: {
+    file: "zh-CN",
+    document: "architecture.zh-CN.md",
+    alt: "PactWeave架构：用户请求、意图分析、任务契约、无模型上下文整理、通过WeaveMesh执行的PactLoop、按需知识与模型、PactVault和验证证据。",
+  },
+};
 const pretty = (value) =>
   typeof value === "string" ? value : JSON.stringify(value, null, 2);
 
@@ -451,6 +477,15 @@ function resetSample() {
   notice("ready");
 }
 function applyLanguage() {
+  const architecture = architectureLocales[language] ?? architectureLocales.en;
+  const imagePath = `./assets/architecture/pactweave-architecture-${architecture.file}.png`;
+  $("architecture-image").setAttribute("src", imagePath);
+  $("architecture-image").setAttribute("alt", architecture.alt);
+  $("architecture-image-link").setAttribute("href", imagePath);
+  $("architecture-document").setAttribute(
+    "href",
+    `./docs/${architecture.document}`,
+  );
   document.documentElement.lang = language === "zh" ? "zh-CN" : language;
   for (const node of document.querySelectorAll("[data-i18n]")) {
     if (node.dataset.i18n === "headline") node.innerHTML = text("headline");

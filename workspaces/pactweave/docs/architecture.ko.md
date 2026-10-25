@@ -4,7 +4,9 @@
 
 아키텍처와 제품 방향은 ProofNova가 설계했습니다. PactLoop·WeaveMesh·PactVault는 해당 설계를 독립적으로 구현하는 내부 모듈이며, 공개 스킬은 `pactweave` 하나입니다.
 
-![PactLoop / WeaveMesh / PactVault](../assets/architecture/pactweave-architecture-en.png)
+![ProofNova PactWeave 한국어 아키텍처](../assets/architecture/pactweave-architecture-ko.png)
+
+이미지 언어: [English](../assets/architecture/pactweave-architecture-en.png) · [한국어](../assets/architecture/pactweave-architecture-ko.png) · [日本語](../assets/architecture/pactweave-architecture-ja.png) · [简体中文](../assets/architecture/pactweave-architecture-zh-CN.png)
 
 원본 요청 → 의도 분석 → 작업 계약 → 무모델 문맥 전처리 → PactLoop 계획·실행·검토·수정 → 근거와 최종 보고 순서를 유지합니다. Wiki·RAG·LLM Gateway는 계획·실행·검토 중 명시적인 정보 공백이 있을 때만 사용하는 분기이며, 모든 작업의 필수 시작 단계가 아닙니다.
 
@@ -18,18 +20,18 @@
 
 ## 기능별 지원 범위
 
-| 기능 | 브라우저 | 로컬 CLI |
-| --- | --- | --- |
-| 규칙 기반 의도 분석·유형이 있는 계약 질문 | 지원 | 지원 |
-| 등록된 ProofNova 순수 도구 실행 | 지원 | 지원 |
-| PactLoop·WeaveMesh 결정적 역할·작업 실행 | 지원 | 지원 |
-| 출처를 포함한 로컬 Wiki/RAG 분할·BM25 검색 | 메모리 문서 | 영속 로컬 문서 |
-| 세션 응답 캐시 관리 | 메모리 전용, 모델 미설정 | TTL·무효화를 지원하는 별도 로컬 캐시 |
-| PactVault 저장·복구·보존·내보내기 | 로컬 CLI 필요 | 지원 |
-| 신뢰한 프로젝트 명령 | 로컬 CLI 필요 | 명시적 호스트 권한 필요 |
-| 모델 제공자 콜백 | 데모에 설정되지 않음 | Gateway를 통한 선택적 제공자 |
-| 유료 호출·무제한 네트워크·자동 코드 다운로드 | 비활성화 | 기본 비활성화 |
-| 임의 자연어→셸 실행·지원 밖의 의미 작업 | 미지원 | 명시적 신뢰 기능이 없으면 BLOCKED |
+| 기능                                         | 브라우저                 | 로컬 CLI                             |
+| -------------------------------------------- | ------------------------ | ------------------------------------ |
+| 규칙 기반 의도 분석·유형이 있는 계약 질문    | 지원                     | 지원                                 |
+| 등록된 ProofNova 순수 도구 실행              | 지원                     | 지원                                 |
+| PactLoop·WeaveMesh 결정적 역할·작업 실행     | 지원                     | 지원                                 |
+| 출처를 포함한 로컬 Wiki/RAG 분할·BM25 검색   | 메모리 문서              | 영속 로컬 문서                       |
+| 세션 응답 캐시 관리                          | 메모리 전용, 모델 미설정 | TTL·무효화를 지원하는 별도 로컬 캐시 |
+| PactVault 저장·복구·보존·내보내기            | 로컬 CLI 필요            | 지원                                 |
+| 신뢰한 프로젝트 명령                         | 로컬 CLI 필요            | 명시적 호스트 권한 필요              |
+| 모델 제공자 콜백                             | 데모에 설정되지 않음     | Gateway를 통한 선택적 제공자         |
+| 유료 호출·무제한 네트워크·자동 코드 다운로드 | 비활성화                 | 기본 비활성화                        |
+| 임의 자연어→셸 실행·지원 밖의 의미 작업      | 미지원                   | 명시적 신뢰 기능이 없으면 BLOCKED    |
 
 ## 한계와 미지원 범위
 

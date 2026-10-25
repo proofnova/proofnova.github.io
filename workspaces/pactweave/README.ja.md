@@ -8,7 +8,9 @@
 
 アーキテクチャと製品方針は ProofNova の設計です。PactLoop、WeaveMesh、PactVault は独立実装の内部モジュールであり、唯一の公開スキルは `pactweave` です。
 
-![ProofNova PactWeave architecture: PactLoop, WeaveMesh, PactVault](assets/architecture/pactweave-architecture-en.png)
+![ProofNova PactWeave 日本語アーキテクチャ](assets/architecture/pactweave-architecture-ja.png)
+
+画像の言語： [English](assets/architecture/pactweave-architecture-en.png) · [한국어](assets/architecture/pactweave-architecture-ko.png) · [日本語](assets/architecture/pactweave-architecture-ja.png) · [简体中文](assets/architecture/pactweave-architecture-zh-CN.png)
 
 ## クイックスタート
 
@@ -37,18 +39,18 @@ node --test
 
 ## 機能ごとの対応範囲
 
-| 機能 | ブラウザ | ローカル CLI |
-| --- | --- | --- |
-| 規則による意図分析・型付き契約質問 | 対応 | 対応 |
-| 登録済み ProofNova 純粋ツール | 対応 | 対応 |
-| PactLoop・WeaveMesh の決定的ジョブ実行 | 対応 | 対応 |
-| 出典付き Wiki/RAG 分割・BM25 検索 | メモリ内文書 | 永続ローカル文書 |
-| セッション応答キャッシュ | メモリのみ、モデル未設定 | TTL・無効化対応の別領域 |
-| PactVault 永続化・復元・保持期間・エクスポート | ローカル CLI が必要 | 対応 |
-| 信頼したプロジェクトコマンド | ローカル CLI が必要 | 明示的ホスト権限が必要 |
-| モデルプロバイダーのコールバック | デモには未設定 | Gateway 経由で任意設定 |
-| 有料呼び出し・無制限通信・自動コード取得 | 無効 | 既定で無効 |
-| 任意の自然文からのシェル実行・未対応の意味タスク | 非対応 | 明示的能力がなければ BLOCKED |
+| 機能                                             | ブラウザ                 | ローカル CLI                 |
+| ------------------------------------------------ | ------------------------ | ---------------------------- |
+| 規則による意図分析・型付き契約質問               | 対応                     | 対応                         |
+| 登録済み ProofNova 純粋ツール                    | 対応                     | 対応                         |
+| PactLoop・WeaveMesh の決定的ジョブ実行           | 対応                     | 対応                         |
+| 出典付き Wiki/RAG 分割・BM25 検索                | メモリ内文書             | 永続ローカル文書             |
+| セッション応答キャッシュ                         | メモリのみ、モデル未設定 | TTL・無効化対応の別領域      |
+| PactVault 永続化・復元・保持期間・エクスポート   | ローカル CLI が必要      | 対応                         |
+| 信頼したプロジェクトコマンド                     | ローカル CLI が必要      | 明示的ホスト権限が必要       |
+| モデルプロバイダーのコールバック                 | デモには未設定           | Gateway 経由で任意設定       |
+| 有料呼び出し・無制限通信・自動コード取得         | 無効                     | 既定で無効                   |
+| 任意の自然文からのシェル実行・未対応の意味タスク | 非対応                   | 明示的能力がなければ BLOCKED |
 
 ## 固定したアーキテクチャ
 

@@ -4,7 +4,9 @@
 
 Architecture and product direction designed by ProofNova. PactLoop, WeaveMesh and PactVault are the independent internal implementations of that architecture. The only public skill is `pactweave`.
 
-![PactLoop / WeaveMesh / PactVault](../assets/architecture/pactweave-architecture-en.png)
+![ProofNova PactWeave architecture](../assets/architecture/pactweave-architecture-en.png)
+
+Image editions: [English](../assets/architecture/pactweave-architecture-en.png) · [한국어](../assets/architecture/pactweave-architecture-ko.png) · [日本語](../assets/architecture/pactweave-architecture-ja.png) · [简体中文](../assets/architecture/pactweave-architecture-zh-CN.png)
 
 Original request → intent analysis → Task Contract → model-free context preprocessing → PactLoop plan/execute/review/repair → evidence and final report. Wiki, RAG and the LLM Gateway branch from planning, execution or review only when an explicit information gap requires them. They are not compulsory steps before every task.
 
@@ -18,18 +20,18 @@ Original request → intent analysis → Task Contract → model-free context pr
 
 ## Support boundaries
 
-| Capability | Browser | Local CLI |
-| --- | --- | --- |
-| Rule-based intent analysis and typed contract questions | Available | Available |
-| Registered ProofNova pure-tool execution | Available | Available |
-| PactLoop and WeaveMesh deterministic role/job execution | Available | Available |
-| Local Wiki/RAG chunking and BM25 with citations | In-memory documents | Persistent local documents |
-| Session response-cache management | Memory only; no configured model | Separate local cache with TTL and invalidation |
-| PactVault persistence, recovery, retention and export | Local CLI Required | Available |
-| Trusted project commands | Local CLI Required | Explicit host permission required |
-| Model-provider callbacks | Not configured in this demo | Optional configured provider through Gateway |
-| Paid calls, unrestricted network and automatic code download | Disabled | Disabled by default |
-| Arbitrary prose-to-shell or unsupported semantic tasks | Unsupported | BLOCKED unless an explicit trusted capability is supplied |
+| Capability                                                   | Browser                          | Local CLI                                                 |
+| ------------------------------------------------------------ | -------------------------------- | --------------------------------------------------------- |
+| Rule-based intent analysis and typed contract questions      | Available                        | Available                                                 |
+| Registered ProofNova pure-tool execution                     | Available                        | Available                                                 |
+| PactLoop and WeaveMesh deterministic role/job execution      | Available                        | Available                                                 |
+| Local Wiki/RAG chunking and BM25 with citations              | In-memory documents              | Persistent local documents                                |
+| Session response-cache management                            | Memory only; no configured model | Separate local cache with TTL and invalidation            |
+| PactVault persistence, recovery, retention and export        | Local CLI Required               | Available                                                 |
+| Trusted project commands                                     | Local CLI Required               | Explicit host permission required                         |
+| Model-provider callbacks                                     | Not configured in this demo      | Optional configured provider through Gateway              |
+| Paid calls, unrestricted network and automatic code download | Disabled                         | Disabled by default                                       |
+| Arbitrary prose-to-shell or unsupported semantic tasks       | Unsupported                      | BLOCKED unless an explicit trusted capability is supplied |
 
 ## Limits and non-goals
 
